@@ -1,0 +1,17 @@
+<Alloy>
+	<View id="insuranceRow">
+		<View class='additionalAmountRow'>
+			<Label id="insuranceTitle" class='additionalAmountTitle' />
+			<ImageView id="insuranceCheck" />
+		</View>
+		<View class='additionalAmountRow'>
+			<TextField id="insuranceFactorField" class="additionalLeftField kbNumeric" />
+			<View class="textFieldUnderlineWhite additionalLeftUnderline" />
+			<Button id="insuranceClearButton" class="additionalClearButton" />
+			<Label class='currencySymbol' />
+			<TextField id="insuranceAmountField" class="additionalField kbNumeric" />
+			<View class="textFieldUnderlineWhite additionalUnderline" />
+		</View>
+		<View class="separatorBlack" />
+	</View>
+</Alloy>

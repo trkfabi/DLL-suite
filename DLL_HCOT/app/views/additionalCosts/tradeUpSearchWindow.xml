@@ -1,0 +1,29 @@
+<Alloy>
+	<Window id='window'>
+		<View id='wrapper'>
+			<View id='header'>
+				<Button id='backButton' platform="ios" />
+				<View id='backButton' platform="android">
+					<View id="backImage" />
+				</View>
+				<Label id='titleLabel' />
+				<Label id='paymentsLabel' />
+				<Button id='doneButton' platform="ios" />
+				<View id='doneButton' platform="android">
+					<View id="doneImage" />
+				</View>
+			</View>
+			<View id='optionsSelectorContainer'>
+				<TabbedBar id='optionsSelector' platform='ios' />
+				<Require id='optionsSelector' platform='android' src='common/tabbedBar' />
+			</View>
+			<SearchBar id='searchBar' platform='ios' />
+			<View id='searchBarContainer' platform='android'>
+				<TextField id='searchBar' platform='android' />
+				<Button id='searchBarButton' platform='android' />
+				<View class='fieldBottomLine' platform='android' />
+			</View>
+			<TableView id='tradeupList' />
+		</View>
+	</Window>
+</Alloy>

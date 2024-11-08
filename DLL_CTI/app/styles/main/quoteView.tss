@@ -1,0 +1,214 @@
+'#container': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white
+},
+
+'#header': {
+	top: 0,
+	height: Alloy.Globals.headerHeight,
+	backgroundColor: Alloy.Globals.colors.azureRadiance
+},
+'#header[if=Alloy.Globals.hasNotch]': {
+	height: 88.3
+}
+"#header[platform=android]": {
+	height: 48,
+	backgroundColor: Alloy.Globals.colors.azureRadiance
+},
+'#flipContainer': {
+	top: Alloy.Globals.headerHeight,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white
+}
+'#flipContainer[if=Alloy.Globals.hasNotch]': {
+	top: 88.3
+},
+'#flipContainer[platform=ios]': {
+	backgroundImage: "/images/bg_blurred999.png"
+},
+'#flipContainer[platform=android]': {
+	top: 48,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'#body': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	// backgroundImage: "/images/bg_blurred.png"
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'#body[platform=ios]': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundImage: "/images/bg_blurred999.png",
+	backgroundColor: Alloy.Globals.colors.white
+},
+".navButton[platform=ios]": {
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+},
+'#navLeftButton': {
+	left: 5,
+	top: 20,
+	height: 40,
+	width: 40,
+},
+'#navLeftButton[if=Alloy.Globals.hasNotch]': {
+	top: 42.67,
+	left: 9,
+	height: 46,
+	width: 46
+}
+"#navLeftButton[platform=ios]": {
+	backgroundImage: '/images/bt_quotescreen_quotelist.png'
+}
+'#navLeftButton[platform=android]': {
+	top: 6,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/bt_quotescreen_quotelist.png'
+}
+'#uploadButton': {
+	right: 50,
+	bottom: 6,
+	height: 40,
+	width: 40,
+},
+'#uploadButton[if=Alloy.Globals.hasNotch]': {
+	right: 61.3,
+	height: 47,
+	width: 47,
+	bottom: 3
+}
+"#uploadButton[platform=ios]": {
+	backgroundImage: '/images/bt_quotescreen_share.png'
+}
+'#uploadButton[platform=android]': {
+	top: 6,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/bt_quotescreen_share.png'
+}
+'#flipButton': {
+	top: 20,
+	height: 40,
+	width: 40,
+},
+'#flipButton[if=Alloy.Globals.hasNotch]': {
+	top: 43,
+	width: 45,
+	height: 45
+}
+"#flipButton[platform=ios]": {
+	backgroundImage: '/images/bt_quotescreen_centaltoggle2.png'
+}
+'#flipButton[platform=android]': {
+	top: 6,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/bt_quotescreen_centaltoggle2.png'
+},
+"#summaryButton": {
+	bottom: 4,
+	right: 5,
+	width: 40,
+	height: 40,
+},
+'#summaryButton[if=Alloy.Globals.hasNotch]': {
+	right: 9,
+	bottom: 2,
+	width: 44,
+	height: 41,
+}
+"#summaryButton[platform=ios]": {
+	backgroundImage: '/images/bt_quotescreen_preview.png'
+}
+'#summaryButton[platform=android]': {
+	top: 6,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/bt_quotescreen_preview.png'
+},
+'#paymentOptionsContainer': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+'#addRow': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 55,
+	borderWidth: 1,
+	borderColor: Alloy.Globals.colors.silver,
+	backgroundColor: Alloy.Globals.colors.white
+}
+"#equipmentWrapper": {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+},
+"#closeArrow[platform=ios]": {
+	image: "/images/ic_closepannel_arrow.png"
+},
+"#closeArrow[platform=android]": {
+	backgroundImage: "/images/ic_closepannel_arrow.png"
+},
+"#paymentsTableView": {
+	top: 85,
+	bottom: 0,
+	width: Ti.UI.FILL,
+	contentWidth: '100%',
+	contentHeight: 'auto',
+	scrollType: 'vertical',
+	layout: 'vertical',
+	bubbleParent: false
+},
+"#numberContainer": {
+	touchEnabled: false
+},
+"#numberLabel": {
+	left: 12,
+	width: 34,
+	height: 34,
+	text: "...",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	font: {
+		fontSize: 18,
+		fontWeight: "bold"
+	},
+	borderRadius: 17,
+	color: Alloy.Globals.colors.azureRadiance,
+	borderColor: Alloy.Globals.colors.azureRadiance,
+	borderWidth: 1,
+	touchEnabled: false
+},
+"#numberLabel[platform=android]": {
+	width: 39,
+	height: 39,
+	borderRadius: 20,
+	left: 12,
+	text: "...",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	font: {
+		fontSize: 18,
+		fontWeight: "bold"
+	},
+	color: Alloy.Globals.colors.azureRadiance,
+	borderColor: Alloy.Globals.colors.azureRadiance,
+	borderWidth: 1,
+	touchEnabled: false
+},
+"#addLabel": {
+	left: 56,
+	text: L("add_new"),
+	color: Alloy.Globals.colors.azureRadiance,
+	font: {
+		fontSize: 22
+	},
+	touchEnabled: false
+},
+"Button[platform=android]": {
+	backgroundColor: Alloy.Globals.colors.transparent,
+	borderColor: Alloy.Globals.colors.transparent
+}

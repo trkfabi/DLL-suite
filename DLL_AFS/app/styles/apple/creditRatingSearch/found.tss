@@ -1,0 +1,48 @@
+'#foundTemplate': {
+	width: Ti.UI.FILL,
+	height: 80,
+	selectedColor: Alloy.Globals.colors.transparent,
+	selectionStyle: Ti.UI.iOS.ListViewCellSelectionStyle.NONE
+},
+'#listItemContainer': {
+	top: 10,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: 70,
+	layout: 'vertical',
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#parentName': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	maxLines: 2,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 14
+	},
+	color: Alloy.Globals.colors.shuttleGray
+},
+'#rating': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	maxLines: 1,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 12
+	},
+	color: Alloy.Globals.colors.shuttleGray
+},
+'.title': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	maxLines: 2,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 14
+	},
+	minimumFontSize: 14,
+	ellipsize: Ti.UI.TEXT_ELLIPSIZE_TRUNCATE_END
+},
+'.leftSpacing': {
+	left: 15
+}

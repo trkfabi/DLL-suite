@@ -1,0 +1,12 @@
+<Alloy>
+	<View id='customerInformation' class='summaryContainer'>
+		<Require id='sectionHeader' src='summary/sectionHeader' />
+		<View id='container' class='summaryContainer'>
+			<Label id='clientNameLabel' class='summaryLabel' />
+			<Label id='addressLabelFirst' class='summaryLabel' />
+			<Label id='addressLabelSecond' class='summaryLabel' />
+			<Label id='phoneLabel' class='summaryLabel' />
+			<Label id='emailLabel' class='summaryLabel' />
+		</View>
+	</View>
+</Alloy>

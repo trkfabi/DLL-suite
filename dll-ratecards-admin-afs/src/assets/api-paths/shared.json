@@ -1,0 +1,25 @@
+{
+	"apiPaths": {
+		"fetch_rate_cards": "api/rate_cards/rate_cards",
+		"rate_cards_vendor_code": "api/rate_cards/rate_cards_vendor_codes",
+		"export_audit_log": "api/rate_cards/export/audit_log",
+		"fetch_import_list": "api/rate_cards/import_list",
+		"import_rate_card": "api/rate_cards/import_from",
+		"fetch_rate_card": "api/rate_cards/rate_card",
+		"delete_rate_card": "api/rate_cards/rate_card/delete",
+		"create_rate_card": "api/rate_cards/rate_card/create",
+		"fetch_version": "api/rate_cards/version",
+		"fetch_rate_factors": "api/rate_cards/admin/rate_factors",
+		"rcm_authenticate": "api/rate_cards/authenticate",
+		"compare_rate_cards": "api/rate_cards/compare",
+		"export_version": "api/rate_cards/export",
+		"publish_rate_card": "api/rate_cards/rate_card/publish",
+		"update_rate_card": "api/rate_cards/rate_card/update",
+		"create_version": "api/rate_cards/version/create",
+		"delete_version": "api/rate_cards/version/delete",
+		"recalculate_version": "api/rate_cards/version/recalculate",
+		"delete_vendor_code": "api/rate_cards/vendor_code/delete",
+		"create_vendor_code": "api/rate_cards/vendor_code/create",
+		"update_vendor_code": "api/rate_cards/vendor_code/update"
+	}
+}

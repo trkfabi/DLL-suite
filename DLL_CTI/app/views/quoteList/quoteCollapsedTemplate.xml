@@ -1,0 +1,15 @@
+<Alloy>
+	<ItemTemplate name="quoteCollapsed">
+		<View id="container">
+			<View id="grayBG" bindId="grayBG">
+				<View id="headerContainer">
+					<View bindId="favoriteButton" id="favoriteButton" />
+					<Label bindId="nameLabel" id="nameLabel" class="noclick" />
+					<Label bindId="dateLabel" id="dateLabel" class="noclick" />
+					<View bindId="selectButton" id="selectButton" />
+				</View>
+				<View class="horizontalSeparator" platform="android" />
+			</View>
+		</View>
+	</ItemTemplate>
+</Alloy>

@@ -1,0 +1,7 @@
+<Alloy>
+	<View id='actionsContainer'>
+		<View class='separator' />
+		<Button id='signContractButton' class='button' />
+		<Button id='sendContractToCustomerButton' class='button' tag='customer' />
+	</View>
+</Alloy>

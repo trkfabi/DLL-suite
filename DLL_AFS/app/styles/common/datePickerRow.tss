@@ -1,0 +1,17 @@
+'#pickerRowView': {
+	width: Ti.UI.FILL,
+	height: 40,
+	backgroundColor: Alloy.Globals.colors.white,
+	touchEnabled: false
+},
+'#pickerRowLabel': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: Alloy.Globals.fonts.regular,
+		fontSize: 20
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	touchEnabled: false
+}

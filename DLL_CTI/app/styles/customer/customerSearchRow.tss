@@ -1,0 +1,103 @@
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	touchEnabled: false,
+	enabled: false
+},
+"#row": {
+	top: 0,
+	height: Ti.UI.SIZE,
+},
+"#container": {
+	top: 0,
+	height: 58
+},
+"#container[platform=android]": {
+	height: 64
+},
+"#header": {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 58,
+	touchEnabled: false,
+	enabled: false
+},
+"#header[platform=android]": {
+	height: 64
+},
+"#customerLabel": {
+	top: 7,
+	left: 16,
+	right: 16,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: "HelveticaNeue-Medium",
+		fontSize: 18
+	}
+},
+"#customerLabel[platform=ios]": {
+	top: 7,
+	minimumFontSize: 12,
+	font: {
+		fontFamily: "HelveticaNeue-Medium",
+		fontSize: 18
+	}
+},
+"#customerLabel[platform=android]": {
+	top: 9,
+	width: Ti.UI.SIZE,
+	height: 20,
+	ellipsize: Ti.UI.TEXT_ELLIPSIZE_TRUNCATE_END,
+	// wordWrap: true,
+	// horizontalWrap: true,
+	// lines: 1,
+	font: {
+		fontFamily: "sans-serif",
+		fontSize: 18
+	}
+},
+"#addressLabel": {
+	left: 16,
+	right: 16,
+	color: Alloy.Globals.colors.mountbattenPink
+},
+"#addressLabel[platform=ios]": {
+	top: 29,
+	minimumFontSize: 12,
+	font: {
+		fontFamily: "HelveticaNeue-Bold",
+		fontSize: 15
+	}
+},
+"#addressLabel[platform=android]": {
+	top: 31,
+	height: 20,
+	font: {
+		fontFamily: "sans-serif",
+		fontSize: 15
+	}
+},
+".rightTab": {
+	right: 0,
+	width: 7,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.azureRadiance,
+	visible: false,
+	touchEnabled: false
+},
+".leftTab": {
+	left: 0,
+	width: 7,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.azureRadiance,
+	visible: false,
+	touchEnabled: false
+},
+".horizontalLine": {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.mercury,
+	touchEnabled: false,
+	enabled: false
+}

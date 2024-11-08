@@ -1,0 +1,12 @@
+<Alloy>
+	<View id='wrapper'>
+		<View id='container'>
+			<WebView id='policy' />
+			<View class='buttonsContainer'>
+				<View class='separator' />
+				<Button class='button' id='okButton' />
+				<Button class='button' id='cancelButton' />
+			</View>
+		</View>
+	</View>
+</Alloy>

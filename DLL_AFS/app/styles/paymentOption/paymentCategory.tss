@@ -1,0 +1,64 @@
+"#categoryContainer": {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	expanded: true
+},
+"#categoryContainer[platform=ios]": {
+	heightExpanded: 90,
+	clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED
+}
+
+"#categoryContainer[platform=android]": {
+	heightCollapsed: 50
+},
+'#paymentRowsContainer': {
+	top: 40,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+'#paymentRowsContainer[platform=android]': {
+	top: 50
+},
+".expandCollapseButton[platform=ios]": {
+	right: 14,
+	width: 14,
+	height: 8,
+	backgroundImage: '/images/bt_quotescreen_equipmentprice_contract.png',
+	imageExpanded: '/images/bt_quotescreen_equipmentprice_contract.png',
+	imageCollapsed: '/images/bt_quotescreen_equipmentprice_expand.png'
+},
+".expandCollapseButton[platform=android]": {
+	right: 7,
+	width: 40,
+	height: 40,
+	backgroundImage: '/images/bt_quotescreen_equipmentprice_expand.png',
+	imageExpanded: '/images/bt_quotescreen_equipmentprice_contract.png',
+	imageCollapsed: '/images/bt_quotescreen_equipmentprice_expand.png'
+},
+".header": {
+	top: 0,
+	left: 0,
+	right: 0,
+	backgroundColor: Alloy.Globals.colors.mainWindowHeaderBackground,
+	borderWidth: 1,
+	borderColor: Alloy.Globals.colors.mainWindowBorders
+},
+".header[platform=android]": {
+	height: 50
+},
+".row": {
+	left: 0,
+	right: 0,
+	height: 40,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+".headerTitle": {
+	left: 10,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 13
+	},
+	color: Alloy.Globals.colors.mainWindowTextColor
+},

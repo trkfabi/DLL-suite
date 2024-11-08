@@ -1,0 +1,1451 @@
+{
+  "ratecards": {
+    "success": true,
+    "request-id": "0bf28775-29c6-450b-a631-3b6884a85b84",
+    "key": "result",
+    "result": [
+      {
+        "id": "025d02b3-f497-4fea-913c-78f7b35a516a",
+        "name": "000B",
+        "versionInProgress": "389168fb-b41c-40f6-98f3-56ccec244e13",
+        "versionPublished": "",
+        "order": 0,
+        "published": false,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "9edeb61d-10ff-4f8c-88e4-6ac4e1a72067",
+        "name": "ZiessRateCard",
+        "versionInProgress": "1f15ccfa-b579-4af7-80b0-950d5e29e4bf",
+        "versionPublished": "",
+        "order": 0,
+        "published": false,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "1865d2c0-bccd-45b9-81ea-fc778a126ea5",
+        "name": "OTHCTest",
+        "versionInProgress": "e650acdf-df0b-49a5-ab73-28b60ee902db",
+        "versionPublished": "",
+        "order": 0,
+        "published": false,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "de81002f-dd71-439a-ad3d-161af809ff8a",
+        "name": "000A",
+        "versionInProgress": "7903dd29-053c-4fc2-aa9c-2bfe8180efa5",
+        "versionPublished": "9e6d6832-0d9c-44c8-8c6e-ae1861f7540b",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "96fb00f2-6584-47af-b568-a2c5459e8e81",
+        "name": "000E",
+        "versionInProgress": "",
+        "versionPublished": "34932f5d-c745-412f-ad91-01fec392e4c7",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "200db7cb-2b29-49cc-b429-3bf2d695ba93",
+        "name": "Australia",
+        "versionInProgress": "fdece7ca-1474-4f88-807d-16cbe6269886",
+        "versionPublished": "",
+        "order": 0,
+        "published": false,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "6873fac0-96ca-432b-9393-17ca07273a12",
+        "name": "000D",
+        "versionInProgress": "",
+        "versionPublished": "002671bb-28a7-4ab2-b0ae-d255a4f5cde2",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "1bf233a4-3a6a-49cc-a42b-6b8e451fd3a6",
+        "name": "FabianTest11",
+        "versionInProgress": "",
+        "versionPublished": "fdc664ba-822b-4524-b9d4-000d9ff18c4e",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "22f8ec4e-eb31-44e8-99d4-46a5a218f812",
+        "name": "MartinTest3",
+        "versionInProgress": "5306030a-4619-4c31-bab9-cc2eed3c8be7",
+        "versionPublished": "",
+        "order": 0,
+        "published": false,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "cced5262-cd81-47c6-ad08-dff377fa4b39",
+        "name": "MartinTest2",
+        "versionInProgress": "",
+        "versionPublished": "57ac5b50-34ee-4ced-bbb5-4b68be9c868d",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "287e2b34-4e75-45c9-a509-3d65c4beb1f5",
+        "name": "MartinTest1",
+        "versionInProgress": "",
+        "versionPublished": "3b9faed6-1179-4757-ba61-c7f73b8d94d6",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "a90f6bff-4cca-437f-903e-30d8587a3f9d",
+        "name": "003RCMvs3V0P",
+        "versionInProgress": "2239dc33-6bf1-4772-948c-d6117a9c48e9",
+        "versionPublished": "",
+        "order": 0,
+        "published": false,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "1749cebc-637d-4165-8039-c8d2336ffd88",
+        "name": "002RCMvs1V0P",
+        "versionInProgress": "46d3b2a6-81da-44c6-b0ac-c63a861b43d5",
+        "versionPublished": "",
+        "order": 0,
+        "published": false,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "5c1c3411-5e62-4e78-b596-8f2571229fbb",
+        "name": "001RCMv2",
+        "versionInProgress": "4bdbc02c-9c4c-4c57-be65-dfb8583da2bf",
+        "versionPublished": "",
+        "order": 0,
+        "published": false,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "79b0b90e-d86f-4c02-bf51-fc4f3e8a4b52",
+        "name": "RCM2",
+        "versionInProgress": "c5d054fd-ed2f-483c-a9c2-b6fa7e98c4e9",
+        "versionPublished": "",
+        "order": 0,
+        "published": false,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "9f796a07-b651-4c3b-a4d8-71c99a9d1bdb",
+        "name": "001TEST",
+        "versionInProgress": "875d8725-337d-426c-a859-b8617f27779e",
+        "versionPublished": "2ce63859-6233-48ef-9a87-9078a626e402",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "afa911e0-654b-464c-8b51-747e60927ec5",
+        "name": "SmokeAxway01",
+        "versionInProgress": "9adde01d-8386-4f3c-a879-d36ae269d706",
+        "versionPublished": "ab7504f4-6e6a-42af-a182-1c64dddf2e1c",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "e952550d-da1d-465f-9cd9-fc6337a76054",
+        "name": "003Memo",
+        "versionInProgress": "4f579f3d-536c-4050-b7db-54c434ad448a",
+        "versionPublished": "71122d9a-fcf3-48bc-947f-d7d306cdfc6f",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "2ffec5ce-5c99-4079-bb95-6435efcd714f",
+        "name": "002Memo",
+        "versionInProgress": "",
+        "versionPublished": "70b3a8f2-aed1-4f88-8de0-b3eaa7fa7164",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "1b0e6f9d-fff0-4ede-a785-ea20fd39eafe",
+        "name": "009Memo",
+        "versionInProgress": "",
+        "versionPublished": "09254161-a154-4ec8-9188-1e6776e271b6",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "8aa66b39-f853-49d4-b25e-dd43a6b0a753",
+        "name": "007Memov84",
+        "versionInProgress": "",
+        "versionPublished": "306dab39-deaf-4898-ba12-46506d42eedd",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "d2bab57b-fed2-43cd-865c-11d3ef1a9e91",
+        "name": "008Memov82",
+        "versionInProgress": "",
+        "versionPublished": "162c43c3-f697-4601-a8ef-afaf0ea478a8",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "57f939e3-6208-437f-a8e2-9dad0c252c28",
+        "name": "NewRC",
+        "versionInProgress": "",
+        "versionPublished": "9505eea0-827e-4e38-bc21-b3b8fd257a90",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "df6da3c1-d7ec-47b1-bd29-352d9afab6b9",
+        "name": "AK05",
+        "versionInProgress": "7f500000-be71-471e-9441-06f0ee30a969",
+        "versionPublished": "b80b08be-a828-4862-843f-94a9efa04904",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "81f48472-06e8-47ea-9ff0-3a2bb56ea475",
+        "name": "006Memo",
+        "versionInProgress": "",
+        "versionPublished": "6b8c93ee-eacf-4f3f-9d8f-605f315b7f49",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "660ebdc0-c478-4a12-a028-7c7ac62430d0",
+        "name": "AK03",
+        "versionInProgress": "",
+        "versionPublished": "de5f6c82-a98e-4cdc-bb0c-d517b5ef4049",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "4cdc6092-87eb-4cd5-b346-36f0e10b3577",
+        "name": "AK02",
+        "versionInProgress": "",
+        "versionPublished": "9b48ec6d-a3bb-4846-9672-9e7181991f91",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "16cbb33a-085a-4783-970f-4381ef84676e",
+        "name": "MemoE2E",
+        "versionInProgress": "",
+        "versionPublished": "38ef4ea7-643c-4263-90d6-7dbb1db14d65",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "1e87feb5-f223-4bff-b616-728c320d3fa0",
+        "name": "EtETest",
+        "versionInProgress": "",
+        "versionPublished": "f34a1f18-c589-4d08-bf5c-b210b8a44d70",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "e9daf237-1ab4-45f9-b606-1f18b5556c99",
+        "name": "FM20181119",
+        "versionInProgress": "",
+        "versionPublished": "ca570ff4-6dc2-460f-a52b-92a85a26c040",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "3ee4f6e3-ee99-4b64-b8a1-28c22fb943da",
+        "name": "PTest",
+        "versionInProgress": "a479e856-f499-4d24-929f-2bf6878f635a",
+        "versionPublished": "",
+        "order": 0,
+        "published": false,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "84f7389e-afc2-48d5-bb9f-a6e70dad63ce",
+        "name": "EERateCard",
+        "versionInProgress": "60d3fb2b-d34c-444c-9537-7cc4ca07164a",
+        "versionPublished": "f440542b-fc64-490c-9992-ef44b3fa0b87",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "7f49c2b8-ae94-4e04-b771-8b325de1ec20",
+        "name": "AppUATNanTest",
+        "versionInProgress": "f8a30f0b-5251-4a97-99f9-69ceacfc6f48",
+        "versionPublished": "2dc20a06-62ca-4e4e-a685-fcd9b2f1bdf4",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      },
+      {
+        "id": "1ef05b19-1b77-4636-b20e-20931ee11258",
+        "name": "APPLENotTouch",
+        "versionInProgress": "",
+        "versionPublished": "78fd3598-ea13-4350-974c-e6902cfc84f3",
+        "order": 0,
+        "published": true,
+        "deleted": false,
+        "versions": []
+      }
+    ]
+  },
+  "ratecard": {
+    "success": true,
+    "request-id": "5de77d0c-3743-44c0-94ca-07deb8dc0c79",
+    "key": "result",
+    "result": {
+      "id": "025d02b3-f497-4fea-913c-78f7b35a516a",
+      "name": "000B",
+      "versionInProgress": "389168fb-b41c-40f6-98f3-56ccec244e13",
+      "versionPublished": "",
+      "order": 0,
+      "published": false,
+      "deleted": false,
+      "versions": [
+        {
+          "id": "389168fb-b41c-40f6-98f3-56ccec244e13",
+          "rateCardId": "025d02b3-f497-4fea-913c-78f7b35a516a",
+          "terms": [
+            "12",
+            "24",
+            "36",
+            "48"
+          ],
+          "creditRatings": [
+            "AAA",
+            "AA+",
+            "AA",
+            "AA-",
+            "A+",
+            "A",
+            "A-",
+            "BBB+",
+            "BBB",
+            "BBB-",
+            "BB+",
+            "BB"
+          ],
+          "canPublish": true,
+          "isPublishing": false,
+          "archived": false,
+          "deleted": false,
+          "published": false,
+          "datePublished": "",
+          "inputs": [
+            {
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "name": "FMV",
+              "type": "cof",
+              "creditRatings": []
+            },
+            {
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "name": "$1 Out",
+              "type": "cof",
+              "creditRatings": []
+            },
+            {
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "name": "AAA to AA",
+              "type": "spread",
+              "creditRatings": [
+                "AAA",
+                "AA+",
+                "AA"
+              ]
+            },
+            {
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "name": "AA- to A-",
+              "type": "spread",
+              "creditRatings": [
+                "AA-",
+                "A+",
+                "A",
+                "A-"
+              ]
+            },
+            {
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "name": "BBB+ to BBB-",
+              "type": "spread",
+              "creditRatings": [
+                "BBB+",
+                "BBB",
+                "BBB-"
+              ]
+            },
+            {
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "name": "BB+ to BB",
+              "type": "spread",
+              "creditRatings": [
+                "BB+",
+                "BB"
+              ]
+            },
+            {
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "name": "AAA to AA",
+              "type": "allin-fmv",
+              "creditRatings": [
+                "AAA",
+                "AA+",
+                "AA"
+              ],
+              "id": null
+            },
+            {
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "name": "AA- to A-",
+              "type": "allin-fmv",
+              "creditRatings": [
+                "AA-",
+                "A+",
+                "A",
+                "A-"
+              ],
+              "id": null
+            },
+            {
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "name": "BBB+ to BBB-",
+              "type": "allin-fmv",
+              "creditRatings": [
+                "BBB+",
+                "BBB",
+                "BBB-"
+              ],
+              "id": null
+            },
+            {
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "name": "BB+ to BB",
+              "type": "allin-fmv",
+              "creditRatings": [
+                "BB+",
+                "BB"
+              ],
+              "id": null
+            },
+            {
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "name": "AAA to AA",
+              "type": "allin-out",
+              "creditRatings": [
+                "AAA",
+                "AA+",
+                "AA"
+              ],
+              "id": null
+            },
+            {
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "name": "AA- to A-",
+              "type": "allin-out",
+              "creditRatings": [
+                "AA-",
+                "A+",
+                "A",
+                "A-"
+              ],
+              "id": null
+            },
+            {
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "name": "BBB+ to BBB-",
+              "type": "allin-out",
+              "creditRatings": [
+                "BBB+",
+                "BBB",
+                "BBB-"
+              ],
+              "id": null
+            },
+            {
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "name": "BB+ to BB",
+              "type": "allin-out",
+              "creditRatings": [
+                "BB+",
+                "BB"
+              ],
+              "id": null
+            }
+          ],
+          "vendorCodeNames": [],
+          "created_at": "2020-05-14T16:51:11+0000",
+          "updated_at": "2020-05-27T00:23:17+0000",
+          "products": [
+            {
+              "id": "5b4ac957-b16a-4669-8ba1-4979bdf9425d",
+              "name": "iPhone 1",
+              "categoryId": "86e753a6-46c5-4724-b36d-2aa05a3dacc6",
+              "order": 1,
+              "versionId": "389168fb-b41c-40f6-98f3-56ccec244e13",
+              "hasItad": true,
+              "itadValue": 0,
+              "ratesEnabled": [
+                "fmv"
+              ],
+              "terms": {
+                "12": 0,
+                "24": 0,
+                "36": 0,
+                "48": 0
+              },
+              "deleted": false,
+              "categoryOrder": 1
+            }
+          ],
+          "categories": [
+            {
+              "id": "86e753a6-46c5-4724-b36d-2aa05a3dacc6",
+              "name": "Apple 1",
+              "versionId": "389168fb-b41c-40f6-98f3-56ccec244e13",
+              "order": 1,
+              "deleted": false
+            }
+          ],
+          "vendorCodes": [],
+          "rateFactors": []
+        }
+      ]
+    }
+  },
+  "recalculate": {"success":true,"request-id":"0c4bc727-18ec-4880-b0cd-ccbb1593246b","key":"result","result":{"out":[{"productId":null,"rate":"out","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"AAA","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"order":0},"category":{"order":0},"order":"0-000-000-00"},{"productId":null,"rate":"out","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"AA+","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"order":0},"category":{"order":0},"order":"0-000-000-01"},{"productId":null,"rate":"out","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"AA","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"order":0},"category":{"order":0},"order":"0-000-000-02"},{"productId":null,"rate":"out","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"AA-","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"order":0},"category":{"order":0},"order":"0-000-000-03"},{"productId":null,"rate":"out","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"A+","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"order":0},"category":{"order":0},"order":"0-000-000-04"},{"productId":null,"rate":"out","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"A","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"order":0},"category":{"order":0},"order":"0-000-000-05"},{"productId":null,"rate":"out","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"A-","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"order":0},"category":{"order":0},"order":"0-000-000-06"},{"productId":null,"rate":"out","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"BBB+","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"order":0},"category":{"order":0},"order":"0-000-000-07"},{"productId":null,"rate":"out","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"BBB","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"order":0},"category":{"order":0},"order":"0-000-000-08"},{"productId":null,"rate":"out","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"BBB-","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"order":0},"category":{"order":0},"order":"0-000-000-09"},{"productId":null,"rate":"out","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"BB+","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"order":0},"category":{"order":0},"order":"0-000-000-10"},{"productId":null,"rate":"out","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"BB","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"order":0},"category":{"order":0},"order":"0-000-000-11"}],"fmv":[{"productId":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","rate":"fmv","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"AAA","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"id":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","name":"iPhone 1","order":1},"category":{"id":"86e753a6-46c5-4724-b36d-2aa05a3dacc6","name":"Apple 1","order":1},"order":"1-001-001-00"},{"productId":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","rate":"fmv","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"AA+","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"id":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","name":"iPhone 1","order":1},"category":{"id":"86e753a6-46c5-4724-b36d-2aa05a3dacc6","name":"Apple 1","order":1},"order":"1-001-001-01"},{"productId":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","rate":"fmv","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"AA","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"id":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","name":"iPhone 1","order":1},"category":{"id":"86e753a6-46c5-4724-b36d-2aa05a3dacc6","name":"Apple 1","order":1},"order":"1-001-001-02"},{"productId":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","rate":"fmv","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"AA-","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"id":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","name":"iPhone 1","order":1},"category":{"id":"86e753a6-46c5-4724-b36d-2aa05a3dacc6","name":"Apple 1","order":1},"order":"1-001-001-03"},{"productId":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","rate":"fmv","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"A+","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"id":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","name":"iPhone 1","order":1},"category":{"id":"86e753a6-46c5-4724-b36d-2aa05a3dacc6","name":"Apple 1","order":1},"order":"1-001-001-04"},{"productId":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","rate":"fmv","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"A","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"id":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","name":"iPhone 1","order":1},"category":{"id":"86e753a6-46c5-4724-b36d-2aa05a3dacc6","name":"Apple 1","order":1},"order":"1-001-001-05"},{"productId":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","rate":"fmv","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"A-","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"id":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","name":"iPhone 1","order":1},"category":{"id":"86e753a6-46c5-4724-b36d-2aa05a3dacc6","name":"Apple 1","order":1},"order":"1-001-001-06"},{"productId":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","rate":"fmv","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"BBB+","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"id":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","name":"iPhone 1","order":1},"category":{"id":"86e753a6-46c5-4724-b36d-2aa05a3dacc6","name":"Apple 1","order":1},"order":"1-001-001-07"},{"productId":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","rate":"fmv","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"BBB","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"id":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","name":"iPhone 1","order":1},"category":{"id":"86e753a6-46c5-4724-b36d-2aa05a3dacc6","name":"Apple 1","order":1},"order":"1-001-001-08"},{"productId":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","rate":"fmv","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"BBB-","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"id":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","name":"iPhone 1","order":1},"category":{"id":"86e753a6-46c5-4724-b36d-2aa05a3dacc6","name":"Apple 1","order":1},"order":"1-001-001-09"},{"productId":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","rate":"fmv","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"BB+","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"id":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","name":"iPhone 1","order":1},"category":{"id":"86e753a6-46c5-4724-b36d-2aa05a3dacc6","name":"Apple 1","order":1},"order":"1-001-001-10"},{"productId":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","rate":"fmv","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","creditRating":"BB","points":0,"vendorCode":"","terms":{"12":0.0833333,"24":0.0416667,"36":0.0277778,"48":0.0208333},"product":{"id":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","name":"iPhone 1","order":1},"category":{"id":"86e753a6-46c5-4724-b36d-2aa05a3dacc6","name":"Apple 1","order":1},"order":"1-001-001-11"}]}},
+  "rate_cards_vendor_codes": {
+    "success": true,
+    "request-id": "53cbd9f6-75ee-4012-b1db-f2d8e6ca381e",
+    "key": "result",
+    "result": [
+        {
+            "id": "025d02b3-f497-4fea-913c-78f7b35a516a",
+            "name": "000B",
+            "versionInProgress": "389168fb-b41c-40f6-98f3-56ccec244e13",
+            "versionPublished": "",
+            "order": 0,
+            "published": false,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": []
+        },
+        {
+            "id": "9edeb61d-10ff-4f8c-88e4-6ac4e1a72067",
+            "name": "ZiessRateCard",
+            "versionInProgress": "1f15ccfa-b579-4af7-80b0-950d5e29e4bf",
+            "versionPublished": "",
+            "order": 0,
+            "published": false,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": []
+        },
+        {
+            "id": "1865d2c0-bccd-45b9-81ea-fc778a126ea5",
+            "name": "OTHCTest",
+            "versionInProgress": "e650acdf-df0b-49a5-ab73-28b60ee902db",
+            "versionPublished": "",
+            "order": 0,
+            "published": false,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "16ea50df-be89-498b-9c63-935128789ed9",
+                    "versionId": "e650acdf-df0b-49a5-ab73-28b60ee902db",
+                    "rateCardId": "1865d2c0-bccd-45b9-81ea-fc778a126ea5",
+                    "name": "CarlZeiss1Pt",
+                    "points": 1,
+                    "deleted": false
+                },
+                {
+                    "id": "70423975-404e-47e6-b912-73c216815ab1",
+                    "versionId": "e650acdf-df0b-49a5-ab73-28b60ee902db",
+                    "rateCardId": "1865d2c0-bccd-45b9-81ea-fc778a126ea5",
+                    "name": "CarlZeiss2Pts",
+                    "points": 2,
+                    "deleted": false
+                },
+                {
+                    "id": "fa62130d-1455-4aac-ad2f-00bb56149772",
+                    "versionId": "e650acdf-df0b-49a5-ab73-28b60ee902db",
+                    "rateCardId": "1865d2c0-bccd-45b9-81ea-fc778a126ea5",
+                    "name": "CarlZeiss3Pts",
+                    "points": 3,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "de81002f-dd71-439a-ad3d-161af809ff8a",
+            "name": "000A",
+            "versionInProgress": "7903dd29-053c-4fc2-aa9c-2bfe8180efa5",
+            "versionPublished": "9e6d6832-0d9c-44c8-8c6e-ae1861f7540b",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "9a17112d-fb02-4342-a795-9e07c9eae1a0",
+                    "versionId": "7903dd29-053c-4fc2-aa9c-2bfe8180efa5",
+                    "rateCardId": "de81002f-dd71-439a-ad3d-161af809ff8a",
+                    "name": "sis",
+                    "points": 2,
+                    "deleted": false
+                },
+                {
+                    "id": "77b8bab5-e78d-4a63-8952-162a4d106777",
+                    "versionId": "7903dd29-053c-4fc2-aa9c-2bfe8180efa5",
+                    "rateCardId": "de81002f-dd71-439a-ad3d-161af809ff8a",
+                    "name": "ere",
+                    "points": 4,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "96fb00f2-6584-47af-b568-a2c5459e8e81",
+            "name": "000E",
+            "versionInProgress": "",
+            "versionPublished": "34932f5d-c745-412f-ad91-01fec392e4c7",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "b4af1e9c-5302-4521-b282-133cd263eebe",
+                    "versionId": "34932f5d-c745-412f-ad91-01fec392e4c7",
+                    "rateCardId": "96fb00f2-6584-47af-b568-a2c5459e8e81",
+                    "name": "ABCDE678901234567892",
+                    "points": 3.55,
+                    "deleted": false
+                },
+                {
+                    "id": "6fee04e5-e8a3-4953-9325-34d437ac959b",
+                    "versionId": "34932f5d-c745-412f-ad91-01fec392e4c7",
+                    "rateCardId": "96fb00f2-6584-47af-b568-a2c5459e8e81",
+                    "name": "AA1",
+                    "points": 2,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "200db7cb-2b29-49cc-b429-3bf2d695ba93",
+            "name": "Australia",
+            "versionInProgress": "fdece7ca-1474-4f88-807d-16cbe6269886",
+            "versionPublished": "",
+            "order": 0,
+            "published": false,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "be7ba902-4162-4ed1-ab6f-581069572440",
+                    "versionId": "fdece7ca-1474-4f88-807d-16cbe6269886",
+                    "rateCardId": "200db7cb-2b29-49cc-b429-3bf2d695ba93",
+                    "name": "ANZ00",
+                    "points": 2,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "6873fac0-96ca-432b-9393-17ca07273a12",
+            "name": "000D",
+            "versionInProgress": "",
+            "versionPublished": "002671bb-28a7-4ab2-b0ae-d255a4f5cde2",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "0dee876b-5ef2-4db4-b53d-f3fcd97c3241",
+                    "versionId": "002671bb-28a7-4ab2-b0ae-d255a4f5cde2",
+                    "rateCardId": "6873fac0-96ca-432b-9393-17ca07273a12",
+                    "name": "newADDED",
+                    "points": 2,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "1bf233a4-3a6a-49cc-a42b-6b8e451fd3a6",
+            "name": "FabianTest11",
+            "versionInProgress": "",
+            "versionPublished": "fdc664ba-822b-4524-b9d4-000d9ff18c4e",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "d7e268e1-7670-43eb-a4f1-625698e2bad5",
+                    "versionId": "fdc664ba-822b-4524-b9d4-000d9ff18c4e",
+                    "rateCardId": "1bf233a4-3a6a-49cc-a42b-6b8e451fd3a6",
+                    "name": "FabianTestVendor1",
+                    "points": 2,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "22f8ec4e-eb31-44e8-99d4-46a5a218f812",
+            "name": "MartinTest3",
+            "versionInProgress": "5306030a-4619-4c31-bab9-cc2eed3c8be7",
+            "versionPublished": "",
+            "order": 0,
+            "published": false,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": []
+        },
+        {
+            "id": "cced5262-cd81-47c6-ad08-dff377fa4b39",
+            "name": "MartinTest2",
+            "versionInProgress": "",
+            "versionPublished": "57ac5b50-34ee-4ced-bbb5-4b68be9c868d",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "5f707c56-2fe2-4045-a3ac-0830a8cda56e",
+                    "versionId": "57ac5b50-34ee-4ced-bbb5-4b68be9c868d",
+                    "rateCardId": "cced5262-cd81-47c6-ad08-dff377fa4b39",
+                    "name": "Vendor12",
+                    "points": 3,
+                    "deleted": false
+                },
+                {
+                    "id": "d501b826-af07-45c5-a62e-72d7a1f13345",
+                    "versionId": "57ac5b50-34ee-4ced-bbb5-4b68be9c868d",
+                    "rateCardId": "cced5262-cd81-47c6-ad08-dff377fa4b39",
+                    "name": "Vendor23",
+                    "points": 1.4,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "287e2b34-4e75-45c9-a509-3d65c4beb1f5",
+            "name": "MartinTest1",
+            "versionInProgress": "",
+            "versionPublished": "3b9faed6-1179-4757-ba61-c7f73b8d94d6",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "6d7bc0ee-56f4-4e15-bb28-d5849e8bed59",
+                    "versionId": "3b9faed6-1179-4757-ba61-c7f73b8d94d6",
+                    "rateCardId": "287e2b34-4e75-45c9-a509-3d65c4beb1f5",
+                    "name": "Vendor1",
+                    "points": 2,
+                    "deleted": false
+                },
+                {
+                    "id": "606169e3-2a24-44fc-887c-023810c9ed93",
+                    "versionId": "3b9faed6-1179-4757-ba61-c7f73b8d94d6",
+                    "rateCardId": "287e2b34-4e75-45c9-a509-3d65c4beb1f5",
+                    "name": "Vendor2",
+                    "points": 2.3,
+                    "deleted": false
+                },
+                {
+                    "id": "bfa59094-d33f-4fe4-b175-29b4922bd4ba",
+                    "versionId": "3b9faed6-1179-4757-ba61-c7f73b8d94d6",
+                    "rateCardId": "287e2b34-4e75-45c9-a509-3d65c4beb1f5",
+                    "name": "Vendor3",
+                    "points": 2,
+                    "deleted": false
+                },
+                {
+                    "id": "3e8256d3-0e94-4c15-8676-64c1eaeb98ce",
+                    "versionId": "3b9faed6-1179-4757-ba61-c7f73b8d94d6",
+                    "rateCardId": "287e2b34-4e75-45c9-a509-3d65c4beb1f5",
+                    "name": "Vendor4",
+                    "points": 12,
+                    "deleted": false
+                },
+                {
+                    "id": "5d227e95-ca45-4776-8bca-5cc18f3373a3",
+                    "versionId": "3b9faed6-1179-4757-ba61-c7f73b8d94d6",
+                    "rateCardId": "287e2b34-4e75-45c9-a509-3d65c4beb1f5",
+                    "name": "Vendor5",
+                    "points": 2.3,
+                    "deleted": false
+                },
+                {
+                    "id": "ac6bbd83-2f7e-450b-9b82-ee8bb11546dc",
+                    "versionId": "3b9faed6-1179-4757-ba61-c7f73b8d94d6",
+                    "rateCardId": "287e2b34-4e75-45c9-a509-3d65c4beb1f5",
+                    "name": "Vendor6",
+                    "points": 4,
+                    "deleted": false
+                },
+                {
+                    "id": "42d1403c-dd69-439d-8fa5-89a281facc1c",
+                    "versionId": "3b9faed6-1179-4757-ba61-c7f73b8d94d6",
+                    "rateCardId": "287e2b34-4e75-45c9-a509-3d65c4beb1f5",
+                    "name": "Vendor7",
+                    "points": 3,
+                    "deleted": false
+                },
+                {
+                    "id": "ed6151ab-6e04-41be-84bf-d47d6e1a2d29",
+                    "versionId": "3b9faed6-1179-4757-ba61-c7f73b8d94d6",
+                    "rateCardId": "287e2b34-4e75-45c9-a509-3d65c4beb1f5",
+                    "name": "Vendor8",
+                    "points": 5,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "a90f6bff-4cca-437f-903e-30d8587a3f9d",
+            "name": "003RCMvs3V0P",
+            "versionInProgress": "2239dc33-6bf1-4772-948c-d6117a9c48e9",
+            "versionPublished": "",
+            "order": 0,
+            "published": false,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "b49bbb6c-3c55-4830-a482-2cd17981fc9e",
+                    "versionId": "2239dc33-6bf1-4772-948c-d6117a9c48e9",
+                    "rateCardId": "a90f6bff-4cca-437f-903e-30d8587a3f9d",
+                    "name": "003V1",
+                    "points": 2,
+                    "deleted": false
+                },
+                {
+                    "id": "05ce3f19-f391-41be-9a9f-fb47df2c8fd2",
+                    "versionId": "2239dc33-6bf1-4772-948c-d6117a9c48e9",
+                    "rateCardId": "a90f6bff-4cca-437f-903e-30d8587a3f9d",
+                    "name": "003V2",
+                    "points": 2.5,
+                    "deleted": false
+                },
+                {
+                    "id": "746d47f9-33c5-48a2-af1e-5c52806aefa8",
+                    "versionId": "2239dc33-6bf1-4772-948c-d6117a9c48e9",
+                    "rateCardId": "a90f6bff-4cca-437f-903e-30d8587a3f9d",
+                    "name": "003V3",
+                    "points": 3,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "1749cebc-637d-4165-8039-c8d2336ffd88",
+            "name": "002RCMvs1V0P",
+            "versionInProgress": "46d3b2a6-81da-44c6-b0ac-c63a861b43d5",
+            "versionPublished": "",
+            "order": 0,
+            "published": false,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "311ef156-cccb-4d44-9958-62b48fa4a894",
+                    "versionId": "46d3b2a6-81da-44c6-b0ac-c63a861b43d5",
+                    "rateCardId": "1749cebc-637d-4165-8039-c8d2336ffd88",
+                    "name": "02Vendor1",
+                    "points": 2,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "5c1c3411-5e62-4e78-b596-8f2571229fbb",
+            "name": "001RCMv2",
+            "versionInProgress": "4bdbc02c-9c4c-4c57-be65-dfb8583da2bf",
+            "versionPublished": "",
+            "order": 0,
+            "published": false,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": []
+        },
+        {
+            "id": "79b0b90e-d86f-4c02-bf51-fc4f3e8a4b52",
+            "name": "RCM2",
+            "versionInProgress": "c5d054fd-ed2f-483c-a9c2-b6fa7e98c4e9",
+            "versionPublished": "",
+            "order": 0,
+            "published": false,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": []
+        },
+        {
+            "id": "9f796a07-b651-4c3b-a4d8-71c99a9d1bdb",
+            "name": "001TEST",
+            "versionInProgress": "875d8725-337d-426c-a859-b8617f27779e",
+            "versionPublished": "2ce63859-6233-48ef-9a87-9078a626e402",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": []
+        },
+        {
+            "id": "afa911e0-654b-464c-8b51-747e60927ec5",
+            "name": "SmokeAxway01",
+            "versionInProgress": "9adde01d-8386-4f3c-a879-d36ae269d706",
+            "versionPublished": "ab7504f4-6e6a-42af-a182-1c64dddf2e1c",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "c760b406-9484-4d98-a68c-f78a1a541228",
+                    "versionId": "9adde01d-8386-4f3c-a879-d36ae269d706",
+                    "rateCardId": "afa911e0-654b-464c-8b51-747e60927ec5",
+                    "name": "RCMv21",
+                    "points": 3.5,
+                    "deleted": false
+                },
+                {
+                    "id": "b7bdae26-1b1d-47c2-8eb0-c3ad2fac1209",
+                    "versionId": "9adde01d-8386-4f3c-a879-d36ae269d706",
+                    "rateCardId": "afa911e0-654b-464c-8b51-747e60927ec5",
+                    "name": "L6588",
+                    "points": 1.5,
+                    "deleted": false
+                },
+                {
+                    "id": "9e24993c-c67c-4532-8457-0d503655b711",
+                    "versionId": "9adde01d-8386-4f3c-a879-d36ae269d706",
+                    "rateCardId": "afa911e0-654b-464c-8b51-747e60927ec5",
+                    "name": "www",
+                    "points": 0,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "e952550d-da1d-465f-9cd9-fc6337a76054",
+            "name": "003Memo",
+            "versionInProgress": "4f579f3d-536c-4050-b7db-54c434ad448a",
+            "versionPublished": "71122d9a-fcf3-48bc-947f-d7d306cdfc6f",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "f5e24cb7-43df-49e9-a7e9-e3fdd44c587b",
+                    "versionId": "4f579f3d-536c-4050-b7db-54c434ad448a",
+                    "rateCardId": "e952550d-da1d-465f-9cd9-fc6337a76054",
+                    "name": "VC003",
+                    "points": 0,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "2ffec5ce-5c99-4079-bb95-6435efcd714f",
+            "name": "002Memo",
+            "versionInProgress": "",
+            "versionPublished": "70b3a8f2-aed1-4f88-8de0-b3eaa7fa7164",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "e9a14adb-ec40-4efe-be5e-c695ebf9b5c1",
+                    "versionId": "70b3a8f2-aed1-4f88-8de0-b3eaa7fa7164",
+                    "rateCardId": "2ffec5ce-5c99-4079-bb95-6435efcd714f",
+                    "name": "POK",
+                    "points": 2.33,
+                    "deleted": false
+                },
+                {
+                    "id": "16f9887e-4bc6-4ca7-8dd0-a65c53417e23",
+                    "versionId": "70b3a8f2-aed1-4f88-8de0-b3eaa7fa7164",
+                    "rateCardId": "2ffec5ce-5c99-4079-bb95-6435efcd714f",
+                    "name": "PDO",
+                    "points": 1,
+                    "deleted": false
+                },
+                {
+                    "id": "374a42cf-26eb-4dca-8eb8-03632cfe0d0c",
+                    "versionId": "70b3a8f2-aed1-4f88-8de0-b3eaa7fa7164",
+                    "rateCardId": "2ffec5ce-5c99-4079-bb95-6435efcd714f",
+                    "name": "ZDKedit",
+                    "points": 3,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "1b0e6f9d-fff0-4ede-a785-ea20fd39eafe",
+            "name": "009Memo",
+            "versionInProgress": "",
+            "versionPublished": "09254161-a154-4ec8-9188-1e6776e271b6",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "25c24acf-1833-4edf-8ad4-63aefaec5a65",
+                    "versionId": "09254161-a154-4ec8-9188-1e6776e271b6",
+                    "rateCardId": "1b0e6f9d-fff0-4ede-a785-ea20fd39eafe",
+                    "name": "009MemoVC",
+                    "points": 2,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "8aa66b39-f853-49d4-b25e-dd43a6b0a753",
+            "name": "007Memov84",
+            "versionInProgress": "",
+            "versionPublished": "306dab39-deaf-4898-ba12-46506d42eedd",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "e064879c-2827-443f-a73c-9f91b71e5579",
+                    "versionId": "306dab39-deaf-4898-ba12-46506d42eedd",
+                    "rateCardId": "8aa66b39-f853-49d4-b25e-dd43a6b0a753",
+                    "name": "dasds",
+                    "points": 0,
+                    "deleted": false
+                },
+                {
+                    "id": "ca621a6a-699e-4d3a-95af-0d0b9f5f03d5",
+                    "versionId": "306dab39-deaf-4898-ba12-46506d42eedd",
+                    "rateCardId": "8aa66b39-f853-49d4-b25e-dd43a6b0a753",
+                    "name": "PEOD",
+                    "points": 0,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "d2bab57b-fed2-43cd-865c-11d3ef1a9e91",
+            "name": "008Memov82",
+            "versionInProgress": "",
+            "versionPublished": "162c43c3-f697-4601-a8ef-afaf0ea478a8",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "480137be-f2a3-42ba-915d-e324e8efceba",
+                    "versionId": "162c43c3-f697-4601-a8ef-afaf0ea478a8",
+                    "rateCardId": "d2bab57b-fed2-43cd-865c-11d3ef1a9e91",
+                    "name": "fff",
+                    "points": 1.5,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "57f939e3-6208-437f-a8e2-9dad0c252c28",
+            "name": "NewRC",
+            "versionInProgress": "",
+            "versionPublished": "9505eea0-827e-4e38-bc21-b3b8fd257a90",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": []
+        },
+        {
+            "id": "df6da3c1-d7ec-47b1-bd29-352d9afab6b9",
+            "name": "AK05",
+            "versionInProgress": "7f500000-be71-471e-9441-06f0ee30a969",
+            "versionPublished": "b80b08be-a828-4862-843f-94a9efa04904",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "aaa268e2-8aa3-4efa-886d-a1e079e55433",
+                    "versionId": "7f500000-be71-471e-9441-06f0ee30a969",
+                    "rateCardId": "df6da3c1-d7ec-47b1-bd29-352d9afab6b9",
+                    "name": "ER",
+                    "points": 44.43,
+                    "deleted": false
+                },
+                {
+                    "id": "55f9fecf-4dc3-497a-bf7a-dc5198c18cc0",
+                    "versionId": "7f500000-be71-471e-9441-06f0ee30a969",
+                    "rateCardId": "df6da3c1-d7ec-47b1-bd29-352d9afab6b9",
+                    "name": "erp",
+                    "points": 98.87,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "81f48472-06e8-47ea-9ff0-3a2bb56ea475",
+            "name": "006Memo",
+            "versionInProgress": "",
+            "versionPublished": "6b8c93ee-eacf-4f3f-9d8f-605f315b7f49",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "0e9e9685-0dfd-4f88-b80b-9051e02faac2",
+                    "versionId": "6b8c93ee-eacf-4f3f-9d8f-605f315b7f49",
+                    "rateCardId": "81f48472-06e8-47ea-9ff0-3a2bb56ea475",
+                    "name": "006MemoVC",
+                    "points": 0,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "660ebdc0-c478-4a12-a028-7c7ac62430d0",
+            "name": "AK03",
+            "versionInProgress": "",
+            "versionPublished": "de5f6c82-a98e-4cdc-bb0c-d517b5ef4049",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "eed52acd-7152-46bd-b439-6b75e90bde10",
+                    "versionId": "de5f6c82-a98e-4cdc-bb0c-d517b5ef4049",
+                    "rateCardId": "660ebdc0-c478-4a12-a028-7c7ac62430d0",
+                    "name": "vc01",
+                    "points": 5.88,
+                    "deleted": false
+                },
+                {
+                    "id": "e3d32890-afaf-45e3-a14d-77678649abc1",
+                    "versionId": "de5f6c82-a98e-4cdc-bb0c-d517b5ef4049",
+                    "rateCardId": "660ebdc0-c478-4a12-a028-7c7ac62430d0",
+                    "name": "vc02",
+                    "points": 67.9,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "4cdc6092-87eb-4cd5-b346-36f0e10b3577",
+            "name": "AK02",
+            "versionInProgress": "",
+            "versionPublished": "9b48ec6d-a3bb-4846-9672-9e7181991f91",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "74deca59-fc7d-4724-a2e4-40602f35aa29",
+                    "versionId": "9b48ec6d-a3bb-4846-9672-9e7181991f91",
+                    "rateCardId": "4cdc6092-87eb-4cd5-b346-36f0e10b3577",
+                    "name": "3",
+                    "points": 0,
+                    "deleted": false
+                },
+                {
+                    "id": "aa9de891-20bd-4642-b353-4a27955aa693",
+                    "versionId": "9b48ec6d-a3bb-4846-9672-9e7181991f91",
+                    "rateCardId": "4cdc6092-87eb-4cd5-b346-36f0e10b3577",
+                    "name": "4",
+                    "points": 0,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "16cbb33a-085a-4783-970f-4381ef84676e",
+            "name": "MemoE2E",
+            "versionInProgress": "",
+            "versionPublished": "38ef4ea7-643c-4263-90d6-7dbb1db14d65",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": []
+        },
+        {
+            "id": "1e87feb5-f223-4bff-b616-728c320d3fa0",
+            "name": "EtETest",
+            "versionInProgress": "",
+            "versionPublished": "f34a1f18-c589-4d08-bf5c-b210b8a44d70",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "32daa505-4a52-4e2a-8739-935936a5c3a7",
+                    "versionId": "f34a1f18-c589-4d08-bf5c-b210b8a44d70",
+                    "rateCardId": "1e87feb5-f223-4bff-b616-728c320d3fa0",
+                    "name": "VC1",
+                    "points": 0,
+                    "deleted": false
+                },
+                {
+                    "id": "b407860b-cf5e-45e5-bc19-8a6454c4bc53",
+                    "versionId": "f34a1f18-c589-4d08-bf5c-b210b8a44d70",
+                    "rateCardId": "1e87feb5-f223-4bff-b616-728c320d3fa0",
+                    "name": "VC2",
+                    "points": 4,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "e9daf237-1ab4-45f9-b606-1f18b5556c99",
+            "name": "FM20181119",
+            "versionInProgress": "",
+            "versionPublished": "ca570ff4-6dc2-460f-a52b-92a85a26c040",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "909f3fba-bac2-4419-8f7f-a55b719b5484",
+                    "versionId": "ca570ff4-6dc2-460f-a52b-92a85a26c040",
+                    "rateCardId": "e9daf237-1ab4-45f9-b606-1f18b5556c99",
+                    "name": "FM1105",
+                    "points": 0,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "3ee4f6e3-ee99-4b64-b8a1-28c22fb943da",
+            "name": "PTest",
+            "versionInProgress": "a479e856-f499-4d24-929f-2bf6878f635a",
+            "versionPublished": "",
+            "order": 0,
+            "published": false,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": []
+        },
+        {
+            "id": "84f7389e-afc2-48d5-bb9f-a6e70dad63ce",
+            "name": "EERateCard",
+            "versionInProgress": "60d3fb2b-d34c-444c-9537-7cc4ca07164a",
+            "versionPublished": "f440542b-fc64-490c-9992-ef44b3fa0b87",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "dc7567cd-baf8-4233-bee2-d8058c29bfe4",
+                    "versionId": "60d3fb2b-d34c-444c-9537-7cc4ca07164a",
+                    "rateCardId": "84f7389e-afc2-48d5-bb9f-a6e70dad63ce",
+                    "name": "EEVendorCode",
+                    "points": 0,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "7f49c2b8-ae94-4e04-b771-8b325de1ec20",
+            "name": "AppUATNanTest",
+            "versionInProgress": "f8a30f0b-5251-4a97-99f9-69ceacfc6f48",
+            "versionPublished": "2dc20a06-62ca-4e4e-a685-fcd9b2f1bdf4",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": [
+                {
+                    "id": "367009b9-3dc9-4263-9043-d69394919250",
+                    "versionId": "f8a30f0b-5251-4a97-99f9-69ceacfc6f48",
+                    "rateCardId": "7f49c2b8-ae94-4e04-b771-8b325de1ec20",
+                    "name": "VendorCode001",
+                    "points": 2,
+                    "deleted": false
+                },
+                {
+                    "id": "74aaf35f-2457-47fc-928f-de0a89258194",
+                    "versionId": "f8a30f0b-5251-4a97-99f9-69ceacfc6f48",
+                    "rateCardId": "7f49c2b8-ae94-4e04-b771-8b325de1ec20",
+                    "name": "Teste",
+                    "points": 1,
+                    "deleted": false
+                },
+                {
+                    "id": "e12e99ed-bad3-4bd4-9a44-7e2724de614c",
+                    "versionId": "f8a30f0b-5251-4a97-99f9-69ceacfc6f48",
+                    "rateCardId": "7f49c2b8-ae94-4e04-b771-8b325de1ec20",
+                    "name": "TESTETE",
+                    "points": 0,
+                    "deleted": false
+                },
+                {
+                    "id": "e7968846-5996-4c46-86c7-9668762baa58",
+                    "versionId": "f8a30f0b-5251-4a97-99f9-69ceacfc6f48",
+                    "rateCardId": "7f49c2b8-ae94-4e04-b771-8b325de1ec20",
+                    "name": "TEST22222",
+                    "points": 0,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id": "1ef05b19-1b77-4636-b20e-20931ee11258",
+            "name": "APPLENotTouch",
+            "versionInProgress": "",
+            "versionPublished": "78fd3598-ea13-4350-974c-e6902cfc84f3",
+            "order": 0,
+            "published": true,
+            "deleted": false,
+            "versions": [],
+            "vendorCodes": []
+        }
+    ]
+	},
+	"vendor_code": {},
+  "ratecards_version": {"success":true,"request-id":"f3e3cbce-eb80-4975-a019-ebe60bda6432","key":"result","result":{"id":"389168fb-b41c-40f6-98f3-56ccec244e13","rateCardId":"025d02b3-f497-4fea-913c-78f7b35a516a","terms":["12","24","36","48"],"canPublish":true,"isPublishing":false,"archived":false,"deleted":false,"published":false,"datePublished":"","creditRatings":["AAA","AA+","AA","AA-","A+","A","A-","BBB+","BBB","BBB-","BB+","BB"],"inputs":[{"terms":{"12":0,"24":0,"36":0,"48":0},"name":"FMV","type":"cof","creditRatings":[]},{"terms":{"12":0,"24":0,"36":0,"48":0},"name":"$1 Out","type":"cof","creditRatings":[]},{"terms":{"12":0,"24":0,"36":0,"48":0},"name":"AAA to AA","type":"spread","creditRatings":["AAA","AA+","AA"]},{"terms":{"12":0,"24":0,"36":0,"48":0},"name":"AA- to A-","type":"spread","creditRatings":["AA-","A+","A","A-"]},{"terms":{"12":0,"24":0,"36":0,"48":0},"name":"BBB+ to BBB-","type":"spread","creditRatings":["BBB+","BBB","BBB-"]},{"terms":{"12":0,"24":0,"36":0,"48":0},"name":"BB+ to BB","type":"spread","creditRatings":["BB+","BB"]},{"terms":{"12":0,"24":0,"36":0,"48":0},"name":"AAA to AA","type":"allin-fmv","creditRatings":["AAA","AA+","AA"],"id":null},{"terms":{"12":0,"24":0,"36":0,"48":0},"name":"AA- to A-","type":"allin-fmv","creditRatings":["AA-","A+","A","A-"],"id":null},{"terms":{"12":0,"24":0,"36":0,"48":0},"name":"BBB+ to BBB-","type":"allin-fmv","creditRatings":["BBB+","BBB","BBB-"],"id":null},{"terms":{"12":0,"24":0,"36":0,"48":0},"name":"BB+ to BB","type":"allin-fmv","creditRatings":["BB+","BB"],"id":null},{"terms":{"12":0,"24":0,"36":0,"48":0},"name":"AAA to AA","type":"allin-out","creditRatings":["AAA","AA+","AA"],"id":null},{"terms":{"12":0,"24":0,"36":0,"48":0},"name":"AA- to A-","type":"allin-out","creditRatings":["AA-","A+","A","A-"],"id":null},{"terms":{"12":0,"24":0,"36":0,"48":0},"name":"BBB+ to BBB-","type":"allin-out","creditRatings":["BBB+","BBB","BBB-"],"id":null},{"terms":{"12":0,"24":0,"36":0,"48":0},"name":"BB+ to BB","type":"allin-out","creditRatings":["BB+","BB"],"id":null}],"vendorCodeNames":[],"created_at":"2020-05-14T16:51:11+0000","updated_at":"2020-05-27T00:23:17+0000","products":[{"id":"5b4ac957-b16a-4669-8ba1-4979bdf9425d","name":"iPhone 1","categoryId":"86e753a6-46c5-4724-b36d-2aa05a3dacc6","order":1,"versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","hasItad":true,"itadValue":0,"ratesEnabled":["fmv"],"terms":{"12":0,"24":0,"36":0,"48":0},"deleted":false,"categoryOrder":1}],"categories":[{"id":"86e753a6-46c5-4724-b36d-2aa05a3dacc6","name":"Apple 1","versionId":"389168fb-b41c-40f6-98f3-56ccec244e13","order":1,"deleted":false}],"vendorCodes":[],"rateFactors":[]}}
+}

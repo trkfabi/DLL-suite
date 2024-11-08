@@ -1,0 +1,46 @@
+<div class="main-content dashboard item-manager term-manager">
+	<header>
+		<h2>
+			Manage Terms
+		</h2>
+		<span class="subtitle">A maximum of 5 terms is allowed on this version.</span>
+		<button
+			class="btn-grey terms-manager"
+			(click)="onAddTermButtonClick($event, { item: item }, dialogActions)"
+			[disabled]="isDisabled"
+		>
+			Add Term
+		</button>
+		<button class="btn-orange-pink btn-align" (click)="onSubmitTerms($event)">
+			Done
+		</button>
+	</header>
+
+	<div class="terms-list">
+		<ul class="terms">
+			<li *ngFor="let item of terms; let i = index" [hidden]="item.status === -1">
+				{{ item.name }}
+				<i
+					class="k-icon k-i-trash"
+					(click)="onRemoveTermButtonClick($event, { type: 'term', item: item, index: i }, dialogActions)"
+				></i>
+			</li>
+		</ul>
+	</div>
+	<div kendoDialogContainer></div>
+	<ng-template #dialogActions>
+		<div class="buttons" [ngClass]="buttonAction === 'Save' ? 'align-center' : ''">
+			<button *ngIf="dialogAction !== null" kendoButton (click)="handleDialogCloseButtonClick($event)" class="k-button">
+				Cancel
+			</button>
+			<button
+				kendoButton
+				[disabled]="dialogRef.content.instance.disableOkButton && dialogAction === 'add'"
+				(click)="handleDialogSubmitButtonClick($event)"
+				class="k-button k-primary"
+			>
+				{{ buttonAction }}
+			</button>
+		</div>
+	</ng-template>
+</div>

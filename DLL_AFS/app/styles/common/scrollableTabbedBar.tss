@@ -1,0 +1,37 @@
+'#scrollContainer': {
+	width: Ti.UI.FILL,
+	height: 34,
+	contentHeight: '100%',
+	contentWidth: 'auto',
+	horizontalWrap: false
+},
+'#scrollContainer[platform=android]': {
+	scrollType: 'horizontal'
+},
+
+'.container': {
+	top: 0,
+	left: 0,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL
+},
+'.marker': {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 4,
+	touchEnabled: false
+},
+'.tabButton': {
+	height: 34,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	borderRadius: 3,
+	borderWidth: 1
+},
+'.tabLabel': {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 12
+	},
+	color: Alloy.Globals.colors.white,
+	touchEnabled: false
+}

@@ -1,0 +1,49 @@
+<Alloy>
+	<Window id='window'>
+		<View id='headerView'>
+			<View id='headerBar'>
+				<Button id='backButtonWhite' />
+				<Label id='headerTitleLabel' />
+			</View>
+		</View>
+		<ScrollView id='wrapperView'>
+			<View id='customerInfoView'>
+				<Label id='equipmentAddressLabel' class='titleLabel' />
+
+				<TextField id='nameField' class='inputField' tag='name' />
+				<View id='nameFieldLine' class='fieldBottomLineLarge fieldLineMargin' />
+
+				<TextField id='addressField' class='inputField' tag='physicalAddress' />
+				<View id='addressFieldLine' class='fieldBottomLineLarge fieldLineMargin' />
+
+				<TextField id='cityField' class='inputField' tag='physicalCity' />
+				<View id='cityFieldLine' class='fieldBottomLineLarge fieldLineMargin' />
+
+				<TextField id='stateField' class='inputField' tag='physicalState' />
+				<View id='stateFieldLine' class='fieldBottomLine fieldLineLeft' />
+				<Button id='selectListButton' />
+
+				<TextField id='zipField' class='inputField kbNumPad' tag='physicalZip' />
+				<View id='zipFieldLine' class='fieldBottomLine fieldLineRight' />
+
+				<Label id='contactInfoLabel' class='titleLabel' />
+
+				<TextField id='firstNameField' class='inputField' tag='firstName' />
+				<View id='firstNameFieldLine' class='fieldBottomLine fieldLineLeft' />
+
+				<TextField id='middleNameField' class='inputField' tag='middleName' />
+				<View id='middleNameFieldLine' class='fieldBottomLine fieldLineRight' />
+
+				<TextField id='lastNameField' class='inputField' tag='lastName' />
+				<View id='lastNameFieldLine' class='fieldBottomLineLarge fieldLineMargin' />
+
+				<TextField id='phoneField' class='inputField kbNumPad' tag='phone' />
+				<View id='phoneFieldLine' class='fieldBottomLineLarge fieldLineMargin' />
+
+				<TextField id='emailField' class='inputField kbEmail' tag='email' />
+				<View id='emailFieldLine' class='fieldBottomLineLarge fieldLineMargin' />
+			</View>
+
+		</ScrollView>
+	</Window>
+</Alloy>

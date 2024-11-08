@@ -1,0 +1,13 @@
+<Alloy>
+	<View id='taxesRow' class="additionalAmountRow">
+		<Label id='taxesLabel' class='additionalAmountTitle' />
+		<Label id='taxesPercentSymbol' />
+		<TextField id='taxesPercentInputTextField' class="additionalLeftField kbNumeric" tag="taxes" />
+		<View class="textFieldUnderlineWhite taxesPercentUnderline" />
+
+		<Label class='currencySymbol' />
+		<TextField id='taxesInputTextField' class="additionalField kbNumeric" tag="taxesAmount" />
+		<Button id="taxesClear" class="additionalClearButton" />
+		<View class="textFieldUnderlineWhite additionalUnderline" />
+	</View>
+</Alloy>

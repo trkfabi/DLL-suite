@@ -1,0 +1,29 @@
+<div class="dialog-container product-dialog category-dialog">
+	<div *ngIf="type === 'productCategory' && !isDelete">
+		<p>Category Name can be at most {{ maxLength }} characters. Allowed special characters are: # % & * ( ) _ - = + ' ".</p>
+		<input
+			kendoTextBox
+			class="textbox bold"
+			#input
+			[ngClass]="{
+				'error-message': isProductCategoryNameDuplicated,
+				bold: !isProductCategoryNameDuplicated,
+				'error-input': isProductCategoryNameDuplicated
+			}"
+			placeholder="Category Name"
+			[(ngModel)]="item.name"
+			[maxLength]="maxLength"
+			(ngModelChange)="onProductCategoryNameChange($event)"
+			(keypress)="onProductCategoryKeyPress($event)"
+		/>
+		<small [hidden]="!showError" class="error-message">
+			{{ messageError }}
+		</small>
+	</div>
+	<div *ngIf="isDelete" class="align-center delete-message">
+		<p class="regularSize">
+			By deleting <strong> {{ item.name }} </strong> all products contained in this category will be lost.
+		</p>
+		<p class="regularSize">Are you sure you want to continue?</p>
+	</div>
+</div>

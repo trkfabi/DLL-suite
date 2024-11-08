@@ -1,0 +1,6 @@
+<Alloy>
+	<View id="itadView">
+		<Label id="itadLabel" />
+		<Switch id="itadSwitch" />
+	</View>
+</Alloy>

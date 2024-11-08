@@ -1,0 +1,39 @@
+'#window': {
+	navBarHidden: true
+},
+'#window[if=Alloy.Globals.iPhoneX]': {
+	statusBarStyle: Ti.UI.iOS.StatusBar.DEFAULT
+}
+'#wrapper': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL
+},
+'#logoContainer[platform=android]': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 53,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#backButton': {
+
+},
+'#backLabel': {
+	text: L('quote')
+},
+'#scrollView': {
+	backgroundColor: Alloy.Globals.colors.white,
+	layout: 'vertical'
+},
+'#shareButton': {
+	top: 5,
+	right: 10,
+	height: 35,
+	width: 30,
+	backgroundImage: '/images/bt_share_gray.png'
+},
+'#shareButton[if=Alloy.Globals.iPhoneX]': {
+	top: 8,
+	right: 8,
+	width: 34,
+	height: 34
+}

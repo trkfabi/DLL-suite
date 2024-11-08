@@ -1,0 +1,15 @@
+'#window': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#window[platform=ios]': {
+	backgroundImage: '/images/splash.png'
+},
+'#window[platform=android]': {
+	backgroundImage: "/images/bg_splash.png",
+	theme: 'Theme.Transparent'
+}
+'#window[if=Alloy.Globals.hasNotch]': {
+	backgroundImage: '/images/splash-Portrait-2436h@3x.png'
+}

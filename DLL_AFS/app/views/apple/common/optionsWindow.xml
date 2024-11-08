@@ -1,0 +1,19 @@
+<Alloy>
+	<Window id='window'>
+		<View id='headerView'>
+			<View id='headerBar'>
+				<Button id='cancelButton' />
+				<Label id='headerTitleLabel' />
+			</View>
+		</View>
+		<View id='wrapperView'>
+			<ListView id='optionsList' defaultItemTemplate='listItemTemplate'>
+				<Templates>
+					<ItemTemplate id='defaultTemplate' name='listItemTemplate'>
+						<Label bindId='listItem' id='listItem' />
+					</ItemTemplate>
+				</Templates>
+			</ListView>
+		</View>
+	</Window>
+</Alloy>

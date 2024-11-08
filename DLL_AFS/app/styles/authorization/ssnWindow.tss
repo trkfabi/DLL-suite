@@ -1,0 +1,91 @@
+'#window': {
+	top: 0,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	title: L('ssn_uppercase'),
+	backgroundColor: Alloy.Globals.colors.alabaster,
+	tintColor: Alloy.Globals.colors.lochmara,
+	barColor: Alloy.Globals.colors.white,
+	navBarHidden: true,
+	orientationModes: [
+		Ti.UI.PORTRAIT
+	]
+},
+'#window[platform=android]': {
+	theme: 'Theme.NoActionBar'
+},
+'#header': {
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#headerContent': {
+
+},
+'#backButton': {
+
+},
+'#backImage': {
+
+},
+'#backLabel': {
+	text: L('signature')
+},
+'#brandLogo': {
+
+},
+'#nextButton': {
+
+},
+'#nextImage': {
+
+},
+'#nextLabel': {
+	text: L('next')
+},
+'#headerSeparator': {
+
+},
+'#scrollView': {
+
+},
+'#authorizationTitleLabel': {
+	text: L('please_enter_social_security_number')
+},
+'#ssnContainer': {
+	top: 150,
+	width: Ti.UI.SIZE,
+	height: 40,
+	layout: 'horizontal'
+},
+'#ssnContainer[platform=android]': {
+	height: 60
+},
+'#section1Container': {
+	width: 60
+},
+'#section1TextField': {
+	value: '',
+	maxLength: 3
+},
+'#section2Container': {
+	left: 10,
+	width: 40
+},
+'#section2Container[platform=android]': {
+	width: 60
+},
+'#section2TextField': {
+	value: '',
+	maxLength: 2
+},
+'#section3Container': {
+	left: 10,
+	width: 70
+},
+'#section3Container[platform=android]': {
+	width: 76
+},
+'#section3TextField': {
+	value: '',
+	maxLength: 4
+}

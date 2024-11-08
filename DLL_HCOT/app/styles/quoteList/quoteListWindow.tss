@@ -1,0 +1,168 @@
+'#container': {
+	backgroundColor: Alloy.Globals.colors.white,
+	layout: 'vertical'
+},
+'#quoteMenuContainer': {
+	top: 20,
+	width: Ti.UI.FILL,
+	height: 40,
+	backgroundColor: Alloy.Globals.colors.white,
+	layout: 'horizontal'
+},
+'#quoteMenuContainer[if=Alloy.Globals.hasNotch]': {
+	top: 46.3
+},
+'#quoteMenuContainer[platform=android]': {
+	top: 0,
+	height: 48
+},
+'#newQuoteContainer': {
+	width: 160,
+	height: 40
+},
+'#newQuoteContainer[platform=android]': {
+	width: Ti.UI.SIZE,
+	height: 48
+},
+'#newQuoteImageView': {
+	left: 5,
+	width: 40,
+	height: 40,
+	backgroundImage: '/images/ic_quotelist_newquote_out.png',
+	backgroundSelectedImage: '/images/ic_quotelist_newquote_pressed.png'
+},
+'#newQuoteImageView[platform=ios]': {
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+},
+'#newQuoteImageView[platform=android]': {
+	left: 6,
+	width: 36,
+	height: 36
+},
+'#newQuoteLabel': {
+	left: 50,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 13
+	},
+	text: L('start_new_quote'),
+	color: Alloy.Globals.colors.mountbattenPink
+},
+'#newQuoteLabel[platform=android]': {
+	left: 40,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	},
+	color: Alloy.Globals.colors.mountbattenPink
+},
+'#settingsContainer': {
+	width: 110,
+	height: 40
+},
+'#settingsContainer[platform=android]': {
+	width: Ti.UI.SIZE
+},
+'#settingsButton': {
+	left: 5,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/ic_settings.png'
+},
+'#settingsLabel': {
+	left: 35,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 10
+	},
+	text: L('settings'),
+	color: Alloy.Globals.colors.mountbattenPink
+},
+'#optionsSelectorContainer': {
+	height: 39,
+	color: Alloy.Globals.colors.quotesAndroid,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#optionsSelectorContainer[platform=android]': {
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.lightGrey
+},
+'#optionsSelector': {
+	left: 20,
+	right: 20,
+	labels: [L('active_quotes'), L('submitted')],
+	tintColor: Alloy.Globals.colors.mountbattenPink,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	selectColor: Alloy.Globals.colors.white,
+	style: Alloy.Globals.tabbedBar.STYLE_TABBED_BAR,
+	index: 0
+},
+'#optionsSelector[if=Alloy.Globals.hasNotch]': {
+	right: 11,
+},
+'#optionsSelector[platform=android]': {
+	left: 0,
+	right: 0,
+	tintColor: Alloy.Globals.colors.black,
+	markerColor: Alloy.Globals.colors.azureRadiance,
+	style: Alloy.Globals.tabbedBar.STYLE_HEADER
+},
+'#sortContainer': {
+	height: 30,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#sortLabel': {
+	left: 10,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 13
+	},
+	text: L('sorted_by_name'),
+	color: Alloy.Globals.colors.silver
+},
+'#sortLabel[platform=android]': {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	}
+},
+'#changeLabel': {
+	right: 15,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 13
+	},
+	text: L('change'),
+	color: Alloy.Globals.colors.silver
+},
+'#changeLabel[platform=android]': {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	}
+},
+'#quoteList': {
+	backgroundColor: Alloy.Globals.colors.lightGrey,
+	defaultItemTemplate: 'quoteListItem'
+},
+'#quoteList[platform=android]': {
+	separatorColor: Alloy.Globals.colors.transparent
+},
+'.separatorBlack': {
+	width: Ti.UI.FILL,
+	height: 0.5,
+	backgroundColor: Alloy.Globals.colors.dustyGray
+},
+'.separatorContainer': {
+	height: 0.5,
+	backgroundColor: Alloy.Globals.colors.silver
+},
+'.separator': {
+	width: 1,
+	height: 25,
+	backgroundImage: '/images/im_vdivider_topoptions.png'
+},
+'.separator[platform=android]': {
+	left: 10
+}

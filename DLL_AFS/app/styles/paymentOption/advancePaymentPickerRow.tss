@@ -1,0 +1,52 @@
+"#pickerContainer": {
+	right: 10,
+	width: 150
+},
+"#selectionLabel": {
+	width: Ti.UI.FILL,
+	text: L('standard'),
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 14
+	},
+	color: Alloy.Globals.colors.shuttleGray
+},
+"#selectionLabel[platform=android]": {
+	left: 3,
+	width: 156,
+	height: 21
+},
+".rowTitle": {
+	left: 10,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 16
+	},
+	color: Alloy.Globals.colors.black
+},
+".rowTitle[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 16
+	}
+},
+".inputDelimiter": {
+	bottom: 0,
+	left: 0,
+	right: 0,
+	height: 5,
+	backgroundImage: '/images/im_customerinfo_textline_small.png'
+},
+".selectionButton": {
+	width: 30,
+	height: 30,
+	right: 0
+},
+".selectionButton[platform=android]": {
+	backgroundImage: "/images/bt_quotescreen_picklist.png"
+}
+".selectionButton[platform=ios]": {
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN,
+	image: "/images/bt_quotescreen_picklist.png"
+}

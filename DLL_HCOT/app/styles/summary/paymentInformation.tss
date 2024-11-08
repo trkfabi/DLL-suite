@@ -1,0 +1,193 @@
+'#paymentInformation': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical',
+	backgroundColor: Alloy.Globals.colors.alto,
+	heightExpanded: Ti.UI.SIZE,
+	heightCollapsed: 40,
+	expanded: false
+},
+'#paymentInformation[platform=ios]': {
+	clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED
+},
+'#paymentInformation[platform=android]': {
+	heightCollapsed: 52
+},
+'#paymentHeader': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 40,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#paymentHeader[platform=android]': {
+	height: 52,
+},
+'.separator': {
+	bottom: 0,
+	height: 0.5,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.alto
+},
+'.whiteSeparator': {
+	bottom: 0,
+	height: 5,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.alabaster
+},
+'.topSeparator': {
+	top: 0
+},
+'#paymentLabel': {
+	left: 10,
+	color: Alloy.Globals.colors.azureRadiance,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 17
+	},
+	text: L('payment'),
+}
+'#paymentSettingsButton': {
+	right: 35,
+	width: 80,
+	height: 40,
+	bubbleParent: false
+},
+'#paymentSettingsButton[platform=ios]': {
+	image: '/images/bt_customerscreen_paymentsettings.png',
+},
+'#paymentSettingsButton[platform=android]': {
+	right: 55,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/bt_customerscreen_paymentsettings.png',
+},
+'.row': {
+	top: 0,
+	left: 4,
+	height: Ti.UI.SIZE,
+	width: Ti.UI.FILL,
+	layout: 'vertical',
+	backgroundColor: Alloy.Globals.colors.alabaster
+},
+'.paymentRow': {
+	top: 0,
+	left: 0,
+	right: 10,
+	height: Ti.UI.SIZE
+},
+'.paymentRow[platform=ios]': {
+	clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED
+},
+'.valueLabel': {
+	left: null,
+	right: 0,
+	textAlign: 'right',
+	font: {
+		fontSize: 14,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	}
+},
+'.expandColapseButton': {
+	backgroundImage: '/images/bt_quotescreen_option_contract.png',
+	imageExpanded: '/images/bt_quotescreen_option_contract.png',
+	imageCollapsed: '/images/bt_quotescreen_option_expand.png'
+},
+'.expandColapseButton[platform=ios]': {
+	backgroundImage: '/images/bt_quotescreen_option_contract.png',
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN,
+	width: 40,
+	height: 40,
+	right: 0
+}
+'.expandColapseButton[platform=android]': {
+	right: 9,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/bt_quotescreen_option_contract.png'
+},
+
+'#paymentAmountTitle': {
+	text: L('payment')
+},
+'#purchaseOptionTitle': {
+	text: L('purchase_option')
+},
+'#termTitle': {
+	text: L('term')
+},
+'#structureTitle': {
+	text: L('advance_payments')
+},
+'#paymentFrequencyTitle': {
+	text: L('payment_frequency')
+},
+'#rateProgramTitle': {
+	text: L('rate_program')
+},
+'#paymentSettingsContainer': {
+	left: 4,
+	right: 0,
+	height: 0,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#paymentSettingsContainer[platform=ios]': {
+	clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED
+},
+'.paymentSettingsIntructions': {
+	left: 29,
+	right: 10,
+	top: 10,
+	height: Ti.UI.SIZE,
+	text: L('payment_settings_instructions', 'In addition to payment amount, purchase option and term, also show:'),
+	color: Alloy.Globals.colors.shuttleGray,
+	font: {
+		fontSize: 12,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	}
+},
+'.paymentSettingsRow': {
+	left: 29,
+	right: 10,
+	height: 40
+},
+'.paymentSettingsLabel': {
+	left: 0,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontSize: 14,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	}
+},
+'.paymentSettingsSwitch': {
+	right: 10,
+	value: true
+},
+'.paymentSettingsIntructions': {
+	left: 29,
+	right: 10,
+	top: 10,
+	height: Ti.UI.SIZE,
+	text: L('payment_settings_instructions', 'In addition to payment amount, purchase option and term, also show:'),
+	color: Alloy.Globals.colors.shuttleGray,
+	font: {
+		fontSize: 12,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	}
+},
+'.paymentSettingsRow': {
+	left: 29,
+	right: 10,
+	height: 40
+},
+'#rateProgramLabel': {
+	text: L('rate_program')
+},
+'#structureSettingsLabel': {
+	text: L('advance_payments')
+},
+'#paymentFreqLabel': {
+	text: L('payment_frequency')
+}

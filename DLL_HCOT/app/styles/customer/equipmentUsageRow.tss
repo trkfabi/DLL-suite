@@ -1,0 +1,100 @@
+'#equipmentUseField': {
+	right: 40,
+	minimumFontSize: 10,
+	hintText: L('equipment_use'),
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'#equipmentUseField[platform=android]': {
+	right: 31,
+	font: {
+		fontSize: 16,
+		fontFamily: Alloy.Globals.fonts.primary.light
+	}
+},
+'#equipmentPercent': {
+	right: 50,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'.container': {
+	width: Ti.UI.FILL,
+	height: 55
+},
+'.container[platform=android]': {
+	height: 60
+}
+'.field': {
+	top: 24,
+	left: 28,
+	right: 20,
+	font: {
+		fontSize: 18,
+		fontFamily: Alloy.Globals.fonts.primary.light
+	},
+	color: Alloy.Globals.colors.shuttleGray,
+	touchEnabled: false
+},
+'.field[platform=ios]': {
+	height: 20
+},
+'.field[platform=android]': {
+	left: 10,
+	right: 0,
+	hintTextColor: Alloy.Globals.colors.silver
+},
+'.fieldBottomLine': {
+	bottom: 0,
+	left: 18,
+	right: 10,
+	height: 5,
+	backgroundImage: '/images/im_customerinfo_textline_large_w.png'
+},
+'.halfRow[platform=ios]': {
+	height: Ti.UI.FILL
+},
+'.halfRow[platform=android]': {
+	height: 60,
+},
+'.leftTab': {
+	left: 0,
+	width: 4,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.silver
+},
+'.leftTab[platform=android]': {
+	height: 60
+}
+'.leftField': {
+	left: 0,
+	width: '60%'
+},
+'.rightField': {
+	right: 0,
+	width: '40%'
+},
+'.percentSign': {
+	top: 24,
+	left: 10,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 12
+	},
+	text: L('percent_symbol'),
+	color: Alloy.Globals.colors.black
+},
+'.selectorButton[platform=ios]': {
+	top: 30,
+	right: 10,
+	width: 25,
+	height: 13,
+	image: '/images/bt_quotescreen_picklist.png'
+},
+'.selectorButton[platform=android]': {
+	top: 25,
+	right: 5,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/bt_quotescreen_picklist.png'
+}

@@ -1,0 +1,9 @@
+<Alloy>
+	<Window id="window" platform="android">
+		<View id="header">
+			<Button id="backButton" />
+			<Label id="titleLabel" />
+		</View>
+		<WebView id="webView" />
+	</Window>
+</Alloy>

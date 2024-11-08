@@ -1,0 +1,317 @@
+#!groovy
+
+/**
+ * Jenkinsfile for Titanium
+ *
+ * v1.0.2
+ *
+ * Pipeline script for running in Jenkins - Multibranch Pipeline projects.
+ * Steps this pipeline covers:
+ * 1. Setup: checkout repo, determine if it's PR or Environment branch, othwerwise skip build
+ * 2. Build: build the project for simulator (PR), adhoc (any other environment), app/play store (production, if required)
+ * 3. Deploy and Notify: upload build(s) in Apperian and send message in Slack about the build * 
+ */
+
+library 'anexinet@master' _;
+
+isPR = env.BRANCH_NAME.startsWith('PR-');
+def isValidBranch = false;
+def configuration = [
+    buildAgent: 'Titanium && Xcode11',
+    buildSignFolder: 'sign/',
+    
+    iosP12File: 'ios-certificate.p12',
+    iosP12PasswordId: 'p12-dll-enterprise-password-text',
+    iosCertificate: 'dE LAGE LANDEN FINANCIAL SERVICES, INC.',
+    iosProvisioningProfile: 'f0d1f4eb-8ee1-485e-b873-69e2329a0eb0',
+
+    appcCredentialsId: 'appcelerator-dll-pabloguevara-userpass',
+    appcOrgId: 'appcelerator-dll-orgid-text',
+    
+    apperianCredentialsId: 'apperian-dll-pabloguevara-userpass',
+    
+    slackChannel: '#dll',
+    slackUrlIos: '',
+    slackUrlAndroid: 'N/A',
+    slackIncludeChangeset: true
+];
+
+// You can specify settings per branch in a switch statement:
+
+switch(env.BRANCH_NAME) {
+    case 'test':
+        isValidBranch = true;
+        configuration.slackUrlIos = 'https://is.gd/F3lgfv';
+        configuration.iosProvisioningProfile = 'a249fe1c-36bf-42e3-8ef8-7a2bfc1b9cc9';
+        break;
+
+    case 'acc':
+        isValidBranch = true;
+        configuration.slackUrlIos = 'https://is.gd/ND8vw3';
+        configuration.iosProvisioningProfile = '5abed03b-d825-46c0-8421-9b50d1b9b9c2';
+        break;
+
+    case 'stage':
+        isValidBranch = true;
+        configuration.slackUrlIos = 'https://is.gd/1KtUlO';
+        configuration.iosProvisioningProfile = '55072345-bc99-45c2-9f5a-edef5cb18a58';
+        break;
+
+    case 'demo':
+        isValidBranch = true;
+        configuration.slackUrlIos = 'https://is.gd/XhEYe3';
+        configuration.iosProvisioningProfile = '432d57ca-8247-4b35-b559-631ae9601d6e';
+        break;
+
+    case 'sit-tst':
+        isValidBranch = true;
+        configuration.slackUrlIos = 'https://is.gd/gVQq7x';
+        configuration.iosProvisioningProfile = 'ca2f49b0-a55a-4bbc-860f-a27c224bfc81';
+        break;
+
+    case 'sit-acc':
+        isValidBranch = true;
+        configuration.slackUrlIos = 'https://is.gd/7k8s3j';
+        configuration.iosProvisioningProfile = 'b1934dce-66d2-42e5-a496-9f6f8c5d06ad';
+        break;
+}
+
+isValidBranch = isValidBranch || isPR;
+
+if (!isValidBranch) {
+    echo "**Branch ${env.BRANCH_NAME} not supported for builds, review this project configuration in Jenkins**";
+    currentBuild.result = 'FAILURE';
+    return;
+} 
+
+def buildAgent = configuration.buildAgent;
+
+node(buildAgent) {    
+    try {
+        checkout scm;
+
+        def buildInfo = build(configuration);
+
+        if (isPR) {
+            return;
+        }
+
+        deploy(buildInfo, configuration);
+        notify(buildInfo, configuration);
+    } catch (err) {
+        currentBuild.result = 'FAILURE';
+        print err.toString();
+    } finally {
+        deleteDir();
+    }
+}
+
+/**
+ * @function
+ * Performs the build process for iOS in Titanium
+ * @param <dict> configuration [
+ *      appcCredentialsId: <string>, 
+ *      appcOrgId: <string>
+ *  ]
+ * @return <dict> [
+ *      appId: <string>, 
+ *      appName: <string>, 
+ *      appVersion: <string>, 
+ *      buildPaths: [ios: <string>, android: <string>]
+ *  ]
+ *
+ */
+def build(configuration) {
+    def appcCredentialsId = configuration.appcCredentialsId;
+    def appcOrgId = configuration.appcOrgId;
+
+    def buildInfo = [:];
+
+    stage('Build') {
+        buildInfo = titanium.getAppInfo();
+
+        lock('appc_session') {
+            withCredentials([
+                    usernamePassword(
+                        credentialsId: appcCredentialsId, 
+                        usernameVariable: 'APPC_USERNAME',
+                        passwordVariable: 'APPC_PASSWORD'), 
+                    string(
+                        credentialsId: appcOrgId, 
+                        variable: 'APPC_ORG_ID')
+                ]) 
+            {
+                
+                titanium.checkSDK([
+                    appcUsername: APPC_USERNAME,
+                    appcPassword: APPC_PASSWORD,
+                    appcOrgId: APPC_ORG_ID
+                ]);
+                
+                titanium.clean();
+
+                if (isPR) {
+                    titanium.compileTitanium([
+                        platform: 'ios',
+                        type: 'simulator'
+                    ]);
+
+                    return;
+                }
+                
+                titanium.appcLogin([
+                    appcUsername: APPC_USERNAME,
+                    appcPassword: APPC_PASSWORD,
+                    appcOrgId: APPC_ORG_ID
+                ]);
+
+                buildInfo.buildPaths = [
+                    ios: buildIOS(configuration)
+                ];
+            }
+        }
+    }
+
+    return buildInfo;
+}
+
+/**
+ * @function
+ * Performs the build process for iOS in Titanium
+ * @param <dict> conifguration [
+ *      buildSignFolder: <string> Folder containing the P12 and Prov. Profiles
+ *      iosP12File: <string> Name of the P12 file (relative to `buildSignFolder`)
+ *      iosP12PasswordId: <string> PasswordId for the P12 file
+ *      iosCertificate: <string> Certificate Name to use
+ *      iosProvisioningProfile: <string> Prov. Profile UUID
+ *  ]
+ * @return <string> path of the IPA generated
+ *
+ */
+def buildIOS(configuration) {
+    def buildSignFolder = configuration.buildSignFolder;
+    def iosP12File = configuration.iosP12File;
+    def iosP12PasswordId = configuration.iosP12PasswordId;
+    def iosCertificate = configuration.iosCertificate;
+    def iosProvisioningProfile = configuration.iosProvisioningProfile;
+
+    def result;
+    try {
+        if (!fileExists(buildSignFolder)) {
+            echo "Signing folder $buildSignFolder does not exist. Aborting"
+
+            throw new IOException();
+        }
+        
+        dir(buildSignFolder) {
+            withCredentials([
+                string(
+                    credentialsId: iosP12PasswordId, 
+                    variable: 'P12_PASS')
+            ]) {
+                xcodeSign.loadTempKeychain([
+                    p12File: iosP12File,
+                    p12Password: P12_PASS
+                ]);
+
+                xcodeSign.loadProvisioningProfiles();
+            }
+        }
+
+        def buildOptions = [
+            platform: 'ios',
+            type: 'adhoc',
+            iosCertName: iosCertificate,
+            iosPP: iosProvisioningProfile
+        ];
+        
+        result = titanium.compileTitanium(buildOptions);
+    } catch(Error err) {
+        print err;
+    } finally {
+        xcodeSign.deleteTempKeychains()
+        xcodeSign.deleteProvisioningProfiles()
+    }
+
+    return result;
+}
+
+/**
+ * @function
+ * Deploys the builds (IPA, APK) to internal app catalogs (Apperian in this case)
+ * @param <dict> buildInfo [
+ *      appId: <string>
+ *      appName: <string>
+ *      appVersion: <string>
+ *      buildPaths: <dict> [
+ *           ios: <string>
+ *           android: <string>
+ *      ]
+ *  ]
+ * @param <dict> configuration [
+ *      apperianCredentialsId: <string>
+ *  ]
+ */
+def deploy(buildInfo, configuration) {
+    def apperianCredentialsId = configuration.apperianCredentialsId;
+    def appId = buildInfo.appId;
+    def appName = buildInfo.appName;
+    def appVersion = buildInfo.appVersion;
+    def buildPaths = buildInfo.buildPaths;
+
+    stage('deploy') {
+        withCredentials([
+            usernamePassword(
+                credentialsId: apperianCredentialsId,
+                usernameVariable: 'username',
+                passwordVariable: 'password')
+        ]) {
+            def timeStamp = Calendar.getInstance().getTime().format('YYYYMMdd-hhmmss',TimeZone.getTimeZone('UTC'));
+            def deploySteps = [:];
+
+            uploads.toApperian([
+                username: username,
+                password: password,
+                appId: appId,
+                platform: 'ios',
+                name: appName,
+                author: 'Anexinet-CI',
+                version: appVersion,
+                path: buildPaths.ios,
+                notes: "Build at $timeStamp (UTC)"
+            ]);      
+        }
+    }
+}
+
+/**
+ * @function
+ * Sends a notification that the build completed, in this case, to Slack
+ * @param <dict> buildInfo [
+ *      appVersion: <string>
+ *  ]
+ * @param <dict> configuration [
+ *      slackChannel: <string>
+ *      slackUrlIos: <string>
+ *      slackUrlAndroid: <string>
+ *      slackIncludeChangeset: <boolean>
+ *  ]
+ */
+def notify(buildInfo, configuration) {
+    def slackChannel = configuration.slackChannel;
+    def slackUrlIos = configuration.slackUrlIos;
+    def slackUrlAndroid = configuration.slackUrlAndroid;
+    def slackIncludeChangeset = configuration.slackIncludeChangeset;
+    
+    def appName = buildInfo.appName;
+    def appVersion = buildInfo.appVersion;
+
+    notifications.sendSlackMessage([
+        channel: slackChannel,
+        name: appName,
+        version: appVersion,
+        iosUrl: slackUrlIos,
+        androidUrl: slackUrlAndroid,
+        includeChangeset: slackIncludeChangeset
+    ]);
+}

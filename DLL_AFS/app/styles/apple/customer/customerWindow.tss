@@ -1,0 +1,164 @@
+'#window': {
+	navBarHidden: true
+},
+'#headerView': {
+	height: 64
+},
+'#headerBar': {
+	top: 20
+},
+'#headerBar[if=Alloy.Globals.iPhoneX]': {
+	top: 25
+},
+'#backButtonWhite': {
+	top: 0,
+	left: 0
+},
+'#headerTitleLabel': {
+	text: L('customer_detail'),
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: '17px'
+	}
+},
+'#wrapperView': {
+	left: 0,
+	right: 0,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#customerInfoView': {
+	top: 5,
+	left: 0,
+	right: 0,
+	bottom: 4,
+	height: 496
+},
+'#nameField': {
+	top: 52,
+	hintText: L('customer')
+},
+'#addressField': {
+	top: 103,
+	hintText: L('address')
+},
+'#cityField': {
+	top: 154,
+	hintText: L('city')
+},
+'#stateField': {
+	top: 205,
+	width: 100,
+	hintText: L('state'),
+	editable: false
+},
+'#zipField': {
+	top: 205,
+	left: 174,
+	hintText: L('zip')
+},
+'#zipField[if=Alloy.Globals.iPhoneX]': {
+	left: 205,
+},
+'#firstNameField': {
+	bottom: 177,
+	width: 116,
+	hintText: L('first_name')
+},
+'#middleNameField': {
+	bottom: 177,
+	left: 175,
+	hintText: L('middle_name')
+},
+'#middleNameField[if=Alloy.Globals.iPhoneX]': {
+	left: 205,
+},
+'#lastNameField': {
+	bottom: 126,
+	hintText: L('last_name')
+},
+'#phoneField': {
+	bottom: 75,
+	hintText: L('phone')
+},
+'#emailField': {
+	bottom: 24,
+	hintText: L('email'),
+	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE
+},
+'#equipmentAddressLabel': {
+	top: 0,
+	height: 38,
+	left: 15,
+	text: L('equipment_address')
+},
+'#contactInfoLabel': {
+	left: 15,
+	bottom: 221,
+	text: L('contact_info')
+},
+
+'.inputField': {
+	left: 25,
+	right: 25,
+	font: {
+		fontSize: 15
+	},
+},
+'.fieldLineMargin': {
+	left: 15,
+	right: 15
+},
+'.fieldLineLeft': {
+	left: 15,
+	width: 141
+},
+'.fieldLineLeft[if=Alloy.Globals.iPhoneX]': {
+	width: '44%'
+},
+'.fieldLineRight': {
+	right: 15,
+	width: 138
+},
+'.fieldLineRight[if=Alloy.Globals.iPhoneX]': {
+	width: '44%'
+},
+'#nameFieldLine': {
+	top: 82
+},
+'#addressFieldLine': {
+	top: 133
+},
+'#cityFieldLine': {
+	top: 184
+},
+'#stateFieldLine': {
+	top: 235
+},
+'#zipFieldLine': {
+	top: 235
+},
+'#firstNameFieldLine': {
+	bottom: 163
+},
+'#middleNameFieldLine': {
+	bottom: 163
+},
+'#lastNameFieldLine': {
+	bottom: 112
+},
+'#phoneFieldLine': {
+	bottom: 61
+},
+'#emailFieldLine': {
+	bottom: 10
+},
+'#selectListButton': {
+	top: 197,
+	left: 116,
+	width: 40,
+	height: 40,
+	backgroundImage: '/images/bt_quotescreen_pickeroptions.png'
+}
+'#selectListButton[if=Alloy.Globals.iPhoneX]': {
+	left: 140
+}

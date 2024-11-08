@@ -1,0 +1,126 @@
+<div class="main-content dashboard item-manager term-manager manage-rate-programs">
+	<header class="header-toolbar">
+		<div class="titles">
+			<h2>
+				Manage Rate Programs
+			</h2>
+		</div>
+		<div class="buttons">
+			<button class="btn-orange-pink" (click)="onDoneButtonClick($event, dialogActionsForDone)">
+				Done
+			</button>
+		</div>
+	</header>
+	<div class="programs-list">
+		<div class="header">
+			<div class="titles">
+				<h4>Assigned Programs</h4>
+				<h5>Add programs to the category selected</h5>
+			</div>
+			<div class="buttons">
+				<button (click)="onAddNewRateProgram()" class="btn-blue">
+					Add New
+				</button>
+			</div>
+		</div>
+		<div class="list">
+			<kendo-sortable
+				*ngIf="!validateEmptyRateCards()"
+				#sortable
+				class="kendo-sortable"
+				[animation]="true"
+				[kendoSortableBinding]="ratePrograms"
+				(dragOver)="onDragOver($event)"
+			>
+				<ng-template let-item="item">
+					<div class="row-rate-program">
+						<div class="row-header">
+							<div class="title">
+								<h4>{{ item.name }}</h4>
+							</div>
+							<div class="buttons">
+								<i class="k-icon k-i-copy" (click)="duplicateRateProgramClick($event, item)"></i>
+								<i class="k-icon k-i-edit" (click)="editRateProgramClick($event, item)"></i>
+								<i class="k-icon k-i-delete" (click)="deleteRateProgramClick($event, item, dialogActions)"></i>
+							</div>
+						</div>
+						<div class="row-body">
+							<div class="left-content">
+								<div class="row">
+									<h5 class="title">Advanced Payments</h5>
+									<span class="value">{{ item.advancePayments | numberToArray }}</span>
+								</div>
+								<div class="row">
+									<h5 class="title">Advanced Security Payments</h5>
+									<span class="value">{{ item.advanceSecurityPayments | numberToArray }}</span>
+								</div>
+								<div class="row">
+									<h5 class="title">Purchase Option</h5>
+									<span class="value">{{ item.purchaseOptions | purchaseOptions }}</span>
+								</div>
+								<div class="row">
+									<h5 class="title">Amount Financed</h5>
+									<span class="value">{{ item.amountRanges | amountRanges }}</span>
+								</div>
+							</div>
+							<div class="right-content">
+								<div class="row">
+									<h5 class="title">Payment Frequency</h5>
+									<span class="value">{{ item.paymentFrequencies | arrayInline: ', ':'paymentFrequencies' }}</span>
+								</div>
+								<div class="row">
+									<h5 class="title">Terms</h5>
+									<span class="value" [innerHTML]="item.terms | termsSelected: item.defaults"></span>
+								</div>
+								<div class="row">
+									<h5 class="title">Deferrals</h5>
+									<span class="value">{{ item.deferrals }}</span>
+								</div>
+								<div class="row">
+									<h5 class="title">No. of Additional Points</h5>
+									<span class="value">{{ item.points | numberToArray: '.00' }}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</ng-template>
+			</kendo-sortable>
+			<div *ngIf="validateEmptyRateCards()" class="empty-program">
+				<div class="no-records-thumb">
+					<img
+						src="/assets/images/dll/imgCatsprods.png"
+						srcset="/assets/images/dll/imgCatsprods@2x.png 2x, /assets/images/dll/imgCatsprods@3x.png 3x"
+					/>
+				</div>
+				<div class="no-records">
+					No programs added
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div kendoDialogContainer></div>
+<ng-template #dialogActions>
+	<div class="buttons">
+		<button
+			kendoButton
+			[disabled]="dialogRef.content.instance.disableOkButton"
+			(click)="handleDialogSubmitButtonClick($event)"
+			class="k-button k-primary"
+		>
+			{{ buttonAction }}
+		</button>
+		<button kendoButton (click)="handleDialogCloseButtonClick($event)" class="k-button">Cancel</button>
+	</div>
+</ng-template>
+<ng-template #dialogActionsForDone>
+	<div class="buttons">
+		<button kendoButton (click)="handleDialogReminderClick($event)" class="k-button k-primary">OK</button>
+	</div>
+</ng-template>
+<ng-template #dialogActionsErrorDisplay>
+	<div class="buttons">
+		<button kendoButton (click)="handleDialogErrorOkClick()" class="k-button k-primary">OK</button>
+	</div>
+</ng-template>

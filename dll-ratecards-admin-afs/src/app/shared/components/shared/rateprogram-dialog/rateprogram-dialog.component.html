@@ -1,0 +1,22 @@
+<div class="dialog-container rateCard-dialog" #manageRateCard>
+	<div *ngIf="isDeleting" class="delete-ratecard">
+		<div *ngIf="isDeleting" class="align-center">
+			<p class="regularSize">
+				By deleting
+				<strong>
+					{{ rateProgramName }}
+				</strong>
+				all details and rate factors associated with this program will be lost.
+			</p>
+			<p class="regularSize">Are you sure you want to continue?</p>
+		</div>
+	</div>
+	<div class="vendor-handle" *ngIf="!isDeleting">
+		<div class="align-center dialog-container">
+			<p class="regularSize">
+				Any changes made to the rate program will not be saved. <br />
+				Are you sure you want to continue?
+			</p>
+		</div>
+	</div>
+</div>

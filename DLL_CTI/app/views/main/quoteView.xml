@@ -1,0 +1,31 @@
+<Alloy>
+
+	<View id='container'>
+
+		<View id='header'>
+			<View id='navLeftButton' class="navButton" />
+			<View id="flipButton" class="navButton" />
+			<View id='uploadButton' class="navButton" />
+			<View id="summaryButton" class="navButton" />
+
+		</View>
+
+		<View id="flipContainer">
+			<View id='body'>
+				<ScrollView id="paymentsTableView">
+					<View id="paymentOptionsContainer">
+						<View id="addRow">
+							<Label id="numberLabel" />
+							<Label id="addLabel" />
+						</View>
+					</View>
+				</ScrollView>
+
+				<View id="equipmentWrapper">
+					<Require id='equipmentPrice' src='additionalCosts/equipmentPrice' />
+				</View>
+			</View>
+		</View>
+		<Require id='loadingIndicator' src='common/loadingIndicator' />
+	</View>
+</Alloy>

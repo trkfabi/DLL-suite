@@ -1,0 +1,456 @@
+<!-- version 1.2.7 -->
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+	<head>
+		<meta charset="UTF-8"></meta>
+		<title></title>
+		<style type="text/css">
+			.real-estate {
+				margin-top: 5px;
+			}
+			.font-title {
+				font-family: 'Helvetica';
+				font-weight: bold;
+				font-size: 18px;
+			 	font-style: normal;
+			  	font-stretch: normal;
+			  	line-height: normal;
+			  	letter-spacing: normal;				
+			}
+			.font-body {
+				font-family: 'HelveticaNeue';
+				font-weight: normal;
+				font-size: 11px;
+			 	font-style: normal;
+			  	font-stretch: normal;
+			  	line-height: normal;
+			  	letter-spacing: normal;									
+			}
+			.font-paragraph {
+				font-family: 'HelveticaNeue';
+				font-weight: normal;
+				font-size: 14px;
+			 	font-style: normal;
+			  	font-stretch: normal;
+			  	line-height: normal;
+			  	letter-spacing: normal;									
+			}			
+			.font-footer {
+				font-family: 'HelveticaNeue';
+				font-weight: normal;
+				font-size: 9px;
+			 	font-style: normal;
+			  	font-stretch: normal;
+			  	line-height: normal;
+			  	letter-spacing: normal;									
+			}			
+			.bold {
+				font-weight: bold;
+			}
+			.italic {
+				font-style: italic;
+			}
+			.item-title {
+				font-family: 'HelveticaNeue';
+				font-weight: normal;
+				font-size: 14px;
+			 	font-style: normal;
+			  	font-stretch: normal;
+			  	line-height: normal;
+			  	letter-spacing: normal;					
+			}
+			.item-subtitle{
+				font-family: 'HelveticaNeue';
+				font-weight: bold;
+				font-size: 14px;
+			 	font-style: normal;
+			  	font-stretch: normal;
+			  	line-height: normal;
+			  	letter-spacing: normal;	
+			  	margin-left: 35px;
+			  	color: #3a3a3a;		
+				position: relative;
+				float: left;	  		
+			}
+
+			.paragraph {
+				margin-top: 0px;
+				position: relative;
+				float: left;
+				width: 100%;	
+				color: #231f20;
+			}			
+
+			body {
+				background-color: #FFF;
+				height: 259mm;
+				min-height: 259mm;
+			}
+
+			#container {
+				margin-left: 40px;
+				margin-top: 20px;
+				margin-right: 40px;
+				height: 100%;
+				min-height: 100%;
+				float: left;
+				position: relative;
+			}
+
+			.top-header {
+				margin-top: 0px;
+				width: 100%;
+				height: 50px;
+				position: relative;
+				float: left;				
+			}
+			.logo {
+				margin-top: 0px;
+				left: 0px;
+				height: 40px;
+				position: relative;
+				float: left;
+			}
+			#underline {
+				width: 100%;
+				height: 1px;
+				background-color: #bcbec0;
+				margin-top: 5px;
+				position: relative;
+				float: left;				
+			}
+
+			#title {
+				position: relative;
+				float: right;
+				text-align: right;
+				color: #000000;
+				margin-top: 15px;
+			}
+
+
+			#customer-data{
+				width: 490px;
+			}
+			#customer-data div {
+				line-height: 1.2
+			}
+			#date {
+				width: 150px;
+				float: right;
+				position: relative;
+				text-align: right;
+			}
+			#description-paragraph{
+				margin-top: 15px;
+				text-align: justify;
+			}
+
+			#equipments {
+				position: relative;
+				float: left;
+				margin-top: 0px;		
+			}	
+				
+			#equipment-title {
+				width: 100px;
+				font-weight: bold;
+				float: left;
+			}
+			#equipment-string{
+				margin-left: 140px;	
+				width: 500px;	
+				font-family: 'HelveticaNeue';
+				font-weight: normal;
+				font-size: 14px;
+			 	font-style: normal;
+			  	font-stretch: normal;
+			  	line-height: normal;
+			  	letter-spacing: normal;	
+			  	text-align: left;					
+			}
+
+			#lease-financing-title{
+				float: left;
+				position: relative;
+				margin-top: 15px;
+				margin-bottom: 5px;
+				font-weight: bold;
+			}
+
+			.payment-table-container{
+				margin-left:auto;
+				margin-right:auto;
+				position: relative;
+				width: 600px;
+			}
+			.payment-table{
+				margin-top: 0px;
+				float: left;
+				position: relative;
+			}
+			.payment-table tr:first-child {
+				background-color: #bcbec0;
+				height: 25px;
+			}		
+
+ 			.payment-table tr:first-child td {
+				color: #ffffff;
+				text-align:center; 
+    			vertical-align:middle;
+    			height: 25px;
+				font-family: 'Helvetica';
+				font-weight: bold;
+				font-size: 9px;
+			 	font-style: normal;
+			  	font-stretch: normal;
+			  	line-height: normal;
+			  	letter-spacing: normal;				
+
+			}			
+			.payment-table tr:not(:first-child){
+				height: 25px;
+			}
+
+			{{#shrinkPaymentsTableSmall}}
+ 			.payment-table tr:first-child td {
+    			height: 15px;
+			}			
+			.payment-table tr:not(:first-child){
+				height: 15px;
+			}		
+			{{/shrinkPaymentsTableSmall}}	
+
+			.payment-table tr:not(:first-child):nth-child(even) {
+				background-color: #ffffff;
+			}
+			.payment-table tr:not(:first-child):nth-child(odd) {
+				background-color: #e6e7e8;
+			}
+
+			.payment-table tr:not(:first-child) td {
+				color: #000000;
+				text-align: center; 
+    			vertical-align: middle;
+    			font-family: 'HelveticaNeue';
+				font-weight: normal;
+				font-size: 11px;
+			 	font-style: normal;
+			  	font-stretch: normal;
+			  	line-height: normal;
+			  	letter-spacing: normal;	
+			}
+			.payment-table tr:not(:first-child) td span {      
+				vertical-align: super;    
+				font-size: 7px;
+				margin-left: 5px; 				
+			}			
+			.payment-table tr:not(:first-child) td:nth-child(4), .payment-table tr:not(:first-child) td:nth-child(5){
+				text-align: left;
+				padding-left: 10px;
+			}
+
+			.payment-table tr td:nth-child(1) {
+				width: 140px;	
+			}
+
+			.payment-table tr td:nth-child(2) {
+				width: 115px;	
+			}
+			.payment-table tr td:nth-child(3) {
+				width: 115px;	
+			}			
+			.payment-table tr td:nth-child(4) {
+				width: 370px;
+			}			
+			.payment-table tr td:nth-child(5) {
+				width: 180px;	
+			}			
+
+
+			#thank-paragraph{
+				margin-top: 10px;
+				text-align: justify;
+				float: left;
+				position: relative;
+			}
+		
+			#sign div {
+				line-height: 1.2
+			}
+
+			#sign-paragraph{
+				margin-top: 5px;
+			}
+			{{#shrinkPaymentsFootnotesSmall}}
+			#sign-paragraph{
+				margin-top: 0px;
+			}
+			{{/shrinkPaymentsFootnotesSmall}}
+			#sign-name-paragraph{
+				margin-top: 10px;	
+			}
+			{{#shrinkPaymentsFootnotesSmall}}
+			#sign-name-paragraph{
+				margin-top: 5px;
+			}
+			{{/shrinkPaymentsFootnotesSmall}}			
+			#payment-options{
+				margin-top: 5px;
+			}			
+			#payment-frequency{
+				margin-top: 5px;
+			}
+			#payment-footnotes{
+				margin-top: 5px;
+			}
+			#payment-terms{
+				margin-top: 5px;
+				text-align: justify;
+			}						
+			#footer {
+				font-family: 'HelveticaNeue-Medium';
+				font-weight: normal;
+				font-size: 9px;
+				font-style: normal;
+				font-stretch: normal;
+				line-height: normal;
+				letter-spacing: normal;	
+				/* Fixed botttom footer */
+				position: absolute;
+				bottom: 0;		  	
+			}	
+			#footer_line {
+				margin-top: 10px;
+				border-top-style: solid;
+				border-top-color: #cccccc;
+				border-top-width: 1px;		
+				float: left;
+				position: relative;			
+			}
+			.page-break {
+				margin-top: 50px;
+			}
+
+			#payment-frequency-list {
+				float: left;
+				position: relative;
+			}
+			#payment-frequency-list div:not(:first-child) {
+				margin-left: 10px;
+			}
+			#payment-footnotes-list {
+				float: left;
+				position: relative;
+			}
+			#payment-footnotes-list div:not(:last-child) {
+				margin-right: 10px;
+			}
+			.footer-notes-horizontal {
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body lang="en">	
+		<!--<div id="outer-border">-->
+	        <div id="container">
+		        <div class="top-header">
+		            <img class="logo" src="{{{logoImage}}}" />
+		            <div id="title" class="font-title">Finance Proposal</div>              
+					<div id="underline"></div>
+				</div>	
+
+		        <div id="customer-data" class="paragraph real-estate">
+		            <div id="customer-data-legal-name" class="paragraph font-paragraph bold">{{customerName}}</div>
+		            <div id="customer-data-name" class="paragraph font-paragraph">Attn: {{customerFirstName}} {{customerLastName}}</div>
+		            <div id="customer-data-address-first" class="paragraph font-paragraph">{{address}}</div>
+		            <div id="customer-data-address-second" class="paragraph font-paragraph">{{city}}{{comma}} {{state}} {{zip}}</div>
+		        </div>
+
+		        <div id="date" class="font-paragraph italic real-estate">{{date}}</div>
+
+		        <p id="description-paragraph" class="paragraph font-paragraph">
+		            I am pleased to present the following finance options for your review. I look forward to working with you on your equipment financing needs.
+		        </p>  
+
+		        <div id="equipments">
+		        	<div id="equipment-title" class="item-title bold" >Equipment:</div>
+		        	<div id="equipment-string">{{equipmentString}}</div>
+		    	</div>
+
+		        <div id="lease-financing-title" class="paragraph item-title bold">Lease Financing Options</div>
+
+
+		        {{#payments}}
+		        <div class="item-subtitle bold real-estate">Amount Financed: {{amountFinanced}}</div>
+		        <div class="payment-table-container">
+			        <table class="payment-table">
+			            <tr> 
+			                <td class="font-body">Purchase<br/>Option</td>
+			                <td class="font-body">Number of Payments</td>
+			                <td class="font-body">Total Term</td>
+			                <td class="font-body">Finance Program</td>
+			                <td class="font-body">Payment</td>
+			            </tr>
+			        	
+		        		{{#paymentList}}
+		        		<tr>
+		        			<td>{{purchaseOption}}</td>
+		        			<td>{{totalPayments}}</td>
+		        			<td>{{term}}</td>
+		        			<td>{{promoName}}</td>
+		        			<td>{{payment}}<span>{{paymentInfo}}</span></td>
+
+		        		</tr>
+			        	{{/paymentList}}
+			        </table>
+			    </div>
+		        {{/payments}}
+
+		        <p id="thank-paragraph" class="paragraph font-paragraph">Thank you for the opportunity to submit this proposal. Additional financing structures are available. Should you have any questions or require further information, please feel free to contact me.</p>
+
+		        <div id="sign" class="paragraph">
+					<div id="sign-paragraph" class="font-paragraph italic">Sincerely,</div>
+
+					<div id="sign-name-paragraph" class="font-paragraph">{{userName}}</div>
+					<div id="sign-title-paragraph" class="font-paragraph">{{userTitle}}</div>
+					<div id="sign-email-paragraph" class="font-paragraph">{{userEmail}}</div>
+					<div id="sign-phone-paragraph" class="font-paragraph">{{userPhone}}</div>
+				</div>			
+
+
+				<div id="footer" class="paragraph">
+					
+					<div id="footer_line">		
+						<div id="payment-options" class="paragraph bold">Purchase Options:</div>
+
+						<div>• FMV: At the end of the term upgrade to new equipment, purchase the equipment for the fair market value, renew lease, or return the equipment</div>
+						<div>• $1.00: Purchase the equipment for $1.00</div>
+						<div>• FPO: Fixed Purchase Option</div>
+
+
+						<div id="payment-frequency" class="paragraph bold">Payment Frequency:</div>
+						<div id="payment-frequency-list" class="paragraph">
+							<div class="footer-notes-horizontal">• Monthly unless indicated otherwise.</div>
+							<div class="footer-notes-horizontal">• Q: Quarterly</div>
+							<div class="footer-notes-horizontal">• SA: Semi-Annual</div>
+							<div class="footer-notes-horizontal">• A: Annual</div>
+						</div>
+
+						{{#displayFooterNotes}}<div id="payment-footnotes" class="paragraph bold">Payment Footnotes:</div><div id="payment-footnotes-list" class="paragraph">{{/displayFooterNotes}}
+						{{#footerNotes}}
+						<div class="footer-notes-horizontal">{{referenceText}}</div>
+						{{/footerNotes}}
+						{{#displayFooterNotes}}</div>{{/displayFooterNotes}}
+
+						<div id="payment-terms" class="paragraph">	
+							<span class="bold">Terms and Conditions:</span> This proposal is valid thru {{termsValidDate}}. Monthly payment amounts do not include applicable sales tax. This proposal is an expression by a potential “lessor” of its interest in considering a lease transaction on the financing options outlined above. This proposal is not intended to and does not create any binding legal obligation on the part of either party. THIS LETTER IS NOT, AND IS NOT TO BE CONSTRUED AS, A COMMITMENT BY LESSOR TO ENTER INTO THE PROPOSED LEASE TRANSACTION. The lessor is not obligated to provide any lease financing until the satisfactory completion of its due diligence, the receipt of all requisite approvals by lessor’s management, and the execution and delivery of final legal documentation in form and substance acceptable to lessor, including acceptance of the equipment. This proposal is not a statement of terms and conditions of any financing that may be approved.
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--</div>-->
+	</body>
+
+</html>

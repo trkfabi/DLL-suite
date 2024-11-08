@@ -1,0 +1,33 @@
+'#container': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#submitButton': {
+	backgroundColor: Alloy.Globals.colors.mantis,
+	title: L('submit_uppercase')
+},
+'#separator': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.alto,
+	touchEnabled: false
+},
+
+'.button': {
+	top: 10,
+	bottom: 10,
+	width: 300,
+	height: 35,
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	},
+	borderRadius: 3
+},
+'.button[platform=ios]': {
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+}

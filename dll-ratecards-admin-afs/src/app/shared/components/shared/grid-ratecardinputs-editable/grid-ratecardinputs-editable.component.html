@@ -1,0 +1,35 @@
+<div #scroll *ngIf="scrollWidth && isLocked" class="top-scroll othc-grids">
+	<div class="dommy-div" [style.width]="scrollWidth[0]" #scrollbar></div>
+</div>
+<kendo-grid
+	#grid
+	[kendoGridBinding]="rows"
+	(cellClick)="onCellClickEventHandler($event)"
+	(cellClose)="onCellCloseHandler($event)"
+	(cancel)="onCancelHandler($event)"
+>
+	<kendo-grid-column
+		*ngFor="let col of columns"
+		field="{{ col.field }}"
+		editor="{{ col.type }}"
+		title="{{ col.title }}"
+		filter="{{ col.type }}"
+		width="{{ col.width }}"
+		format="{{ col.format }}"
+		[locked]="col.locked"
+		[class]="{ bold: col.type == 'numeric' }"
+	>
+		<ng-template kendoGridEditTemplate let-column="column" let-formGroup="formGroup" let-isNew="isNew" let-dataItem="dataItem">
+			<kendo-numerictextbox
+				[decimals]="2"
+				[autoCorrect]="autoCorrect"
+				[min]="minValue"
+				[max]="maxValue"
+				[spinners]="false"
+				[formControl]="formGroup.get(column.field)"
+				(keydown.enter)="onCellCloseHandler($event); grid.closeCell()"
+			>
+			</kendo-numerictextbox>
+		</ng-template>
+	</kendo-grid-column>
+</kendo-grid>

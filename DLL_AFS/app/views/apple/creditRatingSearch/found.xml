@@ -1,0 +1,9 @@
+<Alloy>
+	<ItemTemplate id="foundTemplate" name="foundTemplate">
+		<View id="listItemContainer">
+			<Label bindId="accountName" id="accountName" class="title leftSpacing" />
+			<Label bindId="parentName" id="parentName" class="leftSpacing" />
+			<Label bindId="rating" id="rating" class="leftSpacing" />
+		</View>
+	</ItemTemplate>
+</Alloy>

@@ -1,0 +1,121 @@
+"#container": {
+	top: 0,
+	expanded: false,
+	backgroundColor: Alloy.Globals.colors.azureRadiance
+},
+"#container[platform=ios]": {
+	height: 39.5,
+	heightExpanded: 180,
+	heightCollapsed: 39.5,
+	top: 0,
+	expanded: false,
+	backgroundColor: Alloy.Globals.colors.azureRadiance,
+},
+"#container[platform=android]": {
+	height: 46,
+	heightExpanded: 194,
+	heightCollapsed: 46,
+	top: 0,
+	expanded: false,
+	backgroundColor: Alloy.Globals.colors.azureRadiance
+},
+"#grayBG": {
+	top: 0,
+	left: 0,
+	right: 0,
+	layout: 'vertical',
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.alabaster,
+	selected: {
+		right: 5,
+		backgroundColor: Alloy.Globals.colors.galleryApprox
+	},
+	unselected: {
+		right: 0,
+		backgroundColor: Alloy.Globals.colors.alabaster
+	}
+},
+"#grayBG[platform=android]": {
+	width: Ti.UI.FILL
+}
+"#headerContainer": {
+	top: 0,
+	height: 39,
+	width: Ti.UI.FILL
+},
+"#headerContainer[platform=android]": {
+	height: 45,
+}
+"#dateLabel": {
+	right: 41,
+	font: {
+		fontSize: 13,
+		fontFamily: "HelveticaNeue-Light"
+	},
+	color: Alloy.Globals.colors.crimson
+},
+"#dateLabel[platform=android]": {
+	font: {
+		fontFamily: "Roboto",
+		fontSize: 15
+	},
+	right: 37
+}
+"#nameLabel": {
+	width: 120,
+	text: L("customer_name"),
+	left: 45,
+	font: {
+		fontFamily: "HelveticaNeue-Medium",
+		fontSize: 16
+	},
+	color: Alloy.Globals.colors.scorpion
+},
+"#nameLabel[platform=android]": {
+	left: 47,
+	height: 21,
+	font: {
+		fontFamily: "Roboto",
+		fontSize: 18
+	}
+}
+"#nameLabel[platform=ios]": {
+	minimumFontSize: 10
+},
+'#nameLabel[if=Alloy.Globals.hasNotch]': {
+	width: 110,
+},
+"#favoriteButton": {
+	left: 0,
+	width: 35,
+	height: 35,
+	backgroundImage: "/images/bt_quotelist_favorite_out.png"
+},
+"#favoriteButton[platform=ios]": {
+	width: 40,
+	height: 40
+},
+"#favoriteButton[platform=android]": {
+	left: 6,
+	backgroundColor: "transparent",
+	borderColor: "transparent"
+},
+"#selectButton": {
+	right: 0,
+	width: 35,
+	height: 35,
+	backgroundImage: "/images/bt_quotelist_back.png"
+},
+"#selectButton[platform=ios]": {
+	width: 40,
+	height: 40
+},
+".horizontalSeparator": {
+	left: 20,
+	width: Ti.UI.FILL,
+	height: 0.5,
+	backgroundColor: Alloy.Globals.colors.silver
+},
+".horizontalSeparator[platform=android]": {
+	height: 1
+}

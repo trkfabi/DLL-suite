@@ -1,0 +1,42 @@
+<Alloy>
+	<View id='container'>
+		<TextField id='androidFocus' platform='android' />
+		<View id='header'>
+			<View id='navLeftButton' class='navButton'>
+				<View id='navLeftIcon' class='navIcon' />
+			</View>
+			<View id='exportQuoteButton' class='navButton'>
+				<View id='exportQuoteIcon' class='navIcon' />
+			</View>
+			<View id='flipButton' class='navButton'>
+				<View id='flipIcon' class='navIcon' />
+			</View>
+			<View id='uploadButton' class='navButton'>
+				<View id='uploadIcon' class='navIcon' />
+			</View>
+			<View id='summaryButton' class='navButton'>
+				<View id='summaryIcon' class='navIcon' />
+			</View>
+		</View>
+
+		<View id="flipContainer">
+			<View id='body'>
+				<ScrollView id="paymentsTableView">
+					<View id="paymentOptionsContainer">
+						<View id="addRow">
+							<Label id="numberLabel" />
+							<Label id="addLabel" />
+						</View>
+					</View>
+				</ScrollView>
+
+				<View id="equipmentWrapper">
+					<Require id='equipmentPrice' src='additionalCosts/equipmentPrice' />
+				</View>
+			</View>
+		</View>
+
+		<Require id='loadingIndicator' src='common/loadingIndicator' />
+		<OptionDialog id="optionDialog" />
+	</View>
+</Alloy>

@@ -1,0 +1,13 @@
+"#taxesOnAdvLabel": {
+	text: L('tax_on_advance')
+},
+'#taxOnAdvanceRow': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+'#taxesOnAdvCurrencySymbol': {
+	left: 10,
+	width: 15,
+	text: L('percent_symbol')
+},

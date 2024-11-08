@@ -1,0 +1,25 @@
+<Alloy>
+	<Window id='window'>
+		<View id='headerView'>
+			<View id='headerBar'>
+				<Button id='backButtonWhite' />
+				<Label id='headerTitleLabel' />
+				<Button id='editButton' />
+			</View>
+		</View>
+		<View id='wrapperView'>
+			<TableView id='equipmentTable' />
+			<View id='addNewView'>
+				<View id='addNewWrapper'>
+					<View id='addNewIcon' />
+					<Label id='addNewText' />
+				</View>
+			</View>
+		</View>
+		<View id='noProductsView'>
+			<Label id='noProductsLabel' />
+			<Label id='tapNewLabel' />
+		</View>
+
+	</Window>
+</Alloy>

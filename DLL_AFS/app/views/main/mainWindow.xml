@@ -1,0 +1,11 @@
+<Alloy>
+	<!-- IOS -->
+	<NavigationWindow id='quoteDetail' platform='ios'>
+		<Window id='dashboardWindow' />
+	</NavigationWindow>
+	<Window id='quoteList' platform="ios" />
+
+	<!-- Android -->
+	<View id="quoteDetail" platform="android" />
+	<View id="quoteList" platform="android" />
+</Alloy>

@@ -1,0 +1,56 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.delagelanden.com/mobileauth/1.0/data" targetNamespace="http://schemas.delagelanden.com/mobileauth/1.0/data" elementFormDefault="qualified">
+	<xs:complexType name="CredentialsType">
+		<xs:sequence>
+			<xs:element name="Realm" type="xs:string" nillable="true"/>
+			<xs:element name="UserIdentifier" type="xs:string" nillable="true"/>
+			<xs:element name="Password" type="xs:string" nillable="true"/>
+			<xs:element name="ClientIPAddress" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="DeviceIdentifier" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CredentialsType" type="tns:CredentialsType" nillable="true"/>
+	<xs:complexType name="AuthenticateResponse">
+		<xs:sequence>
+			<xs:element name="Status" nillable="true" type="tns:StatusType"/>
+			<xs:element minOccurs="0" name="Data" nillable="true" type="tns:DataType"/>
+			<xs:element minOccurs="0" name="AuthorizationToken" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="UserIdentity" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AuthenticateResponse" type="tns:AuthenticateResponse" nillable="true"/>
+	<xs:complexType name="StatusType">
+		<xs:sequence>
+			<xs:element name="Code" type="xs:string" nillable="true"/>
+			<xs:element name="Message" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="HttpCodeSuggestion" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="StatusType" type="tns:StatusType" nillable="true"/>
+	<xs:complexType name="DataType">
+		<xs:sequence>
+			<xs:element name="APIList" type="tns:ArrayOfAPIType" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="DataType" type="tns:DataType" nillable="true"/>
+	<xs:complexType name="ArrayOfAPIType">
+		<xs:sequence>
+			<xs:element name="APIType" type="tns:APIType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfAPIType" type="tns:ArrayOfAPIType" nillable="true"/>
+	<xs:complexType name="APIType">
+		<xs:sequence>
+			<xs:element name="Description" type="xs:string" nillable="true"/>
+			<xs:element name="Href" type="xs:string" nillable="true"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="APIType" type="tns:APIType" nillable="true"/>
+	<xs:complexType name="ValidateTokenResponse">
+		<xs:sequence>
+			<xs:element name="Status" type="tns:StatusType" nillable="true"/>
+			<xs:element name="AuthorizationToken" type="xs:string" nillable="true"/>
+			<xs:element name="UserIdentity" type="xs:string" nillable="true"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ValidateTokenResponse" type="tns:ValidateTokenResponse" nillable="true"/>
+</xs:schema>

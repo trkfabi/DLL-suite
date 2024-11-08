@@ -1,0 +1,4 @@
+<Alloy>
+	<View id="container" platform="android" />
+	<TabbedBar id="container" platform="ios" />
+</Alloy>

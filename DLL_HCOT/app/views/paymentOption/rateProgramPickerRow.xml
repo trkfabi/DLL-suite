@@ -1,0 +1,13 @@
+<Alloy>
+	<View id='rateProgramPickerRow' class='paymentOptionRow'>
+		<View class='leftTab' />
+		<View id='wrapper'>
+			<Label id='titleLabel' class='rowTitle' />
+			<View id='pickerContainer'>
+				<Label id='selectionLabel' />
+				<Button id='pickerButton' class='selectionButton' />
+				<View class='inputDelimiter' />
+			</View>
+		</View>
+	</View>
+</Alloy>

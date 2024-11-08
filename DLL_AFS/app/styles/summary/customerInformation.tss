@@ -1,0 +1,19 @@
+'#customerInformation': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	heightExpanded: Ti.UI.SIZE,
+	heightCollapsed: 40,
+	layout: 'vertical',
+	backgroundColor: Alloy.Globals.colors.alto
+},
+'#customerInformation[platform=android]': {
+	heightCollapsed: 52
+},
+'#container': {
+	left: 4,
+	right: 0,
+	backgroundColor: Alloy.Globals.colors.alabaster,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+}

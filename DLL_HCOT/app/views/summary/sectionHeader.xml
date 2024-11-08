@@ -1,0 +1,8 @@
+<Alloy>
+	<View id='summarySectionHeader'>
+		<View class='separator topSeparator' />
+		<Label id='titleLabel' />
+		<Button id='expandColapseButton' />
+		<View class='separator' />
+	</View>
+</Alloy>

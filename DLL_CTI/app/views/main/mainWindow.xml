@@ -1,0 +1,19 @@
+<Alloy>
+	<!-- IOS -->
+	<NavigationWindow id='quoteDetail' platform='ios'>
+		<Window id='dashboardWindow'>
+			<Require id='quoteView' src='main/quoteView' />
+		</Window>
+	</NavigationWindow>
+	<Window id='quoteList' platform="ios">
+		<Require id='quoteListWindow' src='quoteList/quoteListWindow' />
+	</Window>
+
+	<!-- Android -->
+	<View id="quoteDetail" platform="android">
+		<Require id='quoteView' src='main/quoteView' />
+	</View>
+	<View id="quoteList" platform="android">
+		<Require id='quoteListWindow' src='quoteList/quoteListWindow' />
+	</View>
+</Alloy>

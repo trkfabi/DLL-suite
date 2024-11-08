@@ -1,0 +1,82 @@
+'Label': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	touchEnabled: false
+},
+'#row': {
+	top: 0,
+	height: Ti.UI.SIZE
+},
+'#container': {
+	top: 0,
+	height: 58
+},
+'#container[platform=android]': {
+	height: 64
+},
+'#header': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 58
+},
+'#header[platform=android]': {
+	height: 64
+},
+'#customerLabel': {
+	top: 7,
+	left: 16,
+	right: 16,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 18
+	},
+	color: Alloy.Globals.colors.black,
+	minimumFontSize: 12
+},
+'#customerLabel[platform=android]': {
+	top: 9,
+	right: 16,
+	width: Ti.UI.FILL,
+	height: 25,
+	ellipsize: true,
+	wordWrap: false,
+	horizontalWrap: false
+},
+'#addressLabel': {
+	top: 29,
+	left: 16,
+	right: 16,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 15
+	},
+	color: Alloy.Globals.colors.mountbattenPink,
+	minimumFontSize: 12
+},
+'#addressLabel[platform=android]': {
+	top: 31,
+	height: 20
+},
+'.rightTab': {
+	right: 0,
+	width: 7,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.azureRadiance,
+	visible: false,
+	touchEnabled: false
+},
+'.leftTab': {
+	left: 0,
+	width: 7,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.azureRadiance,
+	visible: false,
+	touchEnabled: false
+},
+'.horizontalLine': {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.mercury,
+	touchEnabled: false
+}

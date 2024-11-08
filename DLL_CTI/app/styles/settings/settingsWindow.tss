@@ -1,0 +1,155 @@
+"#window": {
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	title: L('settings'),
+	backgroundColor: Alloy.Globals.colors.white,
+	tintColor: Alloy.Globals.colors.white,
+	barColor: Alloy.Globals.colors.white
+},
+"#window[platform=android]": {
+	navBarHidden: true,
+	backgroundColor: Alloy.Globals.colors.azureRadiance
+},
+"#window[platform=ios]": {
+	navTintColor: Alloy.Globals.colors.white,
+	barColor: Alloy.Globals.colors.azureRadiance,
+	backButtonTitle: L('cancel'),
+	translucent: false,
+	navTintColor: Alloy.Globals.colors.white,
+	statusBarStyle: Ti.UI.iOS.StatusBar.LIGHT_CONTENT,
+	titleAttributes: {
+		color: Alloy.Globals.colors.white,
+		font: {
+			fontFamily: "HelveticaNeue-Medium",
+			fontSize: 17
+		},
+	}
+},
+"#header[platform=android]": {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 50,
+	backgroundColor: Alloy.Globals.colors.shiraz
+},
+"#titleLabel[platform=android]": {
+	text: L('settings'),
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontFamily: "HelveticaNeue-Medium",
+		fontSize: 17
+	},
+}
+
+"#doneButton": {
+	width: Ti.UI.SIZE,
+	height: 20
+},
+"#doneButton[platform=android]": {
+	right: 15
+}
+
+"#doneTitle": {
+	text: L("done"),
+	right: 15,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontFamily: "HelveticaNeue-Light",
+		fontSize: 17
+	},
+	touchEnabled: false,
+	enabled: false
+},
+"#doneTitle[if=Alloy.Globals.hasNotch]": {
+	right: -1
+},
+"#wrapper": {
+	top: 0,
+	bottom: 0,
+	width: Ti.UI.FILL,
+	layout: 'vertical'
+},
+"#wrapper[if=Alloy.Globals.hasNotch]": {
+	top: 15
+
+},
+"#wrapper[platform=android]": {
+	top: 50
+}
+
+"#logoImage": {
+	top: 50,
+	image: '/images/im_agcologo_settings.png'
+},
+"#logoImage[platform=ios]": {
+	image: '/images/dll_logo.png',
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE
+},
+"#logoImage[platform=android]": {
+	top: 30,
+	image: '/images/dll_logo.png',
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE
+}
+
+"#versionLabel": {
+	top: 30,
+	text: L('version'),
+	color: Alloy.Globals.colors.shuttleGray
+},
+"#versionLabel[if=Alloy.Globals.hasNotch]": {
+	top: 42
+}
+"#versionLabel[platform=android]": {
+
+},
+"#usernameLabel": {
+	top: 30,
+	font: {
+		fontFamily: "HelveticaNeue",
+		fontSize: 17
+	},
+	color: Alloy.Globals.colors.shuttleGray
+},
+"#usernameLabel[platform=android]": {
+
+},
+"#selectedLanguageLabel": {
+	color: Alloy.Globals.colors.black
+},
+"#logOutButton": {
+	bottom: 8,
+	right: 10,
+	left: 10,
+	height: 40,
+	borderRadius: 4,
+	backgroundColor: Alloy.Globals.colors.mountbattenPink
+}
+
+"#logOutButton[if=Alloy.Globals.hasNotch]": {
+	bottom: 35.5,
+	right: 38,
+	left: 37.66,
+	height: 35.66,
+	borderRadius: 2
+}
+
+"#logOutButtonText": {
+	text: L('log_out'),
+	touchEnabled: false,
+	color: Alloy.Globals.colors.white,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+
+}
+"#logOutButtonText[if=Alloy.Globals.hasNotch]": {
+	font: {
+		fontSize: 14
+	}
+},
+'#crash': {
+	bottom: 0,
+	color: Alloy.Globals.colors.tamarillo,
+	title: 'Trigger Crash'
+}

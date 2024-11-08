@@ -1,0 +1,86 @@
+<div class="dialog-container product-dialog">
+	<div *ngIf="!isDelete">
+		<p>Product Name can be at most {{ maxLength }} characters. Allowed special characters are: # % & * ( ) / _ - = + ' ".</p>
+		<input
+			kendoTextBox
+			class="textbox"
+			#productName
+			placeholder="Product Name"
+			[(ngModel)]="item.name"
+			[ngClass]="{ 'error-input': productIsRepeated, bold: !productIsRepeated }"
+			[maxLength]="maxLength"
+			(ngModelChange)="onProductNameChange($event)"
+			(keypress)="onProductNameKeyPress($event)"
+		/>
+		<div class="error-message">
+			{{ messageError }}
+		</div>
+		<div>
+			<small class="bold rates-title" for="ratesEnabled">Rates enabled:</small>
+			<ul class="rates inline-list" [ngClass]="item.id ? 'edit-product' : ''">
+				<li class="k-form-field">
+					<input
+						type="radio"
+						name="rates"
+						id="fmv1out"
+						value="fmv,1out"
+						class="k-radio"
+						[(ngModel)]="productRateSelected"
+						(change)="onRateProductChange($event)"
+						[disabled]="true"
+					/>
+					<label for="fmv1out" class="k-radio-label" [ngClass]="{ 'k-radio-label-active': productRateSelected === 'fmv,1out' }"
+						>FMV and $1 Out</label
+					>
+				</li>
+				<li class="k-form-field">
+					<input
+						type="radio"
+						name="rates"
+						id="fmv"
+						value="fmv"
+						class="k-radio"
+						[(ngModel)]="productRateSelected"
+						(change)="onRateProductChange($event)"
+					/>
+					<label for="fmv" class="k-radio-label" [ngClass]="{ 'k-radio-label-active': productRateSelected === 'fmv' }">FMV</label>
+				</li>
+				<li class="k-form-field">
+					<input
+						type="radio"
+						name="rates"
+						id="1out"
+						value="1out"
+						class="k-radio"
+						[(ngModel)]="productRateSelected"
+						(change)="onRateProductChange($event)"
+					/>
+					<label for="1out" class="k-radio-label" [ngClass]="{ 'k-radio-label-active': productRateSelected === '1out' }"
+						>$1 Out</label
+					>
+				</li>
+				<li>
+					<span class="label-title">ITAD:</span>
+					<kendo-switch onLabel="Yes" offLabel="No" [(ngModel)]="item.hasItad"></kendo-switch>
+				</li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+
+		<span class="label-dropdown">Category: </span>
+		<kendo-dropdownlist
+			[data]="productCategories"
+			[(ngModel)]="selectedProductCategoryItem"
+			[textField]="'name'"
+			[valueField]="'id'"
+			(valueChange)="onProductCategoriesChange($event)"
+		>
+		</kendo-dropdownlist>
+	</div>
+	<div *ngIf="isDelete" class="align-center delete-message">
+		<p class="regularSize">
+			By deleting <strong>{{ item.name }} </strong> all rates associated will be lost:
+		</p>
+		<p class="regularSize">Are you sure you want to continue?</p>
+	</div>
+</div>

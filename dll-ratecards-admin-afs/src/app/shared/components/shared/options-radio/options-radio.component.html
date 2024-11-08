@@ -1,0 +1,48 @@
+<div class="rate-programs-radio">
+	<ng-container *ngIf="editable; else nonEditable">
+		<ng-container *ngIf="hasItemsToDisplay; else noItems">
+			<div class="option-default-header">
+				<label>default</label>
+			</div>
+			<div *ngFor="let item of itemList">
+				<label for="enum_answer_{{ item.value }}">
+					{{ item.name }}
+				</label>
+				<input
+					id="enum_answer_{{ item.value }}"
+					[value]="item.value"
+					type="radio"
+					[name]="item.group"
+					class="input-show-delete"
+					[checked]="item.checked"
+					kendoRadioButton
+					(click)="onRadioClick($event.target.checked, item)"
+				/>
+				<button class="k-icon k-i-trash remove-radio-option" (click)="onDeleteRadioClick(item)"></button>
+			</div>
+		</ng-container>
+	</ng-container>
+	<ng-template #noItems>
+		<div class="no-options">
+			<label>
+				Add new terms to this rate program
+			</label>
+		</div>
+	</ng-template>
+	<ng-template #nonEditable>
+		<div *ngFor="let item of itemList">
+			<label for="enum_answer_{{ item.value }}">
+				<input
+					id="enum_answer_{{ item.value }}"
+					[value]="item.value"
+					type="radio"
+					[name]="item.group"
+					[checked]="item.checked"
+					kendoRadioButton
+					(click)="onRadioClick($event.target.checked, item)"
+				/>
+				{{ item.name }}
+			</label>
+		</div>
+	</ng-template>
+</div>

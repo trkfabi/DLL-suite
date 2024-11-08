@@ -1,0 +1,7 @@
+<Alloy>
+	<PickerRow id="pickerRow">
+		<View class="pickerRowView">
+			<Label id="pickerRowLabel" />
+		</View>
+	</PickerRow>
+</Alloy>

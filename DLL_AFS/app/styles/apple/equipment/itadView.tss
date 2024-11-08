@@ -1,0 +1,22 @@
+'#itadView': {
+	width: Ti.UI.FILL,
+	height: 42,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#itadLabel': {
+	left: 20,
+	width: Ti.UI.SIZE,
+	height: 17,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 15
+	},
+	text: L('it_asset_disposition'),
+	color: Alloy.Globals.colors.shuttleGray,
+	touchEnabled: false
+},
+'#itadSwitch': {
+	right: 10,
+	value: false,
+	touchEnabled: false
+}

@@ -1,0 +1,185 @@
+<Alloy>
+	<!-- <View platform="android" module="de.marcelpociot.autofocus" /> -->
+	<View id="wrapper">
+		<View id='container'>
+			<ScrollView id="detailContainer">
+				<View id="customerContainer" class="category">
+					<View id="customerHeader" class="customerHeader">
+						<Label id="customerLabel" class="headerLabel" />
+						<ImageView id="expandCustomerImage" class="expandButton" />
+					</View>
+					<View class="row">
+						<View class="leftTab" />
+						<TextField id="customerNameTextField" class="field" tag="name" />
+						<Button id="searchCustomerButton" class="button" />
+						<View class="fieldBottomLine" />
+					</View>
+
+					<View class="row">
+						<View class="leftTab" />
+						<View class="halfRow leftField">
+							<TextField id="nameTextField" class="field" tag="firstName" />
+							<View class="fieldBottomLine" />
+						</View>
+						<View class="halfRow rightField">
+							<TextField id="middleTextField" class="field" tag="middleName" />
+							<View class="fieldBottomLine" />
+						</View>
+					</View>
+
+					<View class="row">
+						<View class="leftTab" />
+						<TextField id="lastNameTextField" class="field" tag="lastName" />
+						<View class="fieldBottomLine" />
+					</View>
+
+					<View class="row">
+						<View class="leftTab" />
+						<TextField id="phoneTextField" class="field kbNumPad" tag="phone" />
+						<Button id="phoneButton" class="button" />
+						<View class="fieldBottomLine" />
+					</View>
+
+					<View class="row">
+						<View class="leftTab" />
+						<TextField id="emailTextField" class="field kbEmail" tag="email" />
+						<!-- <Button id="mailButton" class="button" /> -->
+						<View class="fieldBottomLine" />
+					</View>
+					<View class="separatorRow">
+						<View class="leftTab" />
+						<View class="separator" />
+					</View>
+					<View class="titleRow">
+						<View class="leftTab" />
+						<Label id="physicalTitle" class="title" />
+					</View>
+
+					<View class="row">
+						<View class="leftTab" />
+						<TextField id="addressTextField" class="field" tag="physicalAddress" />
+						<View class="fieldBottomLine" />
+					</View>
+
+					<View class="row">
+						<View class="leftTab" />
+						<TextField id="cityTextField" class="field" tag="physicalCity" />
+						<View class="fieldBottomLine" />
+					</View>
+
+					<View class="row">
+						<View class="leftTab" />
+						<View class="halfRow leftField">
+							<TextField id="stateTextField" class="field" tag="physicalState" />
+							<View class="fieldBottomLine halfBottomLine" />
+						</View>
+						<View class="halfRow rightField">
+							<TextField id="zipTextField" class="field kbNumeric zip" tag="physicalZip" />
+							<View class="fieldBottomLine halfBottomLine" />
+						</View>
+					</View>
+
+					<View id="stateAutocompleteContainer" class="autocompleteContainer">
+						<Require id="stateAutocomplete" src="common/autocomplete" />
+					</View>
+
+					<View class="separatorRow">
+						<View class="leftTab" />
+						<View class="separator" />
+					</View>
+
+					<View class="titleRow">
+						<View class="leftTab" />
+						<Label id="equipmentTitle" class="title" />
+					</View>
+
+					<View class="row">
+						<View class="leftTab" />
+						<Label id="markTitle" />
+						<View id="markEquipmentSame">
+							<ImageView id="markCheck" />
+						</View>
+					</View>
+
+					<View class="row" id="mailingAddressRow">
+						<View class="leftTab" />
+						<TextField id="equipmentAddressTextField" class="field" tag="mailingAddress" />
+						<View class="fieldBottomLine" />
+					</View>
+
+					<View class="row" id="mailingCityRow">
+						<View class="leftTab" />
+						<TextField id="cityEquipmentTextField" class="field" tag="mailingCity" />
+						<View class="fieldBottomLine" />
+					</View>
+
+					<View class="row" id="mailingStateRow">
+						<View class="leftTab" />
+						<View class="halfRow leftField">
+							<TextField id="stateEquipmentTextField" class="field" tag="mailingState" />
+							<View class="fieldBottomLine halfBottomLine" />
+						</View>
+						<View class="halfRow rightField">
+							<TextField id="zipEquipmentTextField" class="field kbNumeric zip" tag="mailingZip" />
+							<View class="fieldBottomLine halfBottomLine" />
+						</View>
+					</View>
+
+					<View id="stateEquipmentAutocompleteContainer" class="autocompleteContainer">
+						<Require id="stateEquipmentAutocomplete" src="common/autocomplete" />
+					</View>
+
+					<!-- Equipment usage
+
+					<View class="titleRow row" platform="android">
+						<View class="leftTab" />
+						<Label id="usageLabel" class="headerLabel" />
+					</View>
+
+					<View class="row" id="equipmentUseRow" /> -->
+
+					<View class="separatorRow">
+						<View class="leftTab" />
+					</View>
+				</View>
+
+				<View id="equipmentContainer" class="category">
+					<View id="equipmentHeader" class="customerHeader">
+						<Label id="equipmentListLabel" class="headerLabel" />
+						<ImageView id="expandEquipmentImage" class="expandButton" />
+					</View>
+
+					<View id="equipmentListContainer" class="equipmentList" />
+
+					<View id="addEquipmentRow" class="addItemRow">
+						<View class="leftTab" platform="ios" />
+						<View class="equipmentLeftTab" platform="android" />
+						<ImageView class="addItemIcon" />
+						<Label class="title addItemLabel" />
+					</View>
+					<View class="separatorRow">
+						<View class="leftTab" />
+					</View>
+				</View>
+
+				<View id="tradeContainer" class="category">
+					<View id="tradeHeader" class="customerHeader">
+						<Label id="tradeListLabel" class="headerLabel" />
+						<ImageView id="expandTradeImage" class="expandButton" />
+					</View>
+
+					<View id="tradeListContainer" class="equipmentList" />
+
+					<View id="addTradeRow" class="addItemRow">
+						<View class="leftTab" platform="ios" />
+						<View class="equipmentLeftTab" platform="android" />
+
+						<ImageView class="addItemIcon" />
+						<Label class="title addItemLabel" />
+					</View>
+				</View>
+
+			</ScrollView>
+		</View>
+	</View>
+</Alloy>

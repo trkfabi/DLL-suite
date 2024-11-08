@@ -1,0 +1,3 @@
+'#textArea': {
+	tintColor: Alloy.Globals.colors.azureRadiance
+}

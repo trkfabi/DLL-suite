@@ -1,0 +1,12 @@
+<Alloy>
+	<View id='productInfoView'>
+		<Require id='sectionHeader' src='summary/sectionHeader' />
+		<View id='mainContainer'>
+			<View id='productDetailView' />
+			<View id='amountContainer'>
+				<Label id='amountFinanced' class='amountFinancedField' />
+				<Label id='amountFinancedValue' class='amountFinancedField' />
+			</View>
+		</View>
+	</View>
+</Alloy>

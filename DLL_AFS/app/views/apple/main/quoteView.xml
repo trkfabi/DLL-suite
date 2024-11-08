@@ -1,0 +1,55 @@
+<Alloy>
+	<View id='quoteView'>
+		<View id='headerView'>
+			<View id='headerBar'>
+				<View id='menuButton'>
+					<View id='menuIcon' />
+				</View>
+				<View id='exportQuoteButton' class='navButton'>
+					<View id='exportQuoteIcon' class='navIcon' />
+				</View>
+				<View id='shareButton'>
+					<View id='shareIcon' />
+				</View>
+				<View id='summaryButton'>
+					<View id='summaryIcon' />
+				</View>
+			</View>
+		</View>
+		<View id='wrapperView'>
+			<View id='amountFinancedView'>
+				<Label id='amountFinancedLabel' />
+				<View id='financedContainerView'>
+					<Label id='amountFinancedValueLabel' />
+				</View>
+				<View class='chevron' />
+			</View>
+			<View id='customerInfoView'>
+				<TextField id='customerNameField' class='inputField' />
+				<View id='customerBottomLine' class='fieldBottomLineLarge' />
+				<TextField id='spCreditField' class='inputField' />
+				<View id='spCreditBottomLine' class='fieldBottomLineLarge' />
+				<Label id='selectListButton' />
+				<Button id='addDetailsButton' />
+				<View id='creditSearchButton'>
+					<Button id='magnifyingGlassIcon' />
+				</View>
+			</View>
+			<View class='divider' />
+			<TableView id='paymentsTable'>
+				<HeaderView>
+					<View id='separator' />
+				</HeaderView>
+				<TableViewRow id='addNewRow'>
+					<View id='addNewContainer'>
+						<View class='divider dividerTop' />
+						<Label id='numberLabel' />
+						<Button id='addNewButton' />
+						<View class='divider dividerBottom' />
+					</View>
+				</TableViewRow>
+			</TableView>
+		</View>
+		<Require id='loadingIndicator' src='common/loadingIndicator' />
+	</View>
+</Alloy>

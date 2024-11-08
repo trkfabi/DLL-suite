@@ -1,0 +1,216 @@
+"#window": {
+	title: L("dob"),
+	tintColor: Alloy.Globals.colors.lochmara,
+	barColor: Alloy.Globals.colors.white,
+	translucent: false,
+	backgroundColor: Alloy.Globals.colors.alabaster
+},
+"#window[platform=ios]": {
+	backButtonTitle: L("ssn_uppercase")
+},
+"#window[platform=android]": {
+	navBarHidden: true
+},
+"#scrollView": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	contentWidth: '99%',
+	contentHeight: "auto"
+},
+"#brandLogo[platform=ios]": {
+	width: 120,
+},
+"#brandLogo[platform=android]": {
+	top: 6,
+	width: Ti.UI.SIZE,
+	height: 40,
+	touchEnabled: false,
+},
+"#scrollView[platform=android]": {
+	top: 53,
+	backgroundColor: Alloy.Globals.colors.alabaster
+}
+"#titleLabel": {
+	top: 60,
+	text: L('please_enter_date_of_birth'),
+	font: {
+		fontFamily: "HelveticaNeue-Bold",
+		fontSize: 20
+	},
+	color: Alloy.Globals.colors.nobel,
+	textAlign: "center"
+},
+"#ssnContainer": {
+	top: 150,
+	width: Ti.UI.SIZE,
+	height: 40,
+	layout: "horizontal"
+},
+"#section1TextField": {
+	value: "",
+	maxLength: 3
+},
+"#section2TextField": {
+	value: "",
+	maxLength: 2
+},
+"#section3TextField": {
+	value: "",
+	maxLength: 4
+},
+"#section1Container": {
+	width: 50
+},
+"#section2Container": {
+	width: 50,
+},
+"#section3Container": {
+	width: 80,
+},
+"#section3Container[platform=android]": {
+	right: 1
+},
+"#line": {
+	top: 52,
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.mercury
+},
+"#backButton": {
+	width: Ti.UI.SIZE,
+	height: 20
+},
+"#backImage": {
+	left: 0,
+	image: '/images/ic_topbar_back.png'
+},
+"#backTitle": {
+	text: L('signature'),
+	left: 15,
+	width: 70,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: "HelveticaNeue-Light",
+		fontSize: 17
+	}
+},
+"#nextButton": {
+	width: Ti.UI.SIZE,
+	height: 20
+},
+"#nextImage": {
+	right: 0,
+	image: '/images/ic_topbar_next.png'
+},
+"#nextTitle": {
+	text: L('next'),
+	right: 15,
+	width: 70,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: "HelveticaNeue-Light",
+		fontSize: 17
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT
+},
+".font": {
+	textAlign: "center",
+	left: 5,
+	right: 5,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: "HelveticaNeue-Medium",
+		fontSize: 18
+	}
+},
+".fieldContainer": {
+	width: 50,
+	height: 40
+},
+".fieldContainer[platform=ios]": {
+	left: 10
+},
+".fieldBottomLine": {
+	width: Ti.UI.FILL,
+	height: 5,
+	bottom: 0,
+	backgroundImage: '/images/im_customerinfo_textline_small.png'
+}
+
+/* ------ ANDROID ------ */
+
+"#window[platform=android]": {
+	backgroundColor: Alloy.Globals.colors.white,
+	navBarHidden: true
+},
+"#backButton[platform=android]": {
+	top: 9,
+	left: 10,
+	height: 36,
+	width: 36,
+},
+"#backImage[platform=android]": {
+	width: 36,
+	height: 36,
+	left: 0,
+	image: '/images/ic_topbar_back.png'
+},
+"#nextButton[platform=android]": {
+	top: 9,
+	right: 10,
+	height: 36,
+	width: Ti.UI.SIZE,
+}
+"#nextImage[platform=android]": {
+	width: 36,
+	height: 36,
+	right: 0,
+	image: '/images/ic_topbar_next.png'
+}
+"#scrollView[platform=android]": {
+	top: 53,
+	backgroundColor: Alloy.Globals.colors.alabaster
+},
+"#titleLabel[platform=android]": {
+	top: 60,
+	font: {
+		fontFamily: "sans-serif",
+		fontSize: 23,
+		fontWeight: 'bold'
+	},
+},
+"#ssnContainer[platform=android]": {
+	top: 145,
+	height: 70,
+	width: 233,
+	layout: "horizontal",
+},
+"#section1Container[platform=android]": {
+	height: Ti.UI.SIZE,
+	width: 63
+},
+"#section2Container[platform=android]": {
+	left: 10,
+	height: Ti.UI.SIZE,
+	width: 60
+},
+"#section3Container[platform=android]": {
+	left: 10,
+	height: Ti.UI.SIZE,
+	width: 90
+},
+".fieldContainer[platform=android]": {
+	height: 70
+},
+".font[platform=android]": {
+	left: 0,
+	right: 0,
+	font: {
+		fontFamily: "sans-serif",
+		fontSize: 23
+	},
+	hintTextColor: Alloy.Globals.colors.borderGray
+},

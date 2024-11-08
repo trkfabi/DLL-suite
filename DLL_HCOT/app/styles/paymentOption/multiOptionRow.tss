@@ -1,0 +1,18 @@
+'#multiOptionRow': {
+	left: 0,
+	right: 0,
+	height: 70,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'#multiOptionBar': {
+	index: 0
+},
+'#titleLabel': {
+	top: 5,
+	left: 10,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 16
+	},
+	color: Alloy.Globals.colors.black
+}

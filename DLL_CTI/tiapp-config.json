@@ -1,0 +1,84 @@
+{
+		"global": {
+			"guid": "a01cc2fd-ec8b-4112-9ddd-05cda7f32012",
+			"properties": {
+				"appc-app-id": "58dd7b132825c69c7aa51111",
+				"acs-oauth-secret-development": "czBuC6bXIBWV4wDg5STkr23htebE0AWV",
+				"acs-oauth-key-development": "ch70suFIZy6hwe71MXuwJi6In8j5hvqG",
+				"acs-api-key-development": "PjHFwyIzX6mV7wzPnMW2LOFnq6iAqVx0",
+				"acs-username-development": "appc_app_user_dev",
+				"acs-password-development": "WxGo23yzyyexKFArTs",
+				"acs-oauth-secret-production": "7siauZDfXNuJMboBg3Nm0bUcAUpNBzI5",
+				"acs-oauth-key-production": "DTrYUj7bmpfBOwkJRn5lpA3lKK6Zk3rM",
+				"acs-api-key-production": "TSIxB6rCG6AD42kYgYseKOhvJn8We3kM",
+				"acs-username-production": "appc_app_user",
+				"acs-password-production": "NzzOnKobPz5IWveKHD",
+				"com-appcelerator-apm-id": "16b78f2930dc47e8b7767b158437a7f200555300"
+			}
+		},
+		"dev": {
+			"appId": "com.cti.expressfinance.dev",
+			"appName": "CTI DEV",
+			"version:format": "major.minor|bump.0"
+		},
+		"test": {
+			"appId": "com.cti.expressfinance.test",
+			"appName": "CTI TEST",
+			"version:format": "major.minor.1"
+		},
+		"acc": {
+			"appId": "com.cti.expressfinance.acc",
+			"appName": "CTI ACC",
+			"version:format": "major.minor.2"
+		},
+		"stage": {
+			"appId": "com.cti.expressfinance.stage",
+			"appName": "CTI STAGE",
+			"version:format": "major.minor.3"
+		},
+		"demo": {
+			"appId": "com.cti.expressfinance.demo",
+			"appName": "CTI DEMO",
+			"version:format": "major.minor.4"
+		},
+		"sit-tst": {
+			"appId": "com.cti.expressfinance.sit.tst",
+			"appName": "CTI SIT TST",
+			"version:format": "major.minor.5"
+		},
+		"sit-acc": {
+			"appId": "com.cti.expressfinance.sit.acc",
+			"appName": "CTI SIT ACC",
+			"version:format": "major.minor.6"
+		},
+		"upgrade-tst": {
+			"appId": "com.cti.expressfinance.upgrade.tst",
+			"appName": "CTI UPGRADE TST",
+			"version:format": "major.minor.8"
+		},
+		"upgrade-acc": {
+			"appId": "com.cti.expressfinance.upgrade.acc",
+			"appName": "CTI UPGRADE ACC",
+			"version:format": "major.minor.9"
+		},
+		"release": {
+			"appId": "com.dllstore.expressfinancecti.prod",
+			"appName": "Express Finance",
+			"guid": "f359235c-6e37-4b9f-9444-25932731566d",
+			"version:format": "major.minor.7",
+			"properties": {
+				"appc-app-id": "5739f0d0dc076fe30903d1de",
+				"acs-oauth-secret-development": "fPfbcU3XpowTxbhlUbpd71k9nhJTTz0p",
+				"acs-oauth-key-development": "BM7DRve3whLnriJlk1uhF06BLayuwFfK",
+				"acs-api-key-development": "JDcBlduzhgzwC1LmL8p4Z9CzS5FkVh4u",
+				"acs-username-development": "appc_app_user_dev",
+				"acs-password-development": "lo65EGsoyN5xsP5xon",
+				"acs-oauth-secret-production": "VNM2JhgTlNpDIAbXMnArOCcYKKszRFSv",
+				"acs-oauth-key-production": "ooxshv0DtQkc7YcORmylarwLT68OYWk4",
+				"acs-api-key-production": "AX10Ae7kmbnlWljwr7oCwLsoLJ6kRE44",
+				"acs-username-production": "appc_app_user",
+				"acs-password-production": "8sOqbaPS3gaYxHlhE1",
+				"com-appcelerator-apm-id": "d84187266cc14e0db03adcdd0c253d5800555300"
+			}
+		}
+	}

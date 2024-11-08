@@ -1,0 +1,56 @@
+'#productInfoView': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	heightCollapsed: 40,
+	backgroundColor: Alloy.Globals.colors.alto
+},
+'#mainContainer': {
+	top: 40,
+	bottom: 15,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+'#productDetailView': {
+	left: 4,
+	right: 0,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.alabaster,
+	layout: 'vertical'
+},
+'#amountContainer': {
+	top: 10,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+},
+'#amountFinanced': {
+	left: 19,
+	text: L('financed_amount')
+},
+'#amountFinancedValue': {
+	right: 15,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.regular
+	}
+},
+'#sectionHeader': {
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.semiBold,
+		fontSize: 16
+	},
+	color: Alloy.Globals.colors.shuttleGray,
+	expander: {
+		backgroundImage: '/images/bt_quotescreen_apple_expand.png',
+		imageExpanded: '/images/bt_quotescreen_apple_expand.png',
+		imageCollapsed: '/images/bt_quotescreen_apple_collapse.png'
+	}
+},
+'.amountFinancedField': {
+	width: Ti.UI.SIZE,
+	color: Alloy.Globals.colors.thunder,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.regular,
+		fontSize: 14
+	},
+	minimumFontSize: 12
+}

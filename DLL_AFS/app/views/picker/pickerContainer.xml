@@ -1,0 +1,17 @@
+<Alloy>
+	<View id='wrapper'>
+		<View id='container'>
+			<View class='separator' />
+			<ListView id='listContainer'>
+				<Templates>
+					<ItemTemplate name='optionItem'>
+						<View id='optionView'>
+							<Label id='optionLabel' bindId='optionLabel' />
+						</View>
+					</ItemTemplate>
+				</Templates>
+				<ListSection id='listSection' />
+			</ListView>
+		</View>
+	</View>
+</Alloy>

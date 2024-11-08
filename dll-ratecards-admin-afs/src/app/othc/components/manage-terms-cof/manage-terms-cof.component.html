@@ -1,0 +1,69 @@
+<div class="main-content dashboard item-manager term-manager manage-terms-cofs">
+	<header class="header-toolbar">
+		<div class="title">
+			<h2>
+				Manage Terms and COF
+			</h2>
+		</div>
+		<div class="buttons">
+			<button
+				class="btn-grey terms-manager"
+				(click)="onAddTermButtonClick($event, { item: gridData }, dialogActions)"
+				[disabled]="isDisabled"
+			>
+				Add Terms
+			</button>
+			<button class="btn-orange-pink" (click)="onDoneButtonClick($event)">
+				Done
+			</button>
+		</div>
+	</header>
+	<div class="terms-list">
+		<kendo-grid
+			#grid
+			*ngIf="gridData"
+			[data]="gridData"
+			(cellClick)="onCellClickEventHandler($event)"
+			(cellClose)="onCellCloseHandler($event)"
+		>
+			<kendo-grid-column field="term" title="TERMS" class="center">
+				<ng-template kendoGridCellTemplate let-dataItem="dataItem">
+					{{ dataItem.term }}
+					<i class="remove-item k-icon k-i-trash" (click)="onRemoveTermButtonClick(dataItem.term, dialogActions)"></i>
+				</ng-template>
+			</kendo-grid-column>
+			<kendo-grid-column field="cof" title="COF" class="center">
+				<ng-template kendoGridEditTemplate let-column="column" let-formGroup="formGroup" let-dataItem="dataItem">
+					<kendo-numerictextbox
+						class="input-numeric"
+						[decimals]="2"
+						[min]="0"
+						[max]="100"
+						[spinners]="false"
+						[formControl]="formGroup.get('term' + dataItem.term)"
+						(keydown.enter)="onCellCloseHandler(formGroup); grid.closeCell()"
+						(focusout)="onCellCloseHandler({ formGroup: formGroup, dataItem: dataItem })"
+					>
+					</kendo-numerictextbox>
+				</ng-template>
+				<ng-template kendoGridCellTemplate let-dataItem="dataItem"> {{ dataItem.cof | number: '1.2-2' }}% </ng-template>
+			</kendo-grid-column>
+		</kendo-grid>
+	</div>
+	<div kendoDialogContainer></div>
+	<ng-template #dialogActions>
+		<div class="buttons" [ngClass]="buttonAction === 'Save' ? 'align-center' : ''">
+			<button *ngIf="dialogAction !== null" kendoButton (click)="handleDialogCloseButtonClick($event)" class="k-button">
+				Cancel
+			</button>
+			<button
+				kendoButton
+				[disabled]="dialogRef.content.instance.disableOkButton && dialogAction === 'add'"
+				(click)="handleDialogSubmitButtonClick($event)"
+				class="k-button k-primary"
+			>
+				{{ buttonAction }}
+			</button>
+		</div>
+	</ng-template>
+</div>

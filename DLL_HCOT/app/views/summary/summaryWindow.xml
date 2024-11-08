@@ -1,0 +1,15 @@
+<Alloy>
+	<Window id='window'>
+		<View id='header'>
+			<View id='headerContent'>
+				<View id='backButton' class='headerButton'>
+					<ImageView id='backImage' class='headerImage' />
+					<Label id='backLabel' class='headerLabel' />
+				</View>
+				<ImageView id='brandLogo' />
+			</View>
+			<View id='headerSeparator' />
+		</View>
+		<ScrollView id='scrollView' />
+	</Window>
+</Alloy>

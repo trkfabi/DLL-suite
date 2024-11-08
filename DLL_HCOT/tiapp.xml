@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+	<id>com.othc.expressfinance.dev</id>
+	<name>OTHC DEV</name>
+	<version>10.17.0</version>
+	<publisher>propelics</publisher>
+	<url>http://propelics.com</url>
+	<description>not specified</description>
+	<copyright>2017 by propelics</copyright>
+	<icon>appicon.png</icon>
+	<persistent-wifi>false</persistent-wifi>
+	<prerendered-icon>false</prerendered-icon>
+	<statusbar-style>default</statusbar-style>
+	<statusbar-hidden>false</statusbar-hidden>
+	<fullscreen>false</fullscreen>
+	<navbar-hidden>false</navbar-hidden>
+	<analytics>true</analytics>
+	<guid>81a303a8-a37c-4e6e-9888-f71c916d2f10</guid>
+	<property name="ti.ui.defaultunit" type="string">dp</property>
+	<property name="run-on-main-thread" type="bool">true</property>
+	<property name="com-appcelerator-aca" type="string">1.4.1</property>
+	<ios>
+		<use-jscore-framework>false</use-jscore-framework>
+		<plist>
+			<dict>
+				<key>UIUserInterfaceStyle</key>
+				<string>Light</string>
+				<key>UISupportedInterfaceOrientations~iphone</key>
+				<array>
+					<string>UIInterfaceOrientationPortrait</string>
+				</array>
+				<key>UISupportedInterfaceOrientations~ipad</key>
+				<array>
+					<string>UIInterfaceOrientationPortrait</string>
+					<string>UIInterfaceOrientationPortraitUpsideDown</string>
+					<string>UIInterfaceOrientationLandscapeLeft</string>
+					<string>UIInterfaceOrientationLandscapeRight</string>
+				</array>
+				<key>NSCameraUsageDescription</key>
+				<string>Photograph Driver's License</string>
+				<key>NSPhotoLibraryUsageDescription</key>
+				<string>Select a Driver's License from your album</string>
+				<key>NSContactsUsageDescription</key>
+				<string>Not used by the app</string>
+				<key>NSCalendarsUsageDescription</key>
+				<string>Not used by the app</string>
+				<key>NSAppleMusicUsageDescription</key>
+				<string>Not used by the app</string>
+				<key>UIViewControllerBasedStatusBarAppearance</key>
+				<false/>
+			</dict>
+		</plist>
+	</ios>
+	<android xmlns:android="http://schemas.android.com/apk/res/android">
+		<manifest android:versionCode="7">
+			<application android:debuggable="true" android:largeHeap="true" android:theme="@style/Theme.NoActionBar">
+				<activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name=".OthcDevActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Titanium">
+					<intent-filter>
+						<action android:name="android.intent.action.MAIN" />
+						<category android:name="android.intent.category.LAUNCHER" />
+					</intent-filter>
+				</activity>
+				<activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.appcelerator.titanium.TiActivity" android:screenOrientation="portrait" />
+			</application>
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+			<uses-permission android:name="android.permission.GET_TASKS" />
+			<uses-permission android:name="android.permission.BLUETOOTH" />
+			<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+		</manifest>
+	</android>
+	<mobileweb>
+		<precache/>
+		<splash>
+			<enabled>true</enabled>
+			<inline-css-images>true</inline-css-images>
+		</splash>
+		<theme>default</theme>
+	</mobileweb>
+	<modules>
+		<module platform="android">com.appcelerator.aca</module>
+		<module platform="android">dk.napp.drawer</module>
+		<module platform="android">ti.paint</module>
+		<module platform="android">com.propelics.pdfcreator</module>
+		<module platform="android">ti.imagefactory</module>
+		<module platform="iphone">dk.napp.drawer</module>
+		<module platform="iphone">ti.paint</module>
+		<module platform="iphone">dk.napp.pdf.creator</module>
+		<module platform="iphone">ti.imagefactory</module>
+		<module platform="iphone">ti.safaridialog</module>
+		<module platform="iphone">com.appcelerator.aca</module>
+		<module platform="iphone">dk.napp.social</module>
+		<module platform="commonjs">ti.cloud</module>
+	</modules>
+	<deployment-targets>
+		<target device="android">true</target>
+		<target device="blackberry">false</target>
+		<target device="ipad">false</target>
+		<target device="iphone">true</target>
+		<target device="mobileweb">false</target>
+		<target device="tizen">false</target>
+	</deployment-targets>
+	<sdk-version>9.0.3.GA</sdk-version>
+	<plugins>
+		<plugin version="1.0">ti.alloy</plugin>
+	</plugins>
+	<property name="ti.android.useLegacyWindow" type="bool">true</property>
+	<property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
+	<property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
+	<property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
+	<property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
+	<property name="appc-org-id" type="string">100000373</property>
+	<property name="appc-creator-user-id" type="string">e496325b-d695-4131-980c-06cf94e34eb4</property>
+	<property name="acs-authbase-url" type="string">https://secure-identity.cloud.appcelerator.com</property>
+	<property name="acs-base-url" type="string">https://api.cloud.appcelerator.com</property>
+	<property name="appc-app-id" type="string">58d58a825897917136bf4cc1</property>
+	<property name="acs-oauth-secret-development" type="string">WqFygc3JURXk93V18hSCgixYjHmC1pJx</property>
+	<property name="acs-oauth-key-development" type="string">Q3n9sMQ33QhqP0DlJ9du7VOT1ej4lczn</property>
+	<property name="acs-api-key-development" type="string">Rw53cTtV246AJQm6jdsKhklhVN9nHWSJ</property>
+	<property name="acs-username-development" type="string">appc_app_user_dev</property>
+	<property name="acs-password-development" type="string">QPK9VLqDUAq5BXvKai</property>
+	<property name="acs-oauth-secret-production" type="string">F8YDjd4bdibznB9WLeVGQHFoyw0kot3C</property>
+	<property name="acs-oauth-key-production" type="string">Wc8baZYbh3bXtHXzanptpdtYx18S6dCK</property>
+	<property name="acs-api-key-production" type="string">ExTpZl7KzLxvtqZ938PT0VN4CZrvxtwi</property>
+	<property name="acs-username-production" type="string">appc_app_user</property>
+	<property name="acs-password-production" type="string">mKYF1nvFsNzXLchERd</property>
+	<property name="com-appcelerator-apm-id" type="string">c49e5c5e0d074ee2b005bad4443d8c5600555300</property>
+</ti:app>

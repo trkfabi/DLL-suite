@@ -1,0 +1,9 @@
+<Alloy>
+	<Window id="window">
+		<View id="container">
+			<Label id="termsLabel" />
+			<WebView id="policy" />
+			<Button id="okButton" />
+		</View>
+	</Window>
+</Alloy>

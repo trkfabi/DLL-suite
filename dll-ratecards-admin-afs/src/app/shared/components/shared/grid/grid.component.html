@@ -1,0 +1,148 @@
+<div *ngIf="!isGroupable">
+	<kendo-grid
+		class="grid"
+		#grid
+		[ngClass]="{ rateFactors: gridType == 'RC', rateFactorsOut: gridType == 'RCC' }"
+		[data]="data"
+		[kendoGridBinding]="data"
+		(cellClick)="onCellClickEventHandler($event, { gridType: gridType, terms: terms })"
+		(cellClose)="onCellCloseHandler($event)"
+		(cancel)="onCancelHandler($event)"
+		*ngIf="data && columns"
+		#kendoGridComponent
+	>
+		<kendo-grid-column
+			*ngFor="let col of columns; let i = index"
+			[class]="{ editable: col.isEditable }"
+			[width]="col.width"
+			[locked]="isLocked && col.isLockable"
+			field="{{ col.columnGroup }}"
+			title="{{ col.columnName }}"
+			editor="text"
+		>
+			<ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex" *ngIf="displayRFTermHeader(col, gridType)">
+				RF: <br />
+				{{ col.columnName }} M
+			</ng-template>
+			<ng-template
+				kendoGridHeaderTemplate
+				let-column
+				let-columnIndex="columnIndex"
+				*ngIf="col.columnName === 'CREDIT RATING' && gridType === 'RC'"
+			>
+				CREDIT <br />
+				RATING
+			</ng-template>
+			<ng-template kendoGridEditTemplate let-column="column" let-formGroup="formGroup" let-isNew="isNew" *ngIf="col.isEditable">
+				<kendo-numerictextbox
+					[decimals]="2"
+					[min]="0"
+					[spinners]="false"
+					[formControl]="formGroup.get(column.field)"
+					(keydown.enter)="onCellCloseHandler(formGroup); grid.closeCell()"
+				>
+				</kendo-numerictextbox>
+			</ng-template>
+		</kendo-grid-column>
+		<ng-template kendoGridNoRecordsTemplate>
+			<div class="no-records-thumb">
+				<img
+					src="/assets/images/dll/imgCatsprods.png"
+					srcset="/assets/images/dll/imgCatsprods@2x.png 2x, /assets/images/dll/imgCatsprods@3x.png 3x"
+				/>
+			</div>
+			<div class="no-records">
+				{{ noRecordsMessage }}
+			</div>
+		</ng-template>
+	</kendo-grid>
+</div>
+
+<div *ngIf="isGroupable">
+	<kendo-grid
+		class="grid groupable"
+		#grid
+		[data]="data"
+		[sortable]="sortable"
+		[kendoGridBinding]="data"
+		(cellClick)="onCellClickEventHandler($event, { gridType: gridType, terms: terms })"
+		(cellClose)="onCellCloseHandler($event)"
+		(cancel)="onCancelHandler($event)"
+		*ngIf="data && columns"
+		#kendoGridComponent
+	>
+		<kendo-grid-column
+			*ngFor="let col of columns; let i = index"
+			[width]="col.width"
+			[class]="{ editable: col.isEditable }"
+			[locked]="isLocked && col.isLockable"
+			field="{{ col.columnGroup }}"
+			title="{{ col.columnName }}"
+			[sortable]="col.sortable"
+			editor="text"
+		>
+			<ng-template kendoGridCellTemplate let-dataItem let-index="col.columnGroup">
+				{{ displayCellContent(col.columnGroup, dataItem) }}
+				<span class="k-icon k-i-check center" *ngIf="isOneInOut(col.columnGroup, dataItem)"></span>
+			</ng-template>
+			<ng-template kendoGridEditTemplate let-column="column" let-formGroup="formGroup" let-isNew="isNew" *ngIf="col.isEditable">
+				<kendo-numerictextbox
+					#input
+					[decimals]="2"
+					[min]="0"
+					[spinners]="false"
+					[formControl]="formGroup.get(column.field)"
+					(keydown.enter)="onCellCloseHandler(formGroup); grid.closeCell()"
+					*ngIf="formGroup"
+				>
+				</kendo-numerictextbox>
+			</ng-template>
+		</kendo-grid-column>
+		<kendo-grid-column-group *ngIf="groupedColumns" title="FMV">
+			<kendo-grid-column
+				*ngFor="let col of groupedColumns; let i = index"
+				[class]="{ editable: col.isEditable }"
+				class="grouped"
+				[width]="col.width"
+				[locked]="isLocked && col.isLockable"
+				field="{{ col.columnGroup }}"
+				title="{{ col.columnName }}"
+				editor="text"
+				[sortable]="col.sortable"
+			>
+				<ng-template kendoGridCellTemplate let-dataItem let-index="col.columnGroup">
+					{{ displayCellContent(col.columnGroup, dataItem) }}
+				</ng-template>
+				<ng-template
+					kendoGridEditTemplate
+					let-dataItem
+					let-column="column"
+					let-formGroup="formGroup"
+					let-isNew="isNew"
+					*ngIf="col.isEditable"
+				>
+					<kendo-numerictextbox
+						[decimals]="2"
+						[min]="0"
+						[spinners]="false"
+						[formControl]="formGroup.get(column.field)"
+						(keydown.enter)="onCellCloseHandler(formGroup); grid.closeCell()"
+						*ngIf="formGroup"
+					>
+					</kendo-numerictextbox>
+				</ng-template>
+			</kendo-grid-column>
+		</kendo-grid-column-group>
+		<ng-template kendoGridNoRecordsTemplate>
+			<div class="no-records-thumb">
+				<img
+					src="/assets/images/dll/imgCatsprods.png"
+					srcset="/assets/images/dll/imgCatsprods@2x.png 2x, /assets/images/dll/imgCatsprods@3x.png 3x"
+				/>
+			</div>
+			<div class="no-records">
+				{{ noRecordsMessage }}
+			</div>
+		</ng-template>
+	</kendo-grid>
+</div>

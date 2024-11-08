@@ -1,0 +1,398 @@
+@import '~@progress/kendo-theme-default/scss/action-buttons';
+@import '~@progress/kendo-theme-default/scss/button';
+@import '~@progress/kendo-theme-default/scss/calendar';
+@import '~@progress/kendo-theme-default/scss/combobox';
+@import '~@progress/kendo-theme-default/scss/tabstrip';
+@import '~@progress/kendo-theme-default/scss/dialog';
+// @import '~@progress/kendo-theme-default/scss/edit-form';
+@import '~@progress/kendo-theme-default/scss/switch';
+@import '~@progress/kendo-theme-default/scss/grid';
+@import '~@progress/kendo-theme-default/scss/input';
+@import '~@progress/kendo-theme-default/scss/numerictextbox';
+
+@import './_variables.scss';
+.k-dropdown-wrap {
+	border: none !important;
+}
+.k-dropdown-wrap .k-select,
+.k-numeric-wrap .k-select,
+.k-picker-wrap .k-select {
+	line-height: normal !important;
+}
+.k-select {
+	border: none !important;
+}
+.k-i-arrow-60-down:before {
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	position: relative;
+	right: 10px;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+.k-listbox .k-item,
+.k-popup.k-calendar-container,
+.k-popup.k-list-container {
+	background-color: $pale-grey;
+	border: none !important;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+	font-size: 14px;
+	width: auto;
+}
+.k-popup .k-list .k-item {
+	background-color: $pale-grey;
+	font-size: 14px;
+}
+.k-state-selected {
+	background-color: $orange-pink !important;
+	border: 1px solid $pale-red !important;
+	color: $white;
+	font-weight: normal;
+}
+.k-state-selected::after {
+	display: inline-block;
+	margin-left: 0.5em;
+}
+.k-tabstrip {
+	border: 0;
+	position: relative;
+	width: 100%;
+	min-height: 700px;
+}
+.k-tabstrip-wrapper {
+	background: $white;
+	border-radius: 5px;
+	border: 0.5px solid $white-two;
+	margin: 0;
+	min-height: 200px;
+	padding-bottom: 15px;
+}
+.k-tabstrip-top > .k-tabstrip-items {
+	position: absolute;
+	top: 5px;
+	left: 0px;
+	font-size: 11px;
+	border-bottom: 0;
+}
+.k-tabstrip-items .k-item,
+.k-tabstrip-items .k-item .k-loading {
+	border: 0;
+}
+.k-tabstrip > .k-tabstrip-items .k-item .k-link {
+	padding: 6px 0 6px 7px;
+}
+.k-tabstrip-items .k-item {
+	color: $orange-pink;
+	height: 44.5px;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 30px;
+	z-index: 1;
+	letter-spacing: 0.01em;
+	width: 164px;
+	&:first-child {
+		width: 126px;
+	}
+}
+.k-tabstrip-items .k-item.k-state-active {
+	background: $white;
+	border-radius: 2px;
+	color: $slate-grey;
+	.k-link {
+		padding-left: 15px;
+	}
+}
+.k-tabstrip > .k-content {
+	position: relative;
+	top: 50px;
+	border: 0.5px solid $white-two;
+	border-radius: 2px;
+	padding: 4px 0;
+}
+.k-grid {
+	border: none;
+	display: block;
+}
+.k-grid .k-grid-aria-root {
+	border: 1px solid $white-two;
+}
+.k-grid .k-grid-header .k-header .k-link {
+	overflow: visible !important;
+	white-space: normal !important;
+	line-height: 1.5;
+}
+.k-grid-header {
+	padding: 0px;
+	border: 0;
+	box-shadow: none;
+}
+.k-grid .k-grid-container {
+	border-top: 1px solid $white-two;
+}
+.k-grid-header-locked > table,
+.k-grid-header-wrap > table {
+	line-height: 30px;
+	border-top: 0;
+	font-weight: 500;
+}
+.k-grid-content table,
+.k-grid-content-locked table {
+	border: 0;
+}
+
+.k-grid-content {
+	&::-webkit-scrollbar {
+		width: 0px; /* remove scrollbar space */
+		height: 0px;
+		background: transparent; /* optional: just make scrollbar invisible */
+	}
+	/* optional: show position indicator in red */
+	&::-webkit-scrollbar-thumb {
+		background: transparent;
+		padding: 0px;
+		height: 0px;
+	}
+}
+.k-filter-row th,
+.k-grid-header th.k-header {
+	border-left: 1px solid $white-two;
+}
+
+.rateFactorsOthc {
+	.k-grid-header th.k-header {
+		line-height: 1.3;
+		vertical-align: middle;
+	}
+	.k-grid-content-locked td {
+		background-color: transparent !important;
+	}
+}
+.k-grid thead tr {
+	background-color: $white-three;
+}
+.k-grid thead tr a {
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.14;
+	letter-spacing: normal;
+	text-align: left;
+	color: $battleship-grey;
+}
+.k-grid tbody tr {
+	color: $cool-grey;
+}
+.k-grid td {
+	border-width: 0;
+	border-left: 1px solid $white-two;
+	font-size: 14px;
+	color: $cool-grey;
+}
+.k-grid tbody tr:nth-child(even) {
+	background-color: $white-three;
+}
+.k-grid .td-bold {
+	color: $slate-grey;
+	font-weight: bold;
+}
+.k-grid thead,
+.k-grid tbody,
+.k-grid tfoot {
+	border: 0;
+}
+.k-i-sort-desc-sm,
+.k-i-sort-asc-sm {
+	float: right;
+	top: -5px;
+}
+.k-i-sort-desc-sm::before,
+.k-i-sort-asc-sm::before {
+	color: $orange-pink;
+	float: right;
+	top: -5px;
+}
+.k-combobox > .k-dropdown-wrap > .k-i-close {
+	right: 1.5em;
+}
+
+.k-grid-norecords {
+	height: 100px !important;
+	text-align: center;
+}
+
+.k-i-sort-desc-sm,
+.k-i-sort-asc-sm {
+	top: 8px !important;
+	position: relative;
+}
+
+.k-dialog {
+	width: 390px;
+	.k-close {
+		display: none;
+	}
+}
+.k-dialog-titlebar {
+	height: 38px !important;
+	padding: 0;
+}
+.k-window-title {
+	font-weight: bold;
+	line-height: 38px;
+	margin: 0;
+	padding-left: 15px;
+	font-size: 18px;
+}
+.k-window-content {
+	& .dialog-container.import-dialog {
+		padding-right: 0;
+		& label {
+			text-align: left !important;
+			width: 95px;
+			margin: 15px 0;
+			font-weight: normal;
+		}
+	}
+	overflow: hidden;
+}
+.k-window-content.k-dialog-content {
+	overflow: visible;
+	margin-bottom: -33px;
+}
+.k-window-actions {
+	display: none;
+}
+.k-dialog-buttongroup {
+	border-top-width: 0;
+	border-top: 0;
+	height: 40px;
+	max-width: 370px;
+	width: 100%;
+	margin: 0 auto;
+	.buttons {
+		width: 100%;
+		height: 30px;
+	}
+}
+.k-dialog-buttongroup {
+	.k-button {
+		height: 25px !important;
+		line-height: 25px;
+		float: right;
+		overflow: visible;
+		padding: 0;
+		position: relative;
+		width: 130px !important;
+		border-radius: 0 !important;
+		margin: 0 0.6em;
+		font-size: 14px;
+		font-weight: 600;
+		font-style: normal;
+		background-color: $white-four;
+		border: solid 0.5px $white-two !important;
+		&:active {
+			background-color: $white-two;
+			border: 0 !important;
+		}
+		&.k-primary {
+			background-color: $orange-pink !important;
+			border: none !important;
+			color: $white !important;
+			box-shadow: none;
+			margin-right: 0;
+			&:active {
+				background-color: $orange-pink !important;
+			}
+		}
+	}
+}
+
+.k-dialog-buttongroup .k-button.k-primary:hover {
+	opacity: 0.85;
+}
+
+.k-state-selected {
+	font-size: 14px !important;
+}
+
+.groupable {
+	.k-grid-header-wrap {
+		tr {
+			th {
+				.k-link {
+					margin-top: -50px;
+				}
+			}
+		}
+		tr:nth-child(1) > th:nth-child(5) {
+			text-align: center;
+			background-color: $ice-blue;
+			border-bottom: 1px solid $white-two;
+		}
+		tr:nth-child(1) > th:nth-child(3) {
+			line-height: 4.5;
+		}
+		tr:nth-child(1) > th:nth-child(4) {
+			line-height: 4.5;
+		}
+		/*tr:nth-child(2) > th:nth-child() {
+			text-align: center;
+			background-color: $ice-blue;
+		}*/
+		tr:nth-child(1) {
+			th {
+				padding-top: 0;
+				padding-bottom: 0;
+				line-height: 2;
+			}
+		}
+		tr:nth-child(2) {
+			th {
+				line-height: 1.5;
+				.k-link {
+					padding: 0 12px;
+					margin-top: -8px;
+				}
+			}
+		}
+	}
+}
+.k-icon {
+	&.center {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+.k-grid td {
+	padding: 8px 10px;
+}
+
+.k-grid th {
+	padding: 7px 7px;
+}
+
+.rateFactors.k-grid .k-grid-header th.k-header,
+.rateFactorsOut.k-grid .k-grid-header th.k-header {
+	line-height: 1.3 !important;
+}
+.rateFactors.k-grid .k-grid-header th:first-child,
+.rateFactors.k-grid .k-grid-header th:nth-child(2),
+.rateFactorsOut.k-grid .k-grid-header th:first-child {
+	line-height: 2.5 !important;
+}
+
+.compareRates.k-grid .k-grid-header th.k-header,
+.compareRatesOut.k-grid .k-grid-header th.k-header {
+	line-height: normal;
+	vertical-align: middle;
+}
+
+.compareRates {
+	.k-grid-content-locked {
+		height: 100% !important;
+	}
+}

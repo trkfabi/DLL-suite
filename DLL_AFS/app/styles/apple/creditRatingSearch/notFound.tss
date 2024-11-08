@@ -1,0 +1,27 @@
+'#notFoundTemplate': {
+	width: Ti.UI.FILL,
+	height: 45,
+	selectedColor: Alloy.Globals.colors.transparent,
+	selectionStyle: Ti.UI.iOS.ListViewCellSelectionStyle.NONE
+},
+'#listItemContainer': {
+	top: 10,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: 40,
+	layout: 'vertical',
+	backgroundColor: Alloy.Globals.colors.white
+},
+'.title': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 17
+	},
+	minimumFontSize: 14,
+	ellipsize: Ti.UI.TEXT_ELLIPSIZE_TRUNCATE_END
+},
+'.leftSpacing': {
+	left: 15
+}

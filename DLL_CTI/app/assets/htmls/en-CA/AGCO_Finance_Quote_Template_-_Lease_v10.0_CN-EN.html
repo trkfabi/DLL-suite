@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>AGCO Finance Quote Template - Lease v10.0</title>
+		<style type="text/css">
+
+			body {
+				background-color: #FFF;
+			}
+
+			h1 {
+				text-align: right;
+				font-size: 15pt;
+				font-weight: bold;
+				line-height: 15pt;
+			}
+
+			h2 {
+				margin-top: 6pt;
+				margin-bottom: 3pt;
+				font-size: 11pt;
+				font-weight: bold;
+			}
+
+			hr {
+				display: block;
+				margin: 0.3cm 0;
+				width: 100%;
+				height: 2px;
+				border: 0;
+				border-top: 1px solid #000;
+				background-color: #000;
+			}
+
+			table {
+				width: 100%;
+				font-size: 8pt;
+				border: 1px solid #CCC;
+				border-collapse: collapse;
+			}
+
+			tr {
+				/*padding-top: 2pt;*/
+			}
+
+			td {
+				padding: 0pt 2pt 0pt 2pt;
+				height: 15pt;
+			}
+
+			th {
+				padding: 4pt 2pt 4pt 2pt;
+				font-size: 8pt;
+				font-weight: bold;
+				text-align: left;
+				background-color: #000;
+				color: #FFF;
+				border-top: 1px solid #000;
+				border-bottom: 1px solid #000;
+				border-left: 1px solid rgb(81, 81, 81);
+				height: 9pt;
+			}
+
+			th:last-child {
+				border-right: 1px solid #000;
+			}
+
+			th:first-child {
+				border-left: 1px solid #000;
+			}
+			
+			#container {
+				/*width: 22cm;*/
+				/*height: 28cm;*/
+				padding: 0.18cm 0.63cm 0.63cm 0.76cm;
+				background-color: #FFF;
+			}
+
+			#logo {
+				/*display: block;*/
+				/*float: left;*/
+			}
+
+			#table_customer .cell_title{
+				width: 3.87cm;
+			}
+			
+			.equipment_total_title {
+				text-align: right;
+			}
+
+			#table_equipment tr:last-child {
+				border-top: 1px solid #CCC;
+			}
+
+			#table_payment_before_tax {
+				height: 30pt;
+				font-weight: bold;
+				font-size: 11pt;
+				margin-bottom: 10pt;
+			}
+
+			#table_payment_before_tax td:first-child {
+				width: 5cm;
+			}
+
+			#table_lease_quote_details td:nth-child(2), #table_lease_quote_details td:nth-child(4) {
+				border-right: 1px solid #CCC;
+			}
+			
+			#table_lease_quote_details .cell_value{
+				text-align: right;
+			}
+
+			#skip_payments_in {
+				padding: 10pt;
+				text-align: left !important;
+				vertical-align: top;
+			}
+
+			#payment_schedule_row td, #schedule_header th {
+				width: 20%;
+			}
+
+			#note {
+				font-size: 8pt;
+			}
+
+			#hiddenElements {
+				visibility:  hidden;
+			}
+
+			.hiddenElements {
+				visibility:  hidden;
+			}
+
+			.cell_description {
+				width: 6.5cm;
+			}
+
+			.cell_title {
+				font-weight: bold;
+				font-size: 8pt;
+			}
+
+			.cell_numeric {
+				text-align: right;
+			}
+
+			.cell_numeric:before, #table_lease_quote_details .cell_value:before  {
+				/*content: '$ ';*/
+			}
+
+			.cell_no_bottom, .field_title {
+				border-bottom: none !important;
+			}
+
+			.cell_no_top, .field_value{
+				border-top : none !important;
+			}
+
+			.cell_no_border {
+				border: none !important;
+			}
+
+		</style>
+
+		<script>
+			Ti.App.addEventListener("app:updateApplicationContract", refresh);
+			Ti.API.info("[agco_lease.html] - app:createHTML");
+
+			function refresh(e) {
+				Ti.App.removeEventListener("app:updateApplicationContract", refresh);
+				Ti.API.info("[agco_lease.html] - app:updateApplicationContract");
+
+				try{
+					// Logo
+					document.getElementById('logo').src = e.logo || '';
+
+					// Customer Information
+					document.getElementById('customer_name').innerHTML = e.customerName;
+					document.getElementById('customer_phone').innerHTML = e.customerPhone;
+					document.getElementById('customer_email').innerHTML = e.customerEmail;
+					document.getElementById('date').innerHTML = e.date;
+
+					// Equipment Information
+					var equipmentTable = document.getElementById('table_equipment');
+
+					for(var i = 0; i < e.equipment.length; i++){
+						var equipmentInfo = e.equipment[i];
+						var equipmentRow = document.getElementById('equipment_row');
+						var newEquipmentRow = equipmentRow.cloneNode(true);
+						newEquipmentRow.getElementsByClassName('equipment_new')[0].innerHTML = equipmentInfo.use;
+						newEquipmentRow.getElementsByClassName('equipment_year')[0].innerHTML = equipmentInfo.year;
+						newEquipmentRow.getElementsByClassName('equipment_make')[0].innerHTML = equipmentInfo.make;
+						newEquipmentRow.getElementsByClassName('equipment_model')[0].innerHTML = equipmentInfo.model;
+						newEquipmentRow.getElementsByClassName('equipment_description')[0].innerHTML = equipmentInfo.description;
+						newEquipmentRow.getElementsByClassName('equipment_serial')[0].innerHTML = equipmentInfo.serialNumber;
+
+						equipmentTable.getElementsByTagName('tbody')[0].appendChild(newEquipmentRow);
+					}
+
+					var equipmentTotalRow = document.getElementById('equipment_total');
+					equipmentTable.getElementsByTagName('tbody')[0].appendChild(equipmentTotalRow);
+					document.getElementById('equipment_total_amount').innerHTML = '$' + e.equipmentCost;
+
+					// Trade-in Equipment
+					var tradeInTable = document.getElementById('table_trade-in');
+
+					for(var i = 0; i < e.tradeInEquipment.length; i++){
+						var tradeInEquipmentInfo = e.tradeInEquipment[i];
+						var tradeInEquipmentRow = document.getElementById('trade_in_equipment_row');
+						var newTradeInEquipmentRow = tradeInEquipmentRow.cloneNode(true);
+						newTradeInEquipmentRow.getElementsByClassName('trade_in_make')[0].innerHTML = tradeInEquipmentInfo.make;
+						newTradeInEquipmentRow.getElementsByClassName('trade_in_model')[0].innerHTML = tradeInEquipmentInfo.model;
+						newTradeInEquipmentRow.getElementsByClassName('trade_in_description')[0].innerHTML = tradeInEquipmentInfo.description;
+						
+
+						tradeInTable.getElementsByTagName('tbody')[0].appendChild(newTradeInEquipmentRow);
+					}
+
+					// Lease Quote Details
+					document.getElementById('payment_before_tax').innerHTML = '$' + e.paymentBeforeTax;
+
+					// Transaction Details
+					document.getElementById('equipment_price_total').innerHTML = '$' + e.equipmentCost;
+					document.getElementById('cash_down').innerHTML = e.cashDown;
+					document.getElementById('trade_allowance').innerHTML = e.tradeAllowance;
+					document.getElementById('trade_payoff').innerHTML = '$' + e.tradePayoff;
+					document.getElementById('fees').innerHTML = '$' + e.fees;
+
+					// Lease Structure
+					document.getElementById('contract_date').innerHTML = e.contractDate;
+					document.getElementById('first_payment_due').innerHTML = e.firstPaymentDue;
+					document.getElementById('term').innerHTML = e.term;
+					document.getElementById('payment_frequency').innerHTML = e.paymentFrequency;
+					// document.getElementById('interest_rate').innerHTML = e.interestRate;
+					document.getElementById('advance_payment').innerHTML = '$' + e.advancePayment;
+					document.getElementById('tax_in_advance').innerHTML = '$' + e.taxOnAdvance;
+					document.getElementById('purchase_option').innerHTML = e.purchaseOption;
+
+					// Additional Quote Information
+					document.getElementById('interest_waiver').innerHTML = e.interestWaiver;
+					document.getElementById('skip_payments_in').innerHTML = e.skipPayments.join(', ');
+
+
+					// Payment Schedule
+					document.getElementById('quote_date').innerHTML = e.quoteDate;
+					document.getElementById('advance_payment_amount').innerHTML = '$' + e.advancePayment;
+
+					var tableSchedule = document.getElementById('table_schedule');
+
+					for(var i = 0; i < e.paymentSchedule.length; i++){
+						var paymentScheduleInfo = e.paymentSchedule[i];
+						var paymentScheduleRow = document.getElementById('payment_schedule_row');
+						var newPaymentScheduleRow = paymentScheduleRow.cloneNode(true);
+						newPaymentScheduleRow.getElementsByClassName('payment_date')[0].innerHTML = paymentScheduleInfo.date;
+						newPaymentScheduleRow.getElementsByClassName('payment_amount')[0].innerHTML = '$' + paymentScheduleInfo.payment;
+						
+
+						tableSchedule.getElementsByTagName('tbody')[0].appendChild(newPaymentScheduleRow);
+					}
+
+					setTimeout(function() {
+						// Android workaround
+						var _html = encodeURI(document.documentElement.outerHTML);
+						// var doc = new DOMParser().parseFromString(_html, 'text/html');
+						// _html = new XMLSerializer().serializeToString(doc);
+						Ti.App.fireEvent('app:webViewUpdated', {
+							html : _html
+						});
+					}, 1000);
+				} catch(err) {
+					Ti.API.error("[ACGO Lease] HTML Error: ");
+					Ti.API.error(JSON.stringify(err, null, '\t'));
+					var paramError = {
+						error : err
+					};
+					Ti.App.fireEvent('app:webViewUpdated', paramError);	
+				}
+			}
+		</script>
+	</head>
+
+<body lang="en">
+	<div id="container">
+		<img id="logo" src="images/dll_logo@2x.png" height="45"/>
+		<h1>Lease Quote</h1>
+		<hr />
+		
+		<h2>Customer Information</h2>
+		<table id="table_customer">
+			<tbody>
+				<tr>
+					<td class="cell_title">Customer Name:</td>
+					<td class="cell_value" id="customer_name"></td>
+				</tr>
+				<tr>
+					<td class="cell_title">Customer Phone:</td>
+					<td class="cell_value" id="customer_phone"></td>
+				</tr>
+				<tr>
+					<td class="cell_title">Customer Email:</td>
+					<td class="cell_value" id="customer_email"></td>
+				</tr>
+				<tr>
+					<td class="cell_title">Date:</td>
+					<td class="cell_value" id="date"></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<h2>Equipment Information</h2>
+		<table id="table_equipment">
+			<tbody>
+				<tr>
+					<th>New / Used</th>
+					<th>Year</th>
+					<th>Make</th>
+					<th>Model</th>
+					<th>Description</th>
+					<th>Serial Number</th>
+				</tr>
+			</tbody>
+		</table>
+		
+		<h2>Trade-in Equipment</h2>
+		<table id="table_trade-in">
+			<tbody>
+				<tr>
+					<th>Make</th>
+					<th>Model</th>
+					<th class="cell_description">Description</th>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2>Lease Quote Details</h2>
+		<table id="table_payment_before_tax">
+			<tbody>
+				<tr>
+					<td>Payment Before Tax: *</td>
+					<td id="payment_before_tax"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table id="table_lease_quote_details">
+			<tbody>
+				<tr>
+					<th colspan="2">Transaction Details</th>
+					<th colspan="2">Lease Structure</th>
+					<th colspan="2">Additional Quote Information</th>
+				</tr>
+				<tr>
+					<td class="cell_title">Equipment Price:</td>
+					<td class="cell_value" id="equipment_price_total"></td>
+					<td class="cell_title">Contract Date:</td>
+					<td class="cell_value" id="contract_date"></td>
+					<td class="cell_title"></td>
+					<td class="cell_value" id="interest_waiver"></td>
+				</tr>
+				<tr>
+					<td class="cell_title">Cash Down:</td>
+					<td class="cell_value" id="cash_down"></td>
+					<td class="cell_title">First Payment Due:</td>
+					<td class="cell_value" id="first_payment_due"></td>
+					<td class="cell_title" colspan="2"></td>
+				</tr>
+				<tr>
+					<td class="cell_title">Trade Allowance:</td>
+					<td class="cell_value" id="trade_allowance"></td>
+					<td class="cell_title">Term (in months):</td>
+					<td class="cell_value" id="term"></td>
+					<td class="cell_value" id="skip_payments_in" colspan="2" rowspan="5"></td>
+				</tr>
+				<tr>
+					<td class="cell_title">Trade Pay Off:</td>
+					<td class="cell_value" id="trade_payoff"></td>
+					<td class="cell_title">Payment Frequency:</td>
+					<td class="cell_value" id="payment_frequency"></td>
+				</tr>
+				<tr>
+					<td class="cell_title">Fees:</td>
+					<td class="cell_value" id="fees"></td>
+					<td class="cell_title">Advance Payment:</td>
+					<td class="cell_value" id="advance_payment"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td class="cell_title">Tax on Advance:</td>
+					<td class="cell_value" id="tax_in_advance"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td class="cell_title">Purchase Option:</td>
+					<td class="cell_value" id="purchase_option"></td>
+					
+				</tr>
+				<!-- <tr>
+					<td></td>
+					<td></td>
+					
+				</tr> -->
+			</tbody>
+		</table>
+
+		<p id="note">*Note: All quote amounts are subject to final credit approval and other terms and conditions of AGCO Finance.  Payment amounts may be subject to tax.</p>
+
+		<h2>Payment Schedule</h2>
+		<table id="table_schedule">
+			<tbody>
+				<tr>
+					<td class="cell_title">Quote Date:</td>
+					<td class="cell_value" id="quote_date"></td>
+				</tr>
+				<tr>
+					<td class="cell_title">Advance Payment Amount:</td>
+					<td class="cell_value" id="advance_payment_amount"></td>
+				</tr>
+				<tr id="schedule_header">
+					<th>Payment Date</th>
+					<th>Payment</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="hiddenElements">
+		<table>
+			<tr id="equipment_row">
+				<td class="equipment_new"></td>
+				<td class="equipment_year"></td>
+				<td class="equipment_make"></td>
+				<td class="equipment_model"></td>
+				<td class="equipment_description"></td>
+				<td class="equipment_serial"></td>
+			</tr>
+			<tr id="equipment_total">
+				<td class="cell_title equipment_total_title" colspan="5">Equipment Total:</td>
+				<td class="cell_title cell_numeric" id="equipment_total_amount" colspan="1"></td>
+			</tr>
+			<tr id="trade_in_equipment_row">
+				<td class="trade_in_make"></td>
+				<td class="trade_in_model"></td>
+				<td class="trade_in_description cell_description"></td>
+			</tr>
+			<tr id="payment_schedule_row">
+				<td class="cell_value payment_date" ></td>
+				<td class="cell_value payment_amount" ></td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>

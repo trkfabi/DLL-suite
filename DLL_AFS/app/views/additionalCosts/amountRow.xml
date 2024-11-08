@@ -1,0 +1,11 @@
+<Alloy>
+	<View id='amountRow' class='additionalAmountRow'>
+		<Label id='amountTitle' class='additionalAmountTitle' />
+		<Button id='clearAmountButton' class='additionalClearButton' />
+		<Label class='currencySymbol' />
+		<TextField id='amountField' class='additionalField kbNumeric' />
+		<Label id='amountLabel' class='additionalField' />
+		<View class='textFieldUnderlineGray additionalUnderline' />
+		<View class='separatorBlack' />
+	</View>
+</Alloy>

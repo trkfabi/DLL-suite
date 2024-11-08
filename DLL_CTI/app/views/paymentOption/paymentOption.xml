@@ -1,0 +1,99 @@
+<Alloy>
+	<View id="container">
+
+		<View id="headerContainer">
+			<View id="paymentContainer">
+				<View id="leftColumn" />
+				<ImageView id="optionLinesImageView" />
+				<Label id="numberLabel" />
+
+				<Label id="paymentLabel" />
+
+				<Label class='currencySymbol' />
+				<Label id="paymentTotalLabel" />
+
+				<Button id="expandCollapseButton" />
+
+				<Label id="descriptionLabel" class="detailText" />
+				<Label id="financeLabel" class="detailText" />
+
+				<View class="paymentSeparator" />
+			</View>
+
+			<View id="optionsContainer">
+				<Button id="deleteButton" class="button" />
+				<View class="separator" />
+
+				<Button id="duplicateButton" class="button" />
+				<View class="separator" />
+
+				<Button id="goalSeekButton" class="button" />
+			</View>
+
+		</View>
+
+		<View id="detailContainer">
+			<View class="whiteSpace" id="whiteSpace1">
+				<View class="leftTab" />
+			</View>
+			<View id="interestRate" class="row">
+				<View class="leftTab" />
+				<Button class="clearIcon" id="interestRateClear" />
+				<Label id="interestRateLabel" class="rowTitle" />
+				<Label class='percentSymbol' />
+				<View id="interestContainer">
+					<TextField id="interestRateTextField" class="simpleText kbNumeric" />
+					<View class="inputDelimiter textFieldUnderlineGray" />
+				</View>
+			</View>
+
+			<View id="term" class="row">
+				<View class="leftTab" />
+				<Label id="termLabel" class="rowTitle" />
+			</View>
+
+			<View id="termRowControls" class="row multipleOptionsRow">
+				<View class="leftTab" />
+				<Require id="termsBar" class="paymentBar" src="common/tabbedBar" />
+			</View>
+
+			<View class="row" id="frequencyRow">
+				<View class="leftTab" />
+				<Label id="paymentFrequencyLabel" class="rowTitle" />
+			</View>
+			<View id="frequencyRowControls" class="row multipleOptionsRow">
+				<View class="leftTab" />
+				<Require id="frequencyBar" class="paymentBar" src="common/tabbedBar" />
+			</View>
+			<View class="whiteSpace" id="whiteSpace2">
+				<View class="leftTab" />
+			</View>
+
+			<View id="modifyStandardPaymentContainer">
+				<View id="modifyStandardHeader" class="row header">
+					<Label id="modifyStandardPaymentLabel" class="headerTitle" />
+					<Button id="modifyStandardPaymentButton" class="expandCollapseButton" />
+				</View>
+
+				<View id="ballon" class="row">
+					<View class="leftTab" />
+					<Label id="ballonLabel" class="rowTitle" />
+					<Label id="ballonCurrencySymbol" class='currencySymbolTest' />
+					<View id="ballonContainer">
+						<TextField id="ballonTextField" class="simpleText kbNumeric" />
+						<View class="inputDelimiter textFieldUnderlineGray" />
+					</View>
+				</View>
+
+			</View>
+
+			<View class="amortizationContainer">
+				<View class="leftTab" id="amortizationTab" />
+				<Button id="amortizationButton" class="bigButton" />
+			</View>
+			<View class="paymentSeparator" />
+
+
+		</View>
+	</View>
+</Alloy>

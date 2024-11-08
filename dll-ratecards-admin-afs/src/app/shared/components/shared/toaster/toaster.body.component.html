@@ -1,0 +1,16 @@
+<div class="toast-wrapper">
+	<div class="left">
+		<i
+			class="k-icon"
+			[class.k-i-close-circle.k-i-x-circle]="isErrorType"
+			[class.k-i-check-circle.k-i-checkmark-circle]="!isErrorType"
+			*ngIf="data.hasIcon"
+		></i>
+		{{ data.message }}
+	</div>
+
+	<div class="toast-actions right" *ngIf="data.hasButtons">
+		<button mat-button class="left" (click)="onCancelButtonClick($event)" #cancelButton>{{ data.cancelButtonText }}</button>
+		<button mat-button color="primary" class="left" (click)="onSaveButtonClick($event)" #saveButton>{{ data.saveButtonText }}</button>
+	</div>
+</div>

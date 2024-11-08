@@ -1,0 +1,25 @@
+<app-loading [isBusy]="!isRendered"></app-loading>
+<div *ngIf="isLoggedIn">
+	<app-sidebar #sidenav *ngIf="enableSideNav"></app-sidebar>
+	<mat-sidenav-container>
+		<mat-sidenav-content>
+			<app-nav-toolbar
+				[appTitle]="title"
+				[templateName]="templateName"
+				[isLoggedIn]="isLoggedIn"
+				[environment]="environment"
+				[rateCardsList]="rateCards"
+				[versionSelected]="versionSelected"
+				[rateCardSelected]="rateCardSelected"
+				[rateCardsVersionList]="rateCardsVersionList"
+				(openSideNavButtonClick)="handleOpenSideNavButtonClick($event)"
+				(logoutButtonClick)="handleLogoutButtonClick($event)"
+			>
+			</app-nav-toolbar>
+			<toaster-container [toasterconfig]="toastConfig" [ngClass]="{ 'has-toaster': hasToast }"></toaster-container>
+			<div class="wrapper content">
+				<router-outlet></router-outlet>
+			</div>
+		</mat-sidenav-content>
+	</mat-sidenav-container>
+</div>

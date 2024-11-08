@@ -1,0 +1,40 @@
+<div class="dialog-container compare-dialog align-center list list-versions list-item" *ngIf="versionsLength != 0">
+	<div class="compareContent">
+		<div class="select-a-rate-card-v">
+			<p>Select a rate card version to compare with: {{ versionName }}</p>
+		</div>
+		<div class="list-container">
+			<kendo-sortable
+				[data]="rateCardsVersionList"
+				[navigatable]="false"
+				[animation]="true"
+				[emptyText]="'No versions existing'"
+				[emptyItemClass]="'no-records records-message'"
+				class="compare-dialog list list-versions"
+				activeItemClass="compare-dialog items-manager-container active"
+			>
+				<ng-template let-item="item" let-index="index">
+					<div
+						class="list-versions list-item"
+						*ngIf="item.id !== currentVersion.id"
+						[class.active]="sIndex === index"
+						(click)="setIndex(index, item)"
+					>
+						<p class="text">
+							{{ item.versionName }}
+						</p>
+						<div *ngIf="sIndex === index" class="ic-check-white">
+							<img src="assets/images/dll/ic-check-white2x.png" width="16" height="16" alt="" />
+						</div>
+					</div>
+				</ng-template>
+			</kendo-sortable>
+		</div>
+	</div>
+</div>
+
+<div class="dialog-container compare-noversions-dialog align-center" *ngIf="versionsLength == 0">
+	<p>
+		You need at least 2 Versions on this Rate Card in order to compare.
+	</p>
+</div>

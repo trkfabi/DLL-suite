@@ -1,0 +1,23 @@
+<Alloy>
+	<View id='quoteOptionsView'>
+		<Require id='sectionHeader' src='summary/sectionHeader' />
+		<View id='container'>
+			<View id="quoteValidUntilView" class="quoteOptionRow">
+				<Label id="quoteValidUntilLabel" class="quoteOptionLabel" />
+				<TextField id="quoteValidUntilField" class="quoteOptionField" />
+				<View class="textFieldLine" />
+				<View id="quoteValidUntilIcon" class="quoteOptionIcon" />
+			</View>
+			<View id="quoteDisplayPaybackView" class="quoteOptionRow">
+				<Label id="quoteDisplayPaybackLabel" class="quoteOptionLabel" />
+				<Switch id="quoteDisplayPaybackSwitch" class="quoteOptionSwitch" />
+			</View>
+			<View id="pdfFilenameView" class="quoteOptionRow">
+				<Label id="pdfFilenameLabel" class="quoteOptionLabel" />
+				<TextField id="pdfFilenameField" class="quoteOptionField" />
+				<View class="textFieldLine" />
+				<View id="pdfFilenameIcon" class="quoteOptionIcon" />
+			</View>
+		</View>
+	</View>
+</Alloy>

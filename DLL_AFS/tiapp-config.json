@@ -1,0 +1,84 @@
+{
+	"global": {
+		"guid": "78d78b9a-8299-4913-9aaa-247da0b80598",
+		"properties": {
+			"appc-app-id": "58fe1b4a4d2096323e0070b3",
+			"acs-oauth-secret-development": "Af0tpeCheR4CC0rDw1juGw5Xz7RW2ee6",
+			"acs-oauth-key-development": "TfaqU61GMuigbtZurINwSshff7B08lQr",
+			"acs-api-key-development": "Jl3pefJbXms55BCHx5IDas3FCdHW5xVV",
+			"acs-username-development": "appc_app_user_dev",
+			"acs-password-development": "yOGUXlKzgWywa8jUPv",
+			"acs-oauth-secret-production": "bQghvPr6ZGNSOPMoK0kW7LExY140BNAk",
+			"acs-oauth-key-production": "mLTwgN2Ldwk4wafnHA8xPhIubXn9kemS",
+			"acs-api-key-production": "Pw7Wnke9lGoI63cEGiMVKqavDVsZVXcO",
+			"acs-username-production": "appc_app_user",
+			"acs-password-production": "wlprA4wdqgTVerN1XX",
+			"com-appcelerator-apm-id": ""
+		}
+	},
+	"dev": {
+		"appId": "com.dll.expressfinance.dev",
+		"appName": "AFS DEV",
+		"version:format": "major.minor|bump.0"
+	},
+	"upgrade-tst": {
+		"appId": "com.dll.expressfinance.upgrade.tst",
+		"appName": "AFS DEV Upgrade",
+		"version:format": "major.minor.0"
+	},
+	"upgrade-acc": {
+		"appId": "com.dll.expressfinance.upgrade.acc",
+		"appName": "AFS ACC Upgrade",
+		"version:format": "major.minor.1"
+	},
+	"test": {
+		"appId": "com.dll.expressfinance.test",
+		"appName": "AFS TEST",
+		"version:format": "major.minor.1"
+	},
+	"acc": {
+		"appId": "com.dll.expressfinance.acc",
+		"appName": "AFS ACC",
+		"version:format": "major.minor.2"
+	},
+	"stage": {
+		"appId": "com.dll.expressfinance.stage",
+		"appName": "AFS STAGE",
+		"version:format": "major.minor.3"
+	},
+	"demo": {
+		"appId": "com.dll.expressfinance.demo",
+		"appName": "AFS DEMO",
+		"version:format": "major.minor.4"
+	},
+	"sit-tst": {
+		"appId": "com.dll.expressfinance.sit.tst",
+		"appName": "AFS SIT TST",
+		"version:format": "major.minor.5"
+	},
+	"sit-acc": {
+		"appId": "com.dll.expressfinance.sit.acc",
+		"appName": "AFS SIT ACC",
+		"version:format": "major.minor.6"
+	},
+	"release": {
+		"appId": "com.dllstore.expressfinance.prod",
+		"appName": "Express Finance",
+		"guid": "77803eff-7954-416d-86fb-a335b977a056",
+		"version:format": "major.minor.7",
+		"properties": {
+			"appc-app-id": "53188c3b5778e6357800084d",
+			"acs-oauth-secret-development": "q7jdJC4Ob8sMCegmcVHCWerDgeOX7wEp",
+			"acs-oauth-key-development": "dHzFABQvEsz2eDiTmZYW7l8LHK9vRr0U",
+			"acs-api-key-development": "hIcM4PYGUAiCHiwxkQJdtmRIRAelsvzZ",
+			"acs-username-development": "appc_app_user_dev",
+			"acs-password-development": "VxqNmMiEMsmbuuOByQ",
+			"acs-oauth-secret-production": "PxzinMgtr4yfygzT3YnKu1DtUSMliVgV",
+			"acs-oauth-key-production": "RWHdtfYKWHOwMiSoB0HDw4XaWIqOHjG6",
+			"acs-api-key-production": "7J09BbnbmzNqF95dFLsBvsjNcGazyMm6",
+			"acs-username-production": "appc_app_user",
+			"acs-password-production": "HzKEMyzs4XgXjys7Ux",
+			"com-appcelerator-apm-id": "53188c49a613707b9a00007b"
+		}
+	}
+}

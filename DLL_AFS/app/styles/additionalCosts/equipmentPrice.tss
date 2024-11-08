@@ -1,0 +1,717 @@
+'TextField': {
+	bubbleParent: false
+},
+
+// Classes
+'.summaryContainer': {
+	backgroundColor: Alloy.Globals.colors.shark,
+},
+'.detailContainer': {
+	backgroundColor: Alloy.Globals.colors.shark,
+	height: Ti.UI.FILL,
+	bubbleParent: false
+},
+'.formLabel[platform=android]': {
+	left: 10,
+	font: {
+		fontSize: 15,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	},
+	color: Alloy.Globals.colors.geyser,
+	width: Ti.UI.SIZE,
+},
+'.formLabel[platform=ios]': {
+	left: 10,
+	font: {
+		fontSize: 15,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	},
+	color: Alloy.Globals.colors.geyser,
+	width: 140,
+	minimumFontSize: 9
+},
+'.summaryInputContainer': {
+	borderRadius: 6,
+	backgroundColor: Alloy.Globals.colors.shuttleGray,
+},
+'.detailInputContainer': {
+	borderWidth: 1,
+	borderRadius: 6,
+	borderColor: Alloy.Globals.colors.alabaster,
+	backgroundColor: Alloy.Globals.colors.shuttleGray,
+},
+'.currencySymbol': {
+	text: L('currency_symbol'),
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 12
+	},
+	color: Alloy.Globals.colors.white
+},
+'.currencySymbol[platform=ios]': {
+	left: 160,
+	width: 10,
+}
+'.currencySymbol[platform=android]': {
+	right: 153,
+	width: Ti.UI.SIZE
+},
+".row": {
+	top: 10,
+	height: 40,
+	width: Ti.UI.FILL
+},
+".separator": {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 2,
+	layout: 'vertical',
+	backgroundImage: '/images/im_quotescreen_pricepanel_divhline.png'
+},
+".separatorSelector": {
+	width: Ti.UI.FILL,
+	height: 1,
+	layout: 'vertical',
+	backgroundImage: '/images/im_quotescreen_pricepanel_divhline.png'
+}
+".topSeparator": {
+	top: 0,
+	bottom: null
+},
+".currencyOptions": {
+	height: 33,
+	top: 5,
+	width: 120,
+	right: 40,
+	borderRadius: 6,
+	backgroundColor: Alloy.Globals.colors.shuttleGray,
+	layout: "horizontal"
+},
+".simpleText": {
+	right: 50,
+	width: 100,
+	color: Alloy.Globals.colors.white,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	font: {
+		fontSize: 15,
+		fontFamily: Alloy.Globals.fonts.primary.bold
+	},
+},
+".simpleText[platform=android]": {
+	right: 47,
+	width: 113,
+	backgroundColor: 'transparent',
+	font: {
+		fontSize: 18,
+		fontFamily: Alloy.Globals.fonts.primary.bold
+	},
+}
+".simpleTextLeft": {
+	left: 15,
+	width: 100,
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontSize: 15,
+		fontFamily: Alloy.Globals.fonts.primary.bold
+	},
+},
+".simpleTextLeft[platform=android]": {
+	backgroundColor: 'transparent',
+	font: {
+		fontSize: 18,
+		fontFamily: Alloy.Globals.fonts.primary.bold
+	},
+}
+".largeField": {
+	right: 45,
+	width: 180,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT
+},
+".fieldBottomLineLeft": {
+	left: 10,
+	bottom: 5,
+	width: 111,
+	height: 5,
+	backgroundImage: '/images/im_quotescreen_pricepanel_linemid.png'
+},
+
+".largeBottomLine": {
+	right: 10,
+	width: 217,
+	backgroundImage: "/images/im_quotescreen_pricepanel_linelarge.png"
+},
+".switchButton": {
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.white
+},
+".clearIcon": {
+	width: 30,
+	height: 30,
+	right: 160,
+	visible: false,
+	bubbleParent: false
+},
+".clearIcon[platform=android]": {
+	backgroundImage: "/images/bt_quotescreen_clearfield.png"
+},
+".clearIcon[platform=ios]": {
+	top: 7,
+	image: "/images/bt_quotescreen_clearfield.png"
+},
+// IDs
+'#container': {
+	top: 0,
+	height: 85,
+	backgroundColor: Alloy.Globals.colors.shark,
+	expanded: false,
+	heightExpanded: Ti.UI.FILL,
+	heightCollapsed: 85
+	// layout : 'vertical'
+},
+'#summaryContainer': {
+	top: 0,
+	left: 0,
+	right: 0,
+	height: 43,
+},
+'#amountFinancedContainer': {
+	bottom: 0,
+	height: 43
+},
+'#equipmentPriceLabel': {
+	text: L('equipment_price'),
+	left: 10,
+},
+'#equipmentPriceInputContainer': {
+	height: 33,
+	top: 5,
+	width: 120,
+	right: 40,
+	layout: 'horizontal',
+},
+'#priceInputTextField': {
+	top: 0,
+	bottom: 0,
+	clearIcon: 'priceClear'
+},
+"#priceCleanImageView": {
+	image: "/images/ic_erasedata.png"
+},
+"#expandButton[platform=android]": {
+	width: 36,
+	height: 36,
+	right: 7,
+	expanded: false,
+	backgroundImage: '/images/bt_customerinfo_option_expand.png',
+	imageExpanded: '/images/bt_customerinfo_option_contract.png',
+	imageCollapsed: '/images/bt_customerinfo_option_expand.png'
+},
+"#expandButton[platform=ios]": {
+	width: 30,
+	height: 30,
+	right: 5,
+	expanded: false,
+	expandProperty: 'image',
+	image: '/images/bt_customerinfo_option_expand.png',
+	imageExpanded: '/images/bt_customerinfo_option_contract.png',
+	imageCollapsed: '/images/bt_customerinfo_option_expand.png'
+}
+'#detailContainer': {
+	top: 43,
+	bottom: 44,
+	width: Ti.UI.FILL,
+	layout: 'vertical',
+	contentWidth: "100%",
+	contentHeight: "auto"
+},
+"#financeContainer": {
+	top: 39,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: "vertical"
+},
+"#leaseContainer": {
+	top: 39,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: "vertical",
+	visible: false
+},
+
+"#residualCalculation": {
+	height: 0
+},
+"#residualCalculation[platform=ios]": {
+	clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED
+},
+'.equipmentAndAmountrow': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 43
+},
+
+'.inputTextField': {
+	top: 0,
+	bottom: 0,
+},
+
+/* Option Selector */
+"#optionsSelectorContainer": {
+	top: 0,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	height: 39
+},
+"#optionsSelectorContainer[platform=android]": {
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent,
+},
+"#optionsSelector": {
+	left: 20,
+	right: 20,
+	index: 0,
+	tintColor: Alloy.Globals.colors.white,
+},
+"#optionsSelector[platform=android]": {
+	markerColor: Alloy.Globals.colors.azureRadiance,
+	style: Alloy.Globals.tabbedBar.STYLE_HEADER
+},
+
+/* Cash Down Field */
+'#cashDownLabel': {
+	text: L('cash_down')
+},
+'#cashDownInputTextField': {
+	clearIcon: 'cashDownClear'
+},
+
+/* Equal Down */
+"#equalDownLabel": {
+	left: 10,
+	height: Ti.UI.FILL,
+	text: L('equal_down'),
+	touchEnabled: false,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+	}
+},
+
+"#equalDownSame": {
+	right: 0,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	layout: 'horizontal',
+	useSame: false
+},
+
+"#equalDownCheck": {
+	left: 5,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	touchEnabled: false,
+	image: '/images/bt_customerinfo_checkbox_out.png',
+	imageOff: '/images/bt_customerinfo_checkbox_out.png',
+	imageOn: '/images/bt_customerinfo_checkbox_active.png'
+},
+"#equalDownCheck[platform=ios]": {
+	image: '/images/bt_customerinfo_checkbox_out_w.png',
+	imageOff: '/images/bt_customerinfo_checkbox_out_w.png',
+	imageOn: '/images/bt_customerinfo_checkbox_active_w.png'
+},
+
+/* Trade Allowance */
+
+'#tradeAllowanceLabel': {
+	text: L('trade_allowance')
+},
+'#tradeAllowanceInputTextField': {
+	clearIcon: 'tradeAllowanceClear'
+},
+
+/* Trade Pay Off */
+
+'#tradePayOffLabel': {
+	text: L('trade_pay_off')
+},
+'#tradePayOffInputTextField': {
+	clearIcon: 'tradePayOffClear'
+},
+
+/* Insurance */
+"#insuranceLabelFinance": {
+	text: L('insurance'),
+},
+"#insuranceLabelLease": {
+	text: L('insurance'),
+},
+
+"#insuranceCheck": {
+	right: 0,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	checked: false,
+	image: '/images/bt_customerinfo_checkbox_out.png',
+	imageOff: '/images/bt_customerinfo_checkbox_out.png',
+	imageOn: '/images/bt_customerinfo_checkbox_active.png'
+},
+"#insuranceCheck[platform=ios]": {
+	image: '/images/bt_customerinfo_checkbox_out_w.png',
+	imageOff: '/images/bt_customerinfo_checkbox_out_w.png',
+	imageOn: '/images/bt_customerinfo_checkbox_active_w.png'
+},
+"#insuranceCheck[platform=android]": {
+	right: 7,
+	width: 36,
+	height: 36,
+},
+"#insuranceCheckFinance": {
+	right: 0,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	checked: false,
+	image: '/images/bt_customerinfo_checkbox_out.png',
+	imageOff: '/images/bt_customerinfo_checkbox_out.png',
+	imageOn: '/images/bt_customerinfo_checkbox_active.png'
+},
+"#insuranceCheckFinance[platform=ios]": {
+	image: '/images/bt_customerinfo_checkbox_out_w.png',
+	imageOff: '/images/bt_customerinfo_checkbox_out_w.png',
+	imageOn: '/images/bt_customerinfo_checkbox_active_w.png'
+},
+"#insuranceCheckFinance[platform=android]": {
+	right: 7,
+	width: 36,
+	height: 36,
+},
+"#residualCalculatorButton": {
+	right: 0,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	image: '/images/ic_residualcalc_contracted.png',
+	imageContracted: '/images/ic_residualcalc_contracted.png',
+	imageExpanded: '/images/ic_residualcalc_expanded.png'
+},
+"#residualCalculatorButton[platform=android]": {
+	right: 7,
+	width: 28,
+	height: 36,
+},
+"#closeResidualCalculator": {
+	right: 10,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	image: '/images/ic_erasedata.png',
+},
+
+"#feesLeaseLabel": {
+	text: L('fees')
+},
+
+/* Factor */
+
+'#factorInputTextField': {
+	hintText: L('factor'),
+	clearIcon: "factorAmountClear"
+},
+
+'#factorAmountInputTextField': {
+	touchEnabled: false
+},
+
+'#factorLeaseInputTextField': {
+	hintText: L('factor'),
+	clearIcon: "factorLeaseAmountClear"
+},
+"#factorAmountLeaseInputTextField": {
+	touchEnabled: false,
+	// clearIcon : "factorLeaseAmountClear"	
+}
+
+/* Fees */
+
+'#feesLabel': {
+	text: L('fees')
+},
+'#feesInputTextField': {
+	clearIcon: 'feesClear'
+},
+
+/* Taxes */
+
+'#taxesLabel': {
+	text: L('taxes')
+},
+
+'#taxesPercentInputTextField': {
+	width: 60,
+	right: 180
+},
+
+"#taxesFieldBottomLine": {
+	right: 170,
+	bottom: 5,
+	width: 80,
+	height: 5,
+	backgroundImage: '/images/im_quotescreen_pricepanel_linemid.png'
+},
+
+'#taxesPercentSymbol': {
+	right: 240,
+	width: 15,
+	text: L('percent_symbol'),
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 12
+	},
+	color: Alloy.Globals.colors.white
+},
+
+'#taxesInputTextField': {
+	clearIcon: 'taxesClear'
+},
+
+'#taxesClear': {
+	right: 10
+},
+
+/* Residual Value */
+
+'#residualValueExpandInputTextField': {
+	hintText: L('original_invoice')
+},
+
+'#residualValueExpandInputTextField': {
+	hintText: L('residual')
+},
+
+"#residualValueExpandCheck": {
+	right: 5,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	touchEnabled: false,
+	image: '/images/bt_quotescreen_cancel.png',
+},
+
+/* Residual Value */
+'#residualValueLabel': {
+	text: L('residual_value')
+},
+
+'#residualValueButton': {
+	right: 5,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	image: '/images/bt_quotescreen_picklist.png'
+},
+
+/* Advance Payment */
+
+"#advancePaymentLabel": {
+	text: L('adv_payment')
+},
+
+'#advancePaymentInputTextField': {
+	touchEnabled: false
+},
+
+/* Taxes on Adv */
+"#taxesOnAdvLabel": {
+	text: L('tax_on_advance')
+}
+
+'#taxesOnAdvInputTextField': {
+	clearIcon: 'taxesOnAdvClear',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+},
+
+'#taxesOnAdvCurrencySymbol': {
+	left: 10,
+	width: 15,
+	text: L('percent_symbol')
+},
+"#percentalResidualCurrencySymbol": {
+	text: L('percent_symbol'),
+	width: 12
+},
+
+"#cashDownInputLeaseTextField": {
+	clearIcon: "cashDownLeaseClear"
+},
+"#tradeAllowanceLeaseInputTextField": {
+	clearIcon: "tradeAllowanceLeaseClear"
+},
+"#tradePayOffInputLeaseTextField": {
+	clearIcon: "tradePayOffLeaseClear"
+},
+"#feesLeaseInputTextField": {
+	clearIcon: "feesLeaseClear"
+},
+"#residualValueInputTextField": {
+	clearIcon: "residualClear"
+}
+
+"#typeContainer": {
+	borderWidth: 1,
+	borderRadius: 6,
+	borderColor: Alloy.Globals.colors.alabaster,
+	left: 10,
+	right: 10,
+	top: 8,
+	bottom: 7,
+	height: Ti.UI.FILL
+},
+"#financeButton": {
+	left: '10%',
+	width: "35%",
+	height: 34,
+	title: L("finance_uppercase"),
+	borderWidth: 1,
+	borderRadius: 5,
+	borderColor: Alloy.Globals.colors.white,
+	color: Alloy.Globals.colors.white,
+},
+"#leaseButton": {
+	color: Alloy.Globals.colors.white,
+	right: "10%",
+	width: "35%",
+	height: 34,
+	title: L("lease_uppercase"),
+	borderWidth: 1,
+	borderRadius: 5,
+	borderColor: Alloy.Globals.colors.white,
+},
+"#tradeUpRow": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: "vertical"
+},
+"#tradeUpLabel": {
+	text: L('trade_up')
+},
+"#tradeUpAmountTextField": {
+	top: 0,
+	bottom: 0,
+	clearIcon: 'tradeAmountClear'
+},
+"#customerNameTextField": {
+	hintText: L("customer_name")
+},
+"#customerOptions": {
+	height: 40,
+	top: 5,
+	left: 10,
+	right: 40,
+	borderRadius: 6,
+	backgroundColor: Alloy.Globals.colors.shuttleGray,
+},
+"#searchCustomerButton": {
+	height: 30,
+	width: 30,
+	right: 10,
+	image: "/images/ic_search.png"
+},
+"#searchCustomerButton[platform=ios]": {
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+},
+"#customerNameContainer": {
+	top: 5
+},
+"#servicePaymentLabel": {
+	text: L('service_payment')
+},
+"#servicePaymentTextField": {
+	top: 0,
+	bottom: 0,
+	clearIcon: 'servicePaymentClear'
+},
+"#allowanceLabel": {
+	text: L('allowance')
+},
+"#addAllowance": {
+	right: 10,
+	image: "/images/ic_add.png"
+},
+"#addAllowance[platform=ios]": {
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+},
+'#amountFinancedInputContainer': {
+	height: 33,
+	top: 5,
+	width: 120,
+	right: 40,
+	layout: 'horizontal',
+},
+'#amountFinancedLabel': {
+	text: L('amount_financed'),
+	left: 10,
+	touchEnabled: false
+},
+'#amountFinancedTextField': {
+	top: 0,
+	bottom: 0,
+	editable: false
+},
+
+"#amountLabel": {
+	text: L('trade_up_amount')
+},
+
+"#allowanceContainer": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+"#originalBottomLine": {
+	left: 30,
+	width: 100,
+},
+"#originalInvoiceClear": {
+	left: 3
+},
+"#originalCurrencySymbol": {
+	left: 29
+},
+"#originalInvoiceInputTextField": {
+	hintText: L("original_invoice"),
+	left: 20,
+	width: 95,
+	clearIcon: 'originalInvoiceClear'
+},
+"#originalInvoiceInputTextField[platform=ios]": {
+	width: 90
+},
+"#percentualResidualClear": {
+	right: 160
+},
+"#percentualResidualInputTextField": {
+	hintText: L("residual"),
+	width: 95,
+	clearIcon: 'percentualResidualClear'
+},
+"#percentualResidualInputTextField[platform=ios]": {
+	width: 90
+},
+"Button[platform=android]": {
+	backgroundColor: "transparent",
+	borderColor: "transparent"
+},
+'.financeOptionWrapper': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical',
+	visible: false
+},
+'#financeOptionsContainer': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+},
+
+".smoothGray": {
+	color: Alloy.Globals.colors.nevada
+},
+".shadowGray": {
+	backgroundColor: Alloy.Globals.colors.abbey
+},

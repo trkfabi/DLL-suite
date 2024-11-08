@@ -1,0 +1,176 @@
+<div class="relative dashboard main-content item-manager">
+	<header>
+		<h2>
+			Manage Products
+		</h2>
+		<span class="subtitle">Drag categories and products to change order.</span>
+		<button class="btn-orange-pink" (click)="onReturnButtonClick($event)">
+			Done
+		</button>
+	</header>
+	<div class="items-manager-container">
+		<div class="column column-left">
+			<header>
+				<h4>Categories</h4>
+				<button class="k-button" (click)="onAddNewItemButtonClick($event, 'productCategory', dialogActions)">
+					Add New
+				</button>
+			</header>
+			<div class="categories">
+				<div class="content">
+					<div class="list-container" *ngIf="productCategories">
+						<kendo-sortable
+							[kendoSortableBinding]="productCategories"
+							[navigatable]="false"
+							[animation]="true"
+							[emptyText]="'No categories added'"
+							[emptyItemClass]="'no-records records-message with-icon icon-category no-recordsCategory'"
+							(dragStart)="onDragEventStart(0, $event, 'productCategory')"
+							(dragEnd)="onDragEventEnds(lastIndex, $event, 'productCategory')"
+							class="list list-categories category list-kendo"
+						>
+							<ng-template let-item="item" let-index="index">
+								<div
+									class="list-item category"
+									[class.active]="categorySelected.id === item.id"
+									*ngIf="!item.deleted"
+									#sortItem
+								>
+									<div
+										*ngIf="isRemoving !== item"
+										(click)="onViewChildrenItemsClick($event, { type: 'productCategory', item: item, index: index })"
+									>
+										<i class="k-icon k-i-handler-drag"></i>
+										<span class="title">{{ item.name }}</span>
+										<i
+											class="k-icon k-i-edit"
+											(click)="
+												onEditItemButtonClick(
+													$event,
+													{ type: 'productCategory', item: item, index: index },
+													dialogActions
+												)
+											"
+										></i>
+										<i
+											class="k-icon k-i-trash"
+											(click)="
+												onRemoveItemButtonClick(
+													$event,
+													{ type: 'productCategory', item: item, index: index },
+													dialogActions
+												)
+											"
+										></i>
+									</div>
+									<div *ngIf="isRemoving === item" class="removing">
+										<span class="removeMessage">{{ removeMessage }}</span>
+										<i
+											class="k-icon k-i-trash"
+											(click)="
+												onConfirmRemoveItemButtonClick(
+													$event,
+													{ type: 'productCategory', item: item, index: index },
+													dialogActions
+												)
+											"
+										></i>
+										<i
+											class="k-icon k-i-cancel"
+											(click)="
+												onCancelRemoveItemButtonClick(
+													$event,
+													{ type: 'productCategory', item: item, index: index },
+													dialogActions
+												)
+											"
+										></i>
+									</div>
+								</div>
+							</ng-template>
+						</kendo-sortable>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="column column-right">
+			<header>
+				<h4>Products</h4>
+				<button class="k-button" [disabled]="!categorySelected" (click)="onAddNewItemButtonClick($event, 'product', dialogActions)">
+					Add New
+				</button>
+				<div class="message">
+					Add products to the category selected.
+				</div>
+			</header>
+			<div class="products">
+				<div class="content">
+					<div class="list-container">
+						<kendo-sortable
+							[navigatable]="false"
+							[animation]="true"
+							[emptyText]="'No products added'"
+							[emptyItemClass]="'no-records records-message with-icon icon-product'"
+							(dragStart)="onDragEventStart(0, $event)"
+							(dragEnd)="onDragEventEnds(lastIndex, $event, 'product')"
+							[kendoSortableBinding]="productsFiltered"
+							class="list list-products list-kendo"
+						>
+							<ng-template let-item="item" let-index="index">
+								<div class="list-item product" *ngIf="item.categoryId === categorySelected.id && !item.deleted" #sortItem>
+									<div *ngIf="isRemoving !== item">
+										<i class="k-icon k-i-handler-drag"></i>
+										<span class="title title-product">{{ item.name }}</span>
+										<span class="itad">
+											<span *ngIf="item.hasItad">ITAD</span>
+										</span>
+										<span class="rates-enabled">
+											<span>{{ displayRatesEnabled(item) }}</span>
+										</span>
+										<i
+											class="k-icon k-i-edit"
+											(click)="
+												onEditItemButtonClick($event, { type: 'product', item: item, index: index }, dialogActions)
+											"
+										></i>
+										<i
+											class="k-icon k-i-trash"
+											(click)="
+												onRemoveItemButtonClick(
+													$event,
+													{ type: 'product', item: item, index: index },
+													dialogActions
+												)
+											"
+										></i>
+									</div>
+								</div>
+							</ng-template>
+						</kendo-sortable>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div kendoDialogContainer></div>
+	<ng-template #dialogActions>
+		<div class="buttons">
+			<button
+				kendoButton
+				[disabled]="dialogRef.content.instance.disableOkButton"
+				(click)="handleDialogSubmitButtonClick($event)"
+				class="k-button k-primary"
+			>
+				{{ buttonAction }}
+			</button>
+			<button kendoButton (click)="handleDialogCloseButtonClick($event)" class="k-button">Cancel</button>
+		</div>
+	</ng-template>
+
+	<ng-template #dialogActionsUnexpectedError>
+		<div class="buttons">
+			<button kendoButton (click)="dialogActionsUnexpectedErrorClose($event)" class="k-button k-primary">OK</button>
+		</div>
+	</ng-template>
+</div>

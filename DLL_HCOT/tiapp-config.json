@@ -1,0 +1,74 @@
+{
+	"global": {
+		"guid": "81a303a8-a37c-4e6e-9888-f71c916d2f10",
+		"properties": {
+			"appc-app-id": "58d58a825897917136bf4cc1",
+			"acs-oauth-secret-development": "WqFygc3JURXk93V18hSCgixYjHmC1pJx",
+			"acs-oauth-key-development": "Q3n9sMQ33QhqP0DlJ9du7VOT1ej4lczn",
+			"acs-api-key-development": "Rw53cTtV246AJQm6jdsKhklhVN9nHWSJ",
+			"acs-username-development": "appc_app_user_dev",
+			"acs-password-development": "QPK9VLqDUAq5BXvKai",
+			"acs-oauth-secret-production": "F8YDjd4bdibznB9WLeVGQHFoyw0kot3C",
+			"acs-oauth-key-production": "Wc8baZYbh3bXtHXzanptpdtYx18S6dCK",
+			"acs-api-key-production": "ExTpZl7KzLxvtqZ938PT0VN4CZrvxtwi",
+			"acs-username-production": "appc_app_user",
+			"acs-password-production": "mKYF1nvFsNzXLchERd",
+			"com-appcelerator-apm-id": "c49e5c5e0d074ee2b005bad4443d8c5600555300"
+		}
+	},
+	"dev": {
+		"appId": "com.othc.expressfinance.dev",
+		"appName": "OTHC DEV",
+		"version:format": "major.minor|bump.0"
+	},
+	"test": {
+		"appId": "com.othc.expressfinance.test",
+		"appName": "OTHC TEST",
+		"version:format": "major.minor.1"
+	},
+	"acc": {
+		"appId": "com.othc.expressfinance.acc",
+		"appName": "OTHC ACC",
+		"version:format": "major.minor.2"
+	},
+	"stage": {
+		"appId": "com.othc.expressfinance.stage",
+		"appName": "ExpFinanceTech",
+		"version:format": "major.minor.3"
+	},
+	"demo": {
+		"appId": "com.othc.expressfinance.demo",
+		"appName": "OTHC DEMO",
+		"version:format": "major.minor.4"
+	},
+	"sit_tst": {
+		"appId": "com.othc.expressfinance.sit.tst",
+		"appName": "OTHC SIT TST",
+		"version:format": "major.minor.5"
+	},
+	"sit_acc": {
+		"appId": "com.othc.expressfinance.sit.acc",
+		"appName": "OTHC SIT ACC",
+		"version:format": "major.minor.6"
+	},
+	"release": {
+		"appId": "com.othcstore.expressfinance.prod",
+		"appName": "ExpFinanceTech",
+		"guid": "2d23d433-cb8d-4387-9ddd-895c738c0ccf",
+		"version:format": "major.minor.7",
+		"properties": {
+			"appc-app-id": "58fe1bc74d2096323e0070c6",
+			"acs-oauth-secret-development": "gUeVxRK2AGQS8vCQSQsRoMNsgvK8CB30",
+			"acs-oauth-key-development": "eBruRxPT1KFRRnocRx6xSDPo2D4UORyj",
+			"acs-api-key-development": "DyrQX006OUquH1waitoom3rnG5gkQiYH",
+			"acs-username-development": "appc_app_user_dev",
+			"acs-password-development": "LiFiFDvvossI30Zyi1",
+			"acs-oauth-secret-production": "9ms1l84kRxbg7XSlPIi56zQaULIU5INA",
+			"acs-oauth-key-production": "8xHkv0clnz2ySmQa0VVsQnrwCyKqzZan",
+			"acs-api-key-production": "wt4pz9kKhy5IMXLDbgMAgW7wXuOZ7qfg",
+			"acs-username-production": "appc_app_user",
+			"acs-password-production": "2b5EyxDhrzMgqpAQSZ",
+			"com-appcelerator-apm-id": "4239157c485d46f089eb0d6c6a0fb33500555300"
+		}
+	}
+}

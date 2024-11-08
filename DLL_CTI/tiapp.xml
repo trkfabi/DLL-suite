@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+	<id>com.cti.expressfinance.dev</id>
+	<name>CTI DEV</name>
+	<version>6.21.0</version>
+	<publisher>propelics</publisher>
+	<url>http://propelics.com</url>
+	<description>not specified</description>
+	<copyright>2017 by propelics</copyright>
+	<icon>appicon.png</icon>
+	<persistent-wifi>false</persistent-wifi>
+	<prerendered-icon>false</prerendered-icon>
+	<statusbar-style>default</statusbar-style>
+	<statusbar-hidden>false</statusbar-hidden>
+	<fullscreen>false</fullscreen>
+	<navbar-hidden>false</navbar-hidden>
+	<analytics>true</analytics>
+	<guid>a01cc2fd-ec8b-4112-9ddd-05cda7f32012</guid>
+	<property name="ti.ui.defaultunit" type="string">dp</property>
+	<property name="run-on-main-thread" type="bool">true</property>
+	<property name="com-appcelerator-aca" type="string">1.4.1</property>
+	<android xmlns:android="http://schemas.android.com/apk/res/android">
+		<manifest versionCode="3">
+			<application android:debuggable="true" android:largeHeap="true" android:theme="@style/Theme.NoActionBar">
+				<activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name=".CtiDevActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Titanium">
+					<intent-filter>
+						<action android:name="android.intent.action.MAIN" />
+						<category android:name="android.intent.category.LAUNCHER" />
+					</intent-filter>
+				</activity>
+				<activity android:name="org.appcelerator.titanium.TiActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize" />
+			</application>
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+			<uses-permission android:name="android.permission.GET_TASKS" />
+		</manifest>
+	</android>
+	<mobileweb>
+		<precache/>
+		<splash>
+			<enabled>true</enabled>
+			<inline-css-images>true</inline-css-images>
+		</splash>
+		<theme>default</theme>
+	</mobileweb>
+	<modules>
+		<module platform="iphone">com.mfogg.squarecamera</module>
+		<module platform="iphone">com.appcelerator.aca</module>
+		<module platform="iphone">dk.napp.drawer</module>
+		<module platform="commonjs">ti.cloud</module>
+		<module platform="iphone">ti.paint</module>
+		<module platform="iphone">dk.napp.pdf.creator</module>
+		<module platform="iphone">ti.imagefactory</module>
+	</modules>
+	<deployment-targets>
+		<target device="android">false</target>
+		<target device="blackberry">false</target>
+		<target device="ipad">false</target>
+		<target device="iphone">true</target>
+		<target device="mobileweb">false</target>
+		<target device="tizen">false</target>
+	</deployment-targets>
+	<sdk-version>9.0.3.GA</sdk-version>
+	<plugins>
+		<plugin version="1.0">ti.alloy</plugin>
+	</plugins>
+	<ios>
+		<plist>
+			<dict>
+				<key>UIUserInterfaceStyle</key>
+				<string>Light</string>
+				<key>UISupportedInterfaceOrientations~iphone</key>
+				<array>
+					<string>UIInterfaceOrientationPortrait</string>
+				</array>
+				<key>UISupportedInterfaceOrientations~ipad</key>
+				<array>
+					<string>UIInterfaceOrientationPortrait</string>
+					<string>UIInterfaceOrientationPortraitUpsideDown</string>
+					<string>UIInterfaceOrientationLandscapeLeft</string>
+					<string>UIInterfaceOrientationLandscapeRight</string>
+				</array>
+				<key>NSCameraUsageDescription</key>
+				<string>Photograph Driver's License</string>
+				<key>NSPhotoLibraryUsageDescription</key>
+				<string>Select Driver's License</string>
+				<key>NSAppleMusicUsageDescription</key>
+				<string>Select Driver's License</string>
+			</dict>
+		</plist>
+	</ios>
+	<property name="ti.android.useLegacyWindow" type="bool">true</property>
+	<property name="appc-app-id" type="string">58dd7b132825c69c7aa51111</property>
+	<property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
+	<property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
+	<property name="acs-oauth-secret-development" type="string">czBuC6bXIBWV4wDg5STkr23htebE0AWV</property>
+	<property name="acs-oauth-key-development" type="string">ch70suFIZy6hwe71MXuwJi6In8j5hvqG</property>
+	<property name="acs-api-key-development" type="string">PjHFwyIzX6mV7wzPnMW2LOFnq6iAqVx0</property>
+	<property name="acs-username-development" type="string">appc_app_user_dev</property>
+	<property name="acs-password-development" type="string">WxGo23yzyyexKFArTs</property>
+	<property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
+	<property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
+	<property name="acs-oauth-secret-production" type="string">7siauZDfXNuJMboBg3Nm0bUcAUpNBzI5</property>
+	<property name="acs-oauth-key-production" type="string">DTrYUj7bmpfBOwkJRn5lpA3lKK6Zk3rM</property>
+	<property name="acs-api-key-production" type="string">TSIxB6rCG6AD42kYgYseKOhvJn8We3kM</property>
+	<property name="acs-username-production" type="string">appc_app_user</property>
+	<property name="acs-password-production" type="string">NzzOnKobPz5IWveKHD</property>
+	<property name="appc-org-id" type="string">100000373</property>
+	<property name="appc-creator-user-id" type="string">e496325b-d695-4131-980c-06cf94e34eb4</property>
+	<property name="com-appcelerator-apm-id" type="string">16b78f2930dc47e8b7767b158437a7f200555300</property>
+</ti:app>

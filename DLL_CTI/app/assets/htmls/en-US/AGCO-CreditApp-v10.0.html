@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>AGCO-CreditApp-v10.0</title>
+		<style type="text/css">
+
+			body {
+				background-color: #FFF;
+			}
+
+			h1 {
+				text-align: right;
+				font-size: 13px;
+				font-weight: bold;
+			}
+
+			h2 {
+				clear: both;
+				margin-top: 10pt;
+				margin-bottom: 3pt;
+				font-size: 11px;
+				font-weight: bold;
+			}
+
+			hr {
+				display: block;
+				margin: 0.3cm 0;
+				width: 100%;
+				height: 2px;
+				border: 0;
+				border-top: 1px solid #000;
+				background-color: #000;
+			}
+
+			table {
+				width: 100%;
+				font-size: 8px;
+				border: 1px solid #CCC;
+				border-collapse: collapse;
+			}
+
+			td{
+				padding: 2pt 3pt 2pt 3pt;
+				border: 1px solid #CCC;
+				height: 15px;
+			}
+			
+			#container {
+				/*width: 22cm;*/
+				/*height: 28cm;*/
+				padding: 0.18cm 0.63cm 0.63cm 0.76cm;
+				background-color: #FFF;
+			}
+
+			#advice {
+				font-size: 8.5px;
+				text-align: justify;
+				line-height: 1.5em;
+			}
+
+			#table_signature td {
+				vertical-align: top;
+			}
+
+			#div_license {
+				clear: both;
+				margin-top: 25cm;
+				text-align: center;
+			}
+
+			#img_license {
+				max-width: 7cm;
+			}
+
+			.row_no_border td {
+				border: none !important;
+			}
+
+			.hidden {
+				visibility: hidden;
+				display: none;
+			}
+
+			.floatRight {
+				/*float: right;*/
+			}
+
+			.floatLeft {
+				/*float: left;*/
+			}
+
+			#hiddenElements {
+				visibility:  hidden;
+			}
+
+			.hiddenElements {
+				visibility:  hidden;
+			}
+			.innerTable td {
+				border: 1px solid #FFFFFF !important;
+			}
+			.innerTable {
+				border: 1px solid #FFFFFF !important;
+			}
+
+		</style>
+		<script>
+			Ti.API.info("[agco_credit.html] - app:createHTML");
+			
+			Ti.App.addEventListener("app:updateApplicationContract", refresh);
+			Ti.App.addEventListener("app:updateTerms", loadEvent);
+
+			function loadEvent () {
+				Ti.App.removeEventListener("app:updateApplicationContract", refresh);
+				Ti.App.removeEventListener("app:updateTerms", loadEvent);
+				
+				Ti.API.info("[agco_credit.html] - loadEvent()");
+				
+				var termsContent = "";
+				var termsElement = document.getElementById('terms_conditions');
+				termsElement && (termsContent = encodeURI(termsElement.innerHTML));
+				
+				Ti.App.fireEvent('app:creditLoaded', { terms : termsContent });
+			}
+
+			function refresh(e){
+				Ti.App.removeEventListener("app:updateApplicationContract", refresh);
+				Ti.App.removeEventListener("app:updateTerms", loadEvent);
+				
+				Ti.API.info("[agco_credit.html] - refresh()");
+
+				try{
+
+					document.getElementById('first_name').innerHTML = e.firstName;
+					document.getElementById('middle_name').innerHTML = e.middleName;
+					document.getElementById('last_name').innerHTML = e.lastName;
+					document.getElementById('ssn').innerHTML = e.ssn;
+					document.getElementById('dob').innerHTML = e.dob;
+					document.getElementById('phone_1').innerHTML = e.phone1;
+					document.getElementById('phone_2').innerHTML = e.phone2;
+					document.getElementById('email').innerHTML = e.email;
+					document.getElementById('physical_address').innerHTML = e.physicalAddress;
+					document.getElementById('city').innerHTML = e.city;
+					document.getElementById('state').innerHTML = e.state;
+					document.getElementById('zip').innerHTML = e.zip;
+					document.getElementById('mailing_address').innerHTML = e.mailingAddress;
+					document.getElementById('mailing_city').innerHTML = e.mailingCity;
+					document.getElementById('mailing_state').innerHTML = e.mailingState;
+					document.getElementById('mailing_zip').innerHTML = e.mailingZip;
+					document.getElementById('legal_name').innerHTML = e.legalName;
+					document.getElementById('signature_img').src = e.signature;
+					document.getElementById('date').innerHTML = e.date;
+
+					if(e.customerType){
+						var element = document.getElementById(e.customerType);
+						element && (element.innerHTML = element.innerHTML.replace('[]', '[x]'));
+					}
+
+
+					// document.getElementById('farm_usage').innerHTML = 'Farm ' + e.equipmentUsage.farmUsage + ' %';
+					// document.getElementById('personal_usage').innerHTML = 'Personal ' + e.equipmentUsage.personalUsage + ' %';
+					// document.getElementById('construction_usage').innerHTML = 'Construction ' + e.equipmentUsage.constructionUsage + ' %';
+					// document.getElementById('commercial_usage').innerHTML = 'Commercial/Custom ' + e.equipmentUsage.commercialUsage + ' %';
+
+
+					// var tableCustomers = document.getElementById('table_customer');
+					// for(var i = 0, j = e.equipmentUsage.length; i < j; i++){
+					// 	var equipmentUsageInfo = e.equipmentUsage[i];
+					// 	var equipmentUsageRow = document.getElementById('equipment_usage_row');
+					// 	var newEquipmentUsageRow = equipmentUsageRow.cloneNode(true);
+					// 	newEquipmentUsageRow.getElementsByClassName('equipmeent_name')[0].innerHTML = equipmentUsageInfo.name;
+
+					// 	equipmentUsageInfo.farmUsage && (newEquipmentUsageRow.getElementsByClassName('farm_usage')[0].innerHTML = 'Farm ' + equipmentUsageInfo.farmUsage + '%');
+					// 	equipmentUsageInfo.personalUsage && (newEquipmentUsageRow.getElementsByClassName('personal_usage')[0].innerHTML = 'Personal ' + equipmentUsageInfo.personalUsage + '%');
+					// 	equipmentUsageInfo.constructionUsage && (newEquipmentUsageRow.getElementsByClassName('construction_usage')[0].innerHTML = 'Construction ' + equipmentUsageInfo.constructionUsage + '%');
+					// 	equipmentUsageInfo.commercialUsage && (newEquipmentUsageRow.getElementsByClassName('commercial_usage')[0].innerHTML = 'Comercial/Custom ' + equipmentUsageInfo.commercialUsage + '%');
+
+					// 	tableCustomers.getElementsByTagName('tbody')[0].appendChild(newEquipmentUsageRow);
+					// }
+
+					if(e.hasLicense){
+						document.getElementById('img_license').src = e.license;
+					} else {
+						block = document.getElementById('div_license');
+						fatherBlock = block.parentNode;
+						fatherBlock.removeChild(block);
+					}
+
+
+					setTimeout(function() {
+						// Android workaround
+						var _html = encodeURI(document.documentElement.outerHTML);
+						// var doc = new DOMParser().parseFromString(_html, 'text/html');
+						// _html = new XMLSerializer().serializeToString(doc);
+						Ti.App.fireEvent('app:webViewUpdated', {
+							html : _html
+						});	
+					}, 1000);
+				} catch(err){
+					Ti.API.error("[ACGO Lease] HTML Error: ");
+					Ti.API.error(JSON.stringify(err, null, '\t'));
+					var paramError = {
+						error : err
+					};
+					Ti.App.fireEvent('app:webViewUpdated', paramError);	
+
+				}
+			}
+		</script>
+	</head>
+
+<body lang="en">
+	<div id="container">
+		<table class="innerTable">
+			<tr>
+				<td style="width:50%; padding-bottom:0px;"><h1 style="text-align:right;">Application for Credit</h1></td>
+			</tr>
+		</table>
+		
+		<h2>Customer Information</h2>
+		<table id="table_customer">
+			<tbody>
+				<tr colspan="2">
+					<td colspan="2">Applicant's First Name <br/><span id="first_name"></span></td>
+					<td colspan="2">Applicant's Middle Name <br/><span id="middle_name"></span></td>
+					<td colspan="2">Applicant's Last Name <br/><span id="last_name"></span></td>
+					<td colspan="3">Social Security Number <br/><span id="ssn"></span></td>
+					<td colspan="1">Date of Birth <br/><span id="dob"></span></td>
+				</tr>
+				<tr colspan="2">
+					<td colspan="2">Phone Number 1<br/><span id="phone_1"></span></td>
+					<td colspan="3">Phone Number 2<br/><span id="phone_2"></span></td>
+					<td colspan="5">Email Address <br/><span id="email"></span></td>
+				</tr>
+				<tr colspan="2">
+					<td colspan="4">Applicant's Company Address<br/><span id="physical_address"></span></td>
+					<td colspan="3">City<br/><span id="city"></span></td>
+					<td colspan="1">State<br/><span id="state"></span></td>
+					<td colspan="2">Zip<br/><span id="zip"></span></td>
+				</tr>
+				<tr colspan="2">
+					<td colspan="4">Applicant's Company Mailing Address (if different)<br/><span id="mailing_address"></span></td>
+					<td colspan="3">City<br/><span id="mailing_city"></span></td>
+					<td colspan="1">State<br/><span id="mailing_state"></span></td>
+					<td colspan="2">Zip<br/><span id="mailing_zip"></span></td>
+				</tr>
+				<tr colspan="2">
+					<td colspan="10">Type of Business
+					</br>
+						<table class="innerTable">
+							<tr class="row_no_border">
+								<td id="IND" colspan="1">[] Individual</td>
+								<td id="LLC" colspan="2">[] Limited Liability Company (LLC)</td>
+								<td id="CCRP" colspan="3">[] Corporation</td>
+								<td id="GPRT" colspan="2">[] General Partnership</td>
+								<td id="LPRT" colspan="2">[] Limited Partnership</td>
+							</tr>
+						</table>		
+					</td>	
+				</tr>
+
+				<tr colspan="2">
+					<td colspan="10">Customer Legal Name<br/><span id="legal_name"></span></td>
+				</tr>
+				<tr colspan="2">
+					<td colspan="10">Equipment Use
+					<br/>
+						<table class="innerTable">
+							<tr class="row_no_border">
+								<td colspan="2" id="equipmeent_name">&nbsp</td>
+								<td colspan="1" id="farm_usage">Farm 0 %</td>
+								<td colspan="3" id="personal_usage">Personal 0 %</td>
+								<td colspan="2" id="construction_usage">Construction 0 %</td>
+								<td colspan="2" id="commercial_usage">Commercial/Custom 0 %</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="terms_conditions">
+			<p id="advice">By selecting the “Accept and Proceed” button on this device
+			you, the “Applicant” certify to us that the Applicant is applying for credit
+			for business reasons, and not for personal, family or household purposes.
+			I acknowledge and agree that my entry of my social security number on this 
+			device certifies that I am also an individual applying for credit for business 
+			reasons, and not for personal, family or household purposes, and that I 
+			authorize the Lessor to access my personal credit history information from any
+			credit bureau. De Lage Landen Financial Services, Inc. and/or its assigns (“Lessor”),
+			or its designees, is authorized to obtain information from others concerning 
+			Applicant's credit and trade standing and other relevant information impacting 
+			this Application and provide to others information about its transaction and 
+			experiences with Applicant. Lessor may obtain credit reports, including consumer 
+			credit reports, in connection with the Application and, at Applicant's request, 
+			will tell Applicant whether a credit report was obtained and, if so, the name and 
+			address of the reporting agency which provided it. Provided credit is granted, 
+			Lessor may, without further notice to Applicant, use or request subsequent credit 
+			bureau reports (1) to update Lessor’s information, (2) in connection with a renewal 
+			or extension, and/or (3) in connection with Applicant’s request for additional 
+			services. Applicant agrees that Lessor may get or share credit information with its
+			agents, assignees, and its designees, regarding the Applicant, Guarantor(s) or 
+			Applicant’s owners in considering the Applicant's Application. Except as otherwise 
+			prohibited by law, Applicant agrees and consents that Lessor may share with affiliates 
+			and others all information about Applicant that Lessor has or may obtain for, among 
+			other things, the purpose of evaluating credit applications or offering Applicant 
+			products or services that Lessor believes may be of interest to Applicant. Applicant 
+			represents that it has reviewed this document and the information herein is true, 
+			correct and complete.</p>
+			<p id="advice">THE APPLICANT HAS A RIGHT TO A STATEMENT OF THE SPECIFIC REASONS IF 
+			AN ADVERSE ACTION HAS BEEN TAKEN. TO REQUEST THIS INFORMATION, CONTACT LESSOR’S ECOA 
+			COMPLIANCE DEPARTMENT WITHIN SIXTY (60) DAYS OF RECEIPT OF AN ADVERSE ACTION NOTIFICATION. 
+			THE DEPARTMENT CAN BE REACHED BY WRITING TO 1111 OLD EAGLE SCHOOL ROAD, WAYNE, PA 19087. 
+			WHEN CONTACTING THE DEPARTMENT, PLEASE BE SURE TO REFERENCE THE APPLICATION NUMBER ON 
+			THE NOTIFICATION LETTER. LESSOR WILL PROVIDE APPLICANT WITH A STATEMENT OF THE SPECIFIC 
+			REASONS FOR THE ADVERSE ACTION WITHIN THIRTY (30) DAYS AFTER LESSOR HAS RECEIVED APPLICANT’S 
+			REQUEST.
+			NOTICE: THE FEDERAL EQUAL CREDIT OPPORTUNITY ACT PROHIBITS CREDITORS FROM DISCRIMINATING 
+			AGAINST CREDIT APPLICANTS ON THE BASIS OF RACE, COLOR, RELIGION, NATIONAL ORIGIN, SEX, 
+			MARITAL STATUS, AGE (PROVIDED THE APPLICANT HAS THE CAPACITY TO ENTER INTO A BINDING 
+			CONTRACT); BECAUSE ALL OR PART OF THE APPLICANT’S INCOME DERIVES FROM ANY PUBLIC ASSISTANCE
+			PROGRAM; OR BECAUSE THE APPLICANT HAS IN GOOD FAITH EXERCISED ANY RIGHT UNDER THE CONSUMER 
+			CREDIT PROTECTION ACT. THE FEDERAL AGENCIES THAT ADMINISTER COMPLIANCE WITH THIS LAW CONCERNING
+			THE LESSOR ARE THE BUREAU OF CONSUMER FINANCIAL PROTECTION, 1700 G STREET NW., WASHINGTON D.C.
+			20006 AND THE FEDERAL TRADE COMMISSION, EQUAL CREDIT OPPORTUNITY, WASHINGTON D.C. 20580. 
+			APPLICANT HEREBY AUTHORIZES LESSOR OR ANY CREDIT BUREAU OR OTHER INVESTIGATIVE AGENCY EMPLOYED
+			BY LESSOR TO INVESTIGATE THE REFERENCES HEREIN LISTED OR STATEMENTS OR OTHER DATA OBTAINED
+			FROM APPLICANT OR FROM ANY OTHER PERSON PERTAINING TO APPLICANT’S CREDIT AND FINANCIAL 
+			RESPONSIBILITY.</p>
+		</div>
+
+		<h2>Applicant</h2>
+		<table id="table_signature">
+			<tbody>
+				<tr class="row_no_border" colspan="2">
+					<td>Signature <br/><span id="signature"><img id="signature_img" width="160" src="" /></span></td>
+					<td>Date <br/><span id="date"></span></td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="div_license" style="page-break-before : always">
+			<h2>Driver's License Photo</h2>
+			<img id="img_license" src="" />
+		</div>
+		<!-- <div id="hiddenElements">
+			<table>
+				<tr class="row_no_border" id="equipment_usage_row">
+					<td colspan="2" class="equipmeent_name"></td>
+					<td colspan="1" class="farm_usage">Farm 0 %</td>
+					<td colspan="3" class="personal_usage">Personal 0 %</td>
+					<td colspan="2" class="construction_usage">Construction 0 %</td>
+					<td colspan="2" class="commercial_usage">Commercial/Custom 0 %</td>
+				</tr>
+			</table>
+		</div> -->
+	</div>
+</body>
+
+</html>

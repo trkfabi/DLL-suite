@@ -1,0 +1,39 @@
+<Alloy>
+	<TableViewRow id='row'>
+		<View id='container'>
+			<View id='rowContainer'>
+				<View id='header'>
+					<View class='leftTab' id='leftSelectMark' />
+					<Label id='customerLabel' />
+					<Label class='cashLabel headerCashLabel' />
+					<Label id='amountLabel' class='headerAmountLabel' />
+					<Label id='dateLabel' />
+					<Label id='descriptionLabel' />
+					<Label id='contractNumberLabel' />
+					<View class='rightTab' id='selectMark' />
+				</View>
+				<View class='horizontalLine' />
+				<View class='optionRow' id='keepRow'>
+					<View class='leftTab' />
+					<Label id='keepLabel' class='optionLabel' />
+					<Label class='cashLabel optionCash' />
+					<Label class='optionAmount' id='keepAmountLabel' />
+					<ImageView class='checkImage' id='keepCheck' />
+				</View>
+				<View class='horizontalLine' />
+				<View class='optionRow' id='returnRow'>
+					<View class='leftTab' />
+					<Label id='returnLabel' class='optionLabel' />
+					<Label class='cashLabel optionCash' />
+					<Label class='optionAmount' id='returnAmountLabel' />
+					<ImageView class='checkImage' id='returnCheck' />
+				</View>
+				<View class='horizontalLine' />
+			</View>
+			<View id='loadingContainer'>
+				<ActivityIndicator id='activity' platform='ios' />
+				<Label id='collectingLabel' />
+			</View>
+		</View>
+	</TableViewRow>
+</Alloy>

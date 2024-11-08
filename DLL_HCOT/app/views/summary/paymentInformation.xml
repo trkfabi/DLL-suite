@@ -1,0 +1,59 @@
+<Alloy>
+	<View id='paymentInformation' class='summarySectionContainer'>
+		<View id='paymentHeader'>
+			<View class='separator topSeparator' />
+			<Label id='paymentLabel' class='headerTitleLabel' />
+			<Button id='paymentSettingsButton' />
+			<Button id='paymentButton' class='expandColapseButton' />
+			<View class='separator' />
+			<ImageView id='settingsPointer' />
+		</View>
+		<View id='paymentContainer' class='summarySectionContainer'>
+			<View id='paymentOptionsContainer' class='row'>
+				<View class='paymentRow' id='paymentAmountRow'>
+					<Label id='paymentAmountTitle' class='summaryLabel' />
+					<Label id='paymentAmountLabel' class='summaryLabel valueLabel' />
+				</View>
+				<View class='paymentRow' id='purchaseOptionRow'>
+					<Label id='purchaseOptionTitle' class='summaryLabel' />
+					<Label id='purchaseOptionLabel' class='summaryLabel valueLabel' />
+				</View>
+				<View class='paymentRow' id='termRow'>
+					<Label id='termTitle' class='summaryLabel' />
+					<Label id='termLabel' class='summaryLabel valueLabel' />
+				</View>
+				<View class='paymentRow' id='structureRow'>
+					<Label id='structureTitle' class='summaryLabel' />
+					<Label id='structureLabel' class='summaryLabel valueLabel' />
+				</View>
+				<View class='paymentRow' id='paymentFrequencyRow'>
+					<Label id='paymentFrequencyTitle' class='summaryLabel' />
+					<Label id='paymentFrequencyLabel' class='summaryLabel valueLabel' />
+				</View>
+				<View class='paymentRow' id='rateProgramRow'>
+					<Label id='rateProgramTitle' class='summaryLabel' />
+					<Label id='rateProgramLabelValue' class='summaryLabel valueLabel' />
+				</View>
+				<View class='whiteSeparator' />
+			</View>
+			<View id='paymentSettingsContainer' class='row'>
+				<Label class='paymentSettingsIntructions' />
+				<View class='paymentSettingsRow'>
+					<Label id='rateProgramLabel' class='paymentSettingsLabel' />
+					<Switch id='rateProgramSwitch' class='paymentSettingsSwitch' />
+				</View>
+				<View class='separator' />
+				<View class='paymentSettingsRow'>
+					<Label id='structureSettingsLabel' class='paymentSettingsLabel' />
+					<Switch id='structureSwitch' class='paymentSettingsSwitch' />
+				</View>
+				<View class='separator' />
+				<View class='paymentSettingsRow'>
+					<Label id='paymentFreqLabel' class='paymentSettingsLabel' />
+					<Switch id='paymentFreqSwitch' class='paymentSettingsSwitch' />
+				</View>
+				<View class='separator' />
+			</View>
+		</View>
+	</View>
+</Alloy>

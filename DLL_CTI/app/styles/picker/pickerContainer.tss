@@ -1,0 +1,71 @@
+"#window": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+"#window[platform=android]": {
+	theme: 'Theme.AppCompat.Translucent.NoTitleBar'
+},
+'#backgroundMask': {
+	top: 0,
+	left: 0,
+	right: 0,
+	bottom: 0,
+	backgroundColor: Alloy.Globals.colors.black,
+	opacity: 0,
+},
+"#container": {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.white,
+	layout: "vertical",
+	bubbleParent: false
+},
+
+"#header": {
+	width: Ti.UI.FILL,
+	height: 45
+},
+"#clearButton": {
+	left: 10,
+	width: 60,
+	height: Ti.UI.FILL,
+	title: L('clear'),
+	color: Alloy.Globals.colors.mercury,
+	font: {
+		fontSize: 18,
+		fontFamily: 'HelveticaNeue'
+	}
+},
+"#doneButton": {
+	right: 10,
+	width: 60,
+	height: Ti.UI.FILL,
+	title: L('done'),
+	color: Alloy.Globals.colors.lochmara,
+	font: {
+		fontSize: 18,
+		fontFamily: 'HelveticaNeue'
+	}
+},
+"#listContainer": {
+	width: Ti.UI.FILL,
+	height: 180
+},
+"#listContainer[if=Alloy.Globals.hasNotch]": {
+	height: 220
+}
+".separator": {
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.dustyGray
+}
+"#bottomSeparator": {
+	visible: false
+}
+"#bottomSeparator[if=Alloy.Globals.hasNotch]": {
+	bottom: 49,
+	visible: true,
+	backgroundColor: Alloy.Globals.colors.alto
+}

@@ -1,0 +1,208 @@
+'#container': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+
+'#header': {
+	backgroundColor: Alloy.Globals.colors.azureRadiance
+},
+'#flipContainer': {
+	top: Alloy.Globals.headerHeight,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'#flipContainer[if=Alloy.Globals.hasNotch]': {
+	top: 88.3
+},
+'#flipContainer[platform=android]': {
+	top: 48
+},
+'#body': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'.navButton[platform=ios]': {
+	top: 20,
+	width: 45,
+	height: 45
+},
+'.navButton[if=Alloy.Globals.hasNotch]': {
+	top: 43.2,
+	width: 46.5,
+	height: 46.5
+},
+'.navIcon[platform=ios]': {
+	width: 40,
+	height: 40
+},
+'.navIcon[if=Alloy.Globals.hasNotch]': {
+	width: 46.5,
+	height: 46.5
+},
+'#navLeftButton': {
+	left: 5
+},
+'#navLeftButton[if=Alloy.Globals.hasNotch]': {
+	top: 42.8,
+	left: 7.9
+},
+'#navLeftButton[platform=android]': {
+	top: 6
+},
+'#navLeftIcon': {
+	accessibilityLabel: 'navLeftButton',
+	touchEnabled: false,
+	backgroundImage: '/images/bt_quotescreen_quotelist.png'
+},
+'#navLeftIcon[platform=android]': {
+	width: 45,
+	height: 45
+},
+'#uploadButton': {
+	right: 50,
+	accessibilityLabel: 'uploadButton'
+},
+'#uploadButton[if=Alloy.Globals.hasNotch]': {
+	right: 61
+},
+'#uploadButton[platform=android]': {
+	top: 6
+},
+'#uploadIcon': {
+	touchEnabled: false,
+	backgroundImage: '/images/bt_quotescreen_share.png'
+},
+'#uploadIcon[platform=android]': {
+	width: 45,
+	height: 45
+}
+'#flipButton': {
+	accessibilityLabel: 'flipButton'
+},
+'#flipButton[platform=android]': {
+	top: 2
+},
+'#flipIcon': {
+	touchEnabled: false,
+	backgroundImage: '/images/bt_quotescreen_centaltoggle2.png'
+},
+'#flipIcon[platform=android]': {
+	width: 45,
+	height: 45
+},
+'#summaryButton': {
+	right: 5
+},
+'#summaryButton[if=Alloy.Globals.hasNotch]': {
+	right: 9
+},
+'#summaryButton[platform=android]': {
+	top: 6
+},
+'#summaryIcon': {
+	touchEnabled: false,
+	backgroundImage: '/images/bt_quotescreen_preview.png'
+},
+'#summaryIcon[platform=android]': {
+	width: 45,
+	height: 45
+},
+'#paymentOptionsContainer': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+'#addRow': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 55,
+	borderWidth: 1,
+	borderColor: Alloy.Globals.colors.silver,
+	backgroundColor: Alloy.Globals.colors.white
+}
+'#equipmentWrapper': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+},
+'#closeArrow[platform=ios]': {
+	image: '/images/ic_closepannel_arrow.png'
+},
+'#closeArrow[platform=android]': {
+	backgroundImage: '/images/ic_closepannel_arrow.png'
+},
+'#paymentsTableView': {
+	top: 85,
+	bottom: 0,
+	width: Ti.UI.FILL,
+	contentWidth: '100%',
+	contentHeight: 'auto',
+	scrollType: 'vertical',
+	layout: 'vertical',
+	bubbleParent: false
+},
+'#numberContainer': {
+	touchEnabled: false
+},
+'#numberLabel': {
+	left: 12,
+	width: 34,
+	height: 34,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 18
+	},
+	text: '...',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	borderRadius: 17,
+	color: Alloy.Globals.colors.azureRadiance,
+	borderColor: Alloy.Globals.colors.azureRadiance,
+	borderWidth: 1,
+	touchEnabled: false
+},
+'#numberLabel[platform=android]': {
+	width: 39,
+	height: 39,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 18
+	},
+	borderRadius: 20
+},
+'#addLabel': {
+	left: 56,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 22
+	},
+	text: L('add_new'),
+	color: Alloy.Globals.colors.azureRadiance,
+	touchEnabled: false
+}
+'#optionDialog': {
+	cancel: 2,
+	options: [L('create_proposal'), L('create_lease'), L('cancel')]
+},
+'#exportQuoteButton': {
+	left: 50
+},
+'#exportQuoteButton[if=Alloy.Globals.hasNotch]': {
+	top: 42.8,
+	left: 52.9
+},
+'#exportQuoteButton[platform=android]': {
+	top: 6
+},
+'#exportQuoteIcon': {
+	accessibilityLabel: 'exportQuoteButton',
+	touchEnabled: false,
+	backgroundImage: '/images/bt_customerinfo_mail.png'
+},
+'#exportQuoteIcon[platform=android]': {
+	width: 45,
+	height: 45
+},

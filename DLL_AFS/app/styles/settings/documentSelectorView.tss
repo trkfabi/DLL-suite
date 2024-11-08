@@ -1,0 +1,41 @@
+'#documentLanguageContainer': {
+	top: 30,
+	left: 20,
+	right: 20,
+	height: 55,
+	visible: false
+},
+'#documentLanguageTitle': {
+	left: 0,
+	text: L('document_language'),
+	font: {
+		fontFamily: Alloy.Globals.fonts.regular,
+		fontSize: 17
+	},
+	color: Alloy.Globals.colors.thunder
+},
+'#selectedLanguageLabel': {
+	right: 30,
+	text: 'English',
+	font: {
+		fontFamily: Alloy.Globals.fonts.regular,
+		fontSize: 17
+	},
+	color: Alloy.Globals.colors.black
+},
+'#changeLanguageImage': {
+	right: 3,
+	image: '/images/bt_quotelist_back.png'
+},
+
+'.horzLine': {
+	height: 1,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.silver
+},
+'.onTop': {
+	top: 0
+},
+'.onBottom': {
+	bottom: 0
+}

@@ -1,0 +1,134 @@
+'#window': {
+	top: 0,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	navBarHidden: true,
+	orientationModes: [
+		Ti.UI.PORTRAIT
+	]
+},
+'#overlay': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	backgroundColorActive: Alloy.Globals.colors.alabaster,
+	backgroundColorInactive: Alloy.Globals.colors.transparent
+},
+'#header': {
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#headerContent': {
+
+},
+'#backButton': {
+
+},
+'#backImage': {
+
+},
+'#backLabel': {
+	text: L('dob')
+},
+'#brandLogo': {
+
+},
+'#nextButton': {
+
+},
+'#nextImage': {
+
+},
+'#nextImage[platform=android]': {
+	image: '/images/ic_done.png'
+},
+'#nextLabel': {
+	text: L('done')
+},
+'#headerSeparator': {
+
+},
+'#content[platform=ios]': {
+	top: 65,
+	bottom: 55
+},
+'#content[platform=android]': {
+	top: 60,
+	bottom: 50
+},
+'#permissionView': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical',
+	visible: false
+},
+'#permissionLabel': {
+	color: Alloy.Globals.colors.shuttleGray,
+	text: L('access_to_camera_not_enabled'),
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 20
+	}
+},
+'#settingsButton': {
+	top: 20,
+	tintColor: Alloy.Globals.colors.lochmara,
+	color: Alloy.Globals.colors.lochmara,
+	title: L('open_settings'),
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 20
+	}
+},
+'#preview': {
+	top: 100,
+	preventDefaultImage: true,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	autorotate: true
+},
+'#instructionsView': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 100,
+	backgroundImage: '/images/camerablur.png',
+	touchEnabled: false
+},
+'#authorizationDriverTitleLabel': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	text: L('capture_photo_id'),
+	color: Alloy.Globals.colors.shuttleGray,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 20
+	}
+},
+'#optionsContainer': {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 90,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'#toolbarContainer': {
+	bottom: 0,
+	height: 55,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.swirl
+},
+'#retakeButton': {
+	left: 10,
+	height: 35,
+	width: 100,
+	title: L('retake'),
+	color: Alloy.Globals.colors.white,
+	backgroundColor: Alloy.Globals.colors.silver,
+	borderRadius: 3
+},
+'#shooterButton': {
+	top: 0,
+	width: 70,
+	height: 70,
+	backgroundImage: '/images/shoot.png',
+	backgroundSelectedImage: '/images/shoot_pressed.png'
+}

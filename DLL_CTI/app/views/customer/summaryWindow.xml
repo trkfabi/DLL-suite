@@ -1,0 +1,235 @@
+<Alloy>
+	<Window id="window">
+		<View id="wrapper">
+
+			<View id="logoContainer">
+				<Button id="backButton" platform="android" />
+				<View id="backButton" platform="ios">
+					<ImageView id="backButtonImg" />
+				</View>
+				<ImageView id="brandLogo" />
+				<View class="separator" />
+			</View>
+			<ScrollView id="container">
+
+				<View id="grayBackground">
+					<View id="solutionContainer" class="row sectionContainer">
+
+						<View id="solutionHeader" class="headerContainer">
+
+							<View class="separator topSeparator" />
+							<Label id="solutionLabel" class="headerTitleLabel" />
+							<Button id="solutionButton" class="expandColapseButton" />
+							<View class="separator" />
+
+						</View>
+
+						<View id="solutionList" class="contentContainer"></View>
+
+					</View>
+
+					<View id="customerContainer" class="row sectionContainer">
+
+						<View id="customerHeader" class="headerContainer">
+
+							<View class="separator topSeparator" />
+							<Label id="customerLabel" class="headerTitleLabel" />
+							<Button id="customerButton" class="expandColapseButton" />
+							<View class="separator" />
+
+						</View>
+
+						<View id="customerContent" class="contentContainer">
+
+							<Label id="namesLabel" class="summaryLabel" />
+							<Label id="clientNameLabel" class="summaryLabel" />
+							<Label id="addressLabel" class="summaryLabel" />
+							<Label id="cityLabel" class="summaryLabel" />
+							<Label id="phoneLabel" class="summaryLabel" />
+							<Label id="emailLabel" class="summaryLabel" />
+
+						</View>
+
+					</View>
+
+					<View id="paymentContainer" class="row sectionContainer">
+
+						<View id="paymentHeader" class="headerContainer">
+
+							<View class="separator topSeparator" />
+							<Label id="paymentLabel" class="headerTitleLabel" />
+							<Button id="paymentSettingsButton" />
+							<Button id="paymentButton" class="expandColapseButton" />
+							<View class="separator" />
+							<ImageView id="settingsPointer" />
+
+						</View>
+
+						<View id="paymentContent">
+
+							<View class="row" id="paymentOptionsContainer">
+
+								<View class="paymentRow" id="equipmentPriceRow">
+									<Label id="equipmentPriceTitle" class="summaryLabel" />
+									<Label id="equipmentPriceLabel" class="summaryLabel valueLabel" />
+								</View>
+
+								<View class="paymentRow" id="termRow">
+									<Label id="termTitle" class="summaryLabel" />
+									<Label id="termLabel" class="summaryLabel valueLabel" />
+								</View>
+
+								<View class="paymentRow" id="paymentFrequencyRow">
+									<Label id="paymentFrequencyTitle" class="summaryLabel" />
+									<Label id="paymentFrequencyLabel" class="summaryLabel valueLabel" />
+								</View>
+
+								<View class="paymentRow" id="interestRateRow">
+									<Label id="interestRateTitle" class="summaryLabel" />
+									<Label id="interestRateLabel" class="summaryLabel valueLabel" />
+								</View>
+
+								<View class="paymentRow" id="cashDownRow">
+									<Label id="cashDownTitle" class="summaryLabel" />
+									<Label id="cashDownLabel" class="summaryLabel valueLabel" />
+								</View>
+
+								<View class="paymentRow" id="tradeAllowanceRow">
+									<Label id="tradeAllowanceTitle" class="summaryLabel" />
+									<Label id="tradeAllowanceLabel" class="summaryLabel valueLabel" />
+								</View>
+
+								<View class="paymentRow" id="tradePayoffRow">
+									<Label id="tradePayoffTitle" class="summaryLabel" />
+									<Label id="tradePayoffLabel" class="summaryLabel valueLabel" />
+								</View>
+
+								<View class="paymentRow" id="balloonRow">
+									<Label id="balloonTitle" class="summaryLabel" />
+									<Label id="balloonLabel" class="summaryLabel valueLabel" />
+								</View>
+
+								<View class="paymentRow" id="advancePaymentRow">
+									<Label id="advancePaymentTitle" class="summaryLabel" />
+									<Label id="advancePaymentLabel" class="summaryLabel valueLabel" />
+								</View>
+
+								<View class="paymentRow" id="taxesOnAdvRow">
+									<Label id="taxesOnAdvTitle" class="summaryLabel" />
+									<Label id="taxesOnAdvLabel" class="summaryLabel valueLabel" />
+								</View>
+
+								<View class="paymentRow" id="purchaseOptionRow">
+									<Label id="purchaseOptionTitle" class="summaryLabel" />
+									<Label id="purchaseOptionLabel" class="summaryLabel valueLabel" />
+								</View>
+
+								<View class="paymentRow" id="firstPaymentDueRow">
+									<Label id="firstPaymentDueTitle" class="summaryLabel" />
+									<Label id="firstPaymentDueLabel" class="summaryLabel valueLabel" />
+								</View>
+
+								<View class="paymentRow" id="paymentAmountRow">
+									<Label id="paymentAmountTitle" class="summaryLabel" />
+									<Label id="paymentAmountLabel" class="summaryLabel valueLabel" />
+								</View>
+
+							</View>
+
+
+
+							<View class="row" id="paymentSettingsContainer">
+
+								<Label class="paymentSettingsIntructions" />
+
+								<View class="paymentSettingsRow">
+
+									<Label class="paymentSettingsLabel" id="interestSettingsLabel" />
+									<Switch class="paymentSettingsSwitch" id="interestSwitch" platform="ios" />
+									<Require class="paymentSettingsSwitch" id="interestSwitch" platform="android" src="common/androidSwitch" />
+
+								</View>
+
+								<View class="separator" />
+
+							</View>
+
+						</View>
+
+					</View>
+
+					<View id="purchaseContainer" class="row sectionContainer">
+
+						<View id="purchaseHeader" class="headerContainer">
+
+							<View class="separator topSeparator" />
+							<Label id="purchaseLabel" class="headerTitleLabel" />
+							<Button id="purchaseButton" class="expandColapseButton" />
+							<View class="separator" />
+
+						</View>
+
+						<View id="purchaseContent" class="contentContainer">
+							<View class="purchaseRow">
+								<Label id="customerTypeLabel" class="purchaseOptionLabel" />
+							</View>
+
+							<View id="customerTypeContainer" class="purchaseRow purchaseFieldRow">
+								<TextField id="customerTypeField" />
+								<View class="fieldBottomLine" id="customerTypeBottomLine" />
+								<Button class="selectorButton" id="customerTypeButton" />
+							</View>
+
+							<View class="purchaseRow">
+								<Label id="legalNameLabel" class="purchaseOptionLabel" />
+							</View>
+
+							<View class="purchaseRow purchaseFieldRow">
+								<TextField id="legalNameTextField" />
+								<View class="fieldBottomLine" />
+							</View>
+
+							<View class="purchaseRow">
+								<Label id="signatureLabel" class="purchaseOptionLabel" />
+								<ImageView id="signatureCheck" class="purchaseOptionCheck" />
+							</View>
+
+							<View class="purchaseRow">
+								<Label id="ssnLabel" class="purchaseOptionLabel" />
+								<ImageView id="ssnCheck" class="purchaseOptionCheck" />
+							</View>
+
+							<View class="purchaseRow">
+								<Label id="dobLabel" class="purchaseOptionLabel" />
+								<ImageView id="dobCheck" class="purchaseOptionCheck" />
+							</View>
+
+							<View class="purchaseRow">
+								<Label id="idLabel" class="purchaseOptionLabel" />
+								<ImageView id="idCheck" class="purchaseOptionCheck" />
+							</View>
+
+						</View>
+
+					</View>
+
+					<View id="actionsContainer" class="row">
+
+						<View class="separator topSeparator" />
+
+						<Button id="signContractButton" class="button" />
+
+						<!-- <Button id="submitContractButton" class="button" tag="dll" /> -->
+
+						<Button id="sendContractToCustomerButton" class="button" tag="customer" />
+						<View id="bottomSeparator" class="separator" />
+					</View>
+
+					<View id="blankSpace" class="row" />
+				</View>
+
+			</ScrollView>
+
+		</View>
+	</Window>
+</Alloy>

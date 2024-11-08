@@ -1,0 +1,58 @@
+<div class="dialog-container rateCardVendor-dialog" [ngClass]="isDelete ? 'delete-vendor' : 'add-vendor'" #inputVendor>
+	<div *ngIf="isDelete" class="align-center">
+		<p class="regularSize">
+			Are you sure you want to delete this Vendor Code? <br /><br /><strong>{{ item.name }}</strong>
+		</p>
+	</div>
+
+	<div *ngIf="!isDelete">
+		<p>
+			Vendor Code can be at most 20 characters. Only letters, numbers, and the special character “-” are allowed.
+		</p>
+		<input
+			kendoTextBox
+			class="textbox"
+			[maxLength]="20"
+			[(ngModel)]="vendorCodeName"
+			placeholder="Vendor Code"
+			(ngModelChange)="onVendorCodeNameChange($event)"
+			(keypress)="onVendorCodeNameKeyPress($event)"
+			[ngClass]="{ bold: !isInputError, 'error-input': isInputError }"
+		/>
+		<div class="error-message">
+			<span *ngIf="showError">{{ messageError }}</span>
+		</div>
+		<div class="clearfix"></div>
+		<div class="small-column">
+			<small>Points to be added: </small>
+			<kendo-numerictextbox
+				(blur)="handleBlur()"
+				[format]="'n2'"
+				[spinners]="false"
+				[decimals]="2"
+				[min]="0"
+				[max]="maxPoints"
+				class="textbox-points"
+				[(ngModel)]="vendorPoints"
+				(valueChange)="onVendorPointsChange($event)"
+				(keypress)="onVendorPointsKeyPress($event)"
+				[ngClass]="{ bold: isEdit }"
+			>
+			</kendo-numerictextbox>
+			%
+		</div>
+		<div *ngIf="!item.id" class="large-column">
+			<small>Rate Card: </small>
+			<kendo-dropdownlist
+				class="dropdownlist-ratecard"
+				[data]="rateCardList"
+				[(ngModel)]="selectedRateCardItem"
+				[textField]="'name'"
+				[valueField]="'id'"
+				(valueChange)="onRateCardChange($event)"
+			>
+			</kendo-dropdownlist>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>

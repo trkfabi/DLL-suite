@@ -1,0 +1,35 @@
+<Alloy>
+	<View id='container'>
+
+		<View id='summaryContainer' class='summaryContainer'>
+			<Label id='equipmentPriceLabel' class='formLabel' />
+			<Button id='priceClear' class='clearIcon' />
+			<Label id='equipmentCurrencySymbol' class='currencySymbol' />
+			<TextField id='priceInputTextField' class='simpleText kbNumeric' tag='equipmentCost' />
+			<View id='textFieldUnderlineWhite' class='textFieldUnderlineGray additionalUnderline' />
+			<Button id='expandButton' />
+			<View class='separatorBlack' />
+		</View>
+
+		<ScrollView id='detailContainer' class='detailContainer'>
+
+			<View id='optionsSelectorContainer'>
+				<Require id='optionsSelector' src='common/tabbedBar' />
+
+				<View class='separatorBlack' />
+			</View>
+
+			<View id='financeOptionsContainer' />
+		</ScrollView>
+
+
+		<View id='amountFinancedContainer' class='summaryContainer'>
+			<View class='separatorBlack topSeparator' />
+			<Label id='amountFinancedLabel' class='formLabel' />
+			<Label class='currencySymbol' />
+			<TextField id='amountFinancedTextField' class='simpleText kbNumeric' />
+			<View class='textFieldUnderlineGray additionalUnderline' />
+		</View>
+
+	</View>
+</Alloy>

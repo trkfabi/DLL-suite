@@ -1,0 +1,244 @@
+'.textFieldUnderlineGray[platform=ios]': {
+	top: 2,
+	left: 23,
+	right: 23
+},
+'.textFieldUnderlineGray[platform=android]': {
+	top: 0,
+	left: 30,
+	right: 30,
+	height: 5
+},
+'#window': {
+	backgroundColor: Alloy.Globals.colors.alabaster,
+	backgroundImage: '/images/login_footer.png'
+},
+'#window[platform=ios]': {
+	backgroundImage: '/images/login_footer.png',
+	navBarHidden: true
+},
+'#window[if=Alloy.Globals.hasNotch]': {
+	backgroundImage: '/images/splash-Portrait-2436h@3x.png'
+}
+'TextField[platform=ios]': {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 18
+	}
+},
+'TextField[platform=android]': {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 18
+	}
+},
+'#wrapperBackground': {
+	top: 0,
+	bottom: 145,
+	backgroundColor: Alloy.Globals.colors.alabaster
+}
+"#wrapperBackground[if=Alloy.Globals.hasNotch]": {
+	bottom: 210
+},
+'#wrapperBackground[if=Alloy.Globals.hasNotchLarge]': {
+	bottom: 230.5
+}
+'#wrapper': {
+	top: 0,
+	bottom: 0,
+	layout: 'vertical'
+},
+'#wrapper[platform=ios]': {
+	backgroundColor: Alloy.Globals.colors.alabaster
+},
+'#wrapper[if=Alloy.Globals.hasNotch]': {
+	top: 91
+},
+'#wrapper[if=Alloy.Globals.hasNotchLarge]': {
+	top: 103
+},
+'#wrapper[platform=android]': {
+	bottom: 138,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#loginField': {
+	left: 28,
+	right: 28,
+	top: 82,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 18
+	},
+	color: Alloy.Globals.colors.black,
+	tintColor: Alloy.Globals.colors.azureRadiance,
+	hintText: L('login'),
+	bubbleParent: false,
+	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	accessibilityLabel: 'loginField'
+},
+'#loginField[platform=android]': {
+	left: 37,
+	right: 37,
+	color: Alloy.Globals.colors.shuttleGray,
+	hintTextColor: Alloy.Globals.colors.shuttleGray,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'#passwordField': {
+	left: 28,
+	right: 28,
+	top: 20,
+	passwordMask: true,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 18
+	},
+	color: Alloy.Globals.colors.shuttleGray,
+	tintColor: Alloy.Globals.colors.azureRadiance,
+	hintText: L('password'),
+	bubbleParent: false,
+	accessibilityLabel: 'passwordField'
+},
+'#passwordField[platform=android]': {
+	top: 27,
+	left: 37,
+	right: 37,
+	color: Alloy.Globals.colors.shuttleGray,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	hintTextColor: Alloy.Globals.colors.shuttleGray
+},
+'#stayLoggedInContainer': {
+	left: 23,
+	right: 23,
+	top: 50,
+	height: 50
+},
+'#stayLoggedInContainer[if=!Alloy.Globals.iPhoneTall]': {
+	top: 30
+},
+'#stayLoggedInContainer[platform=android]': {
+	top: 20,
+	left: 31,
+	right: 31
+},
+'#stayLoggedInContainerBackground': {
+	left: 0,
+	right: 0,
+	top: 0,
+	bottom: 0,
+	opacity: 0.3
+},
+'#stayLoggedInLabel': {
+	top: 0,
+	height: 50,
+	left: 0,
+	text: L('stay_logged_in'),
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 15
+	}
+},
+'#stayLoggedInLabel[platform=android]': {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 17
+	},
+	bottom: 21
+},
+'#stayLoggedInSwitch': {
+	value: true,
+	right: 0,
+	bubbleParent: false
+},
+'#stayLoggedInSwitch[platform=ios]': {
+	top: 10,
+	tintColor: Alloy.Globals.colors.blue
+},
+'#horzLineBottom': {
+	height: 1,
+	bottom: 0,
+	right: 0,
+	left: 0,
+	backgroundColor: Alloy.Globals.colors.silver
+},
+'#loginButton': {
+	left: 23,
+	right: 23,
+	top: 18,
+	height: 40,
+	borderRadius: 2,
+	text: L('login_uppercase'),
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	color: Alloy.Globals.colors.white,
+	backgroundColor: Alloy.Globals.colors.azureRadiance,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 16
+	},
+	bubbleParent: false
+},
+"#loginButton[platform=android]": {
+	top: 37,
+	height: 49,
+	left: 30,
+	right: 30,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 16
+	}
+},
+'.linkButton': {
+	left: 23,
+	right: 23,
+	height: 30,
+	borderRadius: 2,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	color: Alloy.Globals.colors.mountbattenPink,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 13
+	},
+	bubbleParent: false
+},
+'#privacyStatementButton': {
+	top: 30,
+	text: L('review_privacy_statement')
+},
+'#privacyStatementButton[if=Alloy.Globals.hasNotch]': {
+	top: 65
+},
+'#privacyStatementButton[if=Alloy.Globals.hasNotchLarge]': {
+	top: 110
+},
+'#privacyStatementButton[if=!Alloy.Globals.iPhoneTall]': {
+	top: 5
+},
+'#termsAndConditionsButton': {
+	top: 10,
+	text: L('review_terms_and_conditions')
+},
+"#termsAndConditionsButton[if=Alloy.Globals.hasNotch]": {
+	top: 30
+},
+"#termsAndConditionsButton[if=Alloy.Globals.hasNotchLarge]": {
+	top: 35
+},
+'#termsAndConditionsButton[if=!Alloy.Globals.iPhoneTall]': {
+	top: 5
+},
+'#termsAndConditionsButton[platform=android]': {
+	top: 20,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 17
+	}
+},
+'#logoContainer': {
+	bottom: 0,
+	height: 95,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#logoImageView': {
+	image: '/images/dll_logo.png'
+}

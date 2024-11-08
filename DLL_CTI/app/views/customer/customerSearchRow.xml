@@ -1,0 +1,14 @@
+<Alloy>
+	<TableViewRow id="row">
+		<View id="container">
+			<View id="header">
+				<View class="leftTab" id="leftSelectMark" />
+				<Label id="customerLabel" />
+
+				<Label id="addressLabel" />
+				<View class="rightTab" id="selectMark" />
+			</View>
+			<View class="horizontalLine" />
+		</View>
+	</TableViewRow>
+</Alloy>

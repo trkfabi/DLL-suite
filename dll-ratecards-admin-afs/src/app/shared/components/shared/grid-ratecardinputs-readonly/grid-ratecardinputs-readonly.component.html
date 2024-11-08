@@ -1,0 +1,62 @@
+<ng-template [ngIf]="!isRateFactors">
+	<div #scroll *ngIf="scrollWidth && isLocked" class="top-scroll othc-grids">
+		<div class="dommy-div" [style.width]="scrollWidth[0]" #scrollbar></div>
+	</div>
+	<kendo-grid #grid [kendoGridBinding]="rows">
+		<kendo-grid-column
+			*ngFor="let column of columns"
+			field="{{ column.field }}"
+			title="{{ column.title }}"
+			filter="{{ column.type }}"
+			width="{{ column.width }}"
+			format="{{ column.format }}"
+			[locked]="column.locked"
+		>
+		</kendo-grid-column>
+	</kendo-grid>
+</ng-template>
+<ng-template [ngIf]="isRateFactors">
+	<div #scroll *ngIf="scrollWidth && isLocked" class="top-scroll othc-grids rate-factors-scroll">
+		<div class="dommy-div" [style.width]="scrollWidth[0]" #scrollbar></div>
+	</div>
+	<kendo-grid #grid [kendoGridBinding]="rows" [pageSize]="pageSize" [class]="{ rateFactorsOthc: isRateFactors }">
+		<kendo-grid-column
+			*ngFor="let column of columns"
+			field="{{ column.field }}"
+			title="{{ column.title }}"
+			filter="{{ column.type }}"
+			width="{{ column.width }}"
+			format="{{ column.format }}"
+			[locked]="column.locked"
+		>
+			<ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex" *ngIf="displayRFTermHeader(column)">
+				RF: <br />
+				{{ column.title }} M
+			</ng-template>
+			<ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex" *ngIf="column.title === purchaseOptionsTitle">
+				PURCHASE <br />
+				OPTION
+			</ng-template>
+			<ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+				<span *ngIf="column.title === purchaseOptionsTitle; else ratefactor">
+					{{ dataItem[column.field] | purchaseOptions }}
+				</span>
+				<ng-template #ratefactor>
+					{{ dataItem[column.field] | rateFactorRound: column.field }}
+				</ng-template>
+			</ng-template>
+			<ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex" *ngIf="column.title === additionalPointsTitle">
+				ADDITIONAL <br />
+				POINTS
+			</ng-template>
+			<ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+				<span *ngIf="column.title === additionalPointsTitle; else ratefactor">
+					{{ dataItem[column.field] }}
+				</span>
+				<ng-template #ratefactor>
+					{{ dataItem[column.field] | rateFactorRound }}
+				</ng-template>
+			</ng-template>
+		</kendo-grid-column>
+	</kendo-grid>
+</ng-template>

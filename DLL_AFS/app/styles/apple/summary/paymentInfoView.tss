@@ -1,0 +1,82 @@
+'#paymentInfoView': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	heightCollapsed: 40,
+	backgroundColor: Alloy.Globals.colors.alto
+},
+'#paymentContainer': {
+	top: 34,
+	right: 0,
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	layout: 'horizontal'
+},
+'#term': {
+	top: 10,
+	text: L('term')
+},
+'#payment': {
+	top: 34,
+	text: L('payment')
+},
+'#paymentFrequency': {
+	top: 58,
+	text: L('payment_frequency')
+},
+'#rateFactor': {
+	top: 82,
+	bottom: 10,
+	text: L('rate_factor')
+},
+'#termValue': {
+	top: 10
+},
+'#paymentValue': {
+
+},
+'#paymentFrequencyValue': {
+	top: 58
+},
+'#rateFactorValue': {
+	top: 82
+},
+'#currencySymbol': {
+	text: '$',
+	right: 5
+},
+'#container': {
+	top: 40,
+	left: 4,
+	right: 0,
+	bottom: 0,
+	backgroundColor: Alloy.Globals.colors.alabaster,
+	height: Ti.UI.SIZE
+},
+'#sectionHeader': {
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.semiBold,
+		fontSize: 16
+	},
+	color: Alloy.Globals.colors.shuttleGray,
+	expander: {
+		backgroundImage: '/images/bt_quotescreen_apple_expand.png',
+		imageExpanded: '/images/bt_quotescreen_apple_expand.png',
+		imageCollapsed: '/images/bt_quotescreen_apple_collapse.png'
+	}
+},
+'.valueLabel': {
+	right: 15,
+	color: Alloy.Globals.colors.thunder,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.regular,
+		fontSize: 14
+	}
+},
+'.titleLabel': {
+	left: 15,
+	color: Alloy.Globals.colors.thunder,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.light,
+		fontSize: 14
+	}
+}

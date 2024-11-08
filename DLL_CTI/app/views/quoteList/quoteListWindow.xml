@@ -1,0 +1,33 @@
+<Alloy>
+	<View id='container'>
+		<View id="quoteMenuContainer">
+			<View id="newQuoteContainer">
+				<Button id="newQuoteImageView" />
+				<Label id="newQuoteLabel" />
+			</View>
+
+			<View class="separator" />
+
+			<View id="settingsContainer">
+				<Button id="settingsButton" />
+				<Label id="settingsLabel" />
+			</View>
+		</View>
+
+		<View id="optionsSelectorContainer">
+			<Require id="optionsSelector" src="common/tabbedBar" />
+
+			<View class="separatorBlack" />
+		</View>
+
+		<ListView id="quoteList">
+			<Templates>
+				<Require src="quoteList/quoteExpandedTemplate" />
+				<Require src="quoteList/quoteCollapsedTemplate" />
+			</Templates>
+			<ListSection id="quoteListSection" />
+		</ListView>
+
+
+	</View>
+</Alloy>

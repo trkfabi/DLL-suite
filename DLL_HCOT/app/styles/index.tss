@@ -1,0 +1,10 @@
+"#dashboardWindow": {
+	title: L("quote"),
+	navBarHidden: true,
+	title: L('quote'),
+	// statusBarStyle:Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT,
+	backgroundColor: Alloy.Globals.colors.white
+}
+"#dashboardWindow[platform=android]": {
+	windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_STATE_ALWAYS_HIDDEN | Ti.UI.Android.SOFT_INPUT_ADJUST_RESIZE,
+}

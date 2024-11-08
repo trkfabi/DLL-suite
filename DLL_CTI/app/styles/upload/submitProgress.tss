@@ -1,0 +1,27 @@
+"#window": {
+	bottom: -50,
+	// bottom : 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+"#wrapper": {
+	width: Ti.UI.FILL,
+	height: 50,
+	backgroundColor: Alloy.Globals.colors.black,
+	bottom: 0
+},
+"#submitBar": {
+	left: 10,
+	right: 10,
+	height: 50,
+	min: 0,
+	max: 10,
+	value: 0,
+	color: Alloy.Globals.colors.white,
+	visible: true,
+	font: {
+		fontFamily: 'Helvetica-Neue',
+		fontSize: 14
+	}
+}

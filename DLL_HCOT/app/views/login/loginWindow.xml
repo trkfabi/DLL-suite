@@ -1,0 +1,22 @@
+<Alloy>
+	<Window id='window'>
+		<View id='wrapperBackground'>
+			<View id='wrapper'>
+				<TextField id='loginField' />
+				<View class='textFieldUnderlineGrayLogin' />
+				<TextField id='passwordField' />
+				<View class='textFieldUnderlineGrayLogin' />
+				<View id='stayLoggedInContainer'>
+					<View id='stayLoggedInContainerBackground' />
+					<Label id='stayLoggedInLabel' />
+					<Switch id='stayLoggedInSwitch' />
+					<View id='horzLineBottom' />
+				</View>
+				<Label id='loginButton' />
+				<Label id='privacyStatementButton' class="linkButton" />
+				<Label id="termsAndConditionsButton" class="linkButton" />
+			</View>
+		</View>
+		<Require id='loadingIndicator' src='common/loadingIndicator' />
+	</Window>
+</Alloy>

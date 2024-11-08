@@ -1,0 +1,13 @@
+<Alloy>
+	<View id='amountRow' class='paymentOptionRow'>
+		<View class='leftTab' tag='doNotDisable' />
+		<View id='wrapper'>
+			<Label id='titleLabel' class='rowTitle' />
+			<Button id='cleanButton' />
+			<View id='textFieldContainer'>
+				<TextField id='amountText' class='kbNumeric' />
+				<View class='inputDelimiter' />
+			</View>
+		</View>
+	</View>
+</Alloy>

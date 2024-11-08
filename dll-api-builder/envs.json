@@ -1,0 +1,224 @@
+{
+	"globals": {
+		"base": {
+			"PORT": "8080",
+			"PING_INTERVAL": 90000,
+			"ARROWDB_ENV": "development",
+			"ARROWDB_KEY": "P1mQ4bqvO2CXlsWwk0n3hESJcF0WIRkC",
+			"ARROWDB_USER": "appc_app_user_dev",
+			"ARROWDB_PASS": "xCwxkpqTTCPpzqh7upwEBNzUwDzLBf8hfi2AYrEJ",
+			"GATEWAY_HOST": "http://localhost:8080",
+			"GATEWAY_APIKEY": "ALVS0Ap8ZAcjMvezb60rGgeQmwJbue9g",
+			"DLL_SERVICES_HOST": "http://localhost:2002",
+			"DLL_SERVICES_APIKEY": "FgbbVGNkZWhwQgEPb?>fGLjuguX7qQZ3hKUJ4TPn",
+			"RATE_CARDS_AFS_HOST": "http://localhost:2003",
+			"RATE_CARDS_AFS_APIKEY": "?UKqNMoCvgo9JBkdfRnRu@QhWREin8nZvL8yDaXK",
+			"QUOTES_HOST": "http://localhost:2004",
+			"QUOTES_APIKEY": "TnzxiXJFiTQbMPiuZYP7gdJbwV4hsbwr2wBqCu>",
+			"MOBILE_SERVICES_HOST": "http://localhost:2005",
+			"MOBILE_SERVICES_APIKEY": "28iRM6xhZyiejdZuvK3KuMk9Nj6upusVGkF9mNpd",
+			"MBS_PING_INTERVAL": -1
+		},
+		"gateway": {
+			"SESSION_ENCRYPTION_ALGORITHM": "aes256",
+			"SESSION_ENCRYPTION_KEY": "laLchamHZCls1xhXHvo8NodZqn6Kd5pFwEVaDBAIyvQ=",
+			"SESSION_SIGNATURE_ALGORITHM": "sha512-drop256",
+			"SESSION_SIGNATURE_KEY": "koSeQyZsySnDYdFfwGhnx8Y0/cjWQLW0yN1T6INE4cEeKiPHj5/KwFzjGiJqX5kYSrE7yGI2I6RH9tCy4JXsdQ==",
+			"SESSION_SECRET": "aeM/S+QUwwsidHm1xBmCcVMObltbxUJ2",
+			"SESSION_DURATION": "86400000",
+			"SESSION_ACTIVEDURATION": "300000",
+			"AUTHTOKEN_EXPIRATION": "1h",
+			"REFRESHTOKEN_EXPIRATION": "1y",
+			"AUTH_KEY": "c82b1f7ef4aa7d530e29d7c93dbf256641dbe090ddfdabfb42f33741d5ff9b16",
+			"AUTH_IV": "00000000000000000000000000000000",
+			"DEV_KEY": "ALVS0Ap8ZAcjMvezb60rGgeQmwJbue9g",
+			"DEV_HOST": "http://localhost:8080",
+			"TST_KEY": "4P5OtStt0g0xhRMhdwg5Ze1EhXAtm4Ud",
+			"TST_HOST": "https://dcdfc73aa11d4164990a21bbc323ac4cfdb10859.cloudapp-enterprise.appcelerator.com",
+			"ACC_KEY": "U82HF896qhbRPpbym8k97fNz8+GXjiYYrTGt4WZP",
+			"ACC_HOST": "https://292e118500b1df107a4990cba5086a0b4beb23a2.cloudapp-enterprise.appcelerator.com",
+			"PROD_KEY": "Mm=@PUdqFP>P233Ao=gDhwm6M34udW",
+			"PROD_HOST": "https://598ebaaa1f531f57d60185cf4301d04389179222.cloudapp-enterprise.appcelerator.com"
+		},
+		"dll-services": {
+			"LOCATION_AUTH": "https://servicesacc.dllgroup.com/vf/us/mobile-client-authorization/tst/?KeyId=6f251567-4bc5-40fa-9a47-c78d48301c9b",
+			"LOCATION_EF": "https://servicesacc.dllgroup.com/vf/us/expressfinance/tst/?KeyId=6f251567-4bc5-40fa-9a47-c78d48301c9b"
+		},
+		"quotes": {
+			"ARROWDB_ENV": "development",
+			"ARROWDB_KEY": "QLCAcrAkHjKVsGoNczzvCSBP8aiOowOV",
+			"ARROWDB_USER": "appc_app_user_dev",
+			"ARROWDB_PASS": "rDZ6mLTWwNxxuyehwhjqeNQ4dFvPcrdFEc4k",
+			"MYSQL_HOST": "localhost",
+			"MYSQL_USER": "root",
+			"MYSQL_PASS": "root",
+			"MYSQL_DB": "DLL_TST",
+			"SQLITE_DB_NAME": "results_dev.sql"
+		},
+		"rate-cards-afs": {
+			"ARROWDB_ENV": "development",
+			"ARROWDB_KEY": "5OXeFZYkkcoxL87SYVxjDkByx4gzYKRD",
+			"ARROWDB_USER": "appc_app_user_dev",
+			"ARROWDB_PASS": "ygzxQ8iax9pYpGCSzD"
+		},
+		"mobile-services": {
+			"ARROWDB_ENV": "development",
+			"ARROWDB_KEY": "6539uNcAD3qd2ShITOyXyGdHZ95CHkKK",
+			"ARROWDB_USER": "appc_app_user_dev",
+			"ARROWDB_PASS": "jhWoRzjLpws9fNmvR8"
+		},
+		"snp-arrowdb": {
+			"SNP_URL_OLD": "https://sdk.gds.standardandpoors.com/gdssdk/rest/v2/clientservice.json",
+			"SNP_URL": "https://api-ciq.marketintelligence.spglobal.com/gdsapi/rest/v3/clientservice.json",
+			"SNP_USER": "apiadmin@dllgroup.com",
+			"SNP_PASS": "Step.48998",
+			"ARROWDB_ENV": "development",
+			"ARROWDB_KEY": "6539uNcAD3qd2ShITOyXyGdHZ95CHkKK",
+			"ARROWDB_USER": "appc_app_user_dev",
+			"ARROWDB_PASS": "jhWoRzjLpws9fNmvR8"
+		}
+	},
+	"dev": {},
+	"tst": {
+		"base": {
+			"GATEWAY_HOST": "https://dcdfc73aa11d4164990a21bbc323ac4cfdb10859.cloudapp-enterprise.appcelerator.com",
+			"GATEWAY_APIKEY": "4P5OtStt0g0xhRMhdwg5Ze1EhXAtm4Ud",
+			"DLL_SERVICES_HOST": "https://b94abbafea8ea3eb5e064774a00cb92fec1a1630.cloudapp-enterprise.appcelerator.com",
+			"DLL_SERVICES_APIKEY": "FgbbVGNkZWhwQgEPb?>fGLjuguX7qQZ3hKUJ4TPn",
+			"RATE_CARDS_AFS_HOST": "https://ca09a7316f3f6510c3cf257ba047c7fd7cbb8d88.cloudapp-enterprise.appcelerator.com",
+			"RATE_CARDS_AFS_APIKEY": "?UKqNMoCvgo9JBkdfRnRu@QhWREin8nZvL8yDaXK",
+			"QUOTES_HOST": "https://06d14d68169b18af3f0a1f5a3a5ba6f2b5556da6.cloudapp-enterprise.appcelerator.com",
+			"QUOTES_APIKEY": "TnzxiXJFiTQbMPiuZYP7gdJbwV4hsbwr2wBqCu>",
+			"MOBILE_SERVICES_HOST": "https://1bd38fa3c59d9e39b7b10955038f6b2b392de616.cloudapp-enterprise.appcelerator.com",
+			"MOBILE_SERVICES_APIKEY": "Jmh2UVupVgBq9ZmYuYDFRXmfEfM6aEw8pH3vsQ43",
+			"MBS_PING_INTERVAL": 86400000
+		},
+		"dll-services": {},
+		"gateway": {},
+		"quotes": {
+			"ARROWDB_ENV": "production",
+			"ARROWDB_KEY": "q6W2rznnfWWhCuwPXx7y8VfDUcBChZM4",
+			"ARROWDB_USER": "appc_user",
+			"ARROWDB_PASS": "XfiMHmwai4wLVspncCYKPoYbpXosdYyy3i9vNRhc",
+			"MYSQL_HOST": "localhost",
+			"MYSQL_USER": "root",
+			"MYSQL_PASS": "root",
+			"MYSQL_DB": "DLL_TST",
+			"SQLITE_DB_NAME": "results_tst.sql"
+		},
+		"rate-cards-afs": {
+			"ARROWDB_ENV": "production",
+			"ARROWDB_KEY": "a86xsUNzbRHH40ftvfDmBcgFekRcrMkx",
+			"ARROWDB_USER": "appc_app_user",
+			"ARROWDB_PASS": "zD3U4sMoLxdDLaCZHQ9hrm2Fs7budh7HPpJKox4M"
+		},
+		"mobile-services": {
+			"ARROWDB_ENV": "production",
+			"ARROWDB_KEY": "UmkbMEocF3umOgqDtaANBklWGOwmiuhz",
+			"ARROWDB_USER": "appc_app_user",
+			"ARROWDB_PASS": "HxlcJPIdk2qWqPbxWy"
+		},
+		"snp-arrowdb": {
+			"ARROWDB_ENV": "production",
+			"ARROWDB_KEY": "UmkbMEocF3umOgqDtaANBklWGOwmiuhz",
+			"ARROWDB_USER": "appc_app_user",
+			"ARROWDB_PASS": "HxlcJPIdk2qWqPbxWy"
+		}
+	},
+	"acc": {
+		"base": {
+			"GATEWAY_HOST": "https://292e118500b1df107a4990cba5086a0b4beb23a2.cloudapp-enterprise.appcelerator.com",
+			"GATEWAY_APIKEY": "U82HF896qhbRPpbym8k97fNz8+GXjiYYrTGt4WZP",
+			"DLL_SERVICES_HOST": "https://83fa37097b6741f6c5d54f40da78e0031ada7088.cloudapp-enterprise.appcelerator.com",
+			"DLL_SERVICES_APIKEY": "UfT+j2f73Y2UBse88L3mP7oEz9BuUZKpZKex9JVW",
+			"RATE_CARDS_AFS_HOST": "https://8ac7ba77fddb7306ccea2dbe433923ccb37b2671.cloudapp-enterprise.appcelerator.com",
+			"RATE_CARDS_AFS_APIKEY": "4%7xJ66Cs8jkPKD6oVUGerajaRcckg9hp7GM9oH6",
+			"QUOTES_HOST": "https://e5b1ce5d9af76769db9a4b079623a052322f28f8.cloudapp-enterprise.appcelerator.com",
+			"QUOTES_APIKEY": "e46Ton9HK4evLr8sXy3A6vqmiR#m97pdqsJUg8Mh",
+			"MOBILE_SERVICES_HOST": "https://0d7c842e63ba0b00edc3c6bbe2a21bbad62454f0.cloudapp-enterprise.appcelerator.com",
+			"MOBILE_SERVICES_APIKEY": "F96CxA93ac4Y7Y2g&ipUaiJ2fcMmKDg4nnY4rtUj",
+			"MBS_PING_INTERVAL": 86400000
+		},
+		"dll-services": {
+			"LOCATION_AUTH": "https://servicesacc.dllgroup.com/vf/us/mobile-client-authorization/?KeyId=6f251567-4bc5-40fa-9a47-c78d48301c9b",
+			"LOCATION_EF": "https://servicesacc.dllgroup.com/vf/us/expressfinance/?KeyId=6f251567-4bc5-40fa-9a47-c78d48301c9b"
+		},
+		"rate-cards-afs": {
+			"ARROWDB_ENV": "production",
+			"ARROWDB_KEY": "cxqqVt4cw1WwHpU9lEcenyhiBbh87V5q",
+			"ARROWDB_USER": "appc_app_user",
+			"ARROWDB_PASS": "64JZ^83Lrq/Z.}Mf2ELt.6Y9mWj3AMdftFC6QU3Q"
+		},
+		"quotes": {
+			"ARROWDB_ENV": "production",
+			"ARROWDB_KEY": "gk4XkH1S08uQh0JYQr50KHaLfx6lBEKM",
+			"ARROWDB_USER": "appc_user",
+			"ARROWDB_PASS": "F37a6=aYf7/F9DozTq[tQw8UgbLW+a97TQgam#93",
+			"MYSQL_HOST": "localhost",
+			"MYSQL_USER": "root",
+			"MYSQL_PASS": "root",
+			"MYSQL_DB": "DLL_ACC",
+			"SQLITE_DB_NAME": "results_acc.sql"
+		},
+		"mobile-services": {
+			"ARROWDB_ENV": "production",
+			"ARROWDB_KEY": "QrXJVOAv7J2VCHgL0h355j5SzKxE6LmS",
+			"ARROWDB_USER": "appc_app_user",
+			"ARROWDB_PASS": "R5ZxeG87x5Dmf0Y9yS"
+		},
+		"snp-arrowdb": {
+			"ARROWDB_ENV": "production",
+			"ARROWDB_KEY": "QrXJVOAv7J2VCHgL0h355j5SzKxE6LmS",
+			"ARROWDB_USER": "appc_app_user",
+			"ARROWDB_PASS": "R5ZxeG87x5Dmf0Y9yS"
+		}
+	},
+	"release": {
+		"base": {
+			"GATEWAY_HOST": "https://598ebaaa1f531f57d60185cf4301d04389179222.cloudapp-enterprise.appcelerator.com",
+			"GATEWAY_APIKEY": "Mm=@PUdqFP>P233Ao=gDhwm6M34udW",
+			"DLL_SERVICES_HOST": "https://35c9dfabc2b77247cdbdffb016a6f8faf0c5f179.cloudapp-enterprise.appcelerator.com",
+			"DLL_SERVICES_APIKEY": "NfZdx]F9Q93LYk7,Pv?Xfh7YY6q}yY",
+			"RATE_CARDS_AFS_HOST": "https://c9a9f2200a7180771bbe917d4bde45507df09e76.cloudapp-enterprise.appcelerator.com",
+			"RATE_CARDS_AFS_APIKEY": "w4QN7A7R*}h7WXsgfiB;2kTHaQp9n^",
+			"QUOTES_HOST": "https://b006c90206d73d17b33f19e347bf60ec6ec55014.cloudapp-enterprise.appcelerator.com",
+			"QUOTES_APIKEY": "sP@hiDi;J8zN7BXGn94q9nqv3a]Y%Y",
+			"MOBILE_SERVICES_HOST": "https://76ea0dbb7211802dc48c72c076c05f6c4a0376c5.cloudapp-enterprise.appcelerator.com",
+			"MOBILE_SERVICES_APIKEY": "/Vs%yDHo26jnL6y37Jhj[sXtC8.nHB",
+			"MBS_PING_INTERVAL": 86400000
+		},
+		"dll-services": {
+			"LOCATION_AUTH": "https://services.dllgroup.com/vf/us/mobile-client-authorization?KeyId=985ec48d-a2d9-4b6b-a631-99a0cfe66ea0",
+			"LOCATION_EF": "https://services.dllgroup.com/vf/us/expressfinance?KeyId=985ec48d-a2d9-4b6b-a631-99a0cfe66ea0"
+		},
+		"rate-cards-afs": {
+			"ARROWDB_ENV": "production",
+			"ARROWDB_KEY": "uOsQWEMGAlFLaRSqWj0k5nO3noRh9Bsw",
+			"ARROWDB_USER": "appc_app_user",
+			"ARROWDB_PASS": "CC]mwca83Wx/Xh4xFEt6fCG68KD&#Y"
+		},
+		"quotes": {
+			"ARROWDB_ENV": "production",
+			"ARROWDB_KEY": "F8jBg5XZcWobfexRdkEUJ6z3oHd4WzrN",
+			"ARROWDB_USER": "appc_user",
+			"ARROWDB_PASS": "HzV%uv+of32J8?jV;nmMy3dWsc4t6B",
+			"MYSQL_HOST": "localhost",
+			"MYSQL_USER": "root",
+			"MYSQL_PASS": "root",
+			"MYSQL_DB": "DLL_PROD",
+			"SQLITE_DB_NAME": "results_acc.sql"
+		},
+		"mobile-services": {
+			"ARROWDB_ENV": "production",
+			"ARROWDB_KEY": "C2zHdQFIqi4QswkjWjpMyNCCE5J8j2jL",
+			"ARROWDB_USER": "appc_app_user",
+			"ARROWDB_PASS": "vxbL0Pvi1KeYVJ0LQB"
+		},
+		"snp-arrowdb": {
+			"ARROWDB_ENV": "production",
+			"ARROWDB_KEY": "C2zHdQFIqi4QswkjWjpMyNCCE5J8j2jL",
+			"ARROWDB_USER": "appc_app_user",
+			"ARROWDB_PASS": "vxbL0Pvi1KeYVJ0LQB"
+		}
+	}
+}

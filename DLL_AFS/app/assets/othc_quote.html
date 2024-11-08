@@ -1,0 +1,502 @@
+﻿<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+	<head>
+		<meta charset="UTF-8"></meta>
+		<title>DLL Lease Quote</title>
+		<style type="text/css">
+
+			body {
+				background-color: #FFF;
+			}
+
+			h1 {
+				font-size: 11px;
+				font-weight: bold;
+				margin-top:0; 
+				margin-bottom:0;
+			}
+
+			h2 {
+				margin-top: 3px;
+				margin-bottom: 3px;
+				font-size: 10px;
+				font-weight: bold;
+			}
+
+			hr {
+				display: block;
+				margin: 0.22cm 0;
+				width: 100%;
+				height: 1px;
+				border: 0;
+				border-top: 1px solid #CCC;
+			}
+
+			table {
+				width: 100%;
+				font-size: 9px;
+				border-collapse: collapse;
+			}
+
+			td {
+				height: 10px;
+			}
+			
+			#container {
+				padding: 0.18cm 0.23cm 0.23cm 0.76cm;
+				font-family : sans-serif;
+				background-color: #FFF;
+			}
+
+			#div_license {
+				clear: both;
+				text-align: center;
+				page-break-before: always;
+			}
+
+			#img_license {
+				max-width: 7cm;
+			}
+
+			#footer {
+				margin-top: 3px;
+				margin-bottom: 1px;
+				clear: both;
+				width: 100%;
+			}
+
+			#left_note {
+				float: left;
+			}
+
+			#right_note {
+				float: right;
+			}
+
+			#lessee_row td{
+				height: 40;
+			}
+
+			.info_table {
+				font-size: 9px;
+			}
+
+			.info_table, .info_table td {
+				border: 1px solid #CCC;
+			}
+
+			.info_table td{
+				padding: 1px 1px 1px 2px;
+			}
+
+			.quoted_title {
+				font-weight: bold;
+				width: 3.33cm;
+				padding-left: 0.3cm;
+			}
+
+			.field_title {
+				font-weight: bold;
+				font-size: 7px;
+				font-family : sans-serif;
+			}
+
+			.column {
+				font-size: 9px;
+				width: 40%;
+				text-align: justify;
+			}
+
+			.column, p {
+				margin-top: -8px;
+			}
+
+			.footer_note {
+				font-family : sans-serif;
+				font-size: 7px;
+			}
+
+			.cell_equipment {
+				width: 10.07cm;
+			}
+
+			.cell_no_bottom, .field_title {
+				vertical-align: top;
+			}
+
+			.cell_no_top, .field_value{
+				margin-top: 10px;
+				font-size: 10px;				
+				font-weight: normal;
+			}
+
+			.hidden {
+				visibility: hidden;
+				display: none;
+				width : 0px;
+				height: 0px;
+			}
+
+			.elementToRight {
+				text-align: right;
+			}
+
+			.elementToLeft {
+				text-align: left;
+			}
+
+		</style>
+
+
+		<script type="text/javascript">
+			<!--
+			Ti.API.info("[application.html] - app:createHTML");
+
+			Ti.App.addEventListener("app:updateApplicationContract", refresh);
+			Ti.App.addEventListener("app:updateTerms", obtainTerms);
+
+			function obtainTerms () {
+				Ti.API.info("[application.html] - obtainTerms()");
+
+				Ti.App.removeEventListener("app:updateApplicationContract", refresh);
+				Ti.App.removeEventListener("app:updateTerms", obtainTerms);
+				
+				var termsContent = "";
+				var termsElement = document.getElementById('terms_conditions');
+				termsElement && (termsContent = termsElement.innerHTML);
+				
+				Ti.App.fireEvent('app:leaseLoaded', { terms : termsContent });
+			}
+
+			function refresh(e){
+				Ti.API.info("[application.html] - refresh()");
+				Ti.API.info(e);
+				
+				Ti.App.removeEventListener("app:updateApplicationContract", refresh);
+				Ti.App.removeEventListener("app:updateTerms", obtainTerms);
+
+				try{
+					document.getElementById('customer_name').innerHTML = e.customerName;
+					document.getElementById('customer_email').innerHTML = e.customerEmail;
+					document.getElementById('date').innerHTML = e.date;
+					document.getElementById('customer_phone').innerHTML = e.customerPhone;
+					document.getElementById('term').innerHTML = '' + e.term;
+					document.getElementById('advance_payment').innerHTML = e.advancePayment;
+					document.getElementById('frequency').innerHTML = e.frequency;
+					document.getElementById('payment_description').innerHTML = e.paymentDescription.join(' ');
+					document.getElementById('purchase_option').innerHTML = e.purchaseOption;
+					document.getElementById('lessee_name').innerHTML = e.lesseLegalName;
+					document.getElementById('lessee_phone').innerHTML = e.lessePhoneNumber;
+					document.getElementById('lessee_address').innerHTML = e.lesseBillingAddress;
+					document.getElementById('lessee_city').innerHTML = e.city;
+					document.getElementById('lessee_state').innerHTML = e.state;
+					document.getElementById('lessee_zip').innerHTML = e.zip;
+					document.getElementById('lessee_email').innerHTML = e.emailAddress;
+					if(e.hasSignature){
+						document.getElementById('lessee_signature').innerHTML = '<img src="' + e.lesseSignature + '" width="80" height="40" />';
+					}
+					document.getElementById('lessee_signed_by').innerHTML = e.signedBy;
+					document.getElementById('lesses_title').innerHTML = e.title;
+					document.getElementById('lessee_date').innerHTML = e.signatureDate;
+					document.getElementById('principal_name').innerHTML = e.principalName;
+					document.getElementById('ssn').innerHTML = e.ssn;
+					document.getElementById('dob').innerHTML = e.dob;
+
+					if(e.hasLicense){
+						document.getElementById('div_license').className = '';
+						document.getElementById('img_license').src = e.license;
+					} else {
+						block = document.getElementById('div_license');
+						fatherBlock = block.parentNode;
+						fatherBlock.removeChild(block);
+					}
+
+					var equipmentStrings = [];
+					for(var i = 0; i < e.equipment.length; i++){
+						var equipmentInfo = e.equipment[i];
+						equipmentStrings.push(equipmentInfo.quantity + ' ' + equipmentInfo.make + ' ' + equipmentInfo.model);
+					}
+					document.getElementById('equipment').innerHTML = equipmentStrings.join('; ');
+
+					document.getElementById('right_note').innerHTML = e.copyright;
+
+					if(e.hideFields.structure){
+						var advancePaymentTitle = document.getElementById('advance_payment_title');
+						advancePaymentTitle.className = advancePaymentTitle.className + ' hidden';
+
+						var advancePayment = document.getElementById('advance_payment');
+						advancePayment.className = advancePayment.className + ' hidden';
+					}
+
+					if(e.hideFields.paymentFrequency){
+						var frequencyTitle = document.getElementById('frequency_title');
+						frequencyTitle.className = frequencyTitle.className + ' hidden';
+
+						var frequency = document.getElementById('frequency');
+						frequency.className = frequency.className + ' hidden';
+					}
+
+					setTimeout(function() {
+						// Android workaround
+						var _html = document.documentElement.outerHTML;
+						// var doc = new DOMParser().parseFromString(_html, 'text/html');
+						// _html = new XMLSerializer().serializeToString(doc);
+						Ti.App.fireEvent('app:webViewUpdated', {
+							html : _html
+						});	
+					}, 1000);
+				} catch(err){
+					Ti.API.error('[OTHC-Quote PDF] - ' + JSON.stringify(err, null, '\t'))
+					var paramError = {
+						error : err
+					};
+					Ti.App.fireEvent('app:webViewUpdated', paramError);
+				}
+
+			}
+			-->
+		</script>
+	
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:Artifact_x0020_Type msdt:dt="string">TEMPLATE</mso:Artifact_x0020_Type>
+<mso:ContentType0 msdt:dt="string">text/html</mso:ContentType0>
+<mso:Brand msdt:dt="string">DLLMILNER</mso:Brand>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:ArtifactClass msdt:dt="string">LEASECONTRACT</mso:ArtifactClass>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+
+</head>
+
+<body lang="en">
+	<div id="container">
+
+		<table>
+			<tbody>
+				<tr>
+					<td class="elementToLeft">Quoted To</td>
+					<td class="elementToRight">Lease Quote / Contract</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<table class="table_quote">
+			<tbody>
+				<tr>
+					<td class="quoted_title">Customer Name:</td>
+					<td class="quoted_field" id="customer_name"></td>
+					<td class="quoted_title">Customer Email:</td>
+					<td class="quoted_field" id="customer_email"></td>
+				</tr>
+				<tr>
+					<td class="quoted_title">Date:</td>
+					<td class="quoted_field" id="date"></td>
+					<td class="quoted_title">Customer Phone:</td>
+					<td class="quoted_field" id="customer_phone"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr />
+
+		
+		<h2 style="margin-top:-5px">Payment &amp; Equipment Information</h2>
+		<table class="info_table" id="table_payment">
+			<tbody>
+				<tr colspan="2">
+					<td class="field_title" id="term_title"><span class="field_title">Term (in Months)</span><br/><span class="field_value" id="term"></span></td>
+					<td class="field_title" id="advance_payment_title"><span class="field_title">Advance Payment</span><br/><span class="field_value" id="advance_payment"></span></td>
+					<td class="field_title" id="frequency_title"><span class="field_title">Frequency</span><br/><span class="field_value" id="frequency"></span></td>
+					<td class="field_title"><span class="field_title">Purchase Option</span><br/><span class="field_value" id="purchase_option"></span></td>
+					<td class="field_title cell_equipment" rowspan="3" style="vertical-align : top; width :40%"><span class="field_title">Equipment Description</span><br/><span class="field_value" id="equipment"></span></td>
+				</tr>
+				<tr colspan="2">
+					<td class="field_value cell_no_bottom" colspan="4" rowspan="1"><span id="payment_description"></span><br/><br/>Plus applicable taxes</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<h2>Lessee Information and Signature</h2>
+		<table class="info_table" id="table_lessee">
+			<tbody>
+				<tr colspan="2">
+					<td class="field_title" colspan="8"><span class="field_title">Lessee Legal Name</span><br/><span class="field_value" id="lessee_name">&nbsp;</span></td>
+					<td class="field_title" colspan="3"><span class="field_title">Lessee Phone Number</span><br/><span class="field_value" id="lessee_phone">&nbsp;</span></td>
+				</tr>
+				<tr colspan="2">
+					<td class="field_title cell_no_border" colspan="1"><span class="field_title">Lessee Billing Address</span><br/><span class="field_value" id="lessee_address">&nbsp;</span></td>
+					<td class="field_title cell_no_border" colspan="2"><span class="field_title">City</span><br/><span class="field_value" id="lessee_city">&nbsp;</span></td>
+					<td class="field_title cell_no_border" colspan="1"><span class="field_title">State</span><br/><span class="field_value" id="lessee_state">&nbsp;</span></td>
+					<td class="field_title cell_no_border" colspan="3"><span class="field_title">Zip</span><br/><span class="field_value" id="lessee_zip">&nbsp;</span></td>
+					<td class="field_title cell_no_border" colspan="4"><span class="field_title">Email Address (All invoices will be sent to this address)</span><br/><span class="field_value" id="lessee_email">&nbsp;</span></td>
+				</tr>
+				<tr colspan="2" id="lessee_row">
+					<td class="field_title" colspan="2"><span class="field_title">Lessee Signature</span><br/><span class="field_value" id="lessee_signature">&nbsp;</span></td>
+					<td class="field_title" colspan="4"><span class="field_title">Signed By</span><br/><span class="field_value" id="lessee_signed_by">&nbsp;</span></td>
+					<td class="field_title" colspan="4"><span class="field_title">Title</span><br/><span class="field_value" id="lesses_title">&nbsp;</span></td>
+					<td class="field_title" colspan="1"><span class="field_title">Date</span><br/><span class="field_value" id="lessee_date">&nbsp;</span></td>
+				</tr>
+				<tr colspan="2">
+					<td class="field_title" colspan="3"><span class="field_title">Principal Name</span><br/><span class="field_value" id="principal_name">&nbsp;</span></td>
+					<td class="field_title" colspan="6"><span class="field_title">Social Security Number</span><br/><span class="field_value" id="ssn">&nbsp;</span></td>
+					<td class="field_title" colspan="2"><span class="field_title">Date of Birth</span><br/><span class="field_value" id="dob">&nbsp;</span></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table id="terms_conditions">
+			<tbody>
+				<tr>
+					<th class="elementToLeft" colspan="2">Lease Agreement Terms and Conditions</th>
+				</tr>
+				<tr>
+					<td class="column" style="vertical-align: top; padding-right: 10px;">
+						<p style="margin-top:0"><span style="font-weight: bold;">1.&nbsp; Lease:</span> You (Lessee)
+						agree to lease from De Lage Landen Financial Services, Inc., 1111 Old
+						Eagle School Road, Wayne, PA 19087 (us) the Equipment listed above on
+						the terms herein.&nbsp; <span style="font-weight: bold;">You agree
+						that this is a NON-CANCELABLE lease.</span>&nbsp; You agree to pay us a
+						fee of $75.00 to reimburse our expenses for documentation costs and all
+						ongoing administration costs during the term of this Lease. If a
+						payment is not made when due, you will pay us a late charge of 5% of
+						the payment or $10.00, whichever is greater. If a check is returned,
+						you will pay a return-check / non-sufficient funds charge (“NSF
+						Charge”) of $25.00. </p>
+						<p><span style="font-weight: bold;">2.&nbsp; Term:</span> This Lease is
+						effective on the date that we fund the supplier of the Equipment, and
+						the term of this Lease begins on that date or any later date that we
+						designate (“Commencement Date”) and continues thereafter for the term
+						indicated above. Lease payments are due as invoiced by us. As you will
+						have possession of the Equipment from the date of its delivery, you
+						will pay us interim rent for the period from the date the Equipment is
+						delivered to you until the Commencement Date as reasonably calculated
+						by us based on the Lease payment, the number of days in that period,
+						and a month of 30 days. </p>
+						<p><span style="font-weight: bold;">3.&nbsp; Equipment and Title:</span>
+						You acknowledge that by signing below you have already tested and
+						accepted the Equipment and that it is in good working order.&nbsp; If
+						you have a $1.00 purchase option or this Lease is deemed to be a
+						security agreement, you grant us a security interest in the Equipment
+						and all proceeds therefrom, otherwise we will have title to the
+						Equipment. We may inspect the Equipment during the term of the Lease.</p>
+						<p><span style="font-weight: bold;">4.&nbsp; Equipment Use, Maintenance
+						and Warranties:</span> We are leasing the Equipment to you “AS-IS” AND
+						MAKE NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF
+						MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. Regardless of
+						whether your lease payments include the cost of maintenance, service,
+						and/or supplies (“Service”), you agree that we are not responsible for
+						providing such Service for the Equipment.&nbsp; You will make any&nbsp;
+						claims relating to Service against the Service provider (“Provider”)
+						and will continue to pay us in full.&nbsp; All maintenance, repair of,
+						and removal of information, data and software from, the Equipment,
+						shall be in accordance with Equipment manufacturer’s specifications and
+						recommendations.</p>
+						<p><span style="font-weight: bold;">5.&nbsp; Assignment:</span> You
+						cannot assign this Lease or sublease, pledge or encumber the Equipment.
+						You agree that we may assign this Lease and our assignee will not be
+						subject to any claims, defenses, or setoffs that you may have against
+						us or any supplier or Provider.</p>
+						<p><span style="font-weight: bold;">6.&nbsp; Risk of Loss and Insurance:</span>
+						You are responsible for all risks of loss or damage to the Equipment
+						and will keep the Equipment properly maintained and insured. If you do
+						not provide such insurance, you agree that we have the right, but not
+						the obligation, to obtain such insurance, and add an insurance fee to
+						the amount due from you ( which include a profit). You will indemnify
+						us for any losses or injuries caused by the Equipment and such
+						indemnity shall survive termination of the Lease.</p>
+						<p><span style="font-weight: bold;">7.&nbsp; Taxes:</span> Upon
+						invoice, you shall pay or reimburse us for all taxes (including without
+						limitation, sales, use and personal property taxes) and charges arising in
+						connection with the sale, ownership, lease and use of the
+						Equipment. We may charge you a processing fee for administering
+						property tax filings.&nbsp; You will indemnify us on an after tax basis
+						against the loss or unavailability of any tax benefits anticipated at
+						the Commencement Date arising out of your acts or omissions.&nbsp; You
+						agree to promptly provide evidence of tax-exempt status to us if
+						applicable.</p>
+					</td>
+					<td class="column">
+						<p style="margin-top:0"><span style="font-weight: bold;">8.&nbsp; Default and Remedies:</span>
+						If you fail to pay a Lease payment, any Lease guarantor dies or you
+						breach any other obligation to us, we can: (i) accelerate the balance
+						of all past due and future Lease payments plus our booked Equipment
+						residual value, if any, and exercise any other rights and remedies
+						available at law or equity;&nbsp; and (ii) charge you interest on all
+						monies due at the rate of 18% per year or the highest rate permitted by
+						law from the date of default. You remain liable for any deficiency
+						balance if we sell the Equipment. You shall&nbsp; pay all expenses
+						incurred by us in connection with enforcement of any remedies,
+						including all Equipment recovery and sale expenses and attorneys’ fees.</p>
+						<p><span style="font-weight: bold;">9.&nbsp; End of Lease, Return,
+						Purchase Option, and Renewal: </span>You will give us at least 60 days
+						but not more than 90 days written notice (to our address above) before
+						the expiration of the initial lease term (or any renewal term) of your
+						intention to purchase or return the Equipment.&nbsp; With proper notice
+						you may: a) purchase all the Equipment as indicated above under
+						“Purchase Option”(fair market value purchase option amounts will be
+						determined by us based on the Equipment’s in place value); or b) return
+						all the Equipment in good working condition at your cost in a timely
+						manner, and to a location we designate, with any information, data or
+						software you placed or caused to be placed on the Equipment removed. If you fail
+						to notify us, or if you do not (i) purchase or (ii) return the Equipment as provided
+						herein, this Lease will automatically renew at the same payment amount for
+						consecutive 60-day periods.</p>
+						<p><span style="font-weight: bold;">10.&nbsp; Miscellaneous:</span> You
+						agree that this Lease is a Finance Lease as defined in Article 2A of
+						the Uniform Commercial Code (“UCC”). You acknowledge that we have given
+						you the Equipment supplier’s name. All notices shall be sent to the
+						applicable party’s address above.&nbsp; This Lease shall be governed
+						and construed in accordance with the laws of Pennsylvania). You&nbsp;
+						irrevocably waive trial by jury. You agree that (i) you irrevocably
+						waive any and all rights and remedies granted to you under UCC section
+						2A-508 through 2A-522, (ii) the Equipment will remain personal property
+						and will only be used in the USA and for business purposes at the above
+						location, (iii) we are not liable to you for indirect, special, or
+						consequential damages; (iv) no failure to act shall be deemed a waiver
+						of any rights hereunder (v) no one other than us, including the
+						supplier or Provider, may waive or change any term or condition in this
+						Lease; (vi) your obligations under this lease are absolute,
+						unconditional, and are not subject to cancellation, reduction, setoff
+						or counterclaim; and (vii) a fax or electronic copy of this Lease
+						delivered to us may be treated as the sole original of this
+						Lease.&nbsp; </p>
+						<p><span style="font-weight: bold;">11.&nbsp; Personal Guaranty:</span> I, 
+						the guarantor identified by the Social Security Number and Date of Birth 
+						entered below, unconditionally guaranty prompt payment of all the Lessee’s 
+						obligations. Lessor is not required to proceed against Lessee or Equipment 
+						or enforce other remedies before proceeding against me. I waive notice of 
+						acceptance and all other notices or demands of any kind to which I may be
+						entitled. I consent to any extensions or modification granted to Lessee and 
+						the release and/or compromise of any obligations of Lessee or any other 
+						guarantors without releasing me from my obligations. This is a continuing 
+						guaranty and will remain in effect in the event of my death and may be 
+						enforced by or for the benefit of any assignee or successor of Lessor. 
+						This guaranty is governed by and construed in accordance with the Laws of 
+						the Commonwealth of Pennsylvania and I consent to non-exclusive jurisdiction 
+						in any state or federal court in Pennsylvania and waive trial by jury. 
+						<span style="font-weight: bold;">I ACKNOWLEDGE AND AGREE THAT MY SIGNATURE 
+						BINDS (1) LESSEE THROUGH MY CORPORATE CAPACITY AND (2) IF I ENTER MY SOCIAL 
+						SECURITY NUMBER AND DATE OF BIRTH BELOW, MYSELF IN A PERSONAL CAPACITY 
+						PURSUANT TO THIS SECTION. I ACKNOWLEDGE AND AGREE THAT THE INCLUSION OF MY 
+						SOCIAL SECURITY NUMBER AND DATE OF BIRTH BELOW CONSTITUTES FURTHER 
+						ACCEPTANCE OF THE PERSONAL GUARANTY CONTAINED IN THIS SECTION WITHOUT 
+						DIMINISHING THE OBLIGATIONS OF LESSEE.</span>
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div id="footer">
+			<div id="left_note" class="footer_note">California Finance Lender License No. 603 5216</div>
+			<div id="right_note" class="footer_note">(c) 2014 All Rights Reserved [ID, DATE]</div>
+		</div>
+		<div id="div_license" class="hidden">
+			<h2>Driver's License Photo</h2>
+			<img id="img_license" src="appicon.png" />
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+'#window': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white,
+	backgroundImage: '/images/splash.png'
+}

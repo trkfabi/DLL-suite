@@ -1,0 +1,14 @@
+<Alloy>
+	<Window id="window">
+		<View id='backgroundMask' />
+		<View id="container">
+			<View class="separator" />
+			<View id="header">
+				<Button class="headerButton" id="clearButton" />
+				<Button class="headerButton" id="doneButton" />
+			</View>
+			<TableView id="listContainer" />
+			<View id="bottomSeparator" class="separator" />
+		</View>
+	</Window>
+</Alloy>

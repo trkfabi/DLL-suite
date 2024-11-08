@@ -1,0 +1,28 @@
+<Alloy>
+	<Window id="window">
+		<LeftNavButton>
+			<View id="backView">
+				<Button id="backButton" />
+				<Label id="backText" />
+			</View>
+		</LeftNavButton>
+		<RightNavButton platform="ios">
+			<Button id="doneButton" />
+		</RightNavButton>
+		<View id="Wrapper">
+			<View id="header" platform="android">
+				<Button id="backButton" />
+				<Label id="titleLabel" />
+				<Button id="doneButton" />
+			</View>
+
+			<!--<SearchBar id="searchBar" platform="ios"/>-->
+			<View id="searchBarContainer">
+				<TextField id="searchBarTextField" />
+				<Button id="searchBar" />
+				<View class="fieldBottomLine" platform="android" />
+			</View>
+			<TableView id="customerList" />
+		</View>
+	</Window>
+</Alloy>

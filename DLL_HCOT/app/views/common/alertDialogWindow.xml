@@ -1,0 +1,20 @@
+<Alloy>
+	<Window id='window'>
+		<View id='container'>
+			<Label id='title' />
+			<TextField id='textField' />
+
+			<View id='buttonsContainer'>
+				<View id='leftView'>
+					<View class='topLine' />
+					<Button id='cancelButton' />
+				</View>
+				<View id='centerDivider' />
+				<View id='rightView'>
+					<View class='topLine' />
+					<Button id='okButton' />
+				</View>
+			</View>
+		</View>
+	</Window>
+</Alloy>

@@ -1,0 +1,14 @@
+<Alloy>
+	<View id='wrapper'>
+		<View id='headerContainer' class='header'>
+			<View class='leftTab' />
+			<Label id='titleLabel' />
+		</View>
+		<View id='descriptionRow' class='row'>
+			<View class='leftTab' />
+			<Widget id="descriptionField" src="com.propelics.textarea.hint" tag="description" />
+			<View id='descriptionBottomLine' class='fieldBottomLine' />
+		</View>
+		<View class='separator' />
+	</View>
+</Alloy>

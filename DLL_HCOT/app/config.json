@@ -1,0 +1,14 @@
+{
+	"global": {}, 
+	"env:development": {}, 
+	"env:test": {}, 
+	"env:production": {}, 
+	"os:android": {},
+	"os:blackberry": {},
+	"os:ios": {},
+	"os:mobileweb": {},
+	"dependencies": {
+		"RotatingDial": "1.0",
+		"com.propelics.textarea.hint" : "1.0"
+	}
+}

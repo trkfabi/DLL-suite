@@ -1,0 +1,12 @@
+<Alloy>
+	<TableViewRow class="row">
+		<View class="rowContainer">
+			<Label id="dateRow" class="labelRow" />
+			<Label id="paymentRow" class="labelRow" />
+			<Label id="principalRow" class="labelRow" />
+			<Label id="interestRow" class="labelRow" />
+			<Label id="balanceRow" class="labelRow" />
+		</View>
+		<View class="horizontalLine" />
+	</TableViewRow>
+</Alloy>

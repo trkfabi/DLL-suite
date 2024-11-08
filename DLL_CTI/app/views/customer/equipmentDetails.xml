@@ -1,0 +1,57 @@
+<Alloy>
+	<View id="wrapper">
+		<View class="header" id="header">
+			<View class="leftTab" platform="ios" />
+			<View class="leftTabHeader" platform="android" />
+			<Button id="deleteButton" />
+			<Label id="titleLabel" />
+			<Button id="expandCollapseButton" />
+			<View class="separator" />
+		</View>
+
+		<View class="row" id="statusRow">
+			<View class="leftTab" />
+			<Require id="equipmentStatus" src="common/tabbedBar" />
+		</View>
+
+		<View class="row">
+			<View class="leftTab" />
+			<TextField id="makeField" class="field" />
+			<View class="fieldBottomLine" />
+		</View>
+
+		<!-- <View id="makeAutocompleteContainer">
+				<Require id="makeAutocomplete" src="common/autocomplete" />
+			</View> -->
+
+		<View class="row">
+			<View class="leftTab" />
+			<TextField id="modelField" class="field" />
+			<View class="fieldBottomLine" />
+		</View>
+
+		<View class="row">
+			<View class="leftTab" />
+			<TextField id="descriptionField" class="field" />
+			<View class="fieldBottomLine" />
+		</View>
+
+		<View class="row" id="yearRow">
+			<View class="leftTab" />
+			<TextField id="yearField" class="field" />
+			<View class="fieldBottomLine" />
+		</View>
+
+		<View class="row" id="serialRow">
+			<View class="leftTab" />
+			<TextField id="serialNoField" class="field" />
+			<View class="fieldBottomLine" />
+		</View>
+
+		<View class="extraSpace">
+			<View class="leftTab" platform="ios" />
+			<View class="extraLeftTab" platform="android" />
+		</View>
+
+	</View>
+</Alloy>

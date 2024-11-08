@@ -1,0 +1,4 @@
+<Alloy>
+	<TextField id='fakeTextField' platform='android' />
+	<View id='container' />
+</Alloy>

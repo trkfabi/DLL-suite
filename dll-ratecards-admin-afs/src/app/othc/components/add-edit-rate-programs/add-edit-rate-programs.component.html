@@ -1,0 +1,222 @@
+<div class="main-content dashboard item-manager term-manager manage-rate-programs">
+	<header class="header-toolbar">
+		<div class="titles">
+			<h2>
+				{{ screenTitle }}
+			</h2>
+		</div>
+		<div class="buttons">
+			<button class="btn-grey" (click)="onCancelClick($event, dialogActionsCancel)">
+				Cancel
+			</button>
+			<button class="btn-orange-pink" (click)="onSaveClick($event)" [disabled]="disabledButton">
+				Save
+			</button>
+		</div>
+	</header>
+	<div class="rate-program-content">
+		<div class="col-large">
+			<form [formGroup]="rateDescriptionForm">
+				<div class="column-header">
+					<label for="">
+						<h3>Rate Program Description</h3>
+					</label>
+					<input
+						type="text"
+						class="rate-program-name"
+						placeholder="Enter name"
+						formControlName="name"
+						id="name"
+						maxlength="100"
+						[value]="rateProgramName"
+						#rateProgramDescription
+					/>
+					<span class="error-message" *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+						>The Rate Program Description can be between 5 and 100 characters. Allowed special characters are #%&*()_-=+'“.
+					</span>
+				</div>
+				<div class="field-boxes">
+					<div class="field-box">
+						<div class="box-header">
+							<span class="box-title">Advanced Payments</span>
+						</div>
+						<div class="box-content">
+							<app-increase-points
+								[pointsData]="advancedPaymentsData"
+								(pointsDataOutput)="updateIncreasePoints($event, 'advancePayments')"
+							></app-increase-points>
+						</div>
+					</div>
+					<div class="field-box middle-box">
+						<div class="box-header">
+							<span class="box-title">Advanced Security Payments</span>
+						</div>
+						<div class="box-content">
+							<app-increase-points
+								[pointsData]="advancedSecurityData"
+								(pointsDataOutput)="updateIncreasePoints($event, 'advanceSecurityPayments')"
+							></app-increase-points>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="box-header">
+							<span class="box-title">Purchase Option</span>
+						</div>
+						<div class="box-content">
+							<app-checkbox-list
+								[itemList]="purchaseOptions"
+								(checkBoxClickEvent)="checkboxClick($event, 'purchaseOptions')"
+							></app-checkbox-list>
+						</div>
+					</div>
+				</div>
+				<div class="field-boxes">
+					<div class="field-box">
+						<div class="box-header">
+							<span class="box-title">Payment Frequency</span>
+						</div>
+						<div class="box-content">
+							<app-checkbox-list
+								[itemList]="paymentFrequencies"
+								(checkBoxClickEvent)="checkboxClick($event, 'paymentFrequencies')"
+							></app-checkbox-list>
+						</div>
+					</div>
+					<div class="field-box middle-box">
+						<div class="box-header">
+							<span class="box-title">Additonal Points</span>
+						</div>
+						<div class="box-content">
+							<app-increase-points
+								[pointsData]="additionalPointsData"
+								(pointsDataOutput)="updateIncreasePoints($event, 'points')"
+							></app-increase-points>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="box-header">
+							<span class="box-title">Deferrals</span>
+						</div>
+						<div class="box-content">
+							<app-options-radio
+								class="deferrals-options-radio"
+								[itemList]="deferralValues"
+								(radioOptionClickEvent)="radioOptionClick($event, 'deferralOptions')"
+							>
+							</app-options-radio>
+						</div>
+					</div>
+				</div>
+				<div class="field-boxes">
+					<div class="field-box large-box">
+						<div class="box-header">
+							<span class="box-title">Amount Financed</span>
+						</div>
+						<div class="box-content">
+							<app-amount-finance
+								[amountRanges]="amountRangesData"
+								(amountRangesOutput)="updateAmountRanges($event, 'amountRanges')"
+							></app-amount-finance>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="box-header">
+							<span class="box-title">Terms</span>
+							<button class="btn-add" (click)="addTermsToList($event, dialogActions)">+</button>
+						</div>
+						<div class="box-content box-terms">
+							<app-options-radio
+								[itemList]="termsValues"
+								editable="true"
+								(radioOptionClickEvent)="radioOptionClick($event, 'termsOptions')"
+								(deleteClickEvent)="deleteOptionClick($event)"
+							>
+							</app-options-radio>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-small">
+			<div class="rate-program-summary">
+				<span class="summary-description-empty" *ngIf="!hasDataToDisplay()">
+					Your Rate Program Summary
+				</span>
+				<ul class="program-details-summary" *ngIf="hasDataToDisplay()">
+					<li class="details-name" *ngIf="isValidName">
+						{{ rateProgramSelected?.name }}
+					</li>
+					<li *ngIf="hasDataToDisplay('advancePayments')">
+						<span class="label">Advanced Payments</span>
+						<span class="value">{{ rateProgramSelected?.advancePayments | numberToArray }}</span>
+						<div class="clear"></div>
+					</li>
+					<li *ngIf="hasDataToDisplay('advanceSecurityPayments')">
+						<span class="label">Advanced Security Payments</span>
+						<span class="value">{{ rateProgramSelected?.advanceSecurityPayments | numberToArray }}</span>
+						<div class="clear"></div>
+					</li>
+					<li *ngIf="hasDataToDisplay('purchaseOptions')">
+						<span class="label">Purchase Option</span>
+						<span class="value">{{ rateProgramSelected?.purchaseOptions | purchaseOptions }}</span>
+						<div class="clear"></div>
+					</li>
+					<li *ngIf="hasDataToDisplay('paymentFrequencies')">
+						<span class="label">Payment Frequency</span>
+						<span class="value">{{ rateProgramSelected?.paymentFrequencies | arrayInline: ', ':'paymentFrequencies' }}</span>
+						<div class="clear"></div>
+					</li>
+					<li *ngIf="hasDataToDisplay('terms')">
+						<span class="label single">Terms</span>
+						<span class="value" [innerHTML]="rateProgramSelected?.terms | termsSelected: rateProgramSelected.defaults"></span>
+						<div class="clear"></div>
+					</li>
+					<li *ngIf="hasDataToDisplay('deferrals')">
+						<span class="label single">Deferrals</span>
+						<span class="value">{{ rateProgramSelected?.deferrals }} days</span>
+						<div class="clear"></div>
+					</li>
+					<li class="amount-financed" *ngIf="hasDataToDisplay('amountRanges')">
+						<span class="label rate-program-summary-align-text">Amount Financed</span>
+						<span class="value">{{ rateProgramSelected?.amountRanges | amountRanges }}</span>
+						<div class="clear"></div>
+					</li>
+					<li *ngIf="hasDataToDisplay('points')">
+						<span class="label rate-program-summary-align-text">Additional Points</span>
+						<span class="value">{{ rateProgramSelected?.points | numberToArray: '.00' }}</span>
+						<div class="clear"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+
+<div kendoDialogContainer></div>
+
+<ng-template #dialogActions>
+	<div class="terms-list-dialog buttons">
+		<button
+			kendoButton
+			(click)="handleDialogSubmitButtonClick($event)"
+			class="k-button k-primary"
+			[disabled]="disabledTermsSubmitButton"
+		>
+			{{ buttonAction }}
+		</button>
+		<button kendoButton (click)="handleDialogCloseButtonClick($event)" class="k-button">Cancel</button>
+	</div>
+</ng-template>
+
+<ng-template #dialogActionsCancel>
+	<div>
+		<button kendoButton (click)="handleDialogOkButtonClick($event)" class="k-button k-primary">{{ buttonAction }}</button>
+		<button kendoButton (click)="handleDialogCloseButtonClick($event)" class="k-button">Cancel</button>
+	</div>
+</ng-template>
+<ng-template #dialogActionsErrorDisplay>
+	<div class="buttons">
+		<button kendoButton (click)="handleDialogErrorOkClick()" class="k-button k-primary">OK</button>
+	</div>
+</ng-template>

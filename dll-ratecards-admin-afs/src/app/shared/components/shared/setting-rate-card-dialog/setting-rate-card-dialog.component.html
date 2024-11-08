@@ -1,0 +1,34 @@
+<div class="dialog-container rateCard-dialog" #manageRateCard>
+	<div *ngIf="isDelete" class="delete-ratecard">
+		<div *ngIf="isDelete" class="align-center">
+			<p class="regularSize">
+				By deleting
+				<strong>
+					{{ item.name }}
+				</strong>
+				all Versions and Vendor Codes contained in this Rate Card will be lost.
+			</p>
+			<p class="regularSize">Are you sure you want to continue?</p>
+		</div>
+	</div>
+	<div *ngIf="!isDelete" class="dialog-container add-ratecard">
+		<div>
+			<p>
+				Rate Card Name can be at most 20 characters. Only letters and numbers are allowed.
+			</p>
+			<input
+				kendoTextBox
+				class="textbox"
+				[maxLength]="20"
+				[(ngModel)]="rateCardName"
+				placeholder="Rate Card Name"
+				(ngModelChange)="onRateCardNameChange($event)"
+				(keypress)="onRateCardNameKeyPress($event)"
+				[ngClass]="{ 'error-input': showError, bold: !showError }"
+			/>
+			<small [hidden]="!showError" class="error-message">
+				{{ messageError }}
+			</small>
+		</div>
+	</div>
+</div>

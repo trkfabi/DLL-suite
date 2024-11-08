@@ -1,0 +1,36 @@
+<Alloy>
+	<View id='wrapper'>
+		<View id='headerContainer' class='header'>
+			<View class='leftTab' />
+			<Button id='deleteButton' />
+			<Label id='titleLabel' />
+			<Button id='expandCollapseButton' />
+			<View class='separator' />
+		</View>
+		<View class='row'>
+			<View class='leftTab' />
+			<TextField id='makeField' class='field' />
+			<View class='fieldBottomLine' />
+		</View>
+		<View id='makeAutocompleteContainer'>
+			<Require id='makeAutocomplete' src='common/autocomplete' />
+		</View>
+		<View class='row'>
+			<View class='leftTab' />
+			<TextField id='modelField' class='field' />
+			<View class='fieldBottomLine' />
+		</View>
+		<View class='row'>
+			<View class='leftTab' />
+			<Label class='qtyLabel' />
+			<View class='qtyButtonsContainer'>
+				<Button id='qtyMinusButton' class='qtyButton' />
+				<View id='qtyFieldContainer'>
+					<TextField id='qtyField' class='kbNumPad' />
+				</View>
+				<Button id='qtyMoreButton' class='qtyButton' />
+			</View>
+		</View>
+		<View class='separator' />
+	</View>
+</Alloy>

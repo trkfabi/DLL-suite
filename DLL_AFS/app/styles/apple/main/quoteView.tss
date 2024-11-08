@@ -1,0 +1,303 @@
+'#quoteView': {
+	left: 0,
+	height: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	rowHeight: 71,
+	maxRowHeight: 120
+},
+'#headerView': {
+
+},
+'#headerBar': {
+
+},
+'#menuButton': {
+	left: 5,
+	bottom: 3,
+	width: 55,
+	height: 40
+},
+'#menuButton[if=Alloy.Globals.iPhoneX]': {
+	left: 1,
+	bottom: -1,
+	height: 46
+},
+'#menuIcon': {
+	left: 5,
+	width: 40,
+	height: 40,
+	backgroundImage: '/images/bt_nav_menu.png',
+	touchEnabled: false
+},
+'#menuIcon[if=Alloy.Globals.iPhoneX]': {
+	width: 46,
+	height: 46,
+},
+'#shareButton': {
+	right: 60,
+	bottom: 3,
+	width: 50,
+	height: 40
+},
+'#shareButton[if=Alloy.Globals.iPhoneX]': {
+	right: 51,
+	bottom: 0,
+	height: 46
+},
+'#shareIcon': {
+	width: 40,
+	height: 40,
+	backgroundImage: '/images/bt_quotescreen_share.png',
+	touchEnabled: false
+},
+'#shareIcon[if=Alloy.Globals.iPhoneX]': {
+	width: 46,
+	height: 46,
+},
+'#summaryButton': {
+	right: 5,
+	bottom: 3,
+	width: 50,
+	height: 40
+},
+'#summaryButton[if=Alloy.Globals.iPhoneX]': {
+	right: 4,
+	bottom: 0,
+	height: 46
+},
+'#summaryIcon': {
+	width: 40,
+	height: 40,
+	backgroundImage: '/images/bt_quotescreen_preview.png',
+	touchEnabled: false
+},
+'#summaryIcon[if=Alloy.Globals.iPhoneX]': {
+	width: 46,
+	height: 46,
+},
+'#wrapperView': {
+
+},
+'#amountFinancedView': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 45,
+	backgroundColor: Alloy.Globals.colors.black
+},
+'#amountFinancedLabel': {
+	left: 15,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	text: L('financed_amount'),
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 15
+	}
+
+},
+'#financedContainerView': {
+	right: 35,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	layout: 'horizontal'
+},
+'#amountFinancedValueLabel': {
+	width: 130,
+	height: 20,
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 15
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	ellipsize: true
+},
+'#customerInfoView': {
+	top: 0,
+	bottom: 0,
+	left: 0,
+	right: 0,
+	height: 110,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#customerNameField': {
+	left: 25,
+	right: 110,
+	bottom: 75,
+	hintText: L('customer'),
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 15
+	}
+},
+'#customerBottomLine': {
+	left: 15,
+	right: 100,
+	bottom: 60
+},
+'#spCreditField': {
+	left: 25,
+	right: 100,
+	bottom: 15,
+	height: 40,
+	hintText: L('s_p_rating'),
+	editable: false,
+	// backgroundColor: 'yellow',
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 15
+	}
+},
+'#spCreditBottomLine': {
+	left: 15,
+	right: 100,
+	bottom: 15
+},
+'#addDetailsButton': {
+	top: 5,
+	bottom: 75,
+	right: 15,
+	height: 40,
+	width: 90,
+	title: L('add_details'),
+	color: Alloy.Globals.colors.azureRadiance,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	}
+},
+'#creditSearchButton': {
+	top: 50,
+	right: 15,
+	bottom: 10,
+	width: 50,
+	,
+	height: 50,
+	// backgroundColor: 'red'
+},
+'#magnifyingGlassIcon': {
+	touchEnabled: false,
+	backgroundImage: '/images/ic_searchquote.png'
+}
+'#selectListButton': {
+	right: 100,
+	bottom: 20,
+	width: 40,
+	height: 40,
+	backgroundImage: '/images/bt_quotescreen_pickeroptions.png',
+	touchEnabled: false
+},
+'#paymentsTable': {
+	top: 0,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	editable: true,
+	moveable: false,
+	showVerticalScrollIndicator: false
+},
+'#paymentsTable': {
+	separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE
+},
+'#separator': {
+	width: Ti.UI.FILL,
+	height: 5
+},
+'#paymentsSection': {
+
+},
+'#addNewSection': {
+
+},
+'#addNewRow': {
+	width: Ti.UI.FILL,
+	height: 50,
+	backgroundColor: Alloy.Globals.colors.white,
+	editable: false,
+	moveable: false
+},
+'#addNewContainer': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	touchEnabled: true
+},
+'#numberLabel': {
+	left: 12,
+	width: 34,
+	height: 34,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	text: '...',
+	borderRadius: 17,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 21
+	},
+	borderWidth: 1,
+	color: Alloy.Globals.colors.azureRadiance,
+	borderColor: Alloy.Globals.colors.azureRadiance,
+	backgroundColor: Alloy.Globals.colors.transparent,
+
+	colorActive: Alloy.Globals.colors.white,
+	colorUnactive: Alloy.Globals.colors.azureRadiance,
+	borderColorActive: Alloy.Globals.colors.azureRadiance,
+	borderColorUnactive: Alloy.Globals.colors.azureRadiance,
+	backgroundColorActive: Alloy.Globals.colors.azureRadiance,
+	backgroundColorUnactive: Alloy.Globals.colors.transparent,
+	touchEnabled: false
+},
+'#addNewButton': {
+	left: 58,
+	title: L('add_new'),
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 17
+	},
+	color: Alloy.Globals.colors.azureRadiance,
+	touchEnabled: false
+},
+'#exportQuoteButton': {
+	left: 50,
+	width: 40,
+	height: 40
+},
+'#exportQuoteButton[platform=ios]': {
+	image: '/images/bt_quotescreen_quotelist.png'
+},
+'#exportQuoteButton[platform=android]': {
+	top: 6,
+	width: 36,
+	height: 36
+},
+'#exportQuoteIcon': {
+	accessibilityLabel: 'exportQuoteButton',
+	touchEnabled: false,
+	backgroundImage: '/images/bt_customerinfo_mail.png'
+},
+'#exportQuoteIcon[platform=android]': {
+	width: 45,
+	height: 45
+},
+'.chevron': {
+
+},
+'.whiteChevron': {
+
+},
+'.inputField': {
+
+},
+'.divider': {
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.alto,
+	touchEnabled: false
+},
+'.dividerTop': {
+	top: 0
+},
+'.dividerBottom': {
+	bottom: 0
+}

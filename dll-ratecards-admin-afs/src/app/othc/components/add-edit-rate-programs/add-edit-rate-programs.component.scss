@@ -1,0 +1,54 @@
+@import '../../../../assets/css/_variables.scss';
+
+.rate-program-summary {
+	background-color: $white-four;
+}
+.program-details-summary {
+	list-style: none;
+	width: 190px;
+	margin: 0;
+	padding: 12px;
+	li {
+		&.details-name {
+			font-weight: 500;
+			width: auto;
+			overflow-wrap: break-word;
+			border: none;
+			font-size: 14px;
+			margin: 0 0 1em 0;
+			background-color: transparent;
+		}
+		position: relative;
+		color: $slate-grey;
+		border: 1px solid $pinkish-grey;
+		font-size: 12px;
+		height: auto;
+		padding: 6px 12px;
+		line-height: 20px;
+		background-color: $pale-grey;
+		margin-bottom: 4px;
+		.label {
+			width: 50%;
+			float: left;
+			line-height: 1;
+			font-weight: bold;
+			&.single {
+				line-height: 20px;
+			}
+		}
+		.value {
+			float: right;
+			width: 50%;
+			text-align: right;
+		}
+		.clear {
+			clear: both;
+		}
+	}
+}
+.error-message {
+	display: block;
+	font-size: 14px;
+	color: $orange-pink;
+	padding: 12px 0;
+}

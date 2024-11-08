@@ -1,0 +1,47 @@
+'#wrapper': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.blackHalfTransparent,
+	opacity: 0
+},
+'#wrapper[platform=android]': {
+
+},
+'#container': {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.white,
+	layout: 'vertical',
+	bubbleParent: false,
+},
+'#listContainer': {
+	width: Ti.UI.FILL,
+	height: 180,
+	defaultItemTemplate: 'optionItem',
+	separatorColor: Alloy.Globals.colors.transparent
+},
+'#listContainer[platform=ios]': {
+	separatorColor: Alloy.Globals.colors.dustyGray
+},
+"#optionView": {
+	width: Ti.UI.FILL,
+	height: 40,
+	backgroundColor: Alloy.Globals.colors.white
+},
+"#optionLabel": {
+	left: 30,
+	right: 30,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontSize: 14,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	}
+},
+
+'.separator': {
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.dustyGray
+}

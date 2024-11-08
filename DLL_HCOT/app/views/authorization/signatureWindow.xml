@@ -1,0 +1,23 @@
+<Alloy>
+	<Window id='window'>
+		<View id="container">
+			<View id='cancelButton'>
+				<ImageView id='backImage' />
+				<Label id='backTitle' />
+			</View>
+			<ImageView id='logoImageView' />
+			<View id='nextButton'>
+				<ImageView id='nextImage' />
+				<Label id='nextTitle' />
+			</View>
+
+			<Label id='titleLabel' />
+			<View id='signatureContainer'>
+				<Module id='paintView' module='ti.paint' method='createPaintView' />
+			</View>
+
+			<Button id='clearFieldButton' />
+			<Require id='loadingIndicator' src='common/loadingIndicator' />
+		</View>
+	</Window>
+</Alloy>

@@ -1,0 +1,19 @@
+<Alloy>
+	<View id='userInfoView'>
+		<Label id='yourInfoLabel' class='titleLabel' />
+
+		<TextField id='nameField' class='inputField' tag='name' />
+		<View id='nameFieldLine' class='fieldBottomLine fieldBottomMargin' />
+
+		<TextField id='title' class='inputField' tag='title' />
+		<View id='titleLine' class='fieldBottomLine fieldBottomMargin' />
+
+		<TextField id='emailField' class='inputField kbEmail' tag='email' />
+		<View id='emailFieldLine' class='fieldBottomLine fieldBottomMargin' />
+
+		<TextField id='phoneField' class='inputField kbNumPad' tag='phone' />
+		<View id='phoneFieldLine' class='fieldBottomLine fieldBottomMargin' />
+
+		<!-- <Button id='userInfoButton' /> -->
+	</View>
+</Alloy>

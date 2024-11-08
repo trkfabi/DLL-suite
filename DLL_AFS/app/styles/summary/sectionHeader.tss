@@ -1,0 +1,44 @@
+'#summarySectionHeader': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 40,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#summarySectionHeader[platform=android]': {
+	height: 52
+},
+'.separator': {
+	bottom: 0,
+	height: 0.5,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.alto
+},
+'.topSeparator': {
+	top: 0
+},
+'#titleLabel': {
+	left: 10,
+	color: Alloy.Globals.colors.azureRadiance,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 17
+	}
+},
+'#expandColapseButton': {
+	backgroundImage: '/images/bt_quotescreen_option_contract.png',
+	imageExpanded: '/images/bt_quotescreen_option_contract.png',
+	imageCollapsed: '/images/bt_quotescreen_option_expand.png'
+},
+'#expandColapseButton[platform=ios]': {
+	backgroundImage: '/images/bt_quotescreen_option_contract.png',
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN,
+	width: 40,
+	height: 40,
+	right: 0
+}
+'#expandColapseButton[platform=android]': {
+	right: 9,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/bt_quotescreen_option_contract.png'
+}

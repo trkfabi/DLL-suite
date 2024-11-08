@@ -1,0 +1,37 @@
+<div class="dialog-container export-dialog k-dialog-export align-center">
+	<p>
+		Environment: <strong>{{ item.env }}</strong> <br />
+		Rate Card: <strong>{{ item.ratecard.name }}</strong> <br />
+		Version: <strong>{{ item.versionDate }} </strong>
+	</p>
+	<small>
+		Base Rate Card or Vendor Specific:
+	</small>
+	<kendo-dropdownlist
+		class="k-dropdown"
+		[(ngModel)]="selectedVendorCode"
+		[data]="vendorCodesList"
+		[defaultItem]="defaultVendor"
+		[textField]="'name'"
+		[valueField]="'id'"
+		[disabled]="noVendors"
+	>
+		<ng-template kendoDropDownListItemTemplate let-dataItem>
+			<span class="title">{{ dataItem.name }}</span>
+			<div *ngIf="'base' !== dataItem.id">
+				<span class="points points-label">Pts: </span>
+				<span class="points points-data">{{ dataItem.points | number: '1.2-2' }}%</span>
+			</div>
+		</ng-template>
+		<ng-template kendoDropDownListValueTemplate let-dataItem>
+			<span class="title">{{ dataItem.name }}</span>
+			<div *ngIf="'base' !== dataItem.id">
+				<span class="points points-label">Pts: </span>
+				<span class="points points-data">{{ dataItem.points | number: '1.2-2' }}%</span>
+			</div>
+		</ng-template>
+	</kendo-dropdownlist>
+	<span class="error-message" *ngIf="!vendorCodesList.length">
+		No vendors associated to this Rate Card.
+	</span>
+</div>

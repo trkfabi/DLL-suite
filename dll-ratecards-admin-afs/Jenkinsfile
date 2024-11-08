@@ -1,0 +1,145 @@
+#!groovy
+
+library 'propelics-jenkins' _
+
+def isPR
+def runTests = false
+
+node('angular') {
+	stage('setup') {
+		checkout scm		
+		sh 'rm -rf /home/jenkins/build/tools/'
+
+		isPR = env.BRANCH_NAME.startsWith('PR-')
+
+		nodejs('node14-angular10'){
+			sh 'npm ci'
+		}
+	}
+
+	stage('build') {
+		withCredentials([
+			string(
+				credentialsId: 'github-propelics-dangerci-token-text', 
+				variable: 'DANGER_GITHUB_API_TOKEN')
+			]) 
+		{
+			withEnv([
+					'ghprbGhRepository=propelics/dll-ratecards-admin-afs',
+					"ghprbPullId=${env.CHANGE_ID}"
+				]) 
+			{
+				nodejs('node14-angular10') {
+					try {
+						def environment = ''						
+
+						switch (env.BRANCH_NAME) {
+							case 'tst':
+								environment = 'tst'
+								runTests = true
+								break
+							
+							case 'acc':
+								environment = 'acc'
+								break
+							
+							case 'release':
+								environment = 'production'
+								break
+							
+							default:
+								environment = 'dev'
+								runTests = true
+						}
+
+						if (isPR) {
+							environment = 'dev'
+						}
+
+						sh "npm run build -- --configuration=${environment} --aot"
+
+						if (runTests) {
+							stage('tests') {
+								sh '''
+									export CHROME_BIN=/usr/bin/google-chrome
+									npm test
+								'''
+							}
+						}
+
+					} catch(Error error) {
+						echo "error occured compiling: ${error.toString()}"
+
+						currentBuild.currentResult = 'FAILURE'
+					} finally {
+						if (runTests) {
+							junit allowEmptyResults: true, testResults: '*/test-results.xml'
+						}
+
+						if (isPR) {
+							sh './node_modules/.bin/danger ci'
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	if (isPR || currentBuild.resultIsWorseOrEqualTo('UNSTABLE')) {
+		deleteDir()
+		return
+	}
+	
+	stage('deploy') {
+		def bucket = null
+		def adminUrl = null
+
+
+		switch(env.BRANCH_NAME) {
+			case 'tst':
+				bucket = 'dll-admin-afs-tst.propelics.com'
+				adminUrl = 'dll-admin-afs-tst.propelics.com'
+				break
+			
+			case 'acc':
+				bucket = 'dll-admin-afs-acc.propelics.com'
+				adminUrl = 'dll-admin-afs-acc.propelics.com'
+				break
+
+			case 'release':
+				bucket = 'dll-admin-afs-prod.propelics.com'
+				adminUrl = 'dll-admin-afs-prod.propelics.com'
+				break
+
+			default:
+				echo "bucket not defined for ${env.BRANCH_NAME}. Skipping deploy"
+				return
+		}
+		
+		withAWS(region: 'us-east-1', credentials:'aws-dll-s3-credentials') {
+			s3Upload(
+				bucket: bucket, 
+				file: 'dist',
+				cacheControl: 'no-store'
+			)
+		}
+
+		def pkg = readJSON file: 'package.json'
+		def message = [
+			'*AFS Admin updated:*',
+			"`${pkg.name}`@v${pkg.version}\n",
+			"URL: ${adminUrl}\n",
+			'Updates:',
+			notifications.getChangeSetFormatted()
+		].join('\n')
+
+		slackSend(
+			channel: '#dll',
+			color: 'good', 
+			message: message
+		)
+	}
+
+	deleteDir()
+}

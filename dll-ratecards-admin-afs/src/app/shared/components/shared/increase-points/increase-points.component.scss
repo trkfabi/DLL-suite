@@ -1,0 +1,39 @@
+@import '../../../../../assets/css/variables';
+
+.inputs {
+	margin-top: 6px;
+	display: flex;
+	.buttons {
+		background-color: $pale-grey;
+		border: 1px solid $pinkish-grey;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 30px;
+		width: 30px;
+		.k-icon {
+			color: $orange-pink;
+			font-size: 22px;
+		}
+		&.disabled {
+			cursor: auto !important;
+			opacity: 0.5;
+		}
+	}
+	.input-text {
+		border-radius: 2px;
+		border: 1px solid $pinkish-grey;
+		font-size: 14px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: normal;
+		letter-spacing: normal;
+		text-align: center;
+		margin: 0 8px;
+		height: 28px;
+		width: 91px;
+		color: $slate-grey;
+	}
+}

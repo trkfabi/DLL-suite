@@ -1,0 +1,35 @@
+// '#container[platform=ios]' : {
+// 	style : Titanium.UI.iPhone.SystemButtonStyle.PLAIN
+// },
+// '#container[platform=android]' : {
+'#container': {
+	width: Ti.UI.FILL,
+	height: 30
+},
+'.marker': {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 4,
+	touchEnabled: false
+},
+'.containerTabbed': {
+	borderRadius: 3,
+	borderWidth: 1
+},
+'.tabButton': {
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'.tabLabel': {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 12
+	},
+	color: Alloy.Globals.colors.white,
+	touchEnabled: false
+},
+'.separator': {
+	width: 1,
+	height: '50%',
+	backgroundColor: Alloy.Globals.colors.white
+}

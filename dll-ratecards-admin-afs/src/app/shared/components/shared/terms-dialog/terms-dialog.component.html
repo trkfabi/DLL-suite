@@ -1,0 +1,40 @@
+<div class="dialog-container align-center new-term" #termsDialog>
+	<div *ngIf="item && !isDelete" class="term-container">
+		<kendo-numerictextbox
+			class="form-control form-control-lg edit-dialog"
+			[class.term-is-repeated]="termIsRepeated"
+			[(ngModel)]="item.name"
+			(ngModelChange)="onTermsDialogChange($event)"
+			[value]="10"
+			[min]="0"
+			[max]="99"
+			[decimals]="0"
+			[format]="'#'"
+		>
+		</kendo-numerictextbox>
+		<label for="">months</label>
+		<div class="error-message" [ngClass]="{ show: showErrorMessage }">
+			{{ errorMessage }}
+		</div>
+	</div>
+	<div *ngIf="isDelete && removeMessage && origin === this.cof">
+		<div class="delete-text">
+			<p class="regularSize">
+				By deleting <strong>{{ removeMessage }}</strong> COF, Spreads, Residuals, and Rate Factors at
+				<strong>{{ removeMessage }}</strong> months will be deleted on all Rate Programs in this Rate Card.
+			</p>
+			<p class="regularSize continue-text">Are you sure you want to continue?</p>
+		</div>
+	</div>
+	<div *ngIf="isDelete && removeMessage && origin === this.manageTerms">
+		<div class="delete-text">
+			<p class="regularSize">
+				By deleting <strong>{{ removeMessage }}</strong> all rates associated to this term will be lost.
+			</p>
+			<p class="regularSize continue-text">Are you sure you want to continue?</p>
+		</div>
+	</div>
+	<div *ngIf="isDelete && !removeMessage">
+		<div class="message">You can't remove all the terms.</div>
+	</div>
+</div>

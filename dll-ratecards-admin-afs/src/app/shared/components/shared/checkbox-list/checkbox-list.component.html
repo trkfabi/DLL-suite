@@ -1,0 +1,17 @@
+<ul *ngIf="hasItemsToDisplay" class="checkbox-list">
+	<li *ngFor="let item of itemList">
+		<div class="k-label" [ngClass]="{ disabled: item?.disabled }">
+			<input
+				[id]="'checkbox-element-' + item.name"
+				class="checkbox"
+				[value]="item.value"
+				type="checkbox"
+				kendoCheckBox
+				[(ngModel)]="item.checked"
+				[disabled]="item?.disabled"
+				(click)="onCheckboxClick($event.target.checked, item)"
+			/>
+			{{ item.name }}
+		</div>
+	</li>
+</ul>

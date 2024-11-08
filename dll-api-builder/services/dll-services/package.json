@@ -1,0 +1,48 @@
+{
+	"name": "dev-dll-services",
+	"description": "",
+	"version": "1.1.6",
+	"author": "Propelics",
+	"license": "",
+	"framework": "none",
+	"keywords": [
+		"appcelerator",
+		"arrow"
+	],
+	"repository": {},
+	"private": true,
+	"dependencies": {
+		"@axway/api-builder-plugin-fn-base64": "^2.0.0",
+		"@axway/api-builder-plugin-fn-dot": "^2.0.0",
+		"@axway/api-builder-plugin-fn-json": "^2.0.0",
+		"@axway/api-builder-plugin-fn-swagger": "^2.0.0",
+		"@axway/api-builder-runtime": "^4.0.0",
+		"async": "^1.5.0",
+		"lodash": "^4.17.15",
+		"node-env-file": "^0.1.8",
+		"pkginfo": "^0.3.1",
+		"request-promise-native": "^1.0.5",
+		"soap": "^0.24.0"
+	},
+	"devDependencies": {
+		"@axway/api-builder-admin": "^1.0.0",
+		"grunt": "^1.1.0",
+		"mocha": "^7.1.1",
+		"request": "^2.87.0",
+		"should": "^8.0.2"
+	},
+	"main": "app.js",
+	"healthCheck": true,
+	"scripts": {
+		"initEnv": "grunt --gruntfile ../../Gruntfile.js dev",
+		"dev": "npm run initEnv -- --env=dev && node .",
+		"dev:tst": "npm run initEnv -- --env=tst && node .",
+		"integration": "mocha --recursive --timeout 60000 './test/integration/**/*.js'",
+		"test:ci": "mocha --recursive --timeout 60000 --reporter xunit --reporter-options output=test-results/integration.xml './test/integration/**/*.js'",
+		"test:tst": "npm run initEnv -- --env=tst && npm run integration",
+		"test:dev": "npm run initEnv -- --env=dev && npm run integration"
+	},
+	"engines": {
+		"node": "8.11.3"
+	}
+}

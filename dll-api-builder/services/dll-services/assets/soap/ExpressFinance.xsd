@@ -1,0 +1,100 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:q1="http://schemas.delagelanden.com/expressfinance/1.0/data" xmlns:ns1="http://schemas.delagelanden.com/expressfinance/1.0/" targetNamespace="http://schemas.delagelanden.com/expressfinance/1.0/" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.delagelanden.com/expressfinance/1.0/data" schemaLocation="ExpressFinanceData.xsd"/>
+	<xs:element name="SearchContracts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestor" type="q1:RequestorType" nillable="true" minOccurs="0"/>
+				<xs:element name="request" type="q1:SearchContractsRequestType" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SearchContractsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SearchContractsResult" type="q1:SearchContractsResponseType" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CreateTerminationQuote">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestor" type="q1:RequestorType" nillable="true" minOccurs="0"/>
+				<xs:element name="response" type="q1:TerminationQuoteRequestType" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CreateTerminationQuoteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CreateTerminationQuoteResult" type="q1:TerminationQuoteResponseType" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SearchCustomers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestor" type="q1:RequestorType" nillable="true" minOccurs="0"/>
+				<xs:element name="response" type="q1:SearchCustomersRequestType" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SearchCustomersResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SearchCustomersResult" type="q1:SearchCustomersResponseType" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="SearchRateCards">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="requestor" nillable="true" type="q1:RequestorType" />
+				<xs:element minOccurs="0" name="request" nillable="true" type="q1:SearchRateCardsRequestType" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="SearchRateCardsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="SearchRateCardsResult" nillable="true" type="q1:SearchRateCardsResponseType" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="SubmitApplication">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="requestor" nillable="true" type="q1:RequestorType" />
+				<xs:element minOccurs="0" name="request" nillable="true" type="q1:SubmitApplicationRequestType" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="SubmitApplicationResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="SubmitApplicationResult" nillable="true" type="q1:SubmitApplicationResponseType" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetCustomizations">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="requestor" nillable="true" type="q1:RequestorType" />
+				<xs:element minOccurs="0" name="request" nillable="true" type="q1:GetCustomizationsRequestType" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetCustomizationsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="GetCustomizationsResult" nillable="true" type="q1:GetCustomizationsResponseType" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

@@ -1,0 +1,16 @@
+<Alloy>
+	<View class="container">
+		<View class="halfRow leftField">
+			<View class="leftTab" />
+			<TextField id="equipmentUseField" class="field" />
+			<Button id="useSelector" class="selectorButton" />
+			<View class="fieldBottomLine" />
+		</View>
+		<View class="halfRow rightField">
+			<Label class="percentSign" />
+			<TextField id="equipmentPercent" class="field" tag="middleName" />
+			<Button id="percentSelector" class="selectorButton" />
+			<View class="fieldBottomLine" />
+		</View>
+	</View>
+</Alloy>

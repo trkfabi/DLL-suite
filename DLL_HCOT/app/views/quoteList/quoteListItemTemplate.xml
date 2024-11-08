@@ -1,0 +1,44 @@
+<Alloy>
+	<ItemTemplate name='quoteListItem'>
+		<View id='container' bindId='container'>
+			<View id='grayBG' bindId='grayBG'>
+				<View id='headerContainer'>
+					<View bindId='favoriteButton' id='favoriteButton' />
+					<!-- <TextField id="quoteNameField" bindId="quoteNameField" onChange="handleQuoteNameChange" onLongpress='handleQuoteNameLongpress' onReturn="handleQuoteNameReturn" /> -->
+					<Label id="nameLabel" bindId="nameLabel" onLongpress='handleQuoteNameLongpress' />
+					<Label bindId='dateLabel' id='dateLabel' />
+					<View bindId='selectButton' id='selectButton' />
+				</View>
+				<View class='horizontalSeparator' />
+				<View id='detailContainer'>
+					<View id='summaryContainer'>
+						<View id='equipmentContainer' bindId='equipmentContainer' class='summaryRow'>
+							<Label id='equipmentLabel' class='concept' />
+							<Label class='currencySymbols' />
+							<Label bindId='equipmentTotalLabel' id='equipmentTotalLabel' class='amount' />
+						</View>
+						<View class='summaryRow'>
+							<Label bindId='financedLabel' id='financedLabel' class='concept' />
+							<Label bindId='financedTotalSymbolLabel' id='financedTotalSymbolLabel' class='currencySymbols' />
+							<Label bindId='financedTotalLabel' id='financedTotalLabel' class='amount' />
+						</View>
+						<View id='paymentRow'>
+							<View id='numberContainer'>
+								<Label bindId='numberLabel' id='numberLabel' />
+							</View>
+							<Label id='paymentLabel' />
+							<Label bindId='paymentTotalLabel' id='paymentTotalLabel' />
+							<Label bindId='paymentDetailLabel' id='paymentDetailLabel' />
+						</View>
+						<View id='optionsRow'>
+							<View bindId='deleteButton' id='deleteButton' class='button' />
+							<View id='buttonsSeparator' />
+							<View bindId='cloneButton' id='cloneButton' class='button' />
+						</View>
+					</View>
+				</View>
+				<View class='horizontalSeparator' platform='android' />
+			</View>
+		</View>
+	</ItemTemplate>
+</Alloy>

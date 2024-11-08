@@ -1,0 +1,100 @@
+<div class="relative dashboard main-content item-manager ratecard-manager">
+	<header>
+		<h2>
+			Manage Rate Cards and Vendor Codes
+		</h2>
+		<span class="subtitle"></span>
+		<button class="btn-orange-pink" (click)="onDoneButtonClick($event, dialogActionsForDone)">
+			Done
+		</button>
+	</header>
+
+	<div class="items-manager-container">
+		<div class="column column-left">
+			<header>
+				<h4>Rate Cards</h4>
+				<button class="k-button" (click)="addRateCardClick($event, dialogActions)">Add New</button>
+			</header>
+			<div class="ratecards">
+				<div class="content">
+					<div class="no-records" *ngIf="!hasRateCards()">
+						<div class="icon-tag"></div>
+						<span class="records-message">
+							Add your first Rate Card to start.
+						</span>
+					</div>
+					<div class="list-container" *ngIf="hasRateCards()">
+						<ul class="list list-categories list-ratecards list-kendo">
+							<li *ngFor="let item of rateCardList; index as index">
+								<div
+									class="list-item rate-card-name"
+									[class.active]="rateCardSelected === item"
+									(click)="selectRateCard(item)"
+								>
+									<div>
+										<span class="title">{{ item.name }}</span>
+										<i class="k-icon k-i-edit" (click)="editRateCardClick($event, item, dialogActions)"></i>
+										<i class="k-icon k-i-trash" (click)="deleteRateCardClick($event, item, dialogActions)"></i>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="column column-right">
+			<header>
+				<h4>Vendor Codes</h4>
+				<button class="k-button" (click)="addVendorCodeClick($event, dialogActions)" [disabled]="!hasRateCards()">Add New</button>
+				<div class="message">
+					Add Vendor Codes to the Rate Card selected.
+				</div>
+			</header>
+			<div class="vendors">
+				<div class="content">
+					<div class="no-records" *ngIf="!hasVendorCodes()">
+						<div class="icon-tag"></div>
+						<span class="records-message">
+							No Vendor Codes added
+						</span>
+					</div>
+					<div class="list-container" *ngIf="isRateCardSelected">
+						<ul class="list list-products list-kendo">
+							<li *ngFor="let item of vendorsFiltered; index as index">
+								<div class="list-item vendor" *ngIf="isVendorActive(item)">
+									<span class="title">{{ item.name }}</span>
+									<span class="points points-label">Pts: </span>
+									<span class="points points-data">{{ item.points | number: '1.2-2' }}%</span>
+									<i class="k-icon k-i-edit" (click)="editVendorClick($event, item, dialogActions)"></i>
+									<i class="k-icon k-i-trash" (click)="deleteVendorClick($event, item, dialogActions)"></i>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+
+<div kendoDialogContainer></div>
+<ng-template #dialogActions>
+	<div class="buttons">
+		<button
+			kendoButton
+			[disabled]="dialogRef.content.instance.disableOkButton"
+			(click)="handleDialogSubmitButtonClick($event)"
+			class="k-button k-primary"
+		>
+			{{ buttonAction }}
+		</button>
+		<button kendoButton (click)="handleDialogCloseButtonClick($event)" class="k-button">Cancel</button>
+	</div>
+</ng-template>
+<ng-template #dialogActionsForDone>
+	<div class="buttons">
+		<button kendoButton (click)="handleDialogReminderClick($event)" class="k-button k-primary">OK</button>
+	</div>
+</ng-template>

@@ -1,0 +1,29 @@
+<Alloy>
+	<Window id="window">
+		<LeftNavButton>
+			<View id="backView">
+				<Button id="backButton" />
+				<Label id="backText" />
+			</View>
+		</LeftNavButton>
+		<View id="header" platform="android">
+			<Button id="backButton" />
+			<Label id="titleLabel" />
+		</View>
+
+
+		<TableView id="amortizationList">
+			<TableViewSection id="scheduleSection">
+				<HeaderView>
+					<View id="headerView">
+						<Label id="dateHeader" class="labelHeader" />
+						<Label id="paymentHeader" class="labelHeader" />
+						<Label id="principalHeader" class="labelHeader" />
+						<Label id="interestHeader" class="labelHeader" />
+						<Label id="balanceHeader" class="labelHeader" />
+					</View>
+				</HeaderView>
+			</TableViewSection>
+		</TableView>
+	</Window>
+</Alloy>

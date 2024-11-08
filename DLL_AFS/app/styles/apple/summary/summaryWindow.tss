@@ -1,0 +1,167 @@
+'#window': {
+	navBarHidden: true
+},
+'#window': {
+	statusBarStyle: Ti.UI.iOS.StatusBar.GREY
+},
+'#headerView': {
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#headerBar': {
+
+},
+'#backButton': {
+	backgroundImage: '/images/ic_nav_back_color.png'
+},
+'#headerTitleLabel': {
+	color: Alloy.Globals.colors.shuttleGray,
+	text: 'Financial Services'
+},
+'#titleImage': {
+	image: '/images/img_applelogo.png'
+},
+'#wrapperView': {
+	bottom: 60,
+	backgroundColor: Alloy.Globals.colors.seashell
+},
+'#customerInfoSection': {
+
+},
+'#customerInfoHeaderLabel': {
+	text: 'Customer Information'
+},
+'#customerInfoLabel': {
+	left: 10,
+	right: 10,
+	top: 5,
+	bottom: 5,
+	height: Ti.UI.SIZE,
+	color: Alloy.Globals.colors.thunder,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.regular,
+		fontSize: 16
+	}
+},
+'#productInfoSection': {
+
+},
+'#productInfoHeaderLabel': {
+	text: 'Products/Services'
+},
+'#productsView': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+'#amountFinancedView': {
+	width: Ti.UI.FILL,
+	height: 45,
+	backgroundColor: Alloy.Globals.colors.alto
+},
+'#amountFinancedLabel': {
+	left: 10,
+	width: Ti.UI.SIZE,
+	color: Alloy.Globals.colors.thunder,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.regular,
+		fontSize: 14
+	},
+	text: 'Financed Amount'
+
+},
+'#amountFinancedValueLabel': {
+	right: 10,
+	width: Ti.UI.SIZE,
+	color: Alloy.Globals.colors.thunder,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.medium,
+		fontSize: 14
+	},
+	text: '$9,312,432.23'
+
+},
+'#paymentInfoSection': {
+
+},
+'#paymentInfoHeaderLabel': {
+	text: 'Payment'
+},
+'#termView': {
+	title: 'Term',
+	value: '24'
+},
+'#paymentView': {
+	title: 'Payment',
+	value: '$983.23'
+},
+'#frequencyView': {
+	title: 'Payment Frequency',
+	value: 'Monthly'
+},
+'#rateFactorView': {
+	title: 'Rate Factor',
+	value: '0.03008'
+},
+'#submitView': {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 60,
+	backgroundColor: Alloy.Globals.colors.white,
+	borderColor: Alloy.Globals.colors.alto,
+	borderWidth: 0.5
+},
+'#submitButton': {
+	left: 10,
+	right: 10,
+	height: 35,
+	title: 'SUBMIT',
+	color: Alloy.Globals.colors.white,
+	backgroundColor: Alloy.Globals.colors.mantis,
+	borderRadius: 3,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.regular,
+		fontSize: 18
+	}
+},
+
+'.summarySectionView': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.alto,
+	layout: 'vertical',
+	expanded: true,
+	heightCollapsed: 50
+},
+'.summaryHeaderView': {
+	width: Ti.UI.FILL,
+	height: 50,
+	backgroundColor: Alloy.Globals.colors.white,
+	borderColor: Alloy.Globals.colors.alto,
+	borderWidth: 0.5
+},
+'.summaryHeaderLabel': {
+	left: 10,
+	right: 10,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.shuttleGray,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.medium,
+		fontSize: 18
+	}
+},
+'.expandCollapseButton': {
+	right: 10,
+	width: 40,
+	height: 40,
+	touchEnabled: false,
+	backgroundImage: '/images/ic_expander_down.png',
+	imageExpanded: '/images/ic_expander_down.png',
+	imageCollapsed: '/images/ic_expander_up.png'
+},
+'.summaryContentView': {
+	left: 10,
+	right: 0,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.seashell,
+	layout: 'vertical'
+},

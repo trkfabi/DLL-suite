@@ -1,0 +1,24 @@
+<div>
+	<kendo-grid class="grid" [data]="dataSource" [kendoGridBinding]="dataSource" *ngIf="dataSource" #kendoGridComponent>
+		<kendo-grid-column field="seq.data.description" title="SEQ #"> </kendo-grid-column>
+		<kendo-grid-column field="category.data.description" title="CATEGORY"> </kendo-grid-column>
+		<kendo-grid-column field="product.data.description" title="PRODUCT"> </kendo-grid-column>
+		<kendo-grid-column field="creditRating.data.description" title="CREDIT RATING"> </kendo-grid-column>
+
+		<kendo-grid-column
+			*ngFor="let term of terms; let i = index"
+			[class]="{
+				new: term.status === 'new',
+				edited: term.status === 'edited',
+				deleted: term.status === 'deleted',
+				'higher-rate': term.status === 'higher',
+				'lower-rate': term.status === 'lower'
+			}"
+			field="{{ term.data.description }}"
+			title="{{ term.term }}"
+		>
+		</kendo-grid-column>
+
+		<kendo-grid-messages [noRecords]="noRecordsMessage"> </kendo-grid-messages>
+	</kendo-grid>
+</div>

@@ -1,0 +1,151 @@
+"Button[platform=android]": {
+	backgroundColor: "transparent",
+	borderColor: "transparent"
+},
+".container": {
+
+},
+"#window": {
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	title: L('select_customer')
+},
+"#window[platform=ios]": {
+	navTintColor: Alloy.Globals.colors.white,
+	barColor: Alloy.Globals.colors.azureRadiance,
+	titleAttributes: {
+		color: Alloy.Globals.colors.white
+	}
+},
+"#window[platform=android]": {
+	navBarHidden: true,
+	backgroundColor: Alloy.Globals.colors.white
+},
+"#Wrapper": {
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	backgroundColor: 'transparent',
+	layout: 'vertical'
+},
+"#backButton": {
+	backgroundImage: '/images/ic_nav_back.png',
+	width: 40,
+	height: 40,
+	left: -15
+},
+"#backText": {
+	text: L('return_button'),
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontFamily: 'sans-serif',
+		fontSize: '18'
+	},
+	left: 17,
+},
+"#customerList": {
+	height: Ti.UI.FILL,
+	separatorColor: Alloy.Globals.colors.transparent
+},
+"#header[platform=android]": {
+	width: Ti.UI.FILL,
+	height: 50,
+	backgroundColor: Alloy.Globals.colors.shiraz
+},
+"#doneButton[platform=ios]": {
+	title: L('done')
+},
+"#doneButton[platform=android]": {
+	right: 17,
+	backgroundImage: '/images/ic_goalseeker_done.png',
+	height: 40,
+	width: 40
+
+},
+"#backButton[platform=android]": {
+	backgroundImage: '/images/ic_tradeup_back.png',
+	width: 17,
+	height: 17,
+	left: 0,
+}
+'#titleLabel': {
+	color: Alloy.Globals.colors.white,
+	text: L('select_customer'),
+	font: {
+		fontFamily: 'sans-serif',
+		fontSize: '18'
+	},
+	left: 17,
+}
+/*'#searchBar[platform=ios]' : {
+	tintColor: Alloy.Globals.colors.nobel,
+	hintText: 'Customer Name'
+}*/
+
+// ------------------- iOS ------------------- //
+
+'#searchBarContainer[platform=ios]': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	backgroundColor: '#F7F7F7'
+}
+'#searchBar[platform=ios]': {
+	left: 12,
+	width: 21,
+	height: 23,
+	image: "/images/ic_searchquote.png",
+	touchEnabled: false
+}
+"#searchBarTextField[platform=ios]": {
+	left: 7,
+	right: 7,
+	top: 7,
+	bottom: 7,
+	height: 34,
+	borderRadius: 5,
+	borderColor: '#E6E6E6',
+	padding: {
+		left: 30
+	},
+	hintText: L('customer_name'),
+	color: '#5b5b5b',
+	font: {
+		fontFamily: 'Helvetica-Neue',
+		fontSize: 15
+	},
+	backgroundColor: Alloy.Globals.colors.white,
+	returnKeyType: Ti.UI.RETURNKEY_SEARCH,
+	tintColor: Alloy.Globals.colors.lochmara
+}
+
+// ------------------- Android ------------------- //
+
+'#searchBarContainer[platform=android]': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	top: 10,
+}
+'#searchBar[platform=android]': {
+	right: 12,
+	width: 36,
+	height: 36,
+	backgroundImage: "/images/ic_equipment_search.png"
+}
+"#searchBarTextField[platform=android]": {
+	left: 10,
+	width: 280,
+	height: Ti.UI.SIZE,
+	hintText: L('customer_name'),
+	color: '#5b5b5b',
+	returnKeyType: Ti.UI.RETURNKEY_SEARCH
+}
+".fieldBottomLine[platform=android]": {
+	bottom: 0,
+	left: 10,
+	right: 10,
+	height: 5,
+	backgroundImage: "/images/im_customerinfo_textline_large.png"
+},
+'#tradeupList[platform=android]': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+}

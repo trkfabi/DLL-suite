@@ -1,0 +1,39 @@
+<Alloy>
+	<Window id='window' />
+
+	<View id='overlay'>
+		<View id='header'>
+			<View id='headerContent'>
+				<View id='backButton' class='headerButton'>
+					<ImageView id='backImage' class='headerImage' />
+					<Label id='backLabel' class='headerLabel' />
+				</View>
+				<ImageView id='brandLogo' />
+				<View id='nextButton' class='headerButton'>
+					<ImageView id='nextImage' class='headerImage' />
+					<Label id='nextLabel' class='headerLabel' />
+				</View>
+			</View>
+			<View id='headerSeparator' />
+		</View>
+
+		<View id='content'>
+			<View id='permissionView'>
+				<Label id='permissionLabel' />
+			</View>
+
+			<ImageView id='preview' />
+
+			<View id='instructionsView'>
+				<Label id='authorizationDriverTitleLabel' />
+			</View>
+		</View>
+
+		<View id='optionsContainer'>
+			<View id='toolbarContainer'>
+				<Button id='retakeButton' />
+			</View>
+			<View id='shooterButton' />
+		</View>
+	</View>
+</Alloy>

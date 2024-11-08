@@ -1,0 +1,34 @@
+<Alloy>
+	<View id='container'>
+		<View id='headerContainer'>
+			<View id='paymentContainer'>
+				<View id='leftColumn' />
+				<ImageView id='optionLinesImageView' />
+				<Label id='numberLabel' />
+				<Label id='paymentLabel' />
+				<Label id='paymentTotalLabel' />
+				<Button id='expandCollapseButton' />
+				<Label id='descriptionLabel' class='detailText' />
+				<Label id='financeLabel' class='detailText' />
+				<View class='paymentSeparator' />
+			</View>
+			<View id='optionsContainer'>
+				<Button id='deleteButton' class='button' />
+				<View class='separator' />
+				<Button id='duplicateButton' class='button' />
+				<View class='separator' />
+				<Button id='solveForButton' class='button' />
+			</View>
+		</View>
+		<View id='detailContainer'>
+			<View id='blankSpaceViewTop' class='whiteSpace'>
+				<View class='leftTab' />
+			</View>
+			<View id='paymentRowContainer' />
+			<View id='blankSpaceViewBottom' class='whiteSpace'>
+				<View class='leftTab' />
+			</View>
+			<View class='paymentSeparator' />
+		</View>
+	</View>
+</Alloy>

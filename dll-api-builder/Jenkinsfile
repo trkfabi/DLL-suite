@@ -1,0 +1,232 @@
+#!groovy
+
+import hudson.tasks.test.AbstractTestResultAction
+library 'propelics-jenkins@master' _
+
+isPR = false;
+environment = 'dev';
+services = [];
+success = []
+fails = []
+
+node('docker') {
+	checkout scm
+	isPR = env.BRANCH_NAME.startsWith('PR-');
+	environment = env.BRANCH_NAME;
+
+	services = sh([
+		returnStdout: true, 
+		script: 'ls -d ./services/*/'
+	]).split('\n')
+
+	echo "$services"
+
+	sh 'rm -rf /home/jenkins/build/tools/'
+
+	nodejs('node10-apibuilder') {
+		sh 'npm ci'
+	}
+
+	unitTests()
+
+	if (isPR) {
+		integrationTests()
+		danger()
+		deleteDir()
+	} else {
+		deploy()
+	}
+}
+
+if (!isPR && BRANCH_NAME != 'prod') {
+	sleep time: 5, unit: 'MINUTES' // wait for appc to deploy new server
+	remoteTests()
+}
+
+if (!isPR) {
+	slack()
+}
+
+@NonCPS
+def testStatuses() {
+    def testStatus = ""
+    AbstractTestResultAction testResultAction = currentBuild.rawBuild.getAction(AbstractTestResultAction.class)
+    if (testResultAction != null) {
+        def total = testResultAction.totalCount
+        def failed = testResultAction.failCount
+        def skipped = testResultAction.skipCount
+        def passed = total - failed - skipped
+        testStatus = "Test Status:\n  Passed: ${passed}, Failed: ${failed} ${testResultAction.failureDiffString}, Skipped: ${skipped}"
+
+        if (failed == 0) {
+            currentBuild.result = 'SUCCESS'
+        }
+    }
+    return testStatus
+}
+
+def getServiceList(array = []) {
+	return array.collect { item ->
+		def lines = []
+		
+		if (item.name) {
+			lines.push("`${item.name}`")
+		}
+
+		if (item.version) {
+			lines.push("v${item.version}")
+		}
+
+		return lines.join('@')
+	}
+}
+
+def unitTests() {
+	stage('unit tests') {
+		nodejs('node10-apibuilder'){
+			try {
+				sh 'grunt --env=dev --ci'
+				
+				junit 'test-results/*.xml'
+			}
+			catch(Exception e) {
+				echo "Error in unit tests: ${e.toString()}"
+
+				currentBuild.result = 'FAILURE';
+			}
+		}
+	}
+}
+
+def integrationTests() {
+	stage('integration tests') {
+		nodejs('node10-apibuilder') {
+			sh "grunt initEnv --env=dev"
+			
+			for(service in services) {
+				dir(service) {
+					try {
+						sh 'npm install'
+						sh 'npm run test:ci'
+					} catch(error) {
+						echo "Error running integration tests in $service: ${error.toString()}"
+					}
+				}
+			}
+
+			junit 'services/*/test-results/*.xml'
+		}
+	}
+}
+
+def remoteTests() {
+	node('docker') {
+		stage ('remote tests') {
+			nodejs('node10-apibuilder'){
+				sh 'npm install'		
+				sh "TEST_ENV=production grunt testRemote --env=${environment} --ci"
+			}
+			
+			junit 'test-results/*.xml, services/*/test-results/*.xml'
+		}
+	}
+}
+
+def danger() {
+	stage('danger report') {
+		withCredentials([
+			string(
+				credentialsId: 'github-propelics-dangerci-token-text', 
+				variable: 'DANGER_GITHUB_API_TOKEN')
+			]) 	{
+				withEnv([
+					'ghprbGhRepository=propelics/dll-api-builder',
+					"ghprbPullId=${env.CHANGE_ID}"
+				]) {
+					nodejs('node10-apibuilder') {
+						sh './node_modules/.bin/danger ci'
+					}
+				}
+			}
+	}
+}
+
+def deploy() {
+	stage('deploy') {
+		withCredentials([
+			usernamePassword(
+				credentialsId: 'appcelerator-dll-pabloguevara-userpass',
+				usernameVariable: 'username',
+				passwordVariable: 'password'),
+			string(
+				credentialsId: 'appcelerator-dll-orgid-text', 
+				variable: 'orgId')
+			]) 
+		{
+			lock('appc_session') {
+				nodejs('node10-apibuilder'){
+					sh 'acs logout'
+					sh "acs login --host https://admin.cloudapp-enterprise.appcelerator.com $username $password"
+					sh "grunt initEnv --env=$environment"
+					
+					for(service in services) {
+						def serviceData = [
+							path: service
+						]
+						try {
+							dir(service) {
+								def pkg = readJSON(file: 'package.json')
+								serviceData.name = pkg.name
+								serviceData.version = pkg.version
+
+								sh """
+									docker build -t ${serviceData.name}:${serviceData.version} .
+									acs publish ${serviceData.name} --delete_oldest --image ${serviceData.name}:${serviceData.version} --app_version ${serviceData.version}
+								"""
+							}
+
+							success.push(serviceData)
+						}
+						catch(Exception e) {
+							echo "Exception occured: ${e.toString()}"
+							serviceData.success = false
+							serviceData.error = e
+							fails.push(serviceData)
+						}
+					}
+
+					try {
+						sh 'docker images -q |xargs docker rmi'
+					} catch (Exception e) {
+						echo 'Error removing unused docker images:'
+						echo e.toString()
+					}
+
+				}
+			}
+		}
+	}
+}
+
+def slack() {
+	def slackMessage = [
+		'*API Builder updated:*',
+		"${success.size()} services updated:\n${ getServiceList(success).join('\n') }\n",
+		"${fails.size()} services not updated:\n${ getServiceList(fails).join('\n') }",
+		'\n',
+		'Changes:',
+		notifications.getChangeSetFormatted()
+	]
+
+	slackSend([
+		channel: '#dll',
+		color: 'good',
+		message: "${slackMessage.join('\n')}"
+	])
+
+	slackSend([
+		channel: '#dll',
+		color: '#1D84FB',
+		message: "${testStatuses()}"
+	])
+}

@@ -1,0 +1,23 @@
+'#container': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical',
+	labelStyle: {
+		top: 5,
+		bottom: 5,
+		left: 10,
+		right: 10,
+		height: 20,
+		font: {
+			fontFamily: Alloy.Globals.fonts.primary.regular,
+			fontSize: 14
+		},
+		color: Alloy.Globals.colors.black,
+		isRow: true
+	},
+	bubbleParent: false
+},
+'#fakeTextField[platform=android]': {
+	width: 0,
+	height: 0
+}

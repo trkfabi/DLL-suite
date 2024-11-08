@@ -1,0 +1,66 @@
+<Alloy>
+	<!-- IOS -->
+	<Window id="window" platform="ios">
+		<TitleControl>
+			<View id="titleView">
+				<ImageView id="brandLogo" />
+			</View>
+		</TitleControl>
+		<View id="blurContainer">
+			<Label id="titleLabel" />
+		</View>
+
+		<Label id="permissionLabel" />
+
+		<View id="cameraContainer">
+
+		</View>
+
+		<View id="optionsContainer">
+			<Button id="shooterButton" />
+			<View id="toolbarContainer">
+				<Button id="retakeButton" />
+			</View>
+		</View>
+	</Window>
+	<View id="backButton" platform="ios">
+		<ImageView id="backImage" />
+		<Label id="backTitle" />
+	</View>
+	<View id="nextButton" platform="ios">
+		<ImageView id="nextImage" />
+		<Label id="nextTitle" />
+	</View>
+
+	<!-- ANDROID -->
+	<Window id="window" platform="android">
+		<View class="header">
+			<Button class="backButton" id="backButtonWindow" />
+			<ImageView class="brandLogo" id="brandLogoWindow" />
+			<Button class="nextButton" id="nextButtonWindow" />
+		</View>
+		<View class="separator" />
+		<View class="instructions">
+			<Label class="titleLabel" />
+		</View>
+		<View class="optionsContainer">
+			<View class="toolbarContainer" />
+			<Button id="retakeButton" />
+		</View>
+	</Window>
+	<View id="container" platform="android">
+		<View class="header">
+			<Button class="backButton" id="backButtonCamera" />
+			<ImageView class="brandLogo" id="brandLogoCamera" />
+			<Button class="nextButton" id="nextButtonCamera" />
+		</View>
+		<View class="separator" />
+		<View class="instructions">
+			<Label class="titleLabel" />
+		</View>
+		<View class="optionsContainer">
+			<View class="toolbarContainer" />
+			<Button id="shooterButton" />
+		</View>
+	</View>
+</Alloy>

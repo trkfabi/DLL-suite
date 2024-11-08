@@ -1,0 +1,53 @@
+<Alloy>
+	<Window id='window'>
+		<ScrollView id="container">
+			<View class="header">
+				<Label id="labelTitle" />
+				<Button id="cancelButton" class="topButton" />
+				<Button id="refreshButton" class="topButton" />
+				<Button id="doneButton" class="topButton" />
+			</View>
+
+			<View class="sectionContainer sectionTop">
+				<ImageView id="paymentEditImage" class="leftPencil" />
+				<Label id="paymentLabel" class="titleLabel leftTitle" />
+				<Label id="paymentSymbol" class="dollarSymbol leftSymbol" />
+				<View id="paymentValueContainer" class="valueContainer">
+					<Label id="paymentValue" class="valueIntLabel" />
+					<Label id="paymentDecimalsValue" class="valueDecLabel" />
+				</View>
+				<TextField id="paymentValueField" class="kbNumeric leftField" />
+
+				<Label id="rateLabel" class="titleLabelSolveFor rightTitle" />
+				<!-- <Label id="percentSymbol" /> -->
+				<Label id="rateValue" class="rightValue" />
+				<View id="paymentContainer" class="dialContainer">
+					<View id="paymentDialTicks" class="dialTicks" />
+					<Label id="paymentActiveLabel" class="dialLabel" />
+				</View>
+			</View>
+
+			<View class="sectionContainer sectionBottom">
+				<ImageView id="equipmentEditImage" class="leftPencil" />
+				<Label id="equipmentLabel" class="titleLabel leftTitle" />
+				<Label id="equipmentSymbol" class="dollarSymbol leftSymbol" />
+
+				<View id="equipmentValueContainer" class="valueContainer">
+					<Label id="equipmentValue" class="valueIntLabel" />
+					<Label id="equipmentDecimalValue" class="valueDecLabel" />
+				</View>
+				<TextField id="equipmentValueField" class="kbNumeric leftField" />
+				<ImageView id="additionalCostEditImage" class="rightPencil" />
+				<Label id="additionalCostAllowanceLabel" class="titleLabelSolveFor rightTitle" />
+				<Label id="additionalCostSymbol" class="dollarSymbol rightSymbol" />
+				<Label id="additionalCostValue" class="rightValue" />
+				<TextField id="additionalCostValueField" class="kbNumeric rightField" />
+
+				<View id="equipmentCostContainer" class="dialContainer">
+					<View id="equipmentDialTicks" class="dialTicks" />
+					<Label id="equipmentActiveLabel" class="dialLabel" />
+				</View>
+			</View>
+		</ScrollView>
+	</Window>
+</Alloy>

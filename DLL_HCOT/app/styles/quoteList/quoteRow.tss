@@ -1,0 +1,358 @@
+"#row": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+},
+"#container": {
+	top: 0,
+	backgroundColor: Alloy.Globals.colors.shiraz,
+	expanded: false
+},
+"#container[platform=ios]": {
+	height: 39.5,
+	heightCollapsed: 39.5,
+	heightExpanded: 180
+},
+"#container[platform=android]": {
+	height: 46,
+	heightCollapsed: 46,
+	heightExpanded: 194
+},
+"#grayBG": {
+	top: 0,
+	left: 0,
+	right: 0,
+	layout: 'vertical',
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.alabaster,
+	selected: {
+		right: 5,
+		backgroundColor: Alloy.Globals.colors.pesto
+	},
+	unselected: {
+		right: 0,
+		backgroundColor: Alloy.Globals.colors.alabaster
+	}
+},
+"#grayBG[platform=android]": {
+	backgroundColor: Alloy.Globals.colors.white,
+}
+"#headerContainer": {
+	top: 0,
+	height: 39,
+	width: Ti.UI.FILL
+},
+"#headerContainer[platform=android]": {
+	height: 45,
+}
+"#dateLabel": {
+	right: 41,
+	font: {
+		fontSize: 13,
+		fontFamily: Alloy.Globals.fonts.primary.light
+	},
+	color: Alloy.Globals.colors.crimson
+},
+"#dateLabel[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	},
+	right: 37,
+}
+"#nameLabel": {
+	width: 120,
+	text: L("customer_name"),
+	left: 45,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 16
+	},
+	color: Alloy.Globals.colors.scorpion,
+	ellipsize: Ti.UI.TEXT_ELLIPSIZE_TRUNCATE_END
+},
+"#nameLabel[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 18
+	},
+	left: 47,
+	height: 21,
+}
+"#nameLabel[platform=ios]": {
+	minimumFontSize: 10
+},
+"#detailContainer": {
+	top: 0,
+	left: 20,
+	height: 140,
+	backgroundColor: Alloy.Globals.colors.silver
+},
+"#detailContainer[platform=android]": {
+	height: 147,
+},
+"#favoriteButton": {
+	left: 4,
+	width: 35,
+	height: 35,
+
+},
+"#favoriteButton[platform=ios]": {
+	image: "/images/bt_quotelist_favorite_out.png",
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN,
+},
+"#favoriteButton[platform=android]": {
+	left: 6,
+	backgroundImage: "/images/bt_quotelist_favorite_out.png",
+	backgroundColor: "transparent",
+	borderColor: "transparent"
+}
+"#selectButton": {
+	right: 0,
+	width: 35,
+	height: 35,
+
+},
+"#selectButton[platform=ios]": {
+	image: "/images/bt_quotelist_back.png",
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+},
+"#selectButton[platform=android]": {
+	backgroundImage: "/images/bt_quotelist_back.png"
+},
+"#equipmentLabel": {
+	text: L("equipment_price")
+},
+"#financedLabel": {
+	text: L("leased_property_value")
+},
+"#summaryContainer": {
+	left: 4,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	layout: "vertical",
+	backgroundColor: Alloy.Globals.colors.alabaster
+},
+"#equipmentContainer": {
+	top: 7
+},
+"#paymentRow": {
+	top: 8,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+},
+"#numberContainer": {
+	top: 1,
+	left: 10,
+	width: 16,
+	height: 16,
+	borderRadius: 8,
+	borderColor: Alloy.Globals.colors.shiraz,
+	backgroundColor: Alloy.Globals.colors.shiraz,
+	borderWidth: 1
+},
+"#numberContainer[platform=android]": {
+	top: 2,
+	width: 19,
+	height: 19,
+	borderRadius: 38,
+}
+"#numberLabel": {
+	left: 4,
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontSize: 13,
+		fontFamily: Alloy.Globals.fonts.primary.bold
+	}
+},
+"#numberLabel[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	},
+	left: 6,
+},
+
+"#paymentLabel": {
+	top: 0,
+	left: 31,
+	text: L("payment"),
+	textAlign: "left",
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontFamily: 13
+	}
+},
+"#paymentLabel[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	},
+},
+"#paymentSymbol": {
+	top: 0,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontFamily: 13
+	}
+},
+"#paymentSymbol[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	},
+}
+"#paymentTotalLabel": {
+	top: 0,
+	textAlign: "right",
+	right: 15,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontFamily: 13
+	}
+},
+"#paymentTotalLabel[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	},
+}
+"#paymentDetailLabel": {
+	top: 22,
+	left: 31,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 13
+	},
+	color: Alloy.Globals.colors.mountbattenPink,
+},
+"#paymentDetailLabel[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	},
+}
+"#equipmentTotalLabel": {
+
+},
+"#financedTotalLabel": {
+
+},
+
+"#optionsRow": {
+	top: 5,
+	height: 40,
+	width: Ti.UI.FILL,
+},
+"#optionRow[platform=android]": {
+	top: 5
+},
+"#deleteButton": {
+	width: 40,
+	height: 40,
+	left: 15,
+
+},
+"#deleteButton[platform=ios]": {
+	image: "/images/bt_quotescreen_deleteoption.png"
+}
+"#deleteButton[platform=android]": {
+	backgroundImage: "/images/bt_quotescreen_deleteoption.png"
+}
+"#cloneButton": {
+	width: 40,
+	height: 40,
+	left: 90,
+
+},
+"#cloneButton[platform=ios]": {
+	image: "/images/bt_quotescreen_copyoption.png"
+}
+"#cloneButton[platform=android]": {
+	backgroundImage: "/images/bt_quotescreen_copyoption.png"
+}
+"#buttonsSeparator": {
+	left: 75,
+	width: 1,
+	height: 20,
+	backgroundColor: Alloy.Globals.colors.gray
+},
+
+".summaryRow": {
+	top: 5,
+	width: Ti.UI.FILL,
+	height: 15
+},
+".summaryRow[platform=android]": {
+	height: 17,
+}
+".concept": {
+	textAlign: "left",
+	left: 10,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 13
+	},
+	color: Alloy.Globals.colors.mountbattenPink,
+},
+".concept[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	},
+	left: 17,
+}
+".amount": {
+	textAlign: "right",
+	right: 15,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 13
+	},
+	color: Alloy.Globals.colors.mountbattenPink,
+},
+".amount[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	},
+},
+".currencySymbol": {
+	text: L('currency_symbol'),
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 13
+	},
+	color: Alloy.Globals.colors.mountbattenPink,
+	right: 102
+},
+".currencySymbol[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	},
+},
+".separator": {
+	left: 22,
+	width: 1,
+	height: 20,
+	backgroundColor: Alloy.Globals.colors.gray
+},
+".horizontalSeparator": {
+	left: 20,
+	width: Ti.UI.FILL,
+	height: 0.5,
+	backgroundColor: Alloy.Globals.colors.silver
+},
+".horizontalSeparator[platform=android]": {
+	height: 1,
+},
+".button[platform=ios]": {
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+}
+"Button[platform=android]": {
+	backgroundColor: "transparent",
+	borderColor: "transparent"
+},

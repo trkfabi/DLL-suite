@@ -1,0 +1,17 @@
+<Alloy>
+	<View id='container'>
+		<View id='contentWrapper'>
+			<Label id='quantityLabel' />
+
+			<View id='productDetailContainer'>
+				<Label id='productLabel' />
+				<View id='priceContainer'>
+					<Label id='unitPriceLabel' class='priceLabel' />
+					<Label id='unitPriceValue' class='priceLabel' />
+				</View>
+			</View>
+
+		</View>
+		<Label id='totalLabel' />
+	</View>
+</Alloy>

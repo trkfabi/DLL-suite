@@ -1,0 +1,14 @@
+<Alloy>
+	<Window id="window">
+		<View id="container">
+			<Toolbar id="toolbar">
+				<Items>
+					<Button id="cancelButton" systemButton="CANCEL" />
+					<FlexSpace />
+					<Button id="doneButton" systemButton="DONE" />
+				</Items>
+			</Toolbar>
+			<Picker id="datePicker" />
+		</View>
+	</Window>
+</Alloy>

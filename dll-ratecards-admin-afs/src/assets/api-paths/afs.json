@@ -1,0 +1,14 @@
+{
+	"apiPaths": {
+		"batch_update_models": "api/rate_cards/afs/batch_update",
+		"create_category": "api/rate_cards/afs/category/create",
+		"delete_category": "api/rate_cards/afs/category/delete",
+		"update_category": "api/rate_cards/afs/category/update",
+		"create_product": "api/rate_cards/afs/product/create",
+		"update_product": "api/rate_cards/afs/product/update",
+		"delete_product": "api/rate_cards/afs/product/delete",
+		"update_rate_card_input": "api/rate_cards/afs/input/update",
+		"duplicate_version": "api/rate_cards/afs/version/duplicate",
+		"update_version": "api/rate_cards/afs/version/update"
+	}
+}

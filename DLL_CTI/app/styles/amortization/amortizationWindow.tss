@@ -1,0 +1,99 @@
+"Button[platform=android]": {
+	backgroundColor: "transparent",
+	borderColor: "transparent"
+},
+"#window": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	title: L('amortization')
+},
+"#window[platform=ios]": {
+	navTintColor: Alloy.Globals.colors.white,
+	barColor: Alloy.Globals.colors.azureRadiance,
+	titleAttributes: {
+		color: Alloy.Globals.colors.white
+	}
+},
+"#window[platform=android]": {
+	navBarHidden: true,
+	backgroundColor: Alloy.Globals.colors.white,
+},
+"#header[platform=android]": {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 50,
+	backgroundColor: Alloy.Globals.colors.shiraz
+},
+"#backButton": {
+	backgroundImage: '/images/ic_nav_back.png',
+	width: 40,
+	height: 40,
+	left: -15
+},
+"#backText": {
+	text: L('return_button'),
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontFamily: 'sans-serif',
+		fontSize: '18'
+	},
+	left: 17,
+},
+"#titleLabel[platform=android]": {
+	text: L('amortization'),
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontFamily: 'sans-serif',
+		fontSize: '18'
+	},
+	left: 17,
+},
+"#headerView": {
+	width: Ti.UI.FILL,
+	height: 30,
+	layout: 'horizontal',
+	backgroundColor: Alloy.Globals.colors.mercury
+},
+"#headerView[platform=android]": {
+	height: 35,
+},
+"#amortizationList": {
+	height: Ti.UI.FILL,
+	separatorColor: Alloy.Globals.colors.transparent
+},
+"#amortizationList[platform=android]": {
+	top: 50,
+},
+"#dateHeader": {
+	text: L('date'),
+},
+"#paymentHeader": {
+	text: L('payment'),
+},
+"#principalHeader": {
+	text: L('principal'),
+},
+"#interestHeader": {
+	text: L('interest'),
+},
+"#balanceHeader": {
+	text: L('balance'),
+}
+".labelHeader": {
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	width: '19%',
+	height: Ti.UI.FILL,
+	touchEnabled: false,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: "HelveticaNeue-Bold",
+		fontSize: 11
+	}
+}
+".labelHeader[platform=android]": {
+	font: {
+		fontFamily: "sans-serif",
+		fontSize: 13,
+		fontWeight: 'bold'
+	}
+}

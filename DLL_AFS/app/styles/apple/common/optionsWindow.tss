@@ -1,0 +1,46 @@
+'#window': {
+	navBarHidden: true
+},
+'#headerView': {
+
+},
+'#headerBar': {
+
+},
+'#cancelButton': {
+	left: 15,
+	title: 'Cancel',
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 17
+	},
+	color: Alloy.Globals.colors.white
+},
+'#cancelButton[if=Alloy.Globals.iPhoneX]': {
+	top: 25
+},
+'#headerTitleLabel': {
+	text: 'Select Item',
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 17
+	}
+
+},
+'#wrapperView': {
+
+},
+'#optionsList': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	separatorColor: Alloy.Globals.colors.transparent
+},
+'#listItem': {
+	left: 15,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	color: Alloy.Globals.colors.thunder,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	}
+}

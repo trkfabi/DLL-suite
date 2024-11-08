@@ -1,0 +1,41 @@
+<Alloy>
+	<View id='pointsRow'>
+		<View class='leftTab' />
+		<View id='wrapper'>
+			<Label id='titleLabel' />
+
+			<View id='intersetWaiverContainer' class='fieldContainer' platform='ios'>
+				<Button id='pointMinOption' class='intersetWaiverButtons optionsButtons' tag='<' />
+				<View class='verticalLineDivider' platform='ios' />
+				<Button id='pointLessOption' class='intersetWaiverButtons optionsButtons' tag='-' />
+				<Button id='pointValue' class='intersetWaiverButtons optionsButtons' tag='0' />
+				<Button id='pointMoreOption' class='intersetWaiverButtons optionsButtons' tag='+' />
+				<View class='verticalLineDivider' platform='ios' />
+				<Button id='pointMaxOption' class='intersetWaiverButtons optionsButtons intersetWaiverButtonLarge' tag='>' title='' />
+			</View>
+
+			<View id='intersetWaiverContainer' class='fieldContainer' platform='android'>
+
+				<View id='pointMinOption' class='buttonContainer'>
+					<Button id='pointMin' tag='<' class='buttonBackground' />
+				</View>
+
+				<View id='pointLessOption' class='buttonContainer'>
+					<Button id='pointLess' tag='-' class='buttonBackgroundLess' />
+				</View>
+
+				<View id='pointValueOption' class='buttonContainer buttonCenter'>
+					<Button id='pointValue' tag='0' />
+				</View>
+
+				<View id='pointMoreOption' class='buttonContainer'>
+					<Button id='pointMore' tag='+' class='buttonBackground' />
+				</View>
+
+				<View id='pointMaxOption' class='buttonContainer'>
+					<Button id='pointMax' tag='>' title='' class='buttonBackground' />
+				</View>
+			</View>
+		</View>
+	</View>
+</Alloy>

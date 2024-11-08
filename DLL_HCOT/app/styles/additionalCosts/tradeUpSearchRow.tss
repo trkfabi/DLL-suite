@@ -1,0 +1,334 @@
+'Label': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	touchEnabled: false
+},
+'#row': {
+	top: 0
+},
+'#row[platform=ios]': {
+	height: Ti.UI.SIZE,
+	clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED
+},
+'#row[platform=android]': {
+	height: 67
+},
+'#container': {
+	top: 0
+},
+'#container[platform=ios]': {
+	height: 67,
+	heightCollapsed: 67,
+	heightExpanded: 148,
+	heightNoReturn: 100
+},
+'#container[platform=android]': {
+	height: 67,
+	heightCollapsed: 67,
+	heightExpanded: 154,
+	heightNoReturn: 106
+},
+'#rowContainer': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 138,
+	layout: 'vertical'
+},
+'#rowContainer[platform=android]': {
+	height: 154
+},
+'#header': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 67,
+	backgroundColorExpanded: Alloy.Globals.colors.seashell,
+	backgroundColorCollapsed: Alloy.Globals.colors.white
+},
+'#header[if=Alloy.Globals.hasNotch]': {
+	height: 67,
+},
+'#header[platform=android]': {
+	height: 73
+},
+'#customerLabel': {
+	left: 16,
+	color: Alloy.Globals.colors.black
+},
+'#customerLabel[platform=ios]': {
+	top: 7,
+	right: 130,
+	minimumFontSize: 12,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 18
+	}
+},
+'#customerLabel[platform=android]': {
+	top: 9,
+	height: 15,
+	right: 155,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 12
+	}
+},
+'#amountLabel': {
+	top: 8,
+	right: 16,
+	width: 94,
+	color: Alloy.Globals.colors.black,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 15
+	}
+},
+'#amountLabel[platform=android]': {
+	top: 9,
+	right: 18,
+	width: 74,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 17
+	}
+},
+'#dateLabel': {
+	top: 29,
+	left: 16,
+	width: 90,
+	color: Alloy.Globals.colors.mountbattenPink,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 15
+	}
+},
+'#dateLabel[platform=android]': {
+	top: 31,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	}
+},
+'#descriptionLabel': {
+	top: 29,
+	left: 96,
+	right: 16,
+	color: Alloy.Globals.colors.mountbattenPink,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 15
+	}
+},
+'#descriptionLabel[platform=android]': {
+	top: 31,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	}
+},
+'#contractNumberLabel': {
+	top: 45,
+	left: 16,
+	right: 16,
+	color: Alloy.Globals.colors.mountbattenPink,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 15
+	}
+},
+'#contractNumberLabel[platform=android]': {
+	top: 47,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	}
+},
+'#keepLabel': {
+	text: L('keep'),
+	textDefault: L('keep'),
+	textHealthCare: L('trade_up_search')
+},
+'#returnLabel': {
+	text: L('return_str')
+},
+'#keepRow': {
+	title: 'keepLabel',
+	checkImage: 'keepCheck',
+	optionIndex: 0
+},
+'#returnRow': {
+	heightExpanded: 33,
+	title: 'returnLabel',
+	checkImage: 'returnCheck',
+	optionIndex: 1
+},
+'#returnRow[platform=android]': {
+	heightExpanded: 38
+},
+'#optionsContainer': {
+	width: Ti.UI.FILL,
+	height: 0,
+	heightExpanded: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+'#loadingContainer': {
+	left: 4,
+	right: 0,
+	height: 80,
+	top: 68,
+	backgroundColor: Alloy.Globals.colors.alabaster
+},
+'#loadingContainer[platform=android]': {
+	top: 74,
+	heigth: 85
+},
+'#activity': {
+	top: 20,
+	topReturn: 20,
+	topNoReturn: 5,
+	leftNoReturn: 5,
+	visible: true,
+	style: Ti.UI.ActivityIndicatorStyle.DARK
+},
+'#collectingLabel': {
+	bottom: 10,
+	topNoReturn: 5,
+	leftNoReturn: 35,
+	color: Alloy.Globals.colors.shuttleGray,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 12
+	},
+	text: L('loading_trade_up'),
+	textNoReturn: L('loading_trade_up_short')
+},
+'#collectingLabel[platform=android]': {
+	color: Alloy.Globals.colors.grayApprox,
+	bottomReturn: 10,
+	bottomNoReturn: 55
+},
+'.cashLabel': {
+	text: L('currency_symbol'),
+	color: Alloy.Globals.colors.black,
+	touchEnabled: false
+},
+'.cashLabel[platform=ios]': {
+	top: 10,
+	left: 202,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 15
+	}
+},
+'.cashLabel[platform=android]': {
+	right: 105,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 13
+	}
+},
+'.cashLabel[if=Alloy.Globals.hasNotch]': {
+	left: 285
+},
+'.headerCashLabel[platform=android]': {
+	top: 14
+},
+'.rightTab': {
+	right: 0,
+	width: 7,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.azureRadiance,
+	visible: false,
+	touchEnabled: false
+},
+'.leftTab': {
+	left: 0,
+	width: 7,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.azureRadiance,
+	visible: false,
+	touchEnabled: false
+},
+'.horizontalLine': {
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.mercury,
+	touchEnabled: false
+},
+'.optionRow': {
+	width: Ti.UI.FILL,
+	height: 33,
+	backgroundColor: Alloy.Globals.colors.alabaster
+},
+'.optionRow[platform=android]': {
+	height: 38
+},
+'.optionLabel': {
+	bottom: 9,
+	left: 21,
+	color: Alloy.Globals.colors.silver,
+	colorSelected: Alloy.Globals.colors.azureRadiance,
+	colorUnselected: Alloy.Globals.colors.silver,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 16
+	}
+},
+'.optionLabel[platform=android]': {
+	bottom: 12,
+	left: 18,
+	color: Alloy.Globals.colors.gray,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 18
+	}
+},
+'.optionCash[platform=ios]': {
+	left: 168,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 15
+	}
+},
+'.optionCash[if=Alloy.Globals.hasNotch]': {
+	left: 210
+},
+'.optionCash[platform=android]': {
+	right: 141,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	}
+},
+'.optionAmount': {
+	top: 11,
+	right: 60,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 13
+	},
+	touchEnabled: false
+},
+'.optionAmount[platform=android]': {
+	right: 71,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	},
+	color: Alloy.Globals.colors.black
+},
+'.checkImage': {
+	right: 15,
+	width: 40,
+	height: 40,
+	image: '/images/bt_customerinfo_checkbox_out.png',
+	imageChecked: '/images/bt_tradeup_check.png',
+	imageUnchecked: '/images/bt_customerinfo_checkbox_out.png',
+	touchEnabled: false
+}
+'.checkImage[platform=android]': {
+	right: 17,
+	width: 36,
+	height: 36,
+	imageChecked: '/images/bt_tradeup_checked.png'
+}

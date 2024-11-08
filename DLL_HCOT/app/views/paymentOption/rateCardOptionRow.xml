@@ -1,0 +1,9 @@
+<Alloy>
+	<View id='rateTypeRow' class='paymentOptionRow'>
+		<View class='leftTab' />
+		<View id='wrapper'>
+			<!-- <Require id='rateTypeBar' class='paymentBar' src='common/tabbedBar' /> -->
+			<Button id='resetOptionsButton' />
+		</View>
+	</View>
+</Alloy>

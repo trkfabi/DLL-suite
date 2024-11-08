@@ -1,0 +1,29 @@
+<Alloy>
+	<Window id='window'>
+		<View id="backgroundContainer" platform="android" />
+		<View id="Wrapper">
+			<View id='contentWrapper'>
+				<TextField id='loginField' />
+				<View class="textFieldUnderlineGray" />
+
+				<TextField id='passwordField' />
+				<View class="textFieldUnderlineGray" />
+
+				<View id='stayLoggedInContainer'>
+					<View id='stayLoggedInContainerBackground' />
+					<Label id='stayLoggedInLabel' />
+
+					<Switch id='stayLoggedInSwitch' platform="ios" />
+					<Require id="stayLoggedInSwitch" platform="android" src="common/androidSwitch" />
+
+					<View id='horzLineBottom' />
+				</View>
+				<Label id='loginButton' />
+				<Label id='privacyStatementButton' class="linkButton" />
+				<Label id="termsAndConditionsButton" class="linkButton" />
+			</View>
+
+		</View>
+
+	</Window>
+</Alloy>

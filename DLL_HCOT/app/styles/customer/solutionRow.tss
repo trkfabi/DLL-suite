@@ -1,0 +1,31 @@
+'.container': {
+	width: Ti.UI.FILL,
+	height: 40
+},
+'#solutionOrder': {
+	left: 10,
+	width: 25,
+	height: 25,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 18
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	color: Alloy.Globals.colors.white,
+	borderRadius: 13,
+	backgroundColor: Alloy.Globals.colors.azureRadiance
+},
+'#solutionMake': {
+	left: 45,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 16
+	}
+},
+'#solutionModel': {
+	right: 10,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 12
+	}
+}

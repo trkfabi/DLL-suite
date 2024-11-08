@@ -1,0 +1,158 @@
+<div class="wrapper relative dashboard main-content item-manager compare">
+	<div class="container">
+		<header class="header-block">
+			<div class="compare-versions-subtitle">
+				<div class="title">
+					<span> Comparing Rate Card Version {{ versionCurrentName }} to {{ versionSelectedName }} </span>
+				</div>
+				<div class="buttons">
+					<button class="btn-grey" (click)="onReturnButtonClick()">
+						Done
+					</button>
+					<button
+						class="btn-orange-pink btn-new-comparison-vertical-align"
+						(click)="onCompareRatesButtonClick($event, dialogCompareAction, dialogNoVersions)"
+					>
+						New Comparison
+					</button>
+				</div>
+			</div>
+		</header>
+		<div class="white-bg">
+			<div class="grid-container auto-height">
+				<h4 class="left no-margin-top">
+					FMV RATES
+				</h4>
+				<span class="right no-margin-top tool-bar">
+					<span class="new">New</span>
+					<span class="deleted">Deleted</span>
+					<span class="higher-rate"><i class="k-icon k-i-arrow-60-up"></i>Higher rate</span>
+					<span class="lower-rate"><i class="k-icon k-i-arrow-60-down"></i>Lower rate</span>
+				</span>
+				<div class="clear"></div>
+				<div class="grid-wrapper">
+					<div id="top-scroll" #scroll *ngIf="scrollWidth && isLocked">
+						<div id="dommy-div" [style.width]="scrollWidth[0]" #scrollbar></div>
+					</div>
+					<kendo-grid *ngIf="rmv" [data]="rmv" class="compareRates" #grid>
+						<kendo-grid-column field="category.data.description" title="CATEGORY" width="200" [locked]="isLocked">
+							<ng-template kendoGridCellTemplate let-dataItem>
+								<div
+									*ngIf="dataItem.category"
+									[ngClass]="{
+										new: dataItem.category.status === 'new',
+										'higher-rate': dataItem.category.status === 'higher',
+										deleted: dataItem.category.status === 'deleted',
+										'lower-rate': dataItem.category.status === 'lower'
+									}"
+								>
+									{{ dataItem.category.data.description || dataItem.category.data.previous }}
+								</div>
+							</ng-template>
+						</kendo-grid-column>
+						<kendo-grid-column field="product.data.description" title="PRODUCT" width="200" [locked]="isLocked">
+							<ng-template kendoGridCellTemplate let-dataItem>
+								<div
+									*ngIf="dataItem.product"
+									[ngClass]="{
+										new: dataItem.product.status === 'new',
+										'higher-rate': dataItem.product.status === 'higher',
+										deleted: dataItem.product.status === 'deleted',
+										'lower-rate': dataItem.product.status === 'lower'
+									}"
+								>
+									{{ dataItem.product.data.description || dataItem.product.data.previous }}
+								</div>
+							</ng-template>
+						</kendo-grid-column>
+						<kendo-grid-column field="creditRating.data.description" title="CREDIT RATING" width="96" [locked]="isLocked">
+							<ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex"> CREDIT<br />RATING </ng-template>
+							<ng-template kendoGridCellTemplate let-dataItem>
+								<div
+									*ngIf="dataItem.creditRating"
+									[ngClass]="{
+										new: dataItem.creditRating.status === 'new',
+										'higher-rate': dataItem.creditRating.status === 'higher',
+										deleted: dataItem.creditRating.status === 'deleted',
+										'lower-rate': dataItem.creditRating.status === 'lower'
+									}"
+								>
+									{{ dataItem.creditRating.data.description || dataItem.creditRating.data.previous }}
+								</div>
+							</ng-template>
+						</kendo-grid-column>
+						<kendo-grid-column
+							[kendoGridSelectBy]="'ProductID'"
+							class="terms-grid"
+							*ngFor="let lTerm of termList; let i = index"
+							field="terms"
+							title="RF: {{ lTerm }} M"
+							width="82"
+						>
+							<ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+								RF:<br />{{ lTerm }} M
+							</ng-template>
+							<ng-template kendoGridCellTemplate let-dataItem>
+								<div [ngClass]="mapClass(dataItem.terms, lTerm)" *ngIf="dataItem.terms">
+									{{ actualTerm }}
+								</div>
+							</ng-template>
+						</kendo-grid-column>
+					</kendo-grid>
+				</div>
+				<br />
+				<div class="auto-height">
+					<h4 class="left no-margin-top">
+						$1 OUT RATES
+					</h4>
+					<div class="clear"></div>
+					<div class="grid-wrapper">
+						<div id="top-scroll" #scroll *ngIf="scrollWidth && isLocked">
+							<div id="dommy-div" [style.width]="scrollWidth[1]" #scrollbar></div>
+						</div>
+						<kendo-grid *ngIf="out" [data]="out" class="compareRatesOut" #grid>
+							<kendo-grid-column field="creditRating.data.description" title="CREDIT RATING" width="496" [locked]="isLocked">
+								<ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+									CREDIT<br />RATING
+								</ng-template>
+							</kendo-grid-column>
+							<kendo-grid-column
+								*ngFor="let lTerm of termList; let i = index"
+								field="terms"
+								title="RF: {{ lTerm }} M"
+								width="82"
+							>
+								<ng-template kendoGridHeaderTemplate let-columnIndex="columnIndex"> RF:<br />{{ lTerm }} M </ng-template>
+								<ng-template kendoGridCellTemplate let-dataItem>
+									<div [ngClass]="mapClass(dataItem.terms, lTerm)" *ngIf="dataItem.terms">
+										{{ actualTerm }}
+									</div>
+								</ng-template>
+							</kendo-grid-column>
+						</kendo-grid>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<div kendoDialogContainer></div>
+<ng-template #dialogCompareAction>
+	<div class="k-dialog-buttongroup-buttons-compare">
+		<button
+			kendoButton
+			(click)="handleDialogSubmitButtonClick($event)"
+			[disabled]="dialogRefComponent.sIndex === undefined || dialogRefComponent.sIndex === null"
+			class="k-button k-primary"
+		>
+			{{ buttonAction }}
+		</button>
+		<button kendoButton (click)="handleDialogCloseButtonClick()" class="k-button">Cancel</button>
+	</div>
+</ng-template>
+<ng-template #dialogNoVersions>
+	<div class="buttons">
+		<button kendoButton (click)="handleDialogCloseButtonClick()" class="k-button k-primary">OK</button>
+	</div>
+</ng-template>

@@ -1,0 +1,98 @@
+'#window': {
+	top: 0,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	barColor: Alloy.Globals.colors.azureRadiance,
+	navTintColor: Alloy.Globals.colors.white
+},
+'#cancelButton': {
+	left: 15,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 17
+	},
+	color: Alloy.Globals.colors.white,
+	title: L('cancel')
+},
+'#headerTitleLabel': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 17
+	},
+	text: L('credit_rating')
+},
+'#searchBar': {
+	top: 0,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: 46,
+	hintText: L('enter_customer_name')
+},
+'#creditRatingList': {
+	top: 46,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white,
+},
+'#listSectionHeaderView': {
+	width: Ti.UI.FILL,
+	height: 23,
+	backgroundColor: Alloy.Globals.colors.gallery
+},
+'#headerTitle': {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 14
+	},
+	text: L('customer_found')
+},
+'#activityIndicator': {
+	top: 24,
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	visible: true,
+	style: Ti.UI.ActivityIndicatorStyle.DARK
+},
+'#searchingLabel': {
+	top: 12,
+	width: Ti.UI.SIZE,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 14
+	},
+	color: Alloy.Globals.colors.gray,
+	text: L('searching_for_credit_rating')
+},
+'#waitLabel': {
+	top: 12,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 14
+	},
+	color: Alloy.Globals.colors.gray,
+	text: L('please_wait')
+},
+'#searchResultView': {
+	width: Ti.UI.SIZE,
+	height: 0,
+	searchResultHidden: 0
+},
+'#loadingView': {
+	top: 40,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	layout: 'vertical',
+	visible: true
+},
+
+'.leftSpacing': {
+	left: 15
+}

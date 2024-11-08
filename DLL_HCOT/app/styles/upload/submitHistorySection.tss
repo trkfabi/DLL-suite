@@ -1,0 +1,62 @@
+'#submitHistorySection': {
+
+},
+'#quoteNameLabel': {
+	left: 20,
+	right: 85
+},
+'#paymentAmountLabel': {
+	right: 20,
+	width: 60,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold
+	}
+},
+'#retryButton': {
+	left: 10,
+	right: 10,
+	top: 5,
+	bottom: 5,
+	height: 55,
+	title: 'Retry',
+	color: Alloy.Globals.colors.white,
+	backgroundColor: Alloy.Globals.colors.titleBlue,
+	borderRadius: 3,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 14
+	}
+},
+'.headerContainer': {
+	width: Ti.UI.FILL,
+	height: 40,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'.quoteInfoLabel': {
+	height: 20,
+	color: Alloy.Globals.colors.nightGrey,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 14
+	}
+},
+'.dollarSymbolLabel': {
+	right: 80,
+	color: Alloy.Globals.colors.nightGrey,
+	text: '$',
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 12
+	}
+},
+'.footerContainer': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+},
+'.horizontalLine': {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.mediumGrey
+}

@@ -1,0 +1,135 @@
+@import '~@angular/material/theming';
+@import '_variables.scss';
+// always include only once per project
+@include mat-core();
+$md-dll: (
+	50: $white,
+	100: #bde5ff,
+	200: #85cfff,
+	300: #3db3ff,
+	400: #1fa7ff,
+	500: $dll-blue,
+	600: #0088e0,
+	700: #0076c2,
+	800: #0063a3,
+	900: #005185,
+	A100: $white,
+	A200: #99d7ff,
+	A400: #33afff,
+	A700: #1aa5ff,
+	contrast: (
+		50: $black,
+		100: $black,
+		200: $black,
+		300: $black,
+		400: $black,
+		500: $white,
+		600: $white,
+		700: $white,
+		800: $white,
+		900: $white,
+		A100: $black,
+		A200: $black,
+		A400: $black,
+		A700: $black,
+	),
+);
+// define 3 theme color
+// mat-palette accepts $palette-name, main, lighter and darker variants
+$my-theme-primary: mat-palette($md-dll, 700, 300, 900);
+$my-theme-accent: mat-palette($md-dll);
+$my-theme-warn: mat-palette($md-dll, A700);
+// create theme (use mat-dark-theme for themes with dark backgrounds)
+$my-theme: mat-light-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
+@include angular-material-theme($my-theme);
+/* *
+* Material Form Input Field */
+.mat-form-field-underline,
+.mat-focused .mat-form-field-underline {
+	background-color: transparent !important;
+}
+.mat-focused .mat-input-ripple,
+.ng-invalid .mat-input-ripple {
+	display: none !important;
+}
+.mat-form-field-label {
+	color: $slate-grey !important;
+	font-size: 13px !important;
+	font-weight: 500 !important;
+	text-transform: capitalize !important;
+	transform: none !important;
+	transition: none !important;
+	top: 0 !important;
+}
+.mat-input-element {
+	width: 275px !important;
+	height: 25px !important;
+	margin-top: 5px !important;
+	font-size: 14px !important;
+	font-weight: bold !important;
+	text-align: inherit !important;
+	background-color: $white-three !important;
+	border: 0.5px solid $white-two !important;
+}
+/* *
+ * Material Button */
+.mat-button,
+.mat-button.mat-fab,
+.mat.button.mat-raised-button {
+	min-width: 115px !important;
+	font-weight: 500 !important;
+	font-size: 12px !important;
+	line-height: 25px !important;
+	font-size: 12px !important;
+	background: #fcfcfc !important;
+	border: solid 0.5px #e7e7e7 !important;
+	font-family: $sfUiDisplay !important;
+}
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-button.mat-primary {
+	background-color: $orange-pink !important;
+	border: none !important;
+	color: $white !important;
+	span {
+		text-transform: uppercase;
+	}
+}
+.mat-raised-button[disabled],
+.mat-button.mat-primary[disabled] {
+	background-color: $light-salmon !important;
+	color: $white !important;
+	width: 115px !important;
+	font-size: 13px !important;
+	span {
+		text-transform: uppercase;
+	}
+}
+.mat-button {
+	&.ghost {
+		width: auto !important;
+		border: 0 !important;
+		background: transparent !important;
+		font-size: 13px !important;
+		&.filter {
+			margin-right: 19px;
+		}
+		&.compare {
+			margin-right: 9px;
+		}
+		.mat-button-focus-overlay {
+			width: auto;
+		}
+		&:disabled {
+			color: $pinkish-grey !important;
+		}
+		&.ghost-blue {
+			color: $dll-blue;
+			&:disabled {
+				color: $pinkish-grey !important;
+				opacity: 0.5 !important;
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+<Alloy>
+	<Window id="window">
+		<View id="shadow" />
+		<View id="container">
+			<ImageView id="pdfImageView" />
+
+			<View id="progressContainer">
+				<View id="progressView" />
+			</View>
+
+			<Label id="instructionsLabel" />
+
+			<!-- <Button id="cancelButton" /> -->
+		</View>
+	</Window>
+</Alloy>

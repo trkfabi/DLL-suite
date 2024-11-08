@@ -1,0 +1,22 @@
+'#optionsSection': {
+
+},
+'#headerView': {
+	width: Ti.UI.FILL,
+	height: 24,
+	backgroundColor: Alloy.Globals.colors.black
+},
+'#headerView[if=Alloy.Globals.iPhoneX]': {
+	height: 24
+},
+'#headerLabel': {
+	left: 15,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.white,
+	text: 'iPhone',
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 14
+	}
+}

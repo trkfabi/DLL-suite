@@ -1,0 +1,332 @@
+<div class="relative dashboard main-content" [ngClass]="{ 'has-toaster': hasToast }">
+	<div class="emptyRateCards" *ngIf="emptyStateMessage">
+		<figure>
+			<img
+				src="assets/images/dll/imgRatecard.png"
+				srcset="assets/images/dll/imgRatecard@2x.png 2x, assets/images/dll/imgRatecard@3x.png 3x"
+				alt=""
+			/>
+			<p>{{ emptyStateMessage }}</p>
+		</figure>
+	</div>
+	<a class="export-rate-cards-link" #downloadExportLink></a>
+	<div class="buttons-toolbar header">
+		<div class="buttons buttons-othc">
+			<button class="export" mat-button (click)="onExportToExcelButtonClick($event, dialogAllActions)" [disabled]="!versionSelected">
+				Export to Excel
+			</button>
+			<button class="manage-terms" mat-button (click)="onManageTermsCOFButtonClick($event)" [disabled]="!versionSelected">
+				Manage Terms and COF
+			</button>
+			<button class="rate-program" mat-button (click)="onManageRateProgramsButtonClick($event)" [disabled]="!versionSelected">
+				Manage Rate Programs
+			</button>
+		</div>
+	</div>
+	<div *ngIf="!emptyStateMessage">
+		<kendo-tabstrip (tabSelect)="onTabSelect($event)" [animate]="false">
+			<kendo-tabstrip-tab [title]="'Rate Factors'" [selected]="tabSelected === 'factors'">
+				<ng-template kendoTabContent>
+					<div class="container">
+						<div class="rate-filters othc-filters">
+							<div class="filter-row first">
+								<label for="rateProgram" class="label-rate">
+									Rate Program:
+								</label>
+								<button #rateProgram (click)="onRateProgramDisplay()" class="k-button rate-program-filter">
+									<div class="text">
+										{{ textSelectRateProgram }}
+										<span unselectable="on" class="k-select"
+											><span unselectable="on" class="k-icon k-i-arrow-s" ng-reflect-ng-class="k-i-arrow-s"></span
+										></span>
+									</div>
+								</button>
+								<kendo-popup #popupRateProgram [anchor]="rateProgram" *ngIf="showRateProgram">
+									<div class="rate-program-content">
+										<div class="rate-program-list-container">
+											<div class="k-label" *ngFor="let item of filterRateProgram">
+												<input
+													#filtersRateProgram
+													class="checkbox"
+													[value]="item.value"
+													type="checkbox"
+													kendoCheckBox
+													[(ngModel)]="item.selected"
+													(click)="onRateProgramClick($event.target.checked, item)"
+												/>
+												{{ item.text }}
+											</div>
+										</div>
+										<button kendoButton class="button" (click)="onRateProgramComplete()">Complete</button>
+									</div>
+								</kendo-popup>
+								<kendo-multiselect
+									*ngIf="dataRateProgram && !filterAllRateProgramsIsSelected"
+									class="multi-options"
+									[data]="dataRateProgram"
+									(removeTag)="onRemoveRateProgram($event)"
+									textField="text"
+									valueField="value"
+									[(ngModel)]="dataRateProgram"
+									(open)="onOpenMultiselect($event)"
+								></kendo-multiselect>
+							</div>
+							<div class="filter-row second">
+								<div class="filter-column-left">
+									<label for="purchaseOptions" class="label-rate">
+										Purchase Options
+									</label>
+									<kendo-dropdownlist
+										[defaultItem]="defaultItem"
+										[data]="filterPurchaseOptions"
+										[textField]="'text'"
+										[valueField]="'value'"
+										(selectionChange)="filterBySelector($event, 'purchaseOption')"
+										[(ngModel)]="purchaseOptionSelected"
+										class="dropdown purchase-dropdown"
+									>
+									</kendo-dropdownlist>
+									<label for="paymentFrequency" class="label-rate">
+										Payment Frequency
+									</label>
+									<kendo-dropdownlist
+										[data]="filterPaymentFrequency"
+										[textField]="'text'"
+										[valueField]="'value'"
+										[(ngModel)]="paymentFrequencySelected"
+										(selectionChange)="filterBySelector($event, 'paymentFrequency')"
+										class="dropdown payment-dropdown"
+									>
+									</kendo-dropdownlist>
+									<label for="paymentFrequency" class="label-rate">
+										Advanced Payments
+									</label>
+									<kendo-dropdownlist
+										[valuePrimitive]="true"
+										[data]="filterAdvancedPayments"
+										(valueChange)="filterBySelector($event, 'advancePayments')"
+										[(ngModel)]="paymentSelected"
+										class="dropdown advanced-dropdown"
+									>
+									</kendo-dropdownlist>
+								</div>
+								<div class="filter-column-right">
+									<div class="label-show-container">
+										<label class="label-rate label-show">
+											Show:
+										</label>
+										<app-options-radio
+											[itemList]="displayDataOptions"
+											(radioOptionClickEvent)="displayDataSwitcher($event)"
+										></app-options-radio>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="buttons-toolbar othc-toolbar">
+							<div class="ratefactor-points">
+								<label for="factorPoints" class="ratecard-selector">
+									Display rate factors with points:
+								</label>
+								<kendo-dropdownlist
+									class="k-dropdown display-rate-factors"
+									[data]="vendorCodesList"
+									[defaultItem]="defaultVendor"
+									[textField]="'name'"
+									[valueField]="'id'"
+									[disabled]="noVendors"
+									(selectionChange)="filterBySelector($event, 'vendorCodeId')"
+									[(ngModel)]="vendorCodesSelected"
+								>
+									<ng-template kendoDropDownListItemTemplate let-dataItem>
+										<span class="title">{{ dataItem.name }}</span>
+										<div *ngIf="dataItem && dataItem.isNotBase">
+											<span class="points points-label">Pts:</span>
+											<span class="points points-data">{{ dataItem.points | number: '1.2-2' }}%</span>
+										</div>
+									</ng-template>
+									<ng-template kendoDropDownListValueTemplate let-dataItem>
+										<div *ngIf="dataItem; else notShow">
+											<span class="title">{{ dataItem.name }}</span>
+										</div>
+										<ng-template #notShow>
+											<span class="title">Base (No points added)</span>
+										</ng-template>
+										<div *ngIf="dataItem && dataItem.isNotBase">
+											<span class="points points-label">Pts:</span>
+											<span class="points points-data">{{ dataItem.points | number: '1.2-2' }}%</span>
+										</div>
+									</ng-template>
+								</kendo-dropdownlist>
+							</div>
+							<button
+								mat-button
+								class="ghost ghost-blue compare compare-rates"
+								*ngIf="rateFactorsData"
+								[disabled]="disableButton"
+								(click)="
+									onCompareRatesButtonClick(
+										$event,
+										dialogCompareAction,
+										dialogNoVersions,
+										dialogNoVersionSelectedtoCompare
+									)
+								"
+							>
+								Compare Rates
+							</button>
+							<div class="menu-fiter" [hidden]="!filterMenu">
+								<div class="filter-list">
+									<label
+										for="{{ item.label }}"
+										*ngFor="let item of filterOptions; let i = index"
+										[ngClass]="item.disabled ? 'label-disabled' : ''"
+									>
+										<input
+											id="{{ item.label }}"
+											type="checkbox"
+											[checked]="item.checked"
+											(change)="onFilterChecked($event, i, item)"
+										/>
+										{{ item.label }}
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="grid-container auto-height othc-ratefactor-grid">
+							<div class="clear"></div>
+							<app-grid-ratecardinputs-readonly
+								[columns]="rateFactorsData?.columns"
+								[rows]="rateFactorsData?.rows"
+								[isLocked]="rateFactorsData?.isLocked"
+								[isRateFactors]="rateFactorsData?.isRateFactors"
+							></app-grid-ratecardinputs-readonly>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</ng-template>
+			</kendo-tabstrip-tab>
+			<kendo-tabstrip-tab [title]="'Rate Card Inputs'" [selected]="tabSelected === 'inputs'">
+				<ng-template kendoTabContent>
+					<div class="container container-cof-othc">
+						<div class="grid-container no-margin-top">
+							<h4 class="left">
+								Cost of Funds (COF)
+							</h4>
+							<div class="clear"></div>
+							<div class="rate-program-dropdown">
+								<label class="label-rate">Rate Program</label>
+								<kendo-dropdownlist
+									class="dropdown"
+									[data]="rateProgramsList"
+									[textField]="'name'"
+									[valueField]="'id'"
+									[ngModel]="rateProgramSelected"
+									(selectionChange)="onRateProgramSelectChange($event)"
+								></kendo-dropdownlist>
+								<button kendoButton class="edit-rate-program" (click)="editRateProgram($event)">Edit Rate Program</button>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="grid-container auto-height grid-cofs">
+							<div class="clear"></div>
+							<app-grid-ratecardinputs-readonly
+								[columns]="cofsData?.columns"
+								[rows]="cofsData?.rows"
+								[isLocked]="cofsData.locked"
+							></app-grid-ratecardinputs-readonly>
+						</div>
+						<div class="grid-container">
+							<h4 class="left">
+								Spreads
+							</h4>
+							<div class="clear"></div>
+
+							<app-grid-ratecardinputs-editable
+								(saveChanges)="onSaveChanges($event, 'SPREADS')"
+								[columns]="spreadsData?.columns"
+								[rows]="spreadsData?.rows"
+								[isLocked]="spreadsData?.locked"
+							>
+							</app-grid-ratecardinputs-editable>
+						</div>
+						<div class="grid-container readonly">
+							<h4 class="left">
+								All-In Rates
+							</h4>
+							<div class="clear"></div>
+							<app-grid-ratecardinputs-readonly
+								[columns]="allInRatesData?.columns"
+								[rows]="allInRatesData?.rows"
+								[isLocked]="allInRatesData?.locked"
+							></app-grid-ratecardinputs-readonly>
+						</div>
+						<hr />
+						<div class="grid-container auto-height" *ngIf="hasResiduals">
+							<h4 class="left">
+								Residuals Percentages
+							</h4>
+							<div class="clear"></div>
+							<app-grid-ratecardinputs-editable
+								*ngIf="residualFmvData?.locked"
+								[minValue]="0"
+								(saveChanges)="onSaveChanges($event)"
+								[isResidual]="true"
+								[columns]="residualFmvData?.columns"
+								[rows]="residualFmvData?.rows"
+								[isLocked]="residualFmvData?.locked"
+							>
+							</app-grid-ratecardinputs-editable>
+							<app-grid-ratecardinputs-editable
+								*ngIf="residualFpoData?.locked"
+								(saveChanges)="onSaveChanges($event)"
+								[minValue]="0"
+								[isResidual]="true"
+								[columns]="residualFpoData?.columns"
+								[rows]="residualFpoData?.rows"
+								class="fpo-grid-component"
+							>
+							</app-grid-ratecardinputs-editable>
+						</div>
+					</div>
+				</ng-template>
+			</kendo-tabstrip-tab>
+		</kendo-tabstrip>
+	</div>
+	<div kendoDialogContainer></div>
+	<ng-template #dialogActions>
+		<button kendoButton (click)="handleDialogSubmitButtonClick($event)" class="k-button k-primary" [class.termsSubmit]="isEditingTerms">
+			Done
+		</button>
+	</ng-template>
+	<ng-template #dialogAllActions>
+		<div class="buttons">
+			<button kendoButton (click)="handleDialogSubmitButtonClick($event)" class="k-button k-primary">{{ buttonAction }}</button>
+			<button kendoButton (click)="handleDialogCloseButtonClick($event)" class="k-button">Cancel</button>
+		</div>
+	</ng-template>
+	<ng-template #dialogCompareAction>
+		<div class="k-dialog-buttongroup-buttons-compare">
+			<button
+				kendoButton
+				(click)="handleDialogSubmitButtonClick($event)"
+				[disabled]="dialogRefComponent.sIndex === undefined || dialogRefComponent.sIndex === null"
+				class="k-button k-primary"
+			>
+				{{ buttonAction }}
+			</button>
+			<button kendoButton (click)="handleDialogCloseButtonClick($event)" class="k-button">Cancel</button>
+		</div>
+	</ng-template>
+	<ng-template #dialogNoVersions>
+		<div class="buttons">
+			<button kendoButton (click)="handleDialogCloseButtonClick($event)" class="k-button k-primary">OK</button>
+		</div>
+	</ng-template>
+	<ng-template #dialogNoVersionSelectedtoCompare>
+		<div class="buttons">
+			<button kendoButton (click)="handleDialogNoVersionSelectedCloseButtonClick($event)" class="k-button k-primary">OK</button>
+		</div>
+	</ng-template>
+</div>

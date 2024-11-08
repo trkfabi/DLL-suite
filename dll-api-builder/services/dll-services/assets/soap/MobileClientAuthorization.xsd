@@ -1,0 +1,32 @@
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.delagelanden.com/mobileauth/1.0/" xmlns:data="http://schemas.delagelanden.com/mobileauth/1.0/data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schemas.delagelanden.com/mobileauth/1.0/data" schemaLocation="MobileClientAuthorizationData.xsd"/>
+	<xs:element name="Authenticate">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="Credentials" nillable="true" type="data:CredentialsType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AuthenticateResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="AuthenticateResult" nillable="true" type="data:AuthenticateResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidateToken">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="AuthorizationToken" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="API" nillable="true" type="data:APIType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidateTokenResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ValidateTokenResult" nillable="true" type="data:ValidateTokenResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

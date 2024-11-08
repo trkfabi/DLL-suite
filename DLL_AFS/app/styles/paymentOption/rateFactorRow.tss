@@ -1,0 +1,62 @@
+"#cleanButton": {
+	width: 30,
+	height: 30,
+	right: 125,
+	bubbleParent: false,
+	visible: false
+},
+"#cleanButton[platform=ios]": {
+	image: "/images/bt_quotescreen_clearfield.png"
+},
+"#cleanButton[platform=android]": {
+	backgroundImage: "/images/bt_quotescreen_clearfield.png"
+},
+"#textFieldContainer": {
+	right: 10,
+	width: 110,
+	height: 40
+},
+'#amountText': {
+	height: Ti.UI.FILL,
+	left: 5,
+	right: 5,
+	bubbleParent: false,
+	color: Alloy.Globals.colors.black,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 18
+	},
+	tintColor: Alloy.Globals.colors.azureRadiance
+},
+'#amountText[platform=android]': {
+	width: 102.2
+},
+".simpleText[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 18
+	},
+	backgroundColor: "transparent"
+},
+".inputDelimiter": {
+	bottom: 0,
+	left: 0,
+	right: 0,
+	height: 5,
+	backgroundImage: '/images/im_customerinfo_textline_small.png'
+},
+".rowTitle": {
+	left: 10,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 16
+	},
+	color: Alloy.Globals.colors.black
+},
+".rowTitle[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 16
+	}
+}

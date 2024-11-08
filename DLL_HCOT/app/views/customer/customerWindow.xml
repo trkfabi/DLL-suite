@@ -1,0 +1,121 @@
+<Alloy>
+	<View id='wrapper'>
+		<View id='container'>
+			<ScrollView id='detailContainer'>
+				<TextField id='androidFocus' platform='android' />
+				<View id='customerContainer' class='category'>
+					<View id='customerHeader' class='customerHeader'>
+						<Label id='customerLabel' class='sectionLabel' />
+						<ImageView id='expandCustomerImage' class='expandButton' />
+					</View>
+					<View class='row'>
+						<View class='leftTab' />
+						<TextField id='customerNameTextField' class='field' />
+						<Button id='searchCustomerButton' class='button' />
+						<View class='fieldBottomLine' />
+					</View>
+					<View class='row'>
+						<View class='leftTab' />
+						<View class='halfRow leftField'>
+							<TextField id='nameTextField' class='field' />
+							<View class='fieldBottomLine' />
+						</View>
+						<View class='halfRow rightField'>
+							<TextField id='middleTextField' class='field' />
+							<View class='fieldBottomLine' />
+						</View>
+					</View>
+					<View class='row'>
+						<View class='leftTab' />
+						<TextField id='lastNameTextField' class='field' />
+						<View class='fieldBottomLine' />
+					</View>
+					<View class='row'>
+						<View class='leftTab' />
+						<TextField id='titleTextField' class='field' />
+						<View class='fieldBottomLine' />
+					</View>
+					<View class='row'>
+						<View class='leftTab' />
+						<TextField id='phoneTextField' class='field kbNumPad' />
+						<View class='fieldBottomLine' />
+					</View>
+					<View class='row'>
+						<View class='leftTab' />
+						<TextField id='emailTextField' class='field kbEmail' />
+						<View class='fieldBottomLine' />
+					</View>
+					<View class='separatorRow'>
+						<View class='leftTab' />
+						<View class='separator' />
+					</View>
+					<View class='titleRow'>
+						<View class='leftTab' />
+						<Label id='physicalTitle' class='title' />
+					</View>
+					<View class='row'>
+						<View class='leftTab' />
+						<TextField id='addressTextField' class='field' />
+						<View class='fieldBottomLine' />
+					</View>
+					<View class='row'>
+						<View class='leftTab' />
+						<TextField id='cityTextField' class='field' />
+						<View class='fieldBottomLine' />
+					</View>
+					<View class='row'>
+						<View class='leftTab' />
+						<View class='halfRow leftField'>
+							<TextField id='stateTextField' class='field' />
+							<View class='fieldBottomLine halfBottomLine' />
+						</View>
+						<View class='halfRow rightField'>
+							<TextField id='zipTextField' class='field kbNumeric' />
+							<View class='fieldBottomLine halfBottomLine' />
+						</View>
+					</View>
+					<View class='separatorRow'>
+						<View class='leftTab' />
+						<View class='separator' />
+					</View>
+					<View class='titleRow'>
+						<View class='leftTab' />
+						<Label id='equipmentTitle' class='title' />
+						<View id='markEquipmentSame'>
+							<Label id='markTitle' />
+							<ImageView id='markCheck' />
+						</View>
+					</View>
+					<View class='row'>
+						<View class='leftTab' />
+						<TextField id='equipmentAddressTextField' class='field' />
+						<View class='fieldBottomLine' />
+					</View>
+					<View class='row'>
+						<View class='leftTab' />
+						<TextField id='cityEquipmentTextField' class='field' />
+						<View class='fieldBottomLine' />
+					</View>
+					<View class='row'>
+						<View class='leftTab' />
+						<View class='halfRow leftField'>
+							<TextField id='stateEquipmentTextField' class='field halfField' />
+							<View class='fieldBottomLine halfBottomLine' />
+						</View>
+						<View class='halfRow rightField'>
+							<TextField id='zipEquipmentTextField' class='field kbNumeric halfField' />
+							<View class='fieldBottomLine halfBottomLine' />
+						</View>
+					</View>
+					<View class='row' id='equipmentUseRow' />
+					<View class='separatorRow'>
+						<View class='leftTab' />
+					</View>
+				</View>
+				<View id='equipmentContainer' class='category'>
+					<View id='equipmentListContainer' class='equipmentList' />
+				</View>
+			</ScrollView>
+		</View>
+	</View>
+</Alloy>

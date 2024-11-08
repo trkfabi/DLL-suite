@@ -1,0 +1,34 @@
+"#container": {
+	width : Ti.UI.FILL,
+	height : Ti.UI.FILL,
+	borderRadius : '50%',
+	borderColor : '#fff',
+	borderWidth : 0,
+	visible : false
+},
+"#circularDial": {
+	width : '98%',
+	height : '98%',
+	backgroundImage : WPATH('/images/im_handle_out.png'),
+	opacity : 1
+},
+"#circularDialPressed": {
+	width : '98%',
+	height : '98%',
+	backgroundImage : '/images/im_handle_pressed.png',
+	opacity : 0
+},
+"#centerTarget": {
+	width : '78%',
+	height : '78%',
+	borderRadius : 70,
+	// borderColor : '#f00',
+},
+"#touchPoint": {
+	top : '32%',
+	left : '65%',
+	width : '38%',
+	height : '38%',
+	borderRadius : '50%',
+	borderWidth : 0
+}

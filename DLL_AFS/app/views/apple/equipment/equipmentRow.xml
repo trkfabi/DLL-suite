@@ -1,0 +1,34 @@
+<Alloy>
+	<TableViewRow id='equipmentRow'>
+		<View id='equipmentView'>
+			<View id='productRow' class='rowView firstRow'>
+				<Label id='productLabel' class='inputField' />
+				<View id='pickerIcon' />
+				<View id='nameFieldLine' class='fieldBottomLine fieldLineMargin' />
+			</View>
+
+			<View id='descriptionRow'>
+				<Widget id='descriptionField' src='com.propelics.textarea.hint' class='inputField' tag='description' />
+				<View id='nameFieldLine' class='fieldBottomLine fieldLineMargin' />
+			</View>
+
+			<View class='rowView'>
+				<View id='quantityWrapper'>
+					<TextField id='quantityField' class='inputField kbNumPad' tag='quantity' />
+					<View id='nameFieldLine' class='fieldBottomLine fieldLineMargin' />
+				</View>
+				<View id='priceWrapper'>
+					<Label class='priceSymbol fieldSymbol' />
+					<TextField id='priceField' class='inputField kbNumeric' tag='unitPrice' />
+					<View id='nameFieldLine' class='fieldBottomLine fieldLineMargin' />
+				</View>
+			</View>
+
+			<View class='rowView'>
+				<Label id='extendedPriceLabel' />
+				<Label id='extendedPriceSymbol' class='priceSymbol' />
+				<Label id='extendedPriceValueLabel' />
+			</View>
+		</View>
+	</TableViewRow>
+</Alloy>

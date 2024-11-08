@@ -1,0 +1,276 @@
+'#wrapper': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical',
+	backgroundColor: Alloy.Globals.colors.transparent,
+	expanded: true,
+	heightCollapsed: 40
+},
+'#wrapper[platform=ios]': {
+	heightCollapsed: 43,
+	clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED
+},
+'#titleLabel': {
+	left: 48,
+	right: 60,
+	height: Ti.UI.FILL,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 13
+	},
+	text: L('equipment_item'),
+	color: Alloy.Globals.colors.azureRadiance,
+},
+'#titleLabel[platform=android]': {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 15
+	}
+},
+'#expandCollapseButton': {
+	right: 12,
+	width: 40,
+	height: 40,
+	imageExpanded: '/images/bt_quotescreen_equipmentprice_contract.png',
+	imageCollapsed: '/images/bt_quotescreen_equipmentprice_expand.png',
+	touchEnabled: false
+},
+'#expandCollapseButton[platform=ios]': {
+	image: '/images/bt_quotescreen_equipmentprice_contract.png',
+	expandProperty: 'image'
+},
+'#expandCollapseButton[platform=android]': {
+	right: 6,
+	backgroundImage: '/images/bt_quotescreen_equipmentprice_contract.png',
+	expandProperty: 'backgroundImage'
+},
+'#makeField': {
+	hintText: L('make')
+},
+'#modelField': {
+	hintText: L('model')
+},
+'#descriptionField': {
+	hintText: L('description')
+},
+'#yearField': {
+	hintText: L('year')
+},
+'#serialNoField': {
+	hintText: L('serial_number')
+},
+'#qtyMinusButton': {
+	left: 0,
+	backgroundImage: '/images/it_customerinfo_counter_left_out.png',
+	backgroundSelectedImage: '/images/it_customerinfo_counter_left_pressed.png'
+},
+'#qtyFieldContainer': {
+	width: 40,
+	height: 34,
+	backgroundColor: Alloy.Globals.colors.mountbattenPink
+},
+'#qtyField': {
+	height: 34,
+	width: Ti.UI.FILL,
+	color: Alloy.Globals.colors.white,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 12
+	},
+	bubbleParent: false
+},
+'#qtyField[platform=android]': {
+	top: 0,
+	width: 45,
+	height: 40
+},
+'#qtyMoreButton': {
+	right: 0,
+	backgroundImage: '/images/it_customerinfo_counter_right_out.png',
+	backgroundSelectedImage: '/images/it_customerinfo_counter_right_pressed.png'
+},
+'#deleteButton': {
+	left: 8,
+	width: 35,
+	height: 35
+},
+'#deleteButton[platform=ios]': {
+	image: 'images/bt_customerinfo_removeitem.png',
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+},
+'#deleteButton[platform=android]': {
+	backgroundImage: '/images/bt_customerinfo_removeitem.png'
+},
+'#makeAutocompleteContainer': {
+	left: 8,
+	right: 0,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.lightGrey
+},
+'#equipmentStatus[platform=ios]': {
+	top: 15,
+	left: 20,
+	right: 20,
+	height: 35,
+	labels: [L('new_str'), L('used')],
+	tintColor: Alloy.Globals.colors.abbey,
+	backgroundColor: Alloy.Globals.colors.gallery,
+	selectColor: Alloy.Globals.colors.muddyWaters,
+	style: Alloy.Globals.tabbedBar.STYLE_TABBED_BAR,
+},
+'#equipmentStatus[platform=android]': {
+	top: 15,
+	left: 20,
+	right: 20,
+	height: 35,
+	labels: [L('new_str'), L('used')],
+	selectColor: Alloy.Globals.colors.white,
+	tintColor: Alloy.Globals.colors.mountbattenPink,
+	borderColor: Alloy.Globals.colors.mountbattenPink,
+	style: Alloy.Globals.tabbedBar.STYLE_TABBED_BAR
+},
+'.header': {
+	left: 0,
+	right: 0,
+	height: 40,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'#newButton': {
+	left: 0,
+	width: '50%',
+	height: Ti.UI.FILL,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold
+	},
+	title: L('new_uppercase'),
+	color: Alloy.Globals.colors.mountbattenPink,
+	borderWidth: 1,
+	borderColor: Alloy.Globals.colors.white
+},
+'#usedButton': {
+	right: 0,
+	width: '50%',
+	height: Ti.UI.FILL,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold
+	},
+	title: L('used_uppercase'),
+	color: Alloy.Globals.colors.mountbattenPink,
+	borderWidth: 1,
+	borderColor: Alloy.Globals.colors.white
+},
+'.row': {
+	left: 0,
+	right: 0,
+	height: 50,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'.row[platform=android]': {
+	height: 60
+},
+'.separator': {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.silver,
+	touchEnabled: false
+},
+'.field': {
+	top: 24,
+	left: 20,
+	right: 20,
+	height: 20,
+	font: {
+		fontSize: 18,
+		fontFamily: Alloy.Globals.fonts.primary.light
+	},
+	color: Alloy.Globals.colors.shuttleGray,
+	tintColor: Alloy.Globals.colors.azureRadiance,
+	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_SENTENCES,
+	bubbleParent: false
+},
+'.field[platform=android]': {
+	top: 20,
+	height: Ti.UI.SIZE,
+	hintTextColor: Alloy.Globals.colors.shuttleGray
+},
+'.fieldBottomLine': {
+	bottom: 0,
+	left: 18,
+	right: 10,
+	height: 5,
+	backgroundImage: '/images/im_customerinfo_textline_large_w.png'
+},
+'fieldBottomLine[platform=android]': {
+	bottom: 0
+},
+'.qtyLabel': {
+	left: 18,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	font: {
+		fontSize: 15,
+		fontFamily: Alloy.Globals.fonts.primary.light
+	},
+	text: L('quantity'),
+	color: Alloy.Globals.colors.white
+},
+'.qtyButtonsContainer': {
+	right: 10,
+	width: 122,
+	height: 34,
+	borderRadius: 5,
+	borderColor: Alloy.Globals.colors.mountbattenPink,
+	borderWidth: 1
+},
+'.qtyButton': {
+	width: 41,
+	height: 34,
+	backgroundColor: Alloy.Globals.colors.transparent
+}
+'.qtyButton[platform=ios]': {
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+},
+'.leftTab': {
+	left: 0,
+	width: 4,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.silver
+},
+'.extraLeftTab[platform=android]': {
+	left: 0,
+	width: 4,
+	height: 10,
+	backgroundColor: Alloy.Globals.colors.silver
+},
+'.titleRow': {
+	height: 35
+},
+'.headerLabel': {
+	left: 10,
+	font: {
+		fontSize: 13,
+		fontFamily: Alloy.Globals.fonts.primary.bold
+	},
+	color: Alloy.Globals.colors.black,
+	touchEnabled: false,
+},
+'.qtyLabel': {
+	left: 18,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	font: {
+		fontSize: 15,
+		fontFamily: Alloy.Globals.fonts.primary.light
+	},
+	text: L('quantity'),
+	color: Alloy.Globals.colors.black
+},
+'.qtyLabel[platform=android]': {
+	font: {
+		fontSize: 18,
+		fontFamily: Alloy.Globals.fonts.primary.light
+	},
+	height: 21
+}

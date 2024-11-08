@@ -1,0 +1,525 @@
+<!-- version: 1.0.0 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style type="text/css">
+
+            /* html tags*/
+            html {
+                width: 216mm;
+                height: auto;
+            }
+
+            body {
+                width: 190mm;
+                height: 246mm;
+                margin: 0 auto;
+            }
+
+            /* This tag defines fonts style for the most text in the pdf*/
+            p {
+                padding-bottom: 2px;
+                padding-left: 7px;
+                font-size: 10pt;
+                font-family: 'myriadSetPro-thin';
+                color: #000000;
+            }
+
+            /*id's selectors*/
+            #corp-name {
+                padding-top: 5px;
+                margin-bottom: 0px;
+                padding-bottom: 0px;
+                font-size: 11pt;
+            }
+
+            #date {
+                margin-top: 3px;
+                text-align: right;
+                font-size: 11pt;
+            }
+
+            #logo-td {
+                margin-left: 0px;
+                width: auto;
+                vertical-align: top;
+                padding-top: 17px;
+            }
+
+            #corp-details-td {
+                margin-right: 0px;
+                text-align: right;
+                font-family: 'myriadSetPro-medium';
+                font-size: 14px;
+                vertical-align: top;
+            }
+
+            #description-paragraph {
+                padding-left: 7px;
+            }
+
+            #acquisition {
+                padding-left: 7px;
+                margin-top: 30px;
+                margin-bottom: 20px;
+                font-size: 11pt;
+            }
+
+            #product-services-table {
+                margin-top: 10px;
+                padding: 0;
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            #financed-optionsTable {
+                margin-top: 40px;
+                padding: 0;
+                margin-bottom: 0px;
+                width: 100%;
+                border-collapse: collapse;
+                page-break-inside: avoid;
+            }
+
+            /*class selectors with html tags*/
+
+            /*Update here to change header table*/
+            tr.header-table {
+                background-color: #A6A8AB !important;
+                -webkit-print-color-adjust: exact;
+            }
+
+            /*Block sizes of table header are given for this class padding*/
+            .header-table td {
+                padding: 7px;
+                text-align: right;
+                font-family: 'myriadSetPro-bold';
+                font-size: 10pt;
+                color: #FFFFFF;
+                background-color: #A6A8AB;
+            }
+
+            .header-table td:first-child {
+                text-align: left;
+            }
+
+            .header-table td:last-child {
+                padding-right: 15px;
+            }
+
+            .content-td td:first-child {
+                text-align: left;
+            }
+
+            .content-td td:last-child {
+                padding-right: 15px;
+            }
+
+            .dividerRows tr {
+                border-top: 1px solid #ddd;
+            }
+
+            .dividerRows tr:nth-child(-n+2) {
+                border-top: 0px;
+                border-bottom: 0px;
+            }
+
+            .dividerRows tr:last-child {
+                border-top: 1px solid #000000;
+                border-bottom: 1px double #000000;
+                border-bottom-width : 3px;
+            }
+
+            .dividerRowsNotEnd tr {
+                border-bottom: 1px solid #ddd;
+            }
+
+            .dividerRowsNotEnd tr:first-child {
+                border-top: 0px;
+                border-bottom: 0px;
+            }
+
+            .dividerRowsNotEnd tr:last-child {
+                border-top: 0px;
+                border-bottom: 0px;
+            }
+
+            .wrapper > p {
+                line-height: 1.2;
+            }
+
+            /*pure class selectors*/
+            .product-alignment {
+                padding-right: 7px;
+                vertical-align: top;
+                text-align: right;
+            }
+
+            .items-padding {
+                padding-top: 7px;
+                padding-bottom: 7px;
+            }
+
+            .top-header {
+                margin-top: 20px;
+                margin-bottom: 28px;
+                height : 40px;
+                width : 100%;
+            }
+
+            .logo {
+                padding-left: 1px;
+                width: 60mm;
+                height: 10.92mm;
+            }
+
+            .product-services {
+                width: 100mm;
+            }
+
+            .quantity {
+                width: 18mm;
+            }
+
+            .unit-price {
+                width: 25mm;
+            }
+
+            .extended-price {
+                width: 37mm;
+            }
+
+            .payment-column {
+                width: 43mm;
+            }
+
+            .bold-impact {
+                font-size: 10pt;
+                font-family: 'myriadSetPro-medium';
+                color : #000000;
+            }
+
+            .lineHeigth {
+                margin-left: 0px;
+                padding-left: 0px;
+                margin-top: 20px;
+            }
+
+            .noLineSpace {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                padding-top: 0px;
+                padding-left: 7px;
+                padding-bottom: 0px;
+            }
+
+            .line-spacer {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                padding-top: 5px;
+                padding-left: 7px;
+                padding-bottom: 0px;
+            }
+
+            .page-break {
+                width: 100%;
+                page-break-before: always;
+                position: absolute;
+            }
+
+            .personal-information {
+                margin-top: 33px;
+            }
+
+            .personal-info-item {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .footer-container {
+                width: 100%;
+                height: 20px;
+                position: absolute;
+                bottom: -110px;
+            }
+
+            .footer-text {
+                font-size: 7pt;
+                text-align: left;
+            }
+
+            .wrapper {
+                margin: 0;
+                padding-top: 20px;
+                padding-bottom: 50px;
+                padding-left: 0px;
+                padding-right: 0px;
+                width: 190mm;
+                height: 246mm;
+                position: relative;
+            }
+
+            .no-wrap {
+                white-space: nowrap;
+            }
+
+            .paybackPercentage {
+                width: 91%;
+            }
+
+            .top-margin td {
+                padding-top: 30mm;
+            }
+
+            .padding-top-table {
+                padding-top: 10px;
+            }
+
+            /*Fonts*/
+            @font-face {
+    			font-family: 'myriadSetPro-medium';
+    			/*src: url('MyriadSetPro-Medium.eot');
+    			src: url('MyriadSetPro-Medium.eot?#iefix') format('embedded-opentype'),
+    				url('MyriadSetPro-Medium.woff') format('woff'),*/
+    			src: url('../iphone/fonts/MyriadSetPro-Medium.ttf') format('truetype');
+    			font-weight: 500;
+    			font-style: normal;
+    		}
+
+    		@font-face {
+    			font-family: 'myriadSetPro-bold';
+    			/*src: url('MyriadSetPro-Bold.eot');
+    			src: url('MyriadSetPro-Bold.eot?#iefix') format('embedded-opentype'),
+    				url('MyriadSetPro-Bold.woff') format('woff'),*/
+    			src: url('../iphone/fonts/MyriadSetPro-Bold.ttf') format('truetype');
+    			font-weight: bold;
+    			font-style: normal;
+    		}
+
+    		@font-face {
+    			font-family: 'myriadSetPro-thin';
+    			/*src: url('MyriadSetPro-Thin.eot');
+    			src: url('MyriadSetPro-Thin.eot?#iefix') format('embedded-opentype'),
+    				url('MyriadSetPro-Thin.woff') format('woff'),*/
+    			src: url('../iphone/fonts/MyriadSetPro-Thin.ttf') format('truetype');
+    			font-weight: 100;
+    			font-style: normal;
+    		}
+
+    		@font-face {
+    			font-family: 'myriadSetPro-semiBold';
+    			/*src: url('MyriadSetPro-Semibold.eot');
+    			src: url('MyriadSetPro-Semibold.eot?#iefix') format('embedded-opentype'),
+    				url('MyriadSetPro-Semibold.woff') format('woff'),*/
+    			src: url('../iphone/fonts/MyriadSetPro-Semibold.ttf') format('truetype');
+    			font-weight: 600;
+    			font-style: normal;
+    		}
+
+    		@font-face {
+    			font-family: 'myriadSetPro-regular';
+    			/*src: url('MyriadSetPro-Text.eot');
+    			src: url('MyriadSetPro-Text.eot?#iefix') format('embedded-opentype'),
+    				url('MyriadSetPro-Text.woff') format('woff'),*/
+    			src: url('../iphone/fonts/MyriadSetPro-Text.ttf') format('truetype');
+    			font-weight: normal;
+    			font-style: normal;
+    		}
+
+    		@font-face {
+    			font-family: 'myriadSetPro-ultraLight';
+    			/*src: url('MyriadSetPro-Ultralight.eot');
+    			src: url('MyriadSetPro-Ultralight.eot?#iefix') format('embedded-opentype'),
+    				url('MyriadSetPro-Ultralight.woff') format('woff'),*/
+    			src: url('../iphone/fonts/MyriadSetPro-Ultralight.ttf') format('truetype');
+    			font-weight: 200;
+    			font-style: normal;
+    		}
+
+        </style>
+    </head>
+    <body>
+        <!--First part-->
+
+        <!--HEADER-->
+        <table class="top-header">
+            <tr>
+                <td id="logo-td"> <!--Apple logo  -->
+                    <img class="logo" src="{{{logoImage}}}" />
+                </td>
+                <td id="corp-details-td"> <!-- Corp name and date  -->
+                    <div id="corp-name" class="bold-impact">{{customerName}}</div>
+                    <div id="date">{{creationDate}}</div>
+                </td>
+            </tr>
+        </table>
+
+        <!--INFO-->
+        <p id="description-paragraph">
+            Apple Financial Services specializes in providing unique finance solutions to Apple Enterprise customers. We present this proposal for the transaction described in the table below.
+        </p>
+
+        <div class="lineHeigth">
+            <p id="lessor" class="line-spacer"><span class="bold-impact">Lessor</span>: APPLE FINANCIAL SERVICES or its designee </p>
+            <p id="lesee" class="line-spacer"><span class="bold-impact">Lessee</span>: {{customerName}}</p>
+            <p id="pricing" class="line-spacer"><span class="bold-impact">Pricing</span>: USD pricing in this proposal is provided in conjunction with Apple Inc.</p>
+        </div>
+
+
+        <p id="acquisition" class="bold-impact">Acquisition Costs</p>
+
+        <table id="product-services-table" class="dividerRows">
+            <tr class="header-table"> <!-- header -->
+                <td class="product-services no-wrap">Product Type and Services</td>
+                <td class="quantity no-wrap">Quantity</td>
+                <td class="unit-price no-wrap">Unit Price</td>
+                <td class="extended-price no-wrap">Extended Price</td>
+            </tr>
+
+            {{#equipmentList}}
+                <tr class="content-td{{#topMargin}} top-margin{{/topMargin}}">
+                    <td class="items-padding">
+                        <p class="noLineSpace">{{productName}}</p> <!-- product -->
+                        <p class="noLineSpace">{{description}}</p> <!-- description -->
+                    </td>
+
+                    <td class="product-alignment items-padding"> <!-- quantity -->
+                        <p class="noLineSpace">{{quantity}}</p>
+                    </td>
+
+                    <td class="product-alignment items-padding"> <!-- unit price-->
+                        <p class="noLineSpace">{{unitPrice}}</p>
+                    </td>
+
+                    <td class="product-alignment items-padding"> <!-- extended price-->
+                        <p class="noLineSpace">{{extendedPrice}}</p>
+                    </td>
+                </tr>
+            {{/equipmentList}}
+
+            <tr class="content-td">
+                <td class="items-padding">
+                    <p class="bold-impact noLineSpace">Total amount financed</p>
+                </td>
+
+                <!-- Fake td since an issue caused by colspan (adds strange margin) -->
+                <td>
+
+                </td>
+
+                <td>
+
+                </td>
+
+                <td class="product-alignment items-padding no-wrap">
+                    <p class="bold-impact noLineSpace">{{amountFinanced}}</p>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Last table  -->
+        <div class="padding-top-table">
+            <table id="financed-optionsTable" class="dividerRowsNotEnd">
+                <tr class="header-table">
+                    <td class="product-services no-wrap">Financing Option</td>
+                    <td class="payment-column no-wrap" colspan="2">Payment</td>
+                    <td class="extended-price no-wrap">Payback%</td>
+                </tr>
+
+                {{#paymentOptionsList}}
+                    <tr class="content-td">
+                        <td class="items-padding">
+                            <p class="noLineSpace">{{term}}</p>
+                        </td>
+
+                        <td class="product-alignment items-padding" colspan="2">
+                            <p class="noLineSpace">{{paymentAmount}}</p>
+                        </td>
+
+                        <td class="product-alignment items-padding">
+                            <p class="noLineSpace paybackPercentage">{{paybackPercentage}}</p>
+                        </td>
+                    </tr>
+                {{/paymentOptionsList}}
+
+            </table>
+        </div>
+
+        <!--Second part-->
+        <div class="page-break">
+            <div class="wrapper">
+
+                <table class="top-header">
+                    <tr>
+                        <td id="logo-td"> <!--Apple logo  -->
+                            <img class="logo" src="{{logoImage}}" />
+                        </td>
+                    </tr>
+                </table>
+
+                <p>
+                    <span class="bold-impact">Payment frequency and structure</span>: Monthly in arrears
+                </p>
+
+                <p>
+                    <span class="bold-impact">Lease term and type</span>: Lease term is noted above and is for Apple Inc. products and services and related third party products and services. The lease is intended to be a true lease for tax and commercial law purposes. Lessee should consult its own tax, accounting, legal and other professional advisors, as Apple Financial Services is not providing any accounting, tax, legal or other similar advice to Lessee.
+                </p>
+
+                <p>
+                    <span class="bold-impact">Net lease</span>: This is a net lease transaction under which all costs and liabilities, including without limitation, for insurance, maintenance/service, and taxes, are paid by Lessee for the term of the lease.
+                </p>
+
+                <p>
+                    <span class="bold-impact">Soft costs</span>: Soft costs, such as sales, use and property taxes, are not included in this quote, but are the financial responsibility of the Lessee. Taxes may be required under applicable law and may be paid up front at closing or paid on a monthly basis, depending on the jurisdiction and lease structure. If sales tax is due up front, Lessee may elect to finance that sales tax amount for the term of the lease. Please advise as to whether Lessee desires to finance the taxes.
+                </p>
+
+                <p>
+                    <span class="bold-impact">Please note that Apple Financial Services will require the location of all financed equipment.</span>
+                </p>
+
+                <p>
+                    <span class="bold-impact">Ship-to</span>: Locations within United States
+                </p>
+
+                <p>
+                    <span class="bold-impact">End of term options</span>: Subject to the terms of the lease, Lessee may purchase the equipment for the then current Fair Market Value, renew the lease on a month-to-month basis, or return the equipment
+                </p>
+
+                <p>
+                    <span class="bold-impact">Origination fee</span>: None
+                </p>
+
+                <p>
+                    <span class="bold-impact">Credit approval</span>: This proposal (a) is subject to final credit approval by Apple Financial Services and the execution and delivery of all appropriate documents (in form and substance satisfactory to Apple Financial Services) and (b) <span class="bold-impact">is not a statement of all terms and conditions of any lease that may be approved.</span>
+                </p>
+
+                <p>
+                    <span class="bold-impact">Quote expiration</span>: This quote supersedes and rescinds any and all prior offers or quotations related to this transaction. <span class="bold-impact">This proposal is a <br/> non-binding indication of interest regarding a possible financing transaction on the general terms and conditions outlined herein and is not a commitment, on the part of Apple Financial Services or the Lessee, to enter into any transaction. This proposal is valid for 30 days from the date hereof and thereafter shall automatically be deemed to be null and void.</span>
+                </p>
+
+                <p>
+                    This proposal is confidential and may not be disclosed to any person or entity without the prior written consent of Apple Financial Services.
+                </p>
+
+                <p>
+                    Thank you for the opportunity to present this quote. Please do not hesitate to call or email me at the contact information below with any questions.
+                </p>
+
+                <div class="personal-information">
+                    <p class="personal-info-item"><span class="bold-impact">{{salesRep.name}}</span></p> <!--Rep name -->
+                    <p class="personal-info-item">{{salesRep.title}}</p> <!-- Title or role -->
+                    <p class="personal-info-item">Apple Financial Services</p>
+                    <p class="personal-info-item">{{salesRep.contactInfo}}</p>
+                </div>
+
+                <div class="footer-container">
+                    <p class="footer-text">TM and © 2016 Apple Inc. and Apple Financial Services. All rights reserved. Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

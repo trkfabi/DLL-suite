@@ -1,0 +1,32 @@
+/*import { CompareVersionsComponent } from './compare-versions/compare-versions.component';
+import { ManageProductsComponent } from './manage-products/manage-products.component';
+import { ManageTermsComponent } from './manage-terms/manage-terms.component';
+import { SettingsComponent } from './settings/settings.component';*/
+
+export { TermsComponent } from './terms/terms.component';
+export { LoginComponent } from './login/login.component';
+export { LoadingComponent } from './shared/loading';
+export { ToasterBodyComponent } from './shared/toaster';
+export { GridComponent } from './shared/grid';
+export { GridRatefactorsComponent } from './shared/grid-ratefactors';
+export { GridRatefactorsCompareComponent } from './shared/grid-ratefactors-compare';
+export { ProductDialogComponent } from './shared/product-dialog/product-dialog.component';
+export { ProductCategoriesDialogComponent } from './shared/product-categories-dialog/product-categories-dialog.component';
+/*export { ManageProductsComponent } from './manage-products/manage-products.component';
+export { ManageTermsComponent } from './manage-terms/manage-terms.component';
+export { SettingsComponent } from './settings/settings.component';
+export { CompareVersionsComponent } from './compare-versions/compare-versions.component';*/
+
+export { SettingRateCardDialogComponent } from './shared/setting-rate-card-dialog/setting-rate-card-dialog.component';
+export { SettingVendorCodesDialogComponent } from './shared/setting-vendor-codes-dialog/setting-vendor-codes-dialog.component';
+export { VendorDialogComponent } from './shared/done-vendor-dialog/done-vendor-dialog.component';
+export { SettingsComponent } from './settings/settings.component';
+export { RateProgramDialogComponent } from './shared/rateprogram-dialog/rateprogram-dialog.component';
+export { ManageRateProgramDialogComponent } from './shared/manage-rate-program-dialog/manage-rate-program-dialog.component';
+export { AmountFinanceComponent } from './shared/index';
+export { IncreasePointsComponent } from './shared/increase-points/increase-points.component';
+export { CheckboxListComponent } from './shared/checkbox-list/checkbox-list.component';
+export { OptionsRadioComponent } from './shared/options-radio/options-radio.component';
+export { TermsListDialogComponent } from './shared/terms-list-dialog/terms-list-dialog.component';
+export { GridRatecardinputsReadonlyComponent } from './shared/grid-ratecardinputs-readonly/grid-ratecardinputs-readonly.component';
+export { GridRatecardinputsEditableComponent } from './shared/grid-ratecardinputs-editable/grid-ratecardinputs-editable.component';

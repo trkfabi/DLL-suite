@@ -1,0 +1,124 @@
+'#pointsRow': {
+	left: 0,
+	right: 0,
+	height: 70,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'#titleLabel': {
+	top: 5,
+	left: 10,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 16
+	},
+	color: Alloy.Globals.colors.black
+},
+'#intersetWaiverContainer': {
+	bottom: 5,
+	left: 10,
+	right: 10,
+	layout: 'horizontal',
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#pointMinOption[platform=ios]': {
+	image: '/images/im_quotescreen_customcontroler_prev.png'
+},
+'#pointMin[platform=android]': {
+	backgroundImage: '/images/im_quotescreen_customcontroler_prev.png',
+},
+'#pointLess[platform=android]': {
+	backgroundImage: '/images/im_quotescreen_customcontroler_substract.png'
+},
+'#pointLessOption[platform=ios]': {
+	image: '/images/im_quotescreen_customcontroler_substract.png'
+},
+'#pointMoreOption[platform=ios]': {
+	image: '/images/im_quotescreen_customcontroler_add.png'
+},
+'#pointMore[platform=android]': {
+	backgroundImage: '/images/im_quotescreen_customcontroler_add.png'
+},
+'#pointMaxOption[platform=ios]': {
+	image: '/images/im_quotescreen_customcontroler_next.png'
+},
+'#pointMax[platform=android]': {
+	backgroundImage: '/images/im_quotescreen_customcontroler_next.png'
+},
+'#pointValue': {
+	color: Alloy.Globals.colors.white,
+	backgroundColor: Alloy.Globals.colors.mountbattenPink,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 12
+	}
+},
+'.fieldContainer': {
+	right: 10,
+	height: 34,
+	borderRadius: 6,
+	borderWidth: 1,
+	borderColor: Alloy.Globals.colors.mountbattenPink,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'.fieldContainer[platform=android]': {
+	borderRadius: 8
+},
+'.intersetWaiverButtons': {
+	width: '19%',
+	height: Ti.UI.FILL,
+	borderWidth: 0,
+	color: Alloy.Globals.colors.white,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'.intersetWaiverButtons[platform=ios]': {
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+},
+'.intersetWaiverButtons[platform=android]': {
+	width: '18%'
+},
+'.intersetWaiverButtonLarge': {
+	width: 58.5
+},
+'.buttonContainer[platform=android]': {
+	width: '19.8%',
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white,
+	borderWidth: 1
+},
+'.buttonCenter': {
+	backgroundColor: Alloy.Globals.colors.mountbattenPink
+},
+'.buttonBackground[platform=android]': {
+	width: 12,
+	height: 12,
+	touchEnabled: false,
+	enabled: false
+}
+'.buttonBackgroundLess[platform=android]': {
+	width: 12,
+	height: 4,
+	touchEnabled: false,
+	enabled: false
+},
+'.verticalLineDivider': {
+	width: 1,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'.smallLine': {
+	bottom: 0,
+	width: 1,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.silver
+},
+'.fieldContainer': {
+	right: 10,
+	height: 34,
+	borderRadius: 6,
+	borderWidth: 1,
+	borderColor: Alloy.Globals.colors.mountbattenPink,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'.fieldContainer[platform=android]': {
+	borderRadius: 8
+},

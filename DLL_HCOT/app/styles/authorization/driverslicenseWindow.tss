@@ -1,0 +1,150 @@
+'#window': {
+	top: 0,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	navBarHidden: true,
+	orientationModes: [
+		Ti.UI.PORTRAIT
+	]
+},
+'#overlay': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	backgroundColorActive: Alloy.Globals.colors.alabaster,
+	backgroundColorInactive: Alloy.Globals.colors.transparent
+},
+'#header': {
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#headerContent': {
+
+},
+'#backButton': {
+	width: 100
+},
+'#backImage': {
+
+},
+'#backLabel': {
+	text: L('dob')
+},
+'#brandLogo': {
+
+},
+'#nextButton': {
+	width: 90
+},
+'#nextImage': {
+
+},
+'#nextImage[platform=android]': {
+	image: '/images/ic_done.png'
+},
+'#nextLabel': {
+	text: L('done')
+},
+'#headerSeparator': {
+
+},
+'#content[platform=ios]': {
+	top: 65,
+	bottom: 55
+},
+'#content[if=Alloy.Globals.hasNotch]': {
+	top: 88.3
+},
+'#content[platform=android]': {
+	top: 60,
+	bottom: 50
+},
+'#permissionView': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical',
+	visible: false
+},
+'#permissionLabel': {
+	left: 20,
+	right: 20,
+	color: Alloy.Globals.colors.shuttleGray,
+	text: L('access_to_camera_not_enabled'),
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 18
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+},
+'#preview': {
+	top: 100,
+	preventDefaultImage: true,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	autorotate: true
+},
+'#instructionsView': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 100,
+	backgroundImage: '/images/camerablur.png',
+	touchEnabled: false
+},
+'#instructionsView[if=Alloy.Globals.hasNotch]': {
+	height: 119
+},
+'#authorizationDriverTitleLabel': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	text: L('capture_photo_id'),
+	color: Alloy.Globals.colors.shuttleGray,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 20
+	}
+},
+'#optionsContainer': {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 90,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'#optionsContainer[if=Alloy.Globals.hasNotch]': {
+	height: 124
+},
+'#toolbarContainer': {
+	bottom: 0,
+	height: 55,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.swirl
+},
+'#toolbarContainer[if=Alloy.Globals.hasNotch]': {
+	height: 83.3
+},
+'#retakeButton': {
+	left: 10,
+	height: 35,
+	width: 100,
+	title: L('retake'),
+	color: Alloy.Globals.colors.white,
+	backgroundColor: Alloy.Globals.colors.silver,
+	borderRadius: 3,
+	visible: false
+},
+'#retakeButton[if=Alloy.Globals.hasNotch]': {
+	top: 7,
+	left: 12,
+	height: 41,
+	width: 116,
+},
+'#shooterButton': {
+	top: 0,
+	width: 70,
+	height: 70,
+	backgroundImage: '/images/shoot.png',
+	backgroundSelectedImage: '/images/shoot_pressed.png'
+}
+'#shooterButton[if=Alloy.Globals.hasNotch]': {
+	width: 83.3,
+	height: 83.3
+}

@@ -1,0 +1,27 @@
+<Alloy>
+	<NavigationWindow id="navWindow">
+		<Window id="window">
+			<RightNavButton platform="ios">
+				<Button id="closeButton" />
+			</RightNavButton>
+			<TabbedBar id="statusBar" platform="ios">
+				<Labels>
+					<Label>Successful</Label>
+					<Label>In Queue</Label>
+				</Labels>
+			</TabbedBar>
+			<ListView id="historyList">
+				<Templates>
+					<ItemTemplate name="attemptTemplate">
+						<View class="attemptContainer">
+							<Label class="attemptLabel" id="attemptNumberLabel" bindId="attemptNumberLabel" />
+							<Label class="attemptLabel" id="attemptDateLabel" bindId="attemptDateLabel" />
+							<Label class="attemptLabel" id="attemptTimeLabel" bindId="attemptTimeLabel" />
+							<Label class="attemptLabel" id="attemptStatusLabel" bindId="attemptStatusLabel" />
+						</View>
+					</ItemTemplate>
+				</Templates>
+			</ListView>
+		</Window>
+	</NavigationWindow>
+</Alloy>

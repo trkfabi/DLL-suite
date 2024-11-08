@@ -1,0 +1,153 @@
+'#window': {
+	navBarHidden: true,
+	backgroundColor: 'transparent'
+},
+'#window[platform=android]': {
+	theme: 'Theme.NoActionBar'
+},
+'#containerView': {
+	left: 0,
+	right: 0,
+	width: Ti.UI.FILL,
+	height: Alloy.Globals.height,
+	visibleTop: 0
+},
+'#containerView[platform=android]': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL
+},
+'#headerView': {
+
+},
+'#headerTitleLabel': {
+	text: L('settings')
+},
+'#doneButton': {
+	right: 15,
+	title: 'Done',
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 17
+	}
+},
+'#doneButton[if=Alloy.Globals.iPhoneX]': {
+	top: 25
+}
+'#wrapperView': {
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#headerContainer': {
+	width: Ti.UI.FILL,
+	height: 172,
+	backgroundColor: Alloy.Globals.colors.white
+}
+'#headerContainer[if=!Alloy.Globals.iPhoneTall]': {
+	height: 120
+}
+'#logoImage': {
+	bottom: 51,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	image: '/images/dll_logo.png'
+},
+'#versionLabel': {
+	bottom: 20,
+	text: L('version'),
+	color: Alloy.Globals.colors.mountbattenPink,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 14
+	}
+},
+'#userInfoView': {
+	top: 0,
+	left: 0,
+	right: 0,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.white,
+	layout: 'vertical'
+},
+'#yourInfoLabel': {
+	top: 10,
+	left: 15,
+	height: 27,
+	text: L('your_information')
+},
+'#nameField': {
+	hintText: L('information_name')
+},
+'#title': {
+	hintText: L('title')
+},
+'#emailField': {
+	hintText: L('email')
+},
+'#phoneField': {
+	hintText: L('phone')
+},
+'#userInfoButton': {
+	top: 18,
+	width: 181,
+	height: 35,
+	title: 'EDIT INFO',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	borderRadius: 2,
+	backgroundColor: Alloy.Globals.colors.azureRadiance,
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 14
+	}
+},
+'#logOutButton': {
+	bottom: 15,
+	right: 10,
+	left: 10,
+	height: 40,
+	borderRadius: 2,
+	title: L('log_out'),
+	backgroundColor: Alloy.Globals.colors.mountbattenPink,
+	color: Alloy.Globals.colors.white,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 14
+	}
+},
+'#logOutButton[if=Alloy.Globals.iPhoneX]': {
+	bottom: 35.6,
+	right: 37,
+	left: 37,
+	height: 36,
+}
+'#exportRateCards': {
+	left: 5,
+	bottom: 0,
+	color: Alloy.Globals.colors.black,
+	title: 'Export Rate Cards'
+},
+'#crash': {
+	right: 5,
+	bottom: 0,
+	color: Alloy.Globals.colors.tamarillo,
+	title: 'Trigger Crash'
+},
+
+'.titleLabel': {
+
+},
+'.inputField': {
+	height: 51,
+	left: 25,
+	right: 25,
+	font: {
+		fontSize: 15
+	},
+},
+'.fieldBottomMargin': {
+	top: -7,
+	left: 15,
+	right: 15
+}

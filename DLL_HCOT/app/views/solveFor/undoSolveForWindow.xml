@@ -1,0 +1,8 @@
+<Alloy>
+	<Window id='window'>
+		<View id='container' />
+		<View id="buttonFrame">
+			<Button id='undoButton' />
+		</View>
+	</Window>
+</Alloy>

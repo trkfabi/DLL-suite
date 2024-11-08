@@ -1,0 +1,7 @@
+<Alloy>
+	<View class="container" id="solutionRow">
+		<Label id="solutionOrder" />
+		<Label id="solutionMake" />
+		<Label id="solutionModel" />
+	</View>
+</Alloy>

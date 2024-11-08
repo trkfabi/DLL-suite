@@ -1,0 +1,618 @@
+"Switch": {
+	right: 10
+},
+"#container": {
+	top: 65,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	contentWidth: '100%',
+	contentHeight: 'auto',
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+"#container[platform=android]": {
+	top: 53
+},
+"#container[if=Alloy.Globals.hasNotch]": {
+	top: 88
+},
+"#wrapper": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL
+},
+"#grayBackground": {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical',
+	backgroundColor: Alloy.Globals.colors.alto
+},
+"#solutionContainer": {
+
+},
+"#solutionLabel": {
+	text: L('equipment'),
+	color: Alloy.Globals.colors.shuttleGray
+},
+"#solutionList": {
+
+},
+"#customerContainer": {
+	height: 200,
+	heightExpanded: 200
+},
+"#customerContainer[platform=android]": {
+	height: 235,
+	heightExpanded: 235
+},
+"#customerNameLabel": {
+	top: 12
+},
+"#addressLabel": {
+
+},
+"#customerButton": {
+
+},
+"#customerContent": {
+
+},
+"#customerHeader": {
+
+},
+"#customerLabel": {
+	text: L('customer_information'),
+	color: Alloy.Globals.colors.shuttleGray
+},
+"#submitContractButton": {
+	title: L("submit_credit_application"),
+	backgroundColor: Alloy.Globals.colors.shuttleGray
+},
+"#emailLabel": {
+	bottom: 10
+},
+"#customerTypeLabel": {
+	text: L('customer_type')
+},
+"#customerTypeBottomLine": {
+	right: 57
+},
+"#customerTypeField": {
+	left: 20,
+	right: 60,
+	hintText: L("customer_type"),
+	touchEnabled: false,
+	font: {
+		fontSize: 18,
+		fontFamily: "HelveticaNeue-Light"
+	},
+	color: Alloy.Globals.colors.shuttleGray,
+	tintColor: Alloy.Globals.colors.azureRadiance
+},
+"#customerTypeField[platform=android]": {
+	left: 10,
+	right: 50,
+	hintTextColor: Alloy.Globals.colors.borderGray
+},
+"#legalNameLabel": {
+	text: L('customer_legal_name')
+},
+"#legalNameTextField": {
+	left: 20,
+	right: 20,
+	hintText: L("customer_legal_name"),
+	font: {
+		fontSize: 18,
+		fontFamily: "HelveticaNeue-Light"
+	},
+	color: Alloy.Globals.colors.shuttleGray,
+	tintColor: Alloy.Globals.colors.azureRadiance
+},
+"#legalNameTextField[platform=android]": {
+	left: 10,
+	right: 10,
+	height: 45,
+	font: {
+		fontSize: 20,
+		fontFamily: "Roboto"
+	},
+	hintTextColor: Alloy.Globals.colors.borderGray
+},
+"#paymentAmountLabel": {
+
+},
+"#paymentSettingsButton": {
+	right: 35,
+	width: 80,
+	height: 40,
+	bubbleParent: false
+},
+"#paymentSettingsButton[platform=ios]": {
+	image: '/images/bt_customerscreen_paymentsettings.png',
+}
+"#paymentSettingsButton[platform=android]": {
+	right: 55,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/bt_customerscreen_paymentsettings.png',
+}
+"#paymentButton": {
+
+},
+"#paymentContainer": {
+	heightExpanded: 320,
+	expanded: true
+},
+"#paymentContent": {
+	width: Ti.UI.FILL,
+	height: 280
+},
+"#paymentContainer[platform=android]": {
+	heightExpanded: 370
+},
+"#paymentContent[platform=android]": {
+	width: Ti.UI.FILL,
+	height: 340
+},
+"#paymentFrequencyLabel": {
+
+},
+"#paymentHeader": {
+
+},
+"#paymentLabel": {
+	text: L('payment'),
+	color: Alloy.Globals.colors.shuttleGray
+},
+"#phoneLabel": {
+
+},
+"#purchaseButton": {
+
+},
+"#purchaseContainer": {
+	heightExpanded: Ti.UI.SIZE
+},
+"#purchaseContent": {
+
+},
+"#purchaseHeader": {
+
+},
+"#purchaseLabel": {
+	text: L('authorize_credit_check'),
+	color: Alloy.Globals.colors.shuttleGray
+},
+"#purchaseOptionLabel": {
+
+},
+"#signContractButton": {
+	title: L("sign_contract"),
+	backgroundColor: Alloy.Globals.colors.mantis
+},
+"#sendContractToCustomerButton": {
+	bottom: 5,
+	title: L('send_application_to_customer'),
+	backgroundColor: Alloy.Globals.colors.grayApprox
+},
+"#signatureLabel": {
+	text: L('signature')
+},
+"#ssnLabel": {
+	text: L('ssn')
+},
+"#dobLabel": {
+	text: L('dob')
+},
+"#idLabel": {
+	text: L('id')
+},
+"#termLabel": {
+
+},
+"#window[platform=ios]": {
+	tintColor: Alloy.Globals.colors.dustyGray,
+	navBarHidden: true,
+	barColor: Alloy.Globals.colors.white,
+	translucent: false
+},
+"#window[platform=android]": {
+	navBarHidden: true,
+	windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_STATE_ALWAYS_HIDDEN | Ti.UI.Android.SOFT_INPUT_ADJUST_RESIZE,
+},
+"#brandLogo": {
+	top: 6,
+	width: Ti.UI.SIZE,
+	height: 40,
+	touchEnabled: false,
+},
+"#brandLogo[if=Alloy.Globals.hasNotch]": {
+	top: 0,
+	height: 46
+}
+"#clientNameLabel": {
+
+},
+"#actionsContainer": {
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.white
+},
+// New labels
+"#equipmentPriceTitle": {
+	text: L('equipment_price')
+},
+"#termTitle": {
+	text: L('term')
+},
+"#paymentFrequencyTitle": {
+	text: L('frequency')
+},
+"#interestRateTitle": {
+	text: L('interest_rate')
+},
+"#cashDownTitle": {
+	text: L('cash_down')
+},
+"#tradeAllowanceTitle": {
+	text: L('trade_allowance')
+},
+"#tradePayoffTitle": {
+	text: L('trade_payoff')
+},
+"#balloonTitle": {
+	text: L('balloon')
+},
+"#advancePaymentTitle": {
+	text: L('advance_payment')
+},
+"#taxesOnAdvTitle": {
+	text: L('taxes_on_adv')
+},
+"#purchaseOptionTitle": {
+	text: L('purchase_option')
+},
+"#firstPaymentDueTitle": {
+	text: L('first_payment_due')
+},
+"#paymentAmountTitle": {
+	financeText: L('payment_amount'),
+	leaseText: L('payment_before_tax')
+},
+// =================
+"#paymentOptionsContainer": {
+	left: 4,
+	right: 0,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white
+},
+"#paymentSettingsContainer": {
+	left: 4,
+	right: 0,
+	height: 0,
+	backgroundColor: Alloy.Globals.colors.white
+},
+"#paymentSettingsContainer[platform=ios]": {
+	clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED
+},
+"#rateProgramLabel": {
+	text: L('rate_program')
+},
+"#rateProgramSwitch": {
+
+},
+"#interestSettingsLabel": {
+	text: L('interest_rate')
+},
+"#structureSwitch": {
+
+},
+"#paymentFreqLabel": {
+	text: L('payment_frequency')
+},
+"#paymentFreqSwitch": {
+
+},
+"#settingsPointer": {
+	bottom: 0,
+	right: 60,
+	width: 28,
+	height: 11,
+	image: 'images/im_customerscreen_popuppointer.png',
+	touchEnabled: false,
+	visible: false
+},
+"#rateProgramTitle": {
+	text: L("rate_program")
+},
+"#titleView[platform=ios]": {
+	width: 290
+},
+
+".sectionContainer": {
+	heightExpanded: Ti.UI.SIZE,
+	heightCollapsed: 40,
+	expanded: true
+},
+".sectionContainer[platform=ios]": {
+	clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED
+},
+".sectionContainer[platform=android]": {
+	heightCollapsed: 52
+}
+".row": {
+	top: 0,
+	height: Ti.UI.SIZE,
+	width: Ti.UI.FILL,
+	layout: "vertical"
+},
+"#logoContainer[platform=ios]": {
+	top: 20,
+	width: Ti.UI.FILL,
+	height: 45,
+	backgroundColor: Alloy.Globals.colors.white
+},
+"#logoContainer[if=Alloy.Globals.hasNotch]": {
+	top: 43
+}
+"#logoContainer[platform=android]": {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 53,
+	backgroundColor: Alloy.Globals.colors.white
+},
+"#backButton[platform=android]": {
+	top: 8,
+	left: 5,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/bt_back_arrow.png'
+}
+"#backButton[platform=ios]": {
+	left: 10,
+	width: 50,
+	height: 40
+}
+"#backButton[if=Alloy.Globals.hasNotch]": {
+	left: 13
+}
+"#backButtonImg[platform=ios]": {
+	left: 0,
+	image: '/images/ic_topbar_back.png',
+	touchEnabled: false
+}
+".headerContainer": {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 40,
+	backgroundColor: Alloy.Globals.colors.white
+},
+".headerContainer[platform=android]": {
+	height: 52,
+}
+".headerTitleLabel": {
+	left: 10,
+	color: Alloy.Globals.colors.azureRadiance,
+	font: {
+		fontSize: 17
+	}
+},
+".headerTitleLabel[platform=android]": {
+	left: 12,
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontSize: 16,
+		fontFamily: 'Roboto-Bold'
+	}
+}
+".expandColapseButton": {
+	backgroundImage: "/images/bt_quotescreen_option_contract.png",
+	imageExpanded: "/images/bt_quotescreen_option_contract.png",
+	imageCollapsed: "/images/bt_quotescreen_option_expand.png",
+},
+".expandColapseButton[platform=ios]": {
+	backgroundImage: "/images/bt_quotescreen_option_contract.png",
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN,
+	width: 40,
+	height: 40,
+	right: 0
+}
+".expandColapseButton[platform=android]": {
+	right: 9,
+	width: 36,
+	height: 36,
+	backgroundImage: "/images/bt_quotescreen_option_contract.png",
+}
+".contentContainer": {
+	left: 4,
+	right: 0,
+	backgroundColor: Alloy.Globals.colors.white,
+	height: Ti.UI.SIZE,
+	layout: "vertical"
+},
+".button": {
+	top: 5,
+	left: 10,
+	right: 10,
+	height: 35,
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontFamily: "HelveticaNeue",
+		fontSize: 14
+	},
+	borderRadius: 3
+},
+".button[platform=ios]": {
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+},
+".button[if=Alloy.Globals.hasNotch]": {
+	height: 41,
+	left: 12,
+	right: 12
+},
+".button[platform=android]": {
+	top: 6,
+	left: 15,
+	right: 15,
+	height: 39,
+	font: {
+		fontFamily: "RobotoBold",
+		fontSize: 18
+	},
+}
+".summaryLabel": {
+	left: 10,
+	right: 10,
+	height: 15,
+	top: 10,
+	color: Alloy.Globals.colors.shuttleGray,
+	font: {
+		fontSize: 13
+	}
+},
+".summaryLabel[platform=android]": {
+	height: 20,
+	color: Alloy.Globals.colors.thunder,
+	font: {
+		fontSize: 15,
+		fontFamily: 'Roboto'
+	}
+},
+
+".valueLabel": {
+	left: null,
+	right: 0,
+	textAlign: "right",
+	font: {
+		fontSize: 12,
+		fontFamily: 'HelveticaNeue-Medium'
+	}
+}
+".topSeparator": {
+	top: 0
+},
+".separator": {
+	bottom: 0,
+	height: 0.5,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.alto
+},
+".separatorContainer": {
+	top: 12,
+	width: Ti.UI.FILL,
+	height: 3
+},
+".paymentRow": {
+	top: 0,
+	left: 0,
+	right: 10,
+	height: Ti.UI.SIZE
+},
+".paymentRow[platform=ios]": {
+	clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED
+},
+".paymentSettingsIntructions": {
+	left: 29,
+	right: 10,
+	top: 10,
+	height: Ti.UI.SIZE,
+	text: L('payment_settings_instructions', 'In addition to payment amount, purchase option and term, also show:'),
+	color: Alloy.Globals.colors.shuttleGray,
+	font: {
+		fontSize: 12,
+		fontFamily: 'HelveticaNeue'
+	}
+},
+".paymentSettingsRow": {
+	left: 29,
+	right: 10,
+	height: 40
+},
+".paymentSettingsLabel": {
+	left: 0,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontSize: 14,
+		fontFamily: "HelveticaNeue"
+	}
+},
+".paymentSettingsSwitch": {
+	right: 10
+},
+".fieldBottomLine": {
+	bottom: 0,
+	left: 10,
+	right: 10,
+	height: 5,
+	backgroundImage: "/images/im_customerinfo_textline_large.png"
+},
+".purchaseFieldRow": {
+	height: 50
+},
+".purchaseRow": {
+	width: Ti.UI.FILL,
+	height: 30
+},
+".purchaseFieldRow[platform=android]": {
+	height: 40
+},
+".purchaseOptionLabel": {
+	left: 10,
+	right: 35,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.shuttleGray
+},
+".purchaseOptionLabel[platform=android]": {
+	color: Alloy.Globals.colors.thunder,
+	font: {
+		fontSize: 15,
+		fontFamily: 'Roboto'
+	}
+},
+".purchaseOptionCheck": {
+	right: 10,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	image: '/images/ic_customerscreen_stepstatus_empty.png',
+	imageActive: '/images/ic_customerscreen_stepstatus_checked.png',
+	imageInactive: '/images/ic_customerscreen_stepstatus_empty.png'
+},
+".selectorButton": {
+	right: 10,
+	width: 25,
+	height: 13,
+}
+".selectorButton[platform=ios]": {
+	image: '/images/ic_selector.png'
+}
+".selectorButton[platform=android]": {
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/ic_selector.png'
+}
+".purchaseOptionLabel[platform=android]": {
+	color: Alloy.Globals.colors.thunder,
+	font: {
+		fontSize: 15,
+		fontFamily: 'Roboto'
+	}
+},
+"Button[platform=android]": {
+	backgroundColor: "transparent",
+	borderColor: "transparent"
+},
+"#blankSpace": {
+	height: 0,
+	backgroundColor: Alloy.Globals.colors.white
+}
+"#blankSpace[if=Alloy.Globals.hasNotch]": {
+	height: 40
+}
+"#bottomSeparator": {
+	visible: false
+}
+"#bottomSeparator[if=Alloy.Globals.hasNotch]": {
+	visible: true,
+	height: 1,
+	top: 2
+}

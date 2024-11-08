@@ -1,0 +1,33 @@
+{
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 9,
+        "sourceType": "module"
+    },
+    "env": {
+        "es6": true,
+        "mocha": true,
+        "node": true
+    },
+    "globals":{
+        "doLog": true,
+        "log": true,
+        "TEST_IN_PROD": true,
+        "HOST": true,
+        "API_KEY": true,
+        "AUTH_TOKEN": true,
+        "REFRESH_TOKEN": true
+    },
+    "rules": {
+        "no-console": [0, {
+            "allow": ["error", "warn", "debug"]
+        }],
+        "no-unused-vars": [
+            "error", {
+                "argsIgnorePattern": "resolve|reject",
+                "varsIgnorePattern": "should"
+            }
+        ],
+        "valid-jsdoc": 0
+    }
+}

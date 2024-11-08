@@ -1,0 +1,9 @@
+'#dashboardWindow[platform=ios]': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	navBarHidden: true,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#quoteDetail[platform=android]': {
+	backgroundColor: Alloy.Globals.colors.white
+}

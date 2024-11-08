@@ -1,0 +1,21 @@
+{
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 9,
+        "sourceType": "module"
+    },
+    "env": {
+        "es6": true,
+        "mocha": true,
+        "node": true
+    },
+    "globals":{
+        "doLog": true
+    },
+    "rules": {
+        "no-console": [0, {
+            "allow": ["error", "warn", "debug"]
+        }],
+        "valid-jsdoc": 0
+    }
+}

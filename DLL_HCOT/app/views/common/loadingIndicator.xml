@@ -1,0 +1,11 @@
+<Alloy>
+	<View id='backgroundMask'>
+		<View id='box'>
+			<ActivityIndicator id='activityIndicator' />
+			<Label id='messageLabel' />
+			<Label id='defaultMesssage' />
+			<View id='separator' />
+			<Button id='cancelButton' />
+		</View>
+	</View>
+</Alloy>

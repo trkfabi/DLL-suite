@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>AGCO-CreditApp-v10.0</title>
+		<style type="text/css">
+
+			body {
+				background-color: #FFF;
+			}
+
+			h1 {
+				text-align: right;
+				font-size: 13px;
+				font-weight: bold;
+			}
+
+			h2 {
+				clear: both;
+				margin-top: 10pt;
+				margin-bottom: 3pt;
+				font-size: 11px;
+				font-weight: bold;
+			}
+
+			hr {
+				display: block;
+				margin: 0.3cm 0;
+				width: 100%;
+				height: 2px;
+				border: 0;
+				border-top: 1px solid #000;
+				background-color: #000;
+			}
+
+			table {
+				width: 100%;
+				font-size: 8px;
+				border: 1px solid #CCC;
+				border-collapse: collapse;
+			}
+
+			td{
+				padding: 2pt 3pt 2pt 3pt;
+				border: 1px solid #CCC;
+				height: 15px;
+			}
+			
+			#container {
+				/*width: 22cm;*/
+				/*height: 28cm;*/
+				padding: 0.18cm 0.63cm 0.63cm 0.76cm;
+				background-color: #FFF;
+			}
+
+			#advice {
+				font-size: 8.5px;
+				text-align: justify;
+				line-height: 1.5em;
+			}
+
+			#table_signature td {
+				vertical-align: top;
+			}
+
+			#div_license {
+				clear: both;
+				margin-top: 25cm;
+				text-align: center;
+			}
+
+			#img_license {
+				max-width: 7cm;
+			}
+
+			.row_no_border td {
+				border: none !important;
+			}
+
+			.hidden {
+				visibility: hidden;
+				display: none;
+			}
+
+			.floatRight {
+				/*float: right;*/
+			}
+
+			.floatLeft {
+				/*float: left;*/
+			}
+
+			#hiddenElements {
+				visibility:  hidden;
+			}
+
+			.hiddenElements {
+				visibility:  hidden;
+			}
+			.innerTable td {
+				border: 1px solid #FFFFFF !important;
+			}
+			.innerTable {
+				border: 1px solid #FFFFFF !important;
+			}
+
+		</style>
+		<script>
+			Ti.API.info("[agco_credit.html] - app:createHTML");
+			
+			Ti.App.addEventListener("app:updateApplicationContract", refresh);
+			Ti.App.addEventListener("app:updateTerms", loadEvent);
+
+			function loadEvent () {
+				Ti.App.removeEventListener("app:updateApplicationContract", refresh);
+				Ti.App.removeEventListener("app:updateTerms", loadEvent);
+				
+				Ti.API.info("[agco_credit.html] - loadEvent()");
+				
+				var termsContent = "";
+				var termsElement = document.getElementById('terms_conditions');
+				termsElement && (termsContent = encodeURI(termsElement.innerHTML));
+				
+				Ti.App.fireEvent('app:creditLoaded', { terms : termsContent });
+			}
+
+			function refresh(e){
+				Ti.App.removeEventListener("app:updateApplicationContract", refresh);
+				Ti.App.removeEventListener("app:updateTerms", loadEvent);
+				
+				Ti.API.info("[agco_credit.html] - refresh()");
+
+				try{
+
+					document.getElementById('first_name').innerHTML = e.firstName;
+					document.getElementById('middle_name').innerHTML = e.middleName;
+					document.getElementById('last_name').innerHTML = e.lastName;
+					document.getElementById('ssn').innerHTML = e.ssn;
+					document.getElementById('dob').innerHTML = e.dob;
+					document.getElementById('phone_1').innerHTML = e.phone1;
+					document.getElementById('phone_2').innerHTML = e.phone2;
+					document.getElementById('email').innerHTML = e.email;
+					document.getElementById('physical_address').innerHTML = e.physicalAddress;
+					document.getElementById('city').innerHTML = e.city;
+					document.getElementById('state').innerHTML = e.state;
+					document.getElementById('zip').innerHTML = e.zip;
+					document.getElementById('mailing_address').innerHTML = e.mailingAddress;
+					document.getElementById('mailing_city').innerHTML = e.mailingCity;
+					document.getElementById('mailing_state').innerHTML = e.mailingState;
+					document.getElementById('mailing_zip').innerHTML = e.mailingZip;
+					document.getElementById('legal_name').innerHTML = e.legalName;
+					document.getElementById('signature_img').src = e.signature;
+					document.getElementById('date').innerHTML = e.date;
+
+					if(e.customerType){
+						var element = document.getElementById(e.customerType);
+						element && (element.innerHTML = element.innerHTML.replace('[]', '[x]'));
+					}
+
+
+					document.getElementById('farm_usage').innerHTML = 'Farm ' + e.equipmentUsage.farmUsage + ' %';
+					document.getElementById('personal_usage').innerHTML = 'Personal ' + e.equipmentUsage.personalUsage + ' %';
+					document.getElementById('construction_usage').innerHTML = 'Construction ' + e.equipmentUsage.constructionUsage + ' %';
+					document.getElementById('commercial_usage').innerHTML = 'Commercial/Custom ' + e.equipmentUsage.commercialUsage + ' %';
+
+
+					// var tableCustomers = document.getElementById('table_customer');
+					// for(var i = 0, j = e.equipmentUsage.length; i < j; i++){
+					// 	var equipmentUsageInfo = e.equipmentUsage[i];
+					// 	var equipmentUsageRow = document.getElementById('equipment_usage_row');
+					// 	var newEquipmentUsageRow = equipmentUsageRow.cloneNode(true);
+					// 	newEquipmentUsageRow.getElementsByClassName('equipmeent_name')[0].innerHTML = equipmentUsageInfo.name;
+
+					// 	equipmentUsageInfo.farmUsage && (newEquipmentUsageRow.getElementsByClassName('farm_usage')[0].innerHTML = 'Farm ' + equipmentUsageInfo.farmUsage + '%');
+					// 	equipmentUsageInfo.personalUsage && (newEquipmentUsageRow.getElementsByClassName('personal_usage')[0].innerHTML = 'Personal ' + equipmentUsageInfo.personalUsage + '%');
+					// 	equipmentUsageInfo.constructionUsage && (newEquipmentUsageRow.getElementsByClassName('construction_usage')[0].innerHTML = 'Construction ' + equipmentUsageInfo.constructionUsage + '%');
+					// 	equipmentUsageInfo.commercialUsage && (newEquipmentUsageRow.getElementsByClassName('commercial_usage')[0].innerHTML = 'Comercial/Custom ' + equipmentUsageInfo.commercialUsage + '%');
+
+					// 	tableCustomers.getElementsByTagName('tbody')[0].appendChild(newEquipmentUsageRow);
+					// }
+
+					if(e.hasLicense){
+						document.getElementById('img_license').src = e.license;
+					} else {
+						block = document.getElementById('div_license');
+						fatherBlock = block.parentNode;
+						fatherBlock.removeChild(block);
+					}
+
+
+					setTimeout(function() {
+						// Android workaround
+						var _html = encodeURI(document.documentElement.outerHTML);
+						// var doc = new DOMParser().parseFromString(_html, 'text/html');
+						// _html = new XMLSerializer().serializeToString(doc);
+						Ti.App.fireEvent('app:webViewUpdated', {
+							html : _html
+						});	
+					}, 1000);
+				} catch(err){
+					Ti.API.error("[ACGO Lease] HTML Error: ");
+					Ti.API.error(JSON.stringify(err, null, '\t'));
+					var paramError = {
+						error : err
+					};
+					Ti.App.fireEvent('app:webViewUpdated', paramError);	
+
+				}
+			}
+		</script>
+	</head>
+
+<body lang="en">
+	<div id="container">
+
+		<table class="innerTable">
+			<tr>
+				<td style="width:50%; padding-bottom:0px;"><h1 style="text-align:left;">AGCO Finance Canada, Ltd.</h1></td>
+				<td style="width:50%; padding-bottom:0px;"><h1 style="text-align:right;">Mobile Device Application for Credit</h1></td>
+			</tr>
+		</table>
+		
+		<h2>Customer Information</h2>
+		<table id="table_customer">
+			<tbody>
+				<tr colspan="2">
+					<td colspan="2">Applicant's First Name <br/><span id="first_name"></span></td>
+					<td colspan="2">Applicant's Middle Name <br/><span id="middle_name"></span></td>
+					<td colspan="2">Applicant's Last Name <br/><span id="last_name"></span></td>
+					<td colspan="3">Social Insurance Number (optional) <br/><span id="ssn"></span></td>
+					<td colspan="1">Date of Birth <br/><span id="dob"></span></td>
+				</tr>
+				<tr colspan="2">
+					<td colspan="2">Phone Number 1<br/><span id="phone_1"></span></td>
+					<td colspan="3">Phone Number 2<br/><span id="phone_2"></span></td>
+					<td colspan="5">Email Address <br/><span id="email"></span></td>
+				</tr>
+				<tr colspan="2">
+					<td colspan="4">Applicant's Physical Address<br/><span id="physical_address"></span></td>
+					<td colspan="3">City<br/><span id="city"></span></td>
+					<td colspan="1">Province<br/><span id="state"></span></td>
+					<td colspan="2">Postal Code<br/><span id="zip"></span></td>
+				</tr>
+				<tr colspan="2">
+					<td colspan="4">Applicant's Mailing Address (if different)<br/><span id="mailing_address"></span></td>
+					<td colspan="3">City<br/><span id="mailing_city"></span></td>
+					<td colspan="1">Province<br/><span id="mailing_state"></span></td>
+					<td colspan="2">Postal Code<br/><span id="mailing_zip"></span></td>
+				</tr>
+				<tr colspan="2">
+					<td colspan="10">Type of Business
+					</br>
+						<table class="innerTable">
+							<tr class="row_no_border">
+								<td id="IND" colspan="2">[] Individual</td>
+								<td id="CCRP" colspan="4">[] Corporation</td>
+								<td id="GPRT" colspan="2">[] General Partnership</td>
+								<td id="LPRT" colspan="2">[] Limited Partnership</td>
+							</tr>
+						</table>		
+					</td>	
+				</tr>
+
+				<tr colspan="2">
+					<td colspan="10">Customer Legal Name<br/><span id="legal_name"></span></td>
+				</tr>
+				<tr colspan="2">
+					<td colspan="10">Equipment Use
+					<br/>
+						<table class="innerTable">
+							<tr class="row_no_border">
+								<td colspan="2" id="equipmeent_name">&nbsp</td>
+								<td colspan="1" id="farm_usage">Farm 0 %</td>
+								<td colspan="3" id="personal_usage">Personal 0 %</td>
+								<td colspan="2" id="construction_usage">Construction 0 %</td>
+								<td colspan="2" id="commercial_usage">Commercial/Custom 0 %</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="terms_conditions">
+			<p id="advice">By selecting the “Accept and Proceed” checkbox on this device as an Applicant, Co-Applicant or guarantor, or as an officer, partner or manager of the Applicant or Co-Applicant (hereafter the <span style="font-weight: bold;">“Applicant”</span>), and whether or not the Applicant is personally liable for any credit, the Applicant: (1) confirms that the information provided in this application is true and correct and given for the purposes of obtaining credit; (2) <span style="font-weight: bold;">instructs and authorizes AGCO Finance Canada, Ltd. and/or its affiliates and related parties (“AFC”) to conduct a personal investigation of the Applicant, including the investigation of credit records, obtaining consumer credit reports and obtaining any other available reports concerning the credit history of the Applicant; </span>(3) consents to AFC obtaining, collecting, using, disclosing, investigating, retaining or exchanging the Applicant’s personal information (which includes consumer credit reports and any other information concerning the credit history of the Applicant) for the purpose of assessing credit worthiness in connection with financing transactions, making decisions about credit applications, monitoring, evaluating, servicing and collecting on the accounts established to the granting of such credit and responding to inquiries about credit applications, the Applicant, and relevant accounts and files; (4) instructs and authorizes AFC to disclose consumer and other credit information of the Applicant to credit reporting agencies, credit bureaus and any other person or entity with whom the Applicant has or has had a financial relationship at any time that any credit granted as a result of this application remains unpaid; (5) consents to AFC contacting any references and any current or former employers of the Applicant; (6) instructs and authorizes any references and any current or former employers to release information to AFC as requested by AFC; (7) consents to AFC establishing and maintaining a file of personal information about the Applicant in accordance with AFC’s Privacy Policy below.  The Applicant acknowledges that (i) such personal information will be sent to AFC’s affiliates located outside Canada and may be seen by foreign governments or their agencies and (ii) AFC may retain any personal information obtained as a part of the application process whether or not the requested credit is granted; (8) acknowledges and agrees to the terms of AFC’s Privacy Policy below; and (9) <span style="font-weight: bold;">consents to receive commercial electronic messages such as emails and promotional messages about products and services from AFC.  To withdraw this consent at any time please contact us at ecommerce@leasedirect.com.</span>
+			<br/>
+			<br/>
+			<span style="text-decoration: underline;">PRIVACY POLICY.</span>  Protecting your privacy is important and AGCO Finance Canada is committed to keeping Personal Information that it obtains about Customers, including credit applicants, secure and confidential.  This Policy outlines the privacy practices of AGCO Finance Canada concerning the collection, use, retention, disclosure and security of personal information obtained about Customers, including credit applicants, in connection with Finance Transactions. As used in this Policy:    “<span style="font-weight: bold;">Affiliate</span>” means Cooperatieve Centrale Raiffeisen-Boerenleenbank, B.A., “<span style="font-weight: bold;">Rabobank Nederland</span>” or its successors and assigns from time to time and any direct or indirect subsidiary or entity owned or controlled by Rabobank Nederland or its successors and assigns from time to time, including, without limitation, AGCO Finance Canada and AGCO Finance LLC.   “<span style="font-weight: bold;">AGCO Finance Canada</span>” means AGCO Finance Canada, Ltd. “<span style="font-weight: bold;">AGCO Finance Entity</span>” and “<span style="font-weight: bold;">AGCO Finance Entities</span>” include AGCO Finance Canada, all Affiliates, and each agent, servicer and assignee of AGCO Finance Canada, and their respective successors and assigns.“<span style="font-weight: bold;">Customer</span>” means collectively any business entity or individual customer (a) who has applied for an extension of credit directly or in support of an extension of credit to a third party as a customer, (b) to whom credit has been extended or (c) who has agreed as a guarantor or otherwise to support the extension of credit to a third party as a customer. “<span style="font-weight: bold;">Finance Transaction</span>” means an extension of credit to a Customer by AGCO Finance Canada directly or to a third party and matters related to such a transaction. “<span style="font-weight: bold;">Permitted Purpose</span>” means the collection, use and disclosure of a Customer’s Personal Information for any one or more of the following purposes: (a) To deal with credit matters, including determining a Customer’s credit worthiness and whether or not to extend credit to the Customer; (b) To provide, review, service, enforce, collect, administer or approve the services requested or obtained by the Customer from any AGCO Finance Entity or under or in respect of any Finance Transaction and to disclose the Customer’s Personal Information to and share it with dealers, manufacturers, vendors, insurance companies, financial service providers, independent contractors, Affiliates and other service providers in order to provide the services requested by the Customer; (c) To promote or offer additional financial products and services that might benefit or be of interest to the Customer; (d) To share it with any AGCO Finance Entity who may use it to promote or offer additional financial products and services that might benefit or be of interest to the Customer; (e) To disclose it to and share it with credit bureaus and credit reporting agencies and with financial institutions with whom the Customer now or hereafter has a relationship; (f) To provide it to anyone who works with or for any AGCO Finance Entity, but only as needed for providing, reviewing, servicing, enforcing, collecting, administering or approving the services the Customer has requested from any AGCO Finance Entity; (g) To monitor a Customer’s purchasing or credit history; (h) To maintain and develop a business relationship with the Customer; (i) To comply with applicable law and court orders and procedural rules; (j) To disclose it to service providers, independent contractors and non-financial companies who provide services to any AGCO Finance Entity or on behalf of any AGCO Finance Entity, including, without limitation, auditors engaged to audit the financial statements of an AGCO Finance Entity; (k) To use the Customer’s social insurance number (if provided) and date of birth for income tax reporting purposes, in public filings with governmental officers relating to the perfection of security interests and liens granted by the Customer in connection with Finance Transactions and as an aid to identify the Customer with credit bureaus, credit reporting agencies and other financial institutions for credit history matching purposes; (l)To disclose and transfer it to third parties in connection with an assignment or sale of a Customer’s Finance Transaction to a third party, who in turn may have a right of further assignment or sale and disclosure and a right to collect, use and disclose it to service, enforce, collect and administer the Customer’s Finance Transaction and give effect to the assignment or sale of the Customer’s Finance Transaction; and (m) To disclose and transfer it to third party in connection with a proposed or actual financing, purchase, sale, lease, merger or amalgamation or any other type of acquisition, restructuring, reorganization or disposal of all or any portion of any AGCO Finance Entity. “<span style="font-weight: bold;">Personal Information</span>” has the same meaning as set out in the Personal Information and Electronic Documents Act (Canada) and includes without limitation, any information about an individual obtained by an AGCO Finance Entity in person, over the telephone, through a dealer, manufacturer or other vendor of equipment or products covered or proposed to be covered by a Finance Transaction, by mail, by fax, by email or via the internet in connection with providing a financial product or service to a Customer and includes the individual’s personal, credit and financial information and the Customer’s experience and Finance Transaction information (e.g., payment history and contract balances).
+			<br/>
+			<br/>
+			<span style="text-decoration: underline;">Information Collected or Obtained.</span>  Personal Information may be collected or obtained by any AGCO Finance Entity from the following sources: (a) Information from a Customer on applications or other finance and account forms and correspondence; (b) Information about Customer transactions with an Affiliate, dealers and other third parties; and (c) Information from third parties such as dealers, manufacturers and other vendors of equipment or products covered or proposed to be covered by a Finance Transaction, Affiliates, insurance companies, insurance agents, Customer references, credit bureaus or credit reporting agencies
+			<br/>
+			<br/>
+			<span style="text-decoration: underline;">Confidentiality and Use of Personal Information.</span>  All Personal Information shall be safeguarded and remain confidential and may be used by and shared with any AGCO Finance Entity and other third parties only for one or more Permitted Purposes.  Access to Personal Information shall be by appropriate personnel as necessary to provide, review, service, administer or approve the services a Customer has requested or obtained from any AGCO Finance Entity or under or in respect of any Finance Transaction. 
+			<br/>
+			<br/>
+			<span style="text-decoration: underline;">Withdrawal of Customer Consent.</span>  A Customer may withdraw consent to AGCO Finance Canada’s use of the Customer’s Personal Information for any or all Permitted Purposes at any time by giving written notice of withdrawal to AGCO Finance Canada, c/o AGCO Finance LLC, 8001 Birchwood Court, P.O. Box 2000, Johnston, Iowa  50131-0020 Attention:  Compliance Officer.  A Customer’s Personal Information may be used and disclosed after the Customer has withdrawn consent only as necessary for AGCO Finance Canada to comply with legal and contractual obligations, to provide, review, service, enforce, collect, administer or approve the services a Customer has requested or obtained from any AGCO Finance Entity or under or in respect of any Finance Transactions, to report the Customer’s Finance Transaction experiences to credit reporting agencies and credit bureaus and to fulfill and discharge AGCO Finance Canada’s ongoing business duties and responsibilities.
+			<br/>
+			<br/>
+			<span style="text-decoration: underline;">Changes to Privacy Practices Policy.</span>  AGCO Finance Canada may amend its Privacy Practices Policy from time to time without notice to or approval of any Customer.  A Customer shall have a right, subject to applicable law, to access the current Privacy Practices Policy by submitting a written request for a copy of the current Privacy Practices Policy to AGCO Finance Canada, c/o AGCO Finance LLC, 8001 Birchwood Court, P.O. Box 2000, Johnston, Iowa  50131-0020 Attention:  Compliance Officer.
+			<br/>
+			<br/>
+			<span style="text-decoration: underline;">Customer Access and Complaints.</span>  A Customer shall have a right, subject to applicable law, to access the Personal Information AGCO Finance Canada has about the Customer.  A Customer may request access to the Personal Information about the Customer or obtain a list of current Affiliates by submitting a written request therefor to AGCO Finance Canada, c/o AGCO Finance LLC, 8001 Birchwood Court, P.O. Box 2000, Johnston, Iowa  50131-0020 Attention:  Compliance Officer.  A Customer may submit a written privacy complaint by writing to AGCO Finance Canada, c/o AGCO Finance LLC, 8001 Birchwood Court, P.O. Box 2000, Johnston, Iowa  50131-0020 Attention:  Compliance Officer.  If the Compliance Officer is unable to resolve the complaint, the Customer may file a complaint with the federal Privacy Commissioner of Canada or the appropriate provincial privacy officer (if any).
+			</p>
+		</div>
+
+		<h2>Applicant</h2>
+		<table id="table_signature">
+			<tbody>
+				<tr class="row_no_border" colspan="2">
+					<td>Signature <br/><span id="signature"><img id="signature_img" width="160" src="" /></span></td>
+					<td>Date <br/><span id="date"></span></td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="div_license" style="page-break-before : always">
+			<h2>Driver's License Photo</h2>
+			<img id="img_license" src="" />
+		</div>
+		<!-- <div id="hiddenElements">
+			<table>
+				<tr class="row_no_border" id="equipment_usage_row">
+					<td colspan="2" class="equipmeent_name"></td>
+					<td colspan="1" class="farm_usage">Farm 0 %</td>
+					<td colspan="3" class="personal_usage">Personal 0 %</td>
+					<td colspan="2" class="construction_usage">Construction 0 %</td>
+					<td colspan="2" class="commercial_usage">Commercial/Custom 0 %</td>
+				</tr>
+			</table>
+		</div> -->
+	</div>
+</body>
+
+</html>

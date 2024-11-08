@@ -1,0 +1,52 @@
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.clear {
+	clear: both;
+}
+.relative {
+	position: relative;
+}
+.align-center {
+	text-align: center !important;
+}
+.bold {
+	font-weight: bold !important;
+}
+.public-container {
+	max-width: 62.5%;
+	margin: 1em auto;
+	font-size: 14px;
+
+	h4 {
+		font-size: 18px;
+	}
+	p {
+		margin-bottom: 40px;
+	}
+}
+.container {
+	display: block;
+	padding: 0 10px;
+	position: relative;
+}
+.wrapper {
+	width: 100%;
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	height: inherit;
+}
+
+.k-tabstrip-top > .k-tabstrip-items .k-item + .k-item {
+	padding-left: 10px;
+}
+
+@media screen and (min-width: 960px) {
+	.public-container {
+		font-size: 10.667px;
+	}
+}

@@ -1,0 +1,65 @@
+"#window": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: 'transparent'
+},
+"#window[platform=android]": {
+	theme: 'Theme.AppCompat.Translucent.NoTitleBar'
+},
+"#backgroundShadow": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.abbey,
+	opacity: 0.8
+},
+"#container": {
+	width: 305,
+	height: 446,
+	borderRadius: 10,
+	backgroundColor: Alloy.Globals.colors.white
+},
+"#container[if=Alloy.Globals.hasNotch]": {
+	height: 541
+},
+"#policy": {
+	top: 0,
+	bottom: 90,
+	width: Ti.UI.FILL
+},
+"#policy[platform=android]": {
+	scalesPageToFit: true,
+	enableZoomControls: false
+},
+"#okButton": {
+	top: 10,
+	title: L("accept_and_proceed_uppercase"),
+	backgroundColor: Alloy.Globals.colors.mantis
+},
+"#cancelButton": {
+	top: 5,
+	bottom: 5,
+	title: L("decline_and_close_uppercase"),
+	backgroundColor: Alloy.Globals.colors.tamarillo
+},
+".buttonsContainer": {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 90,
+	layout: "vertical"
+},
+".button": {
+	width: 280,
+	height: 35,
+	color: Alloy.Globals.colors.white,
+	borderRadius: 4,
+	font: {
+		fontFamily: "HelveticaNeue",
+		fontSize: 14
+	}
+},
+".separator": {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.silver
+}

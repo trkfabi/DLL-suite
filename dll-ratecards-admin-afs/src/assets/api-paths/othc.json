@@ -1,0 +1,17 @@
+{
+	"apiPaths": {
+		"fetch_rate_programs": "api/rate_cards/othc/rate_programs",
+		"update_rate_program": "api/rate_cards/othc/rate_program/update",
+		"reorder_rate_programs": "api/rate_cards/othc/rate_program/reorder",
+		"delete_rate_program": "api/rate_cards/othc/rate_program/delete",
+		"duplicate_rate_program": "api/rate_cards/othc/rate_program/duplicate",
+		"create_rate_program": "api/rate_cards/othc/rate_program/create",
+		"update_cof": "api/rate_cards/othc/cof/update",
+		"update_spread": "api/rate_cards/othc/spread/update",
+		"update_residual": "api/rate_cards/othc/residual/update",
+		"update_terms": "api/rate_cards/othc/terms/update",
+		"update_version": "api/rate_cards/othc/version/update",
+		"get_rate_program": "api/rate_cards/othc/rate_program",
+		"duplicate_version": "api/rate_cards/othc/version/duplicate"
+	}
+}

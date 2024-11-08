@@ -1,0 +1,15 @@
+<Alloy>
+	<View id='contractAcceptance' class='summaryContainer'>
+		<Require id='sectionHeader' src='summary/sectionHeader' />
+		<View id='container' class='summaryContainer'>
+			<View class='purchaseRow'>
+				<Label id='legalNameLabel' class='purchaseOptionLabel' />
+			</View>
+			<View class='purchaseRow purchaseFieldRow'>
+				<TextField id='legalNameTextField' />
+				<View class='fieldBottomLine' />
+			</View>
+			<!-- Note: authorization rows will be added here in the controller -->
+		</View>
+	</View>
+</Alloy>

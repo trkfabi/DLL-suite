@@ -1,0 +1,120 @@
+<xs:schema elementFormDefault="qualified" 
+	targetNamespace="http://schemas.datacontract.org/2004/07/ExpressFinance" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:tns="http://schemas.datacontract.org/2004/07/ExpressFinance">
+	<xs:simpleType name="PurchaseOptionEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="F"/>
+			<xs:enumeration value="D"/>
+			<xs:enumeration value="P"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="PurchaseOptionEnum" nillable="true" type="tns:PurchaseOptionEnum"/>
+	<xs:simpleType name="CustomerTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CCRP"/>
+			<xs:enumeration value="GOV"/>
+			<xs:enumeration value="GPRT"/>
+			<xs:enumeration value="IND"/>
+			<xs:enumeration value="LLC"/>
+			<xs:enumeration value="LPRT"/>
+			<xs:enumeration value="PART"/>
+			<xs:enumeration value="PROP"/>
+			<xs:enumeration value="OTH"/>
+			<xs:enumeration value="UNK"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="CustomerTypeEnum" nillable="true" type="tns:CustomerTypeEnum"/>
+	<xs:simpleType name="PaymentScheduleTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BP"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="PaymentScheduleTypeEnum" nillable="true" type="tns:PaymentScheduleTypeEnum"/>
+	<xs:simpleType name="PaymentFrequencyEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="M"/>
+			<xs:enumeration value="Q"/>
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="A"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="PaymentFrequencyEnum" nillable="true" type="tns:PaymentFrequencyEnum"/>
+	<xs:simpleType name="AdvancePaymentTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AA"/>
+			<xs:enumeration value="SA"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="AdvancePaymentTypeEnum" nillable="true" type="tns:AdvancePaymentTypeEnum"/>
+	<xs:simpleType name="AGCOUsageTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CO"/>
+			<xs:enumeration value="CM"/>
+			<xs:enumeration value="FA"/>
+			<xs:enumeration value="FO"/>
+			<xs:enumeration value="IN"/>
+			<xs:enumeration value="OT"/>
+			<xs:enumeration value="PE"/>
+			<xs:enumeration value="RY"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="AGCOUsageTypeEnum" nillable="true" type="tns:AGCOUsageTypeEnum"/>
+	<xs:simpleType name="CostTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="EQ"/>
+			<xs:enumeration value="AD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="CostTypeEnum" nillable="true" type="tns:CostTypeEnum"/>
+	<xs:simpleType name="AGCOContractTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Finance"/>
+			<xs:enumeration value="Lease"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="AGCOContractTypeEnum" nillable="true" type="tns:AGCOContractTypeEnum"/>
+	<xs:simpleType name="TaxTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="City"/>
+			<xs:enumeration value="County"/>
+			<xs:enumeration value="GST"/>
+			<xs:enumeration value="SPST"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="TaxTypeEnum" nillable="true" type="tns:TaxTypeEnum"/>
+	<xs:simpleType name="FeeTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DealerAddOn"/>
+			<xs:enumeration value="Documentation"/>
+			<xs:enumeration value="License1"/>
+			<xs:enumeration value="License2"/>
+			<xs:enumeration value="Termination"/>
+			<xs:enumeration value="Transportation"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="FeeTypeEnum" nillable="true" type="tns:FeeTypeEnum"/>
+	<xs:simpleType name="DocumentTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CreditApplication"/>
+			<xs:enumeration value="FinanceContract"/>
+			<xs:enumeration value="LeaseContract"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="DocumentTypeEnum" nillable="true" type="tns:DocumentTypeEnum"/>
+	<xs:simpleType name="ContentEncodingEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Base64"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ContentEncodingEnum" nillable="true" type="tns:ContentEncodingEnum"/>
+	<xs:simpleType name="BrandArtifactTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LOGO"/>
+			<xs:enumeration value="TEMPLATE"/>
+			<xs:enumeration value="UNKNOWN"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="BrandArtifactTypeEnum" nillable="true" type="tns:BrandArtifactTypeEnum"/>
+</xs:schema>

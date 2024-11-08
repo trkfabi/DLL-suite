@@ -1,0 +1,121 @@
+'#backgroundMask': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	visible: false,
+	backgroundColor: Alloy.Globals.colors.blackHalfTransparent
+},
+'#box[platform=ios]': {
+	left: 25,
+	right: 25,
+	height: Ti.UI.SIZE,
+	borderColor: Alloy.Globals.colors.white,
+	borderRadius: 5,
+	borderWidth: 0,
+	backgroundColor: Alloy.Globals.colors.white,
+	layout: 'vertical'
+},
+'#box[platform=android]': {
+	left: 25,
+	right: 25,
+	height: Ti.UI.SIZE,
+	borderColor: Alloy.Globals.colors.black,
+	borderRadius: 3,
+	borderWidth: 1,
+	backgroundColor: Alloy.Globals.colors.mineShaftApprox,
+	layout: 'vertical'
+},
+'#activityIndicator[platform=ios]': {
+	top: 24,
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	visible: true,
+	style: Ti.UI.ActivityIndicatorStyle.DARK
+},
+'#activityIndicator[platform=android]': {
+	top: 16,
+	height: 30,
+	width: Ti.UI.FILL
+},
+'#defaultMesssage[platform=ios]': {
+	top: 0,
+	bottom: 24,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 19
+	},
+	text: L('please_wait'),
+	color: Alloy.Globals.colors.black
+},
+'#defaultMesssage[platform=android]': {
+	top: 5,
+	bottom: 16,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 14
+	},
+	text: L('please_wait'),
+	color: Alloy.Globals.colors.white
+},
+'#messageLabel[platform=ios]': {
+	top: 10,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 19
+	},
+	color: Alloy.Globals.colors.black,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+},
+'#messageLabel[platform=android]': {
+	top: 5,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 14
+	},
+	color: Alloy.Globals.colors.pictonBlue
+},
+'#separator[platform=ios]': {
+	top: 0, //25,
+	height: 1,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.mercury
+},
+'#separator[platform=android]': {
+	top: 0, //17,
+	height: 1,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.tundora
+},
+'#cancelButton[platform=ios]': {
+	height: 44,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	borderColor: Alloy.Globals.colors.transparent,
+	borderWidth: 0,
+	title: L('cancel'),
+	color: Alloy.Globals.colors.azureRadiance,
+	font: {
+		fontSize: 17,
+		fontFamily: Alloy.Globals.fonts.primary.light
+	}
+},
+'#cancelButton[platform=android]': {
+	height: 39,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	borderColor: Alloy.Globals.colors.transparent,
+	borderWidth: 0,
+	title: L('cancel'),
+	color: Alloy.Globals.colors.prim,
+	font: {
+		fontSize: 11,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	}
+}

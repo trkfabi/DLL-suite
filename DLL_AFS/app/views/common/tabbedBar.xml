@@ -1,0 +1,6 @@
+<Alloy>
+	<!-- TODO: custom tabbedBar because they didn't want separators on iOS -->
+	<View id='container' />
+	<!-- <View id="container" platform="android" />
+	<TabbedBar id="container" platform="ios" /> -->
+</Alloy>

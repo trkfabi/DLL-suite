@@ -1,0 +1,10 @@
+'#window': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white,
+	backgroundImage: '/images/splash.png'
+}
+
+'#window[if=Alloy.Globals.hasNotch]': {
+	backgroundImage: '/images/splash-Portrait-2436h@3x_.png'
+}

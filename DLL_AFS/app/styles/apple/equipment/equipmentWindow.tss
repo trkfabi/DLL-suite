@@ -1,0 +1,126 @@
+'#window': {
+	navBarHidden: true
+},
+'#headerView': {
+	height: 64,
+},
+
+'#headerBar': {
+	height: 44
+},
+'#backButton': {
+
+},
+'#headerTitleLabel': {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 17
+	}
+},
+'#editButton': {
+	right: 15,
+	width: 70,
+	height: Ti.UI.FILL,
+	title: 'Edit',
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 17
+	},
+	color: Alloy.Globals.colors.white
+},
+'#editButton[if=Alloy.Globals.iPhoneX]': {
+	top: 20
+},
+'#wrapperView': {
+	top: 64,
+	layout: 'absolute'
+},
+'#equipmentTable': {
+	top: 0,
+	bottom: 45,
+	left: 0,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	separatorColor: Alloy.Globals.colors.transparent,
+	bottomEdit: 0,
+	bottomNoEdit: 45
+},
+'#equipmentTable[if=Alloy.Globals.iPhoneX]': {
+	bottom: 75,
+	bottomNoEdit: 75
+},
+"#noProductsView": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+'#noProductsView[if=Alloy.Globals.iPhoneX]': {
+	top: 405
+},
+'#noProductsLabel': {
+	top: 0,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	text: L('no_products_services'),
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 18
+	},
+	color: Alloy.Globals.colors.shuttleGray,
+	touchEnabled: false
+}
+'#tapNewLabel': {
+	top: 10,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	heightActive: Ti.UI.SIZE,
+	heightInactive: 0,
+	text: L('tap_on_add_new'),
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 15
+	},
+	color: Alloy.Globals.colors.shuttleGray,
+	touchEnabled: false
+}
+'#addNewView': {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 45,
+	heightExpanded: 45,
+	heightCollapsed: 0,
+	backgroundColor: Alloy.Globals.colors.shark,
+	visible: true
+},
+'#addNewView[if=Alloy.Globals.iPhoneX]': {
+	height: 83,
+	heightExpanded: 83,
+},
+'#addNewWrapper': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	layout: 'horizontal',
+	touchEnabled: false
+},
+'#addNewWrapper[if=Alloy.Globals.iPhoneX]': {
+	top: 10,
+	height: 45
+}
+'#addNewIcon': {
+	width: 25,
+	height: 25,
+	backgroundImage: '/images/ic_addnew.png',
+	touchEnabled: false
+},
+'#addNewText': {
+	left: 10,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	text: 'Add New',
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 16
+	},
+	color: Alloy.Globals.colors.white,
+	touchEnabled: false
+}

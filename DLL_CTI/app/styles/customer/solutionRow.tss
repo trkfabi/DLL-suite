@@ -1,0 +1,31 @@
+".container": {
+	width: Ti.UI.FILL,
+	height: 40
+},
+"#solutionOrder": {
+	left: 10,
+	width: 25,
+	height: 25,
+	borderRadius: 13,
+	backgroundColor: Alloy.Globals.colors.azureRadiance,
+	color: Alloy.Globals.colors.white,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	font: {
+		fontFamily: "HelveticaNeue-Bold",
+		fontSize: 18
+	}
+},
+"#solutionMake": {
+	left: 45,
+	font: {
+		fontFamily: 'HelveticaNeue-Bold',
+		fontSize: 16
+	}
+},
+"#solutionModel": {
+	right: 10,
+	font: {
+		fontFamily: 'HelveticaNeue',
+		fontSize: 12
+	}
+}

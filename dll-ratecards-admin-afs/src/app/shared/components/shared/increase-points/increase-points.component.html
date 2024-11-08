@@ -1,0 +1,9 @@
+<div class="inputs">
+	<div class="buttons minus" (click)="onOperationAction(decreasePoints)" [ngClass]="{ disabled: minValue >= total }">
+		<i class="k-icon k-i-minus"></i>
+	</div>
+	<input type="text" class="input-text" readonly [(ngModel)]="inputValue" />
+	<div class="buttons plus" (click)="onOperationAction(increasePoints)" [ngClass]="{ disabled: maxValue <= total }">
+		<i class="k-icon k-i-plus"></i>
+	</div>
+</div>

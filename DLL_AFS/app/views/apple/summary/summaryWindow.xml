@@ -1,0 +1,51 @@
+<Alloy>
+	<Window id='window'>
+		<View id='headerView'>
+			<View id='headerBar'>
+				<Button id='backButton' />
+				<ImageView id='titleImage' />
+			</View>
+		</View>
+		<ScrollView id='wrapperView'>
+			<View id='customerInfoSection' class='summarySectionView'>
+				<View class='summaryHeaderView'>
+					<Label id='customerInfoHeaderLabel' class='summaryHeaderLabel' />
+					<Button id='customerInfoButton' class='expandCollapseButton' />
+				</View>
+				<View class='summaryContentView'>
+					<Label id='customerInfoLabel' />
+				</View>
+			</View>
+
+			<View id='productInfoSection' class='summarySectionView'>
+				<View class='summaryHeaderView'>
+					<Label id='productInfoHeaderLabel' class='summaryHeaderLabel' />
+					<Button id='productInfoButton' class='expandCollapseButton' />
+				</View>
+				<View class='summaryContentView'>
+					<View id='productsView' />
+					<View id='amountFinancedView'>
+						<Label id='amountFinancedLabel' />
+						<Label id='amountFinancedValueLabel' />
+					</View>
+				</View>
+			</View>
+
+			<View id='paymentInfoSection' class='summarySectionView'>
+				<View class='summaryHeaderView'>
+					<Label id='paymentInfoHeaderLabel' class='summaryHeaderLabel' />
+					<Button id='paymentInfoButton' class='expandCollapseButton' />
+				</View>
+				<View class='summaryContentView'>
+					<Require id='termView' src='apple/summary/paymentInfoView' />
+					<Require id='paymentView' src='apple/summary/paymentInfoView' />
+					<Require id='frequencyView' src='apple/summary/paymentInfoView' />
+					<Require id='rateFactorView' src='apple/summary/paymentInfoView' />
+				</View>
+			</View>
+		</ScrollView>
+		<View id='submitView'>
+			<Button id='submitButton' />
+		</View>
+	</Window>
+</Alloy>

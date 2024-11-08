@@ -1,0 +1,59 @@
+"#window": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+"#window[platform=android]": {
+	theme: 'Theme.AppCompat.Translucent.NoTitleBar'
+},
+"#shadow": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.shuttleGray,
+	opacity: 0.5
+},
+"#container": {
+	width: 302,
+	height: 306,
+	backgroundColor: Alloy.Globals.colors.white,
+	borderRadius: 6,
+	borderColor: Alloy.Globals.colors.black,
+	borderWidth: 1
+},
+"#pdfImageView": {
+	top: 45,
+	image: "/images/ic_creatingpdf.png"
+},
+"#progressContainer": {
+	top: 144,
+	left: 20,
+	right: 20,
+	height: 9,
+	borderRadius: 3,
+	backgroundColor: Alloy.Globals.colors.mercury
+},
+"#progressView": {
+	left: 0,
+	width: 1,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.lochmara
+},
+"#instructionsLabel": {
+	text: L("creating_pdf_file_please_wait"),
+	top: 178,
+	color: Alloy.Globals.colors.shuttleGray,
+	font: {
+		fontSize: 14
+	},
+	textAlign: "center"
+},
+"#cancelButton": {
+	title: L("cancel_uppercase"),
+	left: 10,
+	right: 10,
+	height: 35,
+	bottom: 18,
+	color: Alloy.Globals.colors.white,
+	backgroundColor: Alloy.Globals.colors.mercury,
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+}

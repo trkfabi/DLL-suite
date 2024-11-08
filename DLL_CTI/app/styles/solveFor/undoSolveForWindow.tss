@@ -1,0 +1,29 @@
+"#window": {
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+"#window[platform=android]": {
+	theme: 'Theme.AppCompat.Translucent.NoTitleBar'
+},
+"#container": {
+	backgroundColor: 'transparent',
+},
+"#buttonFrame": {
+	left: 5,
+	right: 5,
+	bottom: 10,
+	height: 60,
+	borderRadius: 3,
+	backgroundColor: Alloy.Globals.colors.mineShaft,
+},
+"#buttonFrame[if=Alloy.Globals.hasNotch]": {
+	bottom: 40
+},
+"#undoButton": {
+	height: 35,
+	width: 200,
+	borderRadius: 3,
+	title: L('undo_solve_for'),
+	color: Alloy.Globals.colors.white,
+	borderColor: Alloy.Globals.colors.white,
+	backgroundColor: Alloy.Globals.colors.mineShaft,
+}

@@ -1,0 +1,77 @@
+'#contractAcceptance': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	heightExpanded: Ti.UI.SIZE,
+	heightCollapsed: 40,
+	layout: 'vertical',
+	backgroundColor: Alloy.Globals.colors.alto
+},
+'#contractAcceptance[platform=android]': {
+	heightCollapsed: 52
+},
+'#container': {
+	left: 4,
+	right: 0,
+	backgroundColor: Alloy.Globals.colors.alabaster,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+'#legalNameLabel': {
+	text: L('customer_legal_name')
+},
+'#legalNameTextField': {
+	left: 20,
+	right: 20,
+	hintText: L('customer_legal_name'),
+	font: {
+		fontSize: 18,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	},
+	color: Alloy.Globals.colors.shuttleGray
+},
+'#legalNameTextField[platform=android]': {
+	left: 10,
+	right: 10,
+	font: {
+		fontSize: 18,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	},
+	hintTextColor: Alloy.Globals.colors.silver
+},
+
+'.purchaseRow': {
+	width: Ti.UI.FILL,
+	height: 30
+},
+'.purchaseOptionLabel': {
+	left: 10,
+	right: 35,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.mountbattenPink,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 14
+	}
+},
+'.purchaseOptionCheck': {
+	right: 10,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	image: '/images/ic_customerscreen_stepstatus_empty.png',
+	imageActive: '/images/ic_customerscreen_stepstatus_checked.png',
+	imageInactive: '/images/ic_customerscreen_stepstatus_empty.png'
+},
+'.purchaseFieldRow': {
+	height: 50
+},
+'.purchaseFieldRow[platform=android]': {
+	height: 40
+},
+'.fieldBottomLine': {
+	bottom: 0,
+	left: 10,
+	right: 10,
+	height: 5,
+	backgroundImage: '/images/im_customerinfo_textline_large.png'
+}

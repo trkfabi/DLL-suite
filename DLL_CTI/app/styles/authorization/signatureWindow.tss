@@ -1,0 +1,178 @@
+"#window": {
+	backgroundColor: Alloy.Globals.colors.transparent,
+	navBarHidden: true,
+	orientationModes: [Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT]
+},
+"#window[platform=android]": {
+	navBarHidden: true,
+	theme: 'Theme.NoActionBar',
+	backgroundColor: Alloy.Globals.colors.white,
+	backgroundImage: '/images/bg_customerscreen_signature.png'
+},
+"#container": {
+	left: 0,
+	right: 0,
+	bottom: 0
+}
+"#container[platform=ios]": {
+	top: '99%',
+	backgroundColor: Alloy.Globals.colors.white,
+	backgroundImage: '/images/bg_customerscreen_signature.png'
+},
+"#container[platform=android]": {
+	top: 0
+},
+"#logoImageView": {
+	top: 15,
+	height: 40,
+	// image  : '/images/agco_logo.png',
+	touchEnabled: false,
+},
+"#logoImageView[if=Alloy.Globals.hasNotch]": {
+	height: 45
+}
+"#cancelButton": {
+	top: 25,
+	left: 25,
+	width: Ti.UI.SIZE,
+	height: 20
+},
+"#cancelButton[platform=android]": {
+	top: 13,
+	right: 19,
+	height: 36
+}
+"#cancelButton[if=Alloy.Globals.hasNotch]": {
+	left: 59.93
+}
+"#backImage": {
+	left: 0,
+	image: '/images/ic_topbar_back.png'
+},
+"#backImage[platform=android]": {
+	width: 36,
+	height: 36
+}
+"#backTitle[platform=ios]": {
+	text: L("preview"),
+	left: 15,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: "HelveticaNeue-Light",
+		fontSize: 17
+	}
+},
+"#backTitle[if=Alloy.Globals.hasNotch]": {
+	left: 18.33
+}
+"#nextButton": {
+	top: 25,
+	right: 25,
+	width: Ti.UI.SIZE,
+	height: 20
+},
+"#nextButton[if=Alloy.Globals.hasNotch]": {
+	right: 61.6
+}
+"#nextButton[platform=android]": {
+	top: 13,
+	right: 19,
+	height: 36
+}
+"#nextImage": {
+	right: 0,
+	image: '/images/ic_topbar_next.png'
+},
+"#nextImage[platform=android]": {
+	width: 36,
+	height: 36
+}
+"#nextTitle[platform=ios]": {
+	text: L("next"),
+	right: 15,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: "HelveticaNeue-Light",
+		fontSize: 17
+	}
+},
+"#nextTitle[if=Alloy.Globals.hasNotch]": {
+	right: 22
+}
+"#titleLabel": {
+	text: L("please_sign_here"),
+	top: 70,
+	color: Alloy.Globals.colors.shuttleGray,
+	font: {
+		fontFamily: "HelveticaNeue-Bold",
+		fontSize: 20,
+		fontWeight: "bold"
+	}
+},
+"#titleLabel[if=Alloy.Globals.hasNotch]": {
+	top: 80
+}
+'#titleLabel[platform=android]': {
+	font: {
+		fontFamily: "Roboto",
+		fontSize: 20,
+		fontWeight: "bold"
+	}
+}
+"#signatureContainer": {
+	top: 55,
+	bottom: 45,
+	left: 25,
+	right: 25,
+	borderColor: Alloy.Globals.colors.mercury,
+	borderRadius: 5,
+	borderWidth: 1
+},
+"#signatureContainer[if=Alloy.Globals.hasNotch]": {
+	top: 65,
+	bottom: 53,
+	left: 61.6,
+	right: 61.6
+}
+"#signatureContainer[platform=android]": {
+	top: 60,
+	left: 26,
+	right: 26,
+	bottom: 60
+}
+"#clearFieldButton": {
+	title: L("clear_re_sign"),
+	bottom: 10,
+	left: 25,
+	width: Ti.UI.SIZE,
+	height: 35,
+	font: {
+		fontFamily: "HelveticaNeue",
+		fontSize: 14
+	},
+	color: Alloy.Globals.colors.black
+}
+"#clearFieldButton[platform=android]": {
+	bottom: 13,
+	left: 26,
+	height: 40,
+	font: {
+		fontFamily: "Robot",
+		fontSize: 18
+	},
+	color: Alloy.Globals.colors.black,
+	backgroundColor: Alloy.Globals.colors.transparent
+}
+
+"#clearFieldButton[if=Alloy.Globals.hasNotch]": {
+	bottom: 17.33,
+	left: 60.27,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 16
+	},
+}

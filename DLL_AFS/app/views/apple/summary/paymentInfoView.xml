@@ -1,0 +1,21 @@
+<Alloy>
+	<View id='paymentInfoView'>
+		<Require id='sectionHeader' src='summary/sectionHeader' />
+		<View id='container'>
+			<Label id='term' class='titleLabel' />
+			<Label id='termValue' class='valueLabel' />
+
+			<Label id='payment' class='titleLabel' />
+			<View id='paymentContainer'>
+				<!--<Label id='currencySymbol' class='valueLabel'/>-->
+				<Label id='paymentValue' class='valueLabel' />
+			</View>
+
+			<Label id='paymentFrequency' class='titleLabel' />
+			<Label id='paymentFrequencyValue' class='valueLabel' />
+
+			<Label id='rateFactor' class='titleLabel' />
+			<Label id='rateFactorValue' class='valueLabel' />
+		</View>
+	</View>
+</Alloy>

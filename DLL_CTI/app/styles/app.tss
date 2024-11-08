@@ -1,0 +1,191 @@
+// UI Tags
+"Window": {
+	backgroundColor: Alloy.Globals.colors.white,
+	orientationModes: [
+		Ti.UI.PORTRAIT
+	]
+},
+'TextField': {
+	returnKeyType: Ti.UI.RETURNKEY_DONE,
+	autocorrect: false,
+	showUndoRedoActions: false
+},
+"TextField[platform=android]": {
+	backgroundImage: '',
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'Button[platform=ios]': {
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+},
+'Button[platform=android]': {
+	backgroundImage: '',
+	backgroundColor: Alloy.Globals.colors.transparent,
+	borderColor: Alloy.Globals.colors.transparent
+},
+"TableViewRow[platform=ios]": {
+	selectionStyle: Ti.UI.iOS.TableViewCellSelectionStyle.NONE
+},
+
+// Classes - General
+'.enabledElement': {
+	touchEnabled: true,
+	enabled: true,
+	opacity: 1.0
+},
+'.disabledElement': {
+	touchEnabled: false,
+	enabled: false,
+	opacity: Alloy.Globals.opacityDisabled
+},
+".kbNumeric": {
+	keyboardType: Ti.UI.KEYBOARD_TYPE_DECIMAL_PAD
+},
+".kbNumeric[platform=android]": {
+	autocorrect: false
+},
+".kbNumPad": {
+	keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBER_PAD
+},
+".kbEmail": {
+	keyboardType: Ti.UI.KEYBOARD_TYPE_EMAIL
+},
+'.textFieldUnderlineWhite': {
+	height: 5,
+	backgroundImage: '/images/textfield_line_white.png',
+	touchEnabled: false
+},
+'.textFieldUnderlineWhite[platform=ios]': {
+	backgroundLeftCap: 10
+},
+'.textFieldUnderlineGray': {
+	height: 5,
+	backgroundImage: '/images/textfield_line_gray.png',
+	touchEnabled: false
+},
+'.textFieldUnderlineGray[platform=ios]': {
+	backgroundLeftCap: 10
+},
+'.textFieldUnderlineBlack': {
+	height: 5,
+	backgroundImage: '/images/textfield_line_black.png',
+	touchEnabled: false
+},
+'.textFieldUnderlineBlack[platform=ios]': {
+	backgroundLeftCap: 10
+},
+'Label': {
+	font: {
+		fontFamily: "HelveticaNeue-Light"
+	}
+},
+// Classes - Additional Costs
+'.currencySymbol': {
+	text: '$',
+	font: {
+		fontSize: 12
+	},
+	color: Alloy.Globals.colors.white
+},
+'.currencySymbol[platform=ios]': {
+	right: 150,
+	width: 10,
+	font: {
+		fontSize: 12
+	},
+	color: Alloy.Globals.colors.white
+}
+'.currencySymbol[platform=android]': {
+	right: 153,
+	font: {
+		fontSize: 12
+	},
+	color: Alloy.Globals.colors.white
+},
+'.currencySymbolPorcentage[if=Alloy.Globals.hasNotch]': {
+	left: 216
+},
+".separatorBlack": {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 2,
+	backgroundImage: "/images/im_hdivider_pricedetail.png",
+	zIndex: 300
+},
+'.additionalAmountRow': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 43
+},
+'.additionalAmountTitle': {
+	left: 10,
+	width: Ti.UI.SIZE,
+	font: {
+		fontSize: 15,
+		fontFamily: "HelveticaNeue"
+	},
+	color: Alloy.Globals.colors.geyser,
+	touchEnabled: false
+},
+".additionalClearButton": {
+	width: 30,
+	right: 160,
+	height: 30,
+	right: 160,
+	visible: false,
+	bubbleParent: false
+},
+".additionalClearButton[platform=android]": {
+	backgroundImage: "/images/bt_quotescreen_clearfield.png"
+},
+".additionalClearButton[platform=ios]": {
+	top: 7,
+	image: "/images/bt_quotescreen_clearfield.png"
+},
+".additionalField": {
+	right: 50,
+	width: 100,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.white,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	font: {
+		fontSize: 15,
+		fontFamily: "HelveticaNeue-Bold"
+	},
+},
+".additionalField[platform=android]": {
+	right: 47,
+	width: 113,
+	backgroundColor: 'transparent',
+	font: {
+		fontSize: 18,
+		fontFamily: "Roboto-Bold"
+	},
+},
+".additionalLeftField": {
+	left: 20,
+	width: 90,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontSize: 15,
+		fontFamily: "HelveticaNeue-Bold"
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT
+},
+".additionalLeftField[platform=android]": {
+	backgroundColor: 'transparent',
+	font: {
+		fontSize: 18,
+		fontFamily: "Roboto-Bold"
+	},
+},
+'.additionalUnderline': {
+	right: 45,
+	bottom: 5,
+	width: 111
+},
+'.additionalLeftUnderline': {
+	left: 15,
+	bottom: 5,
+	width: 100
+}

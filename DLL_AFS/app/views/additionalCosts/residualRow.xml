@@ -1,0 +1,24 @@
+<Alloy>
+	<View id="residualRow">
+		<View id='residualValueRow' class="additionalAmountRow">
+			<Label id='residualValueLabel' class='additionalAmountTitle' />
+			<Button id="residualClear" class="additionalClearButton" />
+			<Label class='currencySymbol' />
+			<TextField id='residualValueInputTextField' class="additionalField kbNumeric" tag="residualValue" />
+			<View class="textFieldUnderlineWhite additionalUnderline" />
+			<ImageView id="residualCalculatorButton" />
+		</View>
+
+		<View id="residualCalculation" class="additionalAmountRow">
+			<Button id="originalInvoiceClear" class="additionalClearButton" />
+			<Label id="originalCurrencySymbol" class="currencySymbol" />
+			<TextField id='originalInvoiceInputTextField' class="additionalField kbNumeric" tag="originalInvoice" subTag="originalInvoice" />
+			<View id="originalBottomLine" class="textFieldUnderlineWhite" />
+
+			<Button id="percentualResidualClear" class="additionalClearButton" />
+			<Label id="percentalResidualCurrencySymbol" class="currencySymbolPorcentage" />
+			<TextField id='percentualResidualInputTextField' class="additionalField kbNumeric" tag="residualPercentage" subTag="residualPercentage" />
+			<View class="textFieldUnderlineWhite additionalUnderline" />
+		</View>
+	</View>
+</Alloy>

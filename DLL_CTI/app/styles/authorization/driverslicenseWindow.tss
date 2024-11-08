@@ -1,0 +1,236 @@
+//IOS
+"#window[platform=ios]": {
+	translucent: false
+},
+"#brandLogo[platform=ios]": {
+	width: 120,
+},
+"#blurContainer[platform=ios]": {
+	top: 0,
+	backgroundImage: "/images/camerablur.png",
+	height: 97,
+	zIndex: 200
+},
+"#blurContainer[if=Alloy.Globals.hasNotch]": {
+	height: 119
+},
+"#titleLabel[platform=ios]": {
+	text: L("capture_photo_id"),
+	color: Alloy.Globals.colors.shuttleGray,
+	font: {
+		fontFamily: "HelveticaNeue-Bold",
+		fontSize: 20,
+		fontWeight: "bold"
+	}
+},
+"#permissionLabel[platform=ios]": {
+	top: 120,
+	color: Alloy.Globals.colors.shuttleGray,
+	font: {
+		fontFamily: "HelveticaNeue-Bold",
+		fontSize: 20,
+		fontWeight: "bold"
+	},
+	zIndex: 999,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+},
+"#permissionLabel[if=Alloy.Globals.hasNotch]": {
+	top: 142,
+}
+"#cameraContainer[platform=ios]": {
+	top: 0,
+	bottom: 55,
+	width: Ti.UI.FILL,
+	zIndex: 100
+},
+"#cameraContainer[if=Alloy.Globals.hasNotch]": {
+	bottom: 83.3
+},
+"#optionsContainer[platform=ios]": {
+	bottom: 0,
+	height: 90,
+	width: Ti.UI.FILL,
+	zIndex: 200
+},
+"#optionsContainer[if=Alloy.Globals.hasNotch]": {
+	height: 127
+},
+"#shooterButton[platform=ios]": {
+	top: 0,
+	backgroundImage: "/images/shoot.png",
+	backgroundSelectedImage: "/images/shoot_pressed.png",
+	width: 70,
+	height: 70,
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN,
+	zIndex: 200
+},
+"#shooterButton[if=Alloy.Globals.hasNotch]": {
+	width: 83.3,
+	height: 83.3
+},
+"#toolbarContainer[platform=ios]": {
+	bottom: 0,
+	height: 55,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.swirl,
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN,
+	zIndex: 100
+},
+"#toolbarContainer[if=Alloy.Globals.hasNotch]": {
+	height: 83.3
+},
+"#retakeButton[platform=ios]": {
+	title: L("retake"),
+	bottom: -50,
+	left: 10,
+	height: 35,
+	width: 100,
+	color: Alloy.Globals.colors.white,
+	backgroundColor: Alloy.Globals.colors.silver,
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN,
+	borderRadius: 3
+},
+"#doneButton[platform=ios]": {
+	title: L("done"),
+	bottom: -50,
+	right: 20,
+	height: 35,
+	width: 82,
+	color: Alloy.Globals.colors.white,
+	backgroundColor: Alloy.Globals.colors.lochmara,
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN,
+	borderRadius: 3
+},
+"#backButton[platform=ios]": {
+	width: Ti.UI.SIZE,
+	height: 20
+},
+"#backImage[platform=ios]": {
+	left: 0,
+	image: 'images/ic_topbar_back.png'
+},
+"#backTitle[platform=ios]": {
+	text: L('dob'),
+	left: 15,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: "HelveticaNeue-Light",
+		fontSize: 17
+	}
+},
+"#nextButton[platform=ios]": {
+	width: Ti.UI.SIZE,
+	height: 20
+},
+"#nextImage[platform=ios]": {
+	right: 0,
+	image: 'images/ic_topbar_next.png'
+},
+"#nextTitle[platform=ios]": {
+	text: L("done"),
+	right: 15,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: "HelveticaNeue-Light",
+		fontSize: 17
+	}
+},
+"#titleView[platform=ios]": {
+	width: 290
+},
+
+// ANDROID
+"#window[platform=android]": {
+	navBarHidden: true,
+	backgroundColor: Alloy.Globals.colors.white
+},
+"#container[platform=android]": {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+".header[platform=android]": {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 54,
+	backgroundColor: Alloy.Globals.colors.white
+},
+".backButton[platform=android]": {
+	left: 10,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/ic_topbar_back.png'
+},
+".titleLabel[platform=android]": {
+	height: Ti.UI.FILL,
+	text: L("capture_photo_id"),
+	color: Alloy.Globals.colors.nobel,
+	font: {
+		fontFamily: "sans-serif",
+		fontSize: 23,
+		fontWeight: 'bold'
+	}
+},
+'.separator': {
+	top: 54,
+	height: 1,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.alabaster
+}
+".instructions[platform=android]": {
+	top: 55,
+	width: Ti.UI.FILL,
+	height: 79,
+	backgroundColor: Alloy.Globals.colors.white,
+	opacity: 0.9
+}
+".brandLogo[platform=android]": {
+	top: 6,
+	width: Ti.UI.SIZE,
+	height: 40,
+	touchEnabled: false,
+},
+".nextButton[platform=android]": {
+	right: 10,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/ic_topbar_next.png'
+},
+".optionsContainer[platform=android]": {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 90
+},
+"#shooterButton[platform=android]": {
+	top: 0,
+	width: 70,
+	height: 70,
+	backgroundImage: "/images/shoot.png",
+	backgroundSelectedImage: "/images/shoot_pressed.png"
+},
+".toolbarContainer[platform=android]": {
+	bottom: 0,
+	height: 55,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white,
+	opacity: 0.9
+},
+"#retakeButton[platform=android]": {
+	bottom: 10,
+	title: L("retake"),
+	left: 20,
+	height: 35,
+	width: 82,
+	color: Alloy.Globals.colors.shuttleGray,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+".photoTaken[platform=android]": {
+	top: 80,
+	bottom: 55,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white
+}

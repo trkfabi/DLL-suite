@@ -1,0 +1,10 @@
+<Alloy>
+	<View id="categoryContainer">
+		<View id="categoryHeader" class="row header">
+			<Label id="categoryTitleLabel" class="headerTitle" />
+			<Button id="categoryExpandButton" class="expandCollapseButton" />
+		</View>
+
+		<View id='paymentRowsContainer' />
+	</View>
+</Alloy>

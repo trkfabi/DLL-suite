@@ -1,0 +1,53 @@
+<div class="login-component">
+	<div class="wrapper">
+		<div class="login-container">
+			<div class="login-wrapper">
+				<header>
+					<div id="blue-line"></div>
+					<div class="title">
+						Login to<br />
+						<strong>{{ appTitle }} {{ appSubTitle }}</strong>
+					</div>
+				</header>
+				<form class="login-form" [formGroup]="loginForm">
+					<mat-form-field class="no-label-animation">
+						<input class="login-input" matInput placeholder="Email" formControlName="username" />
+					</mat-form-field>
+					<br class="clear" />
+					<mat-form-field class="no-label-animation">
+						<input
+							class="login-input"
+							type="password"
+							matInput
+							placeholder="Password"
+							formControlName="password"
+							minlength="8"
+						/>
+					</mat-form-field>
+					<div id="button-Policy">
+						<button mat-button color="primary" [disabled]="!loginForm.valid" (click)="onLoginButtonClick($event)">login</button>
+						<a
+							href="{{ privacyStatementUrl }}"
+							rel="noopener"
+							target="_blank"
+							class="terms right"
+							style="text-decoration: none;"
+							>Review Privacy Statement</a
+						>
+					</div>
+					<mat-error class="error" *ngIf="!loginForm.valid && isRendered">{{ onValidateForm() }}</mat-error>
+					<mat-error class="error" *ngIf="!loginForm.valid && isRendered">{{ onValidateForm() }}</mat-error>
+					<mat-error class="error">{{ errorMessage }}</mat-error>
+				</form>
+			</div>
+			<footer>
+				<figure class="logo">
+					<div class="center">
+						<img src="assets/images/{{ templateName }}/img-logo-3-x@2x.png" alt="{{ appTitle }}" width="82.5" height="22" />
+					</div>
+				</figure>
+			</footer>
+		</div>
+	</div>
+	<div kendoDialogContainer></div>
+</div>

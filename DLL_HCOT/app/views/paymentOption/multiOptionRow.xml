@@ -1,0 +1,9 @@
+<Alloy>
+	<View id='multiOptionRow'>
+		<View class='leftTab' />
+		<View id='wrapper'>
+			<Label id='titleLabel' />
+			<!-- <Require id='multiOptionBar' class='paymentBar' src='common/tabbedBar' /> -->
+		</View>
+	</View>
+</Alloy>

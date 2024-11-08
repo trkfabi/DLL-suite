@@ -1,0 +1,23 @@
+<Alloy>
+	<Window id='window'>
+		<View id='containerView'>
+			<View id='headerView'>
+				<View id='headerBar'>
+					<!-- <Button id='backButtonWhite' /> -->
+					<Label id='headerTitleLabel' />
+					<Button id='doneButton' />
+				</View>
+			</View>
+			<ScrollView id='wrapperView'>
+				<View id='headerContainer'>
+					<ImageView id='logoImage' />
+					<Label id='versionLabel' />
+					<Button id='exportRateCards' />
+					<Button id='crash' />
+				</View>
+				<View id="sectionContainer" />
+			</ScrollView>
+			<Button id='logOutButton' />
+		</View>
+	</Window>
+</Alloy>

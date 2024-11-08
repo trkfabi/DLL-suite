@@ -1,0 +1,16 @@
+'#wrapper': {
+	bubbleParent: false
+},
+'#rateTypeBar': {
+	right: 50,
+	index: 0
+},
+'#resetOptionsButton': {
+	right: 10,
+	width: 35,
+	height: 35,
+	image: '/images/bt_quotescreen_resettodefault.png'
+},
+'#resetOptionsButton[platform=android]': {
+	backgroundImage: '/images/ic_payment_arrow.png'
+}

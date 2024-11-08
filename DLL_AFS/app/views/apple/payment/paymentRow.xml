@@ -1,0 +1,20 @@
+<Alloy>
+	<TableViewRow id='paymentRow'>
+		<View id='paymentView'>
+			<View class='divider' />
+			<View id='paymentHeaderView'>
+				<Label id='numberLabel' />
+				<Label id='termLabel' />
+				<Label id='rateFactorLabel' />
+				<Label id='paymentLabel' />
+				<Button id='expandButton' />
+				<View id='dragLinesView' />
+			</View>
+			<View class='divider' />
+			<View id='optionsView'>
+				<TabbedBar id='termBar' />
+				<View id='verticalDividerView' />
+			</View>
+		</View>
+	</TableViewRow>
+</Alloy>

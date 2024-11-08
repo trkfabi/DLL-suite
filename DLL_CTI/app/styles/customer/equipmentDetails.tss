@@ -1,0 +1,258 @@
+'#wrapper': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: "vertical",
+	backgroundColor: Alloy.Globals.colors.transparent,
+	expanded: true,
+	heightCollapsed: 40
+},
+'#wrapper[platform=ios]': {
+	clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED
+},
+"#titleLabel": {
+	left: 48,
+	right: 60,
+	text: L('equipment_item'),
+	color: Alloy.Globals.colors.azureRadiance,
+	font: {
+		fontFamily: 'HelveticaNeue-Bold',
+		fontSize: 13
+	}
+},
+"#titleLabel[platform=android]": {
+	height: Ti.UI.SIZE,
+	font: {
+		fontFamily: 'Roboto-Bold',
+		fontSize: 15
+	},
+
+}
+"#expandCollapseButton[platform=ios]": {
+	right: 12,
+	width: 40,
+	height: 40,
+	image: '/images/bt_quotescreen_equipmentprice_expand.png',
+	imageExpanded: '/images/bt_quotescreen_equipmentprice_contract.png',
+	imageCollapsed: '/images/bt_quotescreen_equipmentprice_expand.png',
+	expandProperty: 'image',
+	touchEnabled: false
+},
+"#expandCollapseButton[platform=android]": {
+	left: 315,
+	right: 6,
+	width: 40,
+	height: 40,
+	backgroundImage: '/images/bt_quotescreen_equipmentprice_expand.png',
+	imageExpanded: '/images/bt_quotescreen_equipmentprice_contract.png',
+	imageCollapsed: '/images/bt_quotescreen_equipmentprice_expand.png',
+	touchEnabled: false
+},
+'#makeField': {
+	hintText: L('make')
+},
+'#modelField': {
+	hintText: L('model')
+},
+'#descriptionField': {
+	hintText: L('description')
+},
+'#yearField': {
+	hintText: L('year')
+},
+'#serialNoField': {
+	hintText: L('serial_number')
+},
+
+'#qtyMinusButton': {
+	left: 0,
+	backgroundImage: '/images/it_customerinfo_counter_left_out.png',
+	backgroundSelectedImage: '/images/it_customerinfo_counter_left_pressed.png'
+},
+'#qtyField': {
+
+},
+'#qtyMoreButton': {
+	right: 0,
+	backgroundImage: '/images/it_customerinfo_counter_right_out.png',
+	backgroundSelectedImage: '/images/it_customerinfo_counter_right_pressed.png'
+},
+'#deleteButton': {
+	left: 8,
+	width: 35,
+	height: 35,
+},
+'#deleteButton[platform=ios]': {
+	image: 'images/bt_customerinfo_removeitem.png',
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+},
+'#deleteButton[platform=android]': {
+	backgroundImage: '/images/bt_customerinfo_removeitem.png'
+},
+"#makeAutocompleteContainer": {
+	left: 8,
+	right: 0,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.lightGrey
+},
+"#equipmentStatus[platform=ios]": {
+	top: 15,
+	left: 20,
+	right: 20,
+	height: 35,
+	labels: [L("new_str"), L("used")],
+	tintColor: Alloy.Globals.colors.abbey
+},
+"#equipmentStatus[platform=android]": {
+	selectColor: Alloy.Globals.colors.white,
+	tintColor: Alloy.Globals.colors.mountbattenPink,
+	borderColor: Alloy.Globals.colors.mountbattenPink,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	style: Alloy.Globals.tabbedBar.STYLE_TABBED_BAR,
+	top: 15,
+	left: 20,
+	right: 20,
+	height: 35,
+	labels: [L("new_str"), L("used")]
+},
+"#newButton": {
+	title: L('new_uppercase'),
+	height: Ti.UI.FILL,
+	color: "#947987",
+	borderWidth: 1,
+	borderColor: Alloy.Globals.colors.white,
+	font: {
+		fontWeight: "bold"
+	},
+	width: '50%',
+	left: 0,
+},
+"#usedButton": {
+	height: Ti.UI.FILL,
+	color: "#947987",
+	borderWidth: 1,
+	borderColor: Alloy.Globals.colors.white,
+	font: {
+		fontWeight: "bold"
+	},
+	width: '50%',
+	title: L('used_uppercase'),
+	right: 0
+},
+".extraSpace": {
+	width: Ti.UI.FILL,
+	height: 10
+},
+
+".header": {
+	left: 0,
+	right: 0,
+	height: 40,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'.row': {
+	left: 0,
+	right: 0,
+	height: 50,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+".row[platform=android]": {
+	height: 60,
+
+}
+'.separator': {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.tundora
+},
+".field": {
+	top: 24,
+	left: 20,
+	right: 20,
+	height: 20,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	bubbleParent: false,
+	color: Alloy.Globals.colors.shuttleGray,
+	tintColor: Alloy.Globals.colors.azureRadiance
+},
+".field[platform=ios]": {
+	font: {
+		fontSize: 18,
+		fontFamily: "HelveticaNeue-Light"
+	},
+}
+".field[platform=android]": {
+	top: 20,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: 18,
+		fontFamily: "Roboto-Light"
+	},
+	hintTextColor: Alloy.Globals.colors.shuttleGray
+}
+".fieldBottomLine": {
+	bottom: 0,
+	left: 18,
+	right: 10,
+	height: 5,
+	backgroundImage: "/images/im_customerinfo_textline_large_w.png"
+},
+"fieldBottomLine[platform=android]": {
+	bottom: 0,
+}
+'.qtyLabel': {
+	left: 18,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.white,
+	text: L('quantity'),
+	font: {
+		fontSize: 15,
+		fontFamily: 'HelveticaNeue-light'
+	}
+},
+'.qtyButtonsContainer': {
+	right: 10,
+	width: 122,
+	height: 34,
+	borderRadius: 5,
+	borderColor: Alloy.Globals.colors.mountbattenPink,
+	borderWidth: 1
+},
+".leftTab": {
+	left: 0,
+	width: 4,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.silver
+},
+".leftTab[platform=android]": {
+	height: 60,
+}
+".leftTabHeader[platform=android]": {
+	left: 0,
+	width: 4,
+	height: 40,
+	backgroundColor: Alloy.Globals.colors.silver
+}
+".extraLeftTab[platform=android]": {
+	left: 0,
+	width: 4,
+	height: 10,
+	backgroundColor: Alloy.Globals.colors.silver
+}
+".titleRow": {
+	height: 35
+},
+".headerLabel": {
+	left: 10,
+	color: Alloy.Globals.colors.mainWindowTextColor,
+	touchEnabled: false,
+	font: {
+		fontSize: 13,
+		fontFamily: "HelveticaNeue-Bold"
+	}
+}
+"Button[platform=android]": {
+	backgroundColor: "transparent",
+	borderColor: "transparent"
+},

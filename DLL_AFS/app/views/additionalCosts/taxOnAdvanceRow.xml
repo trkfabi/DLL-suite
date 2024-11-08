@@ -1,0 +1,16 @@
+<Alloy>
+	<View id='taxOnAdvanceRow'>
+		<View id='taxesOnAdvRowHeader' class="additionalAmountRow">
+			<Label id='taxesOnAdvLabel' class='additionalAmountTitle' />
+		</View>
+		<View id="taxesOnAdvRow" class="additionalAmountRow">
+			<Label id='taxesOnAdvCurrencySymbol' class='currencySymbol' />
+			<TextField id="taxesOnAdvInputTextField" class="additionalLeftField kbNumeric" tag="taxOnAdvance" />
+			<View class="textFieldUnderlineWhite additionalLeftUnderline" />
+			<Button id="taxesOnAdvClear" class="additionalClearButton" />
+			<Label class='currencySymbol' />
+			<Label id="taxesOnAdvAmountLabel" class="additionalField kbNumeric" />
+			<View class="textFieldUnderlineWhite additionalUnderline" />
+		</View>
+	</View>
+</Alloy>

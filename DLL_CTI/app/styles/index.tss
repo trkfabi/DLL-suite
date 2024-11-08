@@ -1,0 +1,8 @@
+"#dashboardWindow": {
+	title: L("quote"),
+	navBarHidden: true,
+	backgroundColor: Alloy.Globals.colors.white
+}
+"#dashboardWindow[platform=android]": {
+	windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_STATE_ALWAYS_HIDDEN | Ti.UI.Android.SOFT_INPUT_ADJUST_RESIZE,
+}

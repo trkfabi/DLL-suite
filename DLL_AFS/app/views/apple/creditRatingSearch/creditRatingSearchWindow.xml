@@ -1,0 +1,32 @@
+<Alloy>
+	<Window id="window">
+		<LeftNavButton>
+			<Button id="cancelButton" />
+		</LeftNavButton>
+		<TitleControl>
+			<Label id="headerTitleLabel" />
+		</TitleControl>
+		<SearchBar id="searchBar" platform="ios" />
+		<View id="loadingView">
+			<ActivityIndicator id="activityIndicator" />
+			<Label id="searchingLabel" />
+			<Label id="waitLabel" />
+		</View>
+		<ListView id="creditRatingList">
+			<Templates>
+				<Require src="apple/creditRatingSearch/found" />
+				<Require src="apple/creditRatingSearch/notFound" />
+			</Templates>
+
+			<ListSection id="notFoundSection" class="leftSpacing" />
+
+			<ListSection id="foundSection" class="leftSpacing">
+				<HeaderView>
+					<View id="listSectionHeaderView">
+						<Label id="headerTitle" class="leftSpacing" />
+					</View>
+				</HeaderView>
+			</ListSection>
+		</ListView>
+	</Window>
+</Alloy>

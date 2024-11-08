@@ -1,0 +1,9 @@
+<Alloy>
+	<View id='documentLanguageContainer'>
+		<View class='horzLine onTop' />
+		<Label id='documentLanguageTitle' />
+		<Label id='selectedLanguageLabel' />
+		<ImageView id='changeLanguageImage' />
+		<View class='horzLine onBottom' />
+	</View>
+</Alloy>

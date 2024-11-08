@@ -1,0 +1,126 @@
+'#equipmentRow': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'#equipmentView': {
+	top: 5,
+	right: 5,
+	left: 5,
+	height: Ti.UI.SIZE,
+	layout: 'vertical',
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#productLabel': {
+	right: 50,
+	height: 20,
+	hintText: L('select_product_service'),
+	hintTextColor: Alloy.Globals.colors.silver,
+	maxLength: 25,
+	ellipsize: true,
+	editable: false
+},
+'#pickerIcon': {
+	right: 0,
+	width: 40,
+	height: 40,
+	backgroundImage: '/images/bt_pickeroptions.png'
+},
+'#descriptionRow': {
+	right: 10,
+	left: 10,
+	top: 0,
+	height: 54
+},
+'#descriptionField': {
+	hintText: L('enter_description'),
+	hintTextColor: Alloy.Globals.colors.silver,
+	ellipsize: true,
+	height: Ti.UI.SIZE,
+	left: 10,
+	right: 10,
+	bottom: 0,
+	scrollable: false
+},
+'#quantityWrapper': {
+	left: 0,
+	width: '47%',
+	height: Ti.UI.FILL,
+},
+'#priceWrapper': {
+	right: 0,
+	width: '47%',
+	height: Ti.UI.FILL
+},
+'#quantityField': {
+	width: Ti.UI.FILL,
+	hintText: L('qty'),
+	ellipsize: true
+},
+'#priceField': {
+	width: Ti.UI.FILL,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	hintText: L('unit_price'),
+	ellipsize: true
+},
+'#extendedPriceLabel': {
+	left: 10,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	text: L('extended_price'),
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 15
+	},
+	color: Alloy.Globals.colors.black
+},
+'#extendedPriceValueLabel': {
+	right: 10,
+	width: 120,
+	height: 20,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 15
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	wordWrap: false,
+	ellipsize: true,
+	color: Alloy.Globals.colors.black
+},
+'.inputField': {
+	right: 10,
+	left: 10,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 15
+	},
+},
+'.rowView': {
+	right: 10,
+	left: 10,
+	top: 7,
+	height: 44
+},
+'.firstRow': {},
+'.lastRow': {
+	top: 0,
+	bottom: 10,
+	height: 55
+},
+'.priceSymbol': {
+	right: '44%',
+	text: '$',
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 11
+	}
+},
+'.fieldSymbol': {
+	left: 1
+},
+'.inputField': {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 15
+	}
+},

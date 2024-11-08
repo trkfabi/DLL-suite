@@ -1,0 +1,94 @@
+'#residualRow': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+"#residualCalculation": {
+	height: 0
+},
+"#residualCalculation[platform=ios]": {
+	clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED
+},
+'#residualValueExpandInputTextField': {
+	hintText: L('original_invoice'),
+	ellipsize: true
+},
+'#residualValueExpandInputTextField': {
+	hintText: L('residual')
+},
+"#residualValueExpandCheck": {
+	right: 5,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	touchEnabled: false,
+	image: '/images/bt_quotescreen_cancel.png',
+},
+'#residualValueLabel': {
+	text: L('residual_value')
+},
+'#residualValueButton': {
+	right: 5,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	image: '/images/bt_quotescreen_picklist.png'
+},
+"#residualCalculatorButton": {
+	right: 0,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	image: '/images/ic_residualcalc_contracted.png',
+	imageContracted: '/images/ic_residualcalc_contracted.png',
+	imageExpanded: '/images/ic_residualcalc_expanded.png'
+},
+"#residualCalculatorButton[platform=android]": {
+	right: 7,
+	width: 28,
+	height: 36,
+},
+"#originalBottomLine": {
+	left: 30,
+	bottom: 5,
+	width: 100
+},
+"#originalInvoiceClear": {
+	left: 3
+},
+"#originalCurrencySymbol": {
+	left: 29
+},
+"#originalInvoiceInputTextField": {
+	hintText: L("original_invoice"),
+	left: 36,
+	width: 95,
+	clearIcon: 'originalInvoiceClear',
+	ellipsize: true
+},
+"#originalInvoiceInputTextField[platform=ios]": {
+	width: 90
+},
+"#percentualResidualClear": {
+	right: 160
+},
+"#percentualResidualInputTextField": {
+	hintText: "Residual",
+	width: 95,
+	clearIcon: 'percentualResidualClear'
+},
+"#percentualResidualInputTextField[platform=ios]": {
+	width: 90
+},
+'.currencySymbolPorcentage': {
+	text: '%',
+	font: {
+		fontSize: 12
+	},
+	color: Alloy.Globals.colors.white
+},
+'.currencySymbolPorcentage[platform=ios]': {
+	left: 160,
+	width: 11,
+}
+'.currencySymbolPorcentage[platform=android]': {
+	right: 153,
+	width: Ti.UI.SIZE
+},

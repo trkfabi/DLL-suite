@@ -1,0 +1,65 @@
+'#navWindow': {
+	modal: true
+},
+'#window': {
+	navBarHidden: false,
+	title: 'Submission History',
+	layout: 'vertical',
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white,
+	barColor: Alloy.Globals.colors.titleBlue,
+	navTintColor: Alloy.Globals.colors.white,
+	titleAttributes: {
+		color: Alloy.Globals.colors.white
+	}
+},
+'#closeButton': {
+	title: 'Close'
+},
+'#statusBar': {
+	top: 10,
+	left: 10,
+	right: 10,
+	height: 35,
+	index: 0
+},
+'#historyList': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	defaultItemTemplate: 'attemptTemplate',
+	separatorColor: Alloy.Globals.colors.darkPink,
+	separatorStyle: Titanium.UI.iPhone.ListViewSeparatorStyle.SINGLE_LINE,
+	// style : Titanium.UI.iPhone.ListViewStyle.GROUPED,
+	separatorInsets: {
+		left: 0,
+		right: 0
+	}
+},
+'#attemptNumberLabel': {
+
+},
+'#attemptDateLabel': {
+
+},
+'#attemptTimeLabel': {
+
+},
+'#attemptStatusLabel': {
+
+},
+'.attemptContainer': {
+	width: Ti.UI.FILL,
+	height: 30,
+	layout: 'horizontal'
+},
+'.attemptLabel': {
+	left: '5%',
+	width: '20%',
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.darkPink,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 11
+	}
+},

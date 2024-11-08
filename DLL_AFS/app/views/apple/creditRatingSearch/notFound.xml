@@ -1,0 +1,7 @@
+<Alloy>
+	<ItemTemplate id="notFoundTemplate" name="notFoundTemplate">
+		<View id="listItemContainer">
+			<Label bindId="accountName" id="accountName" class="title leftSpacing" />
+		</View>
+	</ItemTemplate>
+</Alloy>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta charset="UTF-8">
+
+
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="viewport" content="width=device-width,
+	                 height=device-height, user-scalable=no" />
+  <title>AGCO Credit Agreement</title>
+  <style type="text/css">
+		h2 {
+			color : #000;
+			font-family:"HelveticaNeue-Bold";
+			font-size: 20px;
+			line-height: 25px;
+			text-align: center;
+		}
+		h1 {
+			color : #0081bf;
+			font-family: "HelveticaNeue";
+			font-size: 17px;
+			line-height: 20px;
+			text-align: left;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		p {
+			color: #231F20;
+			font-family: "HelveticaNeue";
+			font-size: 14px;
+			line-height: 15px;
+			text-align: left;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+	</style>
+	<script>
+		Ti.API.info("[agco_credit_terms.html] - LOADED");
+		Ti.App.addEventListener("app:loadTermsPopup", refresh);
+
+		function refresh(e){
+			Ti.App.removeEventListener("app:loadTermsPopup", refresh);
+			Ti.API.info("[agco_credit_terms.html] - app:loadTermsPopup");
+			Ti.API.info(e);
+
+			try{
+				document.getElementById('terms_container').innerHTML = e.terms;
+			} catch(err){
+				Ti.API.error('[agco_credit_terms.html] - ' + JSON.stringify(err, null, '\t'))
+			}
+		}
+
+	</script>
+  
+</head><body>
+<h1>Credit Application Agreement</h1>
+<div id="terms_container"></div>
+</body></html>

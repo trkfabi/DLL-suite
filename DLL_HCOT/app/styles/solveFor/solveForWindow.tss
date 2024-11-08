@@ -1,0 +1,481 @@
+"#window": {
+	navBarHidden: true,
+	backgroundColor: 'transparent'
+
+},
+"#window[platform=android]": {
+	theme: 'Theme.NoActionBar',
+	windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_ADJUST_PAN,
+	fullscreen: true
+},
+
+"#container": {
+	backgroundImage: "/images/bg_solvefor_screenbg.png",
+	top: Alloy.Globals.height,
+	left: 0,
+	right: 0,
+	width: Ti.UI.FILL,
+	height: Alloy.Globals.height,
+	contentWidth: Ti.UI.FILL,
+	contentHeight: Ti.UI.SIZE,
+	layout: 'vertical',
+	visibleTop: 0,
+	hiddenTop: Alloy.Globals.height
+},
+"#container[platform=android]": {
+	scrollingEnabled: false
+},
+"#labelTitle": {
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.white,
+	text: L("solve_for")
+},
+"#labelTitle[platform=ios]": {
+	left: 10,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 26
+	}
+},
+"#labelTitle[platform=android]": {
+	left: 15,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 28
+	},
+}
+"#cancelButton[platform=ios]": {
+	right: 90,
+	image: "/images/ic_goalseeker_cancel.png"
+},
+"#cancelButton[if=Alloy.Globals.hasNotch]": {
+	right: 93
+},
+"#cancelButton[platform=android]": {
+	right: 95,
+	backgroundImage: "/images/ic_goalseeker_cancel.png"
+},
+"#refreshButton[platform=ios]": {
+	right: 49,
+	image: "/images/ic_goalseeker_undo.png"
+},
+"#refreshButton[if=Alloy.Globals.hasNotch]": {
+	right: 51
+},
+"#refreshButton[platform=android]": {
+	right: 55,
+	backgroundImage: "/images/ic_goalseeker_undo.png"
+},
+"#doneButton[platform=ios]": {
+	right: 8,
+	image: "/images/ic_goalseeker_done.png"
+},
+"#doneButton[if=Alloy.Globals.hasNotch]": {
+	right: 6
+},
+"#doneButton[platform=android]": {
+	right: 15,
+	backgroundImage: "/images/ic_goalseeker_done.png"
+},
+"#paymentEditImage": {
+	tag: 'payment'
+},
+"#paymentLabel": {
+	text: L("payment"),
+	tag: 'payment'
+},
+"#paymentLabel[if=Alloy.Globals.hasNotch]": {
+	top: 12
+},
+"#paymentSymbol[if=Alloy.Globals.hasNotch]": {
+	top: 40
+},
+"#paymentValueContainer": {
+	tag: 'payment'
+},
+"#paymentValueContainer[if=Alloy.Globals.hasNotch]": {
+	top: 35
+},
+"#paymentValueField": {
+	tag: 'payment',
+	bubbleParent: false
+},
+"#paymentValueField[if=Alloy.Globals.hasNotch]": {
+	top: 35
+}
+"#paymentValueField[platform=android]": {
+	softKeyboardOnFocus: Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS
+}
+"#equipmentEditImage": {
+	tag: 'equipment'
+},
+'#equipmentLabel': {
+	text: L('equipment_cost'),
+	tag: 'equipment'
+},
+"#equipmentValueContainer": {
+	tag: 'equipment'
+},
+"#equipmentValueField": {
+	tag: 'equipment',
+	bubbleParent: false
+},
+"#equipmentValueField[platform=android]": {
+	softKeyboardOnFocus: Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS
+},
+"#rateEditImage": {
+	tag: 'rate'
+},
+"#rateLabel": {
+	text: L("rate_factor"),
+	tag: 'rate'
+},
+"#rateLabel[if=Alloy.Globals.hasNotch]": {
+	top: 58.2,
+	right: 24
+},
+"#rateValue": {
+	tag: 'rate'
+},
+"#rateValue[if=Alloy.Globals.hasNotch]": {
+	top: 79
+},
+"#rateValueField": {
+	tag: 'rate',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	bubbleParent: false
+},
+"#additionalCostEditImage": {
+	tag: 'additional'
+},
+'#additionalCostAllowanceLabel': {
+	text: L('additional'),
+	tag: 'additional'
+},
+'#additionalCostAllowanceLabel[if=Alloy.Globals.hasNotch]': {
+	top: 38,
+	right: 35
+},
+"#additionalCostValue": {
+	width: 90,
+	minimumFontSize: 14,
+	tag: 'additional',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT
+},
+"#additionalCostValue[if=Alloy.Globals.hasNotch]": {
+	top: 59,
+	right: 11
+},
+'#additionalCostValue[platform=android]': {
+	width: Ti.UI.SIZE,
+},
+"#additionalCostValueField": {
+	tag: 'additional',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	bubbleParent: false,
+	padding: {
+		left: 11
+	}
+},
+"#additionalCostValueField[if=Alloy.Globals.hasNotch]": {
+	top: 59,
+	right: 11
+},
+"#additionalCostValueField[platform=android]": {
+	softKeyboardOnFocus: Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS
+},
+".header": {
+	top: 10,
+	width: Ti.UI.FILL,
+	height: '10%'
+},
+".header[if=Alloy.Globals.hasNotch]": {
+	top: 26
+},
+".sectionContainer": {
+	width: Ti.UI.FILL,
+	height: '43%'
+},
+".sectionContainer[if=Alloy.Globals.hasNotch]": {
+	height: '40%'
+},
+'.sectionTop[if=Alloy.Globals.hasNotch]': {
+	top: 9
+},
+'.sectionBottom[if=Alloy.Globals.hasNotch]': {
+	top: 0
+},
+".dollarSymbol": {
+	text: L("currency_symbol"),
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 20
+	},
+	color: Alloy.Globals.colors.white
+}
+".dollarSymbol[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 20
+	},
+},
+".topButton[platform=ios]": {
+	width: 36,
+	height: 36
+},
+".topButton[if=Alloy.Globals.hasNotch]": {
+	width: 38,
+	height: 38
+},
+".topButton[platform=android]": {
+	width: 40,
+	height: 40
+},
+".titleLabel": {
+	top: 5,
+	color: Alloy.Globals.colors.white
+},
+".titleLabel[platform=ios]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 14
+	}
+},
+".titleLabel[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 18
+	}
+},
+".leftTitle[platform=ios]": {
+	left: 25
+},
+".leftTitle[if=Alloy.Globals.hasNotch]": {
+	left: 31
+},
+".leftTitle[platform=android]": {
+	left: 30
+},
+".rightTitle": {
+	top: 50
+},
+".rightTitle[platform=ios]": {
+	right: 25
+},
+".rightTitle[platform=android]": {
+	right: 30
+},
+".leftSymbol[platform=ios]": {
+	top: 30,
+	left: 10
+},
+".leftSymbol[platform=android]": {
+	top: 30,
+	left: 15
+},
+".valueContainer": {
+	width: 200,
+	height: Ti.UI.SIZE,
+	layout: "horizontal"
+},
+".valueContainer[platform=ios]": {
+	top: 25,
+	left: 30
+},
+".valueContainer[platform=android]": {
+	top: 30,
+	left: 35
+},
+".valueIntLabel": {
+	color: Alloy.Globals.colors.white,
+	touchEnabled: false
+},
+".valueIntLabel[platform=ios]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 27
+	}
+},
+".valueIntLabel[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 27
+	},
+},
+".valueDecLabel": {
+	top: 7,
+
+	color: Alloy.Globals.colors.white,
+	touchEnabled: false
+},
+".valueDecLabel[platform=ios]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 20
+	}
+},
+".valueDecLabel[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 20
+	}
+},
+".rightValue": {
+	top: 70,
+	color: Alloy.Globals.colors.nobel,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT
+},
+".rightValue[platform=ios]": {
+	right: 5,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 20
+	}
+},
+".rightValue[if=Alloy.Globals.hasNotch]": {
+	right: 12
+},
+".rightValue[platform=android]": {
+	right: 5,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 20
+	}
+},
+".dialContainer": {
+	bottom: 0,
+	width: Alloy.Globals.solveForDrawerWidth,
+	height: Alloy.Globals.solveForDrawerWidth
+},
+"#equipmentCostContainer[if=Alloy.Globals.hasNotch]": {
+	bottom: 22
+},
+".dialTicks": {
+	backgroundImage: '/images/im_dialbg_equipment.png'
+},
+".dialLabel": {
+	color: Alloy.Globals.colors.white,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+},
+".dialLabel[platform=ios]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 15
+	}
+},
+".dialLabel[platform=android]": {
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 20
+	}
+},
+".rightSymbol[platform=ios]": {
+	top: 73,
+	right: 95,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 13
+	}
+},
+".rightSymbol[platform=android]": {
+	top: 70,
+	right: 107,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 18
+	}
+},
+'#additionalCostSymbol[if=Alloy.Globals.hasNotch]': {
+	top: 63.5,
+	right: 103
+},
+".leftField": {
+	width: 200,
+	color: Alloy.Globals.colors.white,
+	visible: false
+},
+".leftField[platform=ios]": {
+	top: 25,
+	left: 30,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 27
+	}
+},
+".leftField[platform=android]": {
+	top: 25,
+	left: 30,
+	color: Alloy.Globals.colors.white,
+	visible: false,
+	softKeyboardOnFocus: Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 27
+	}
+},
+".rightField": {
+	top: 70,
+	width: 100,
+	color: Alloy.Globals.colors.white,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	visible: false
+},
+".rightField[platform=ios]": {
+	right: 5,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 20
+	}
+},
+".rightField[platform=android]": {
+	right: 5,
+	width: 95,
+	height: Ti.UI.SIZE,
+	softKeyboardOnFocus: Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 20
+	}
+},
+".leftPencil": {
+	height: 12,
+	width: 12,
+	backgroundImage: "/images/im_pencil_white.png"
+},
+".leftPencil[platform=ios]": {
+	top: 8,
+	left: 5
+},
+".leftPencil[if=Alloy.Globals.hasNotch]": {
+	height: 14,
+	width: 14,
+	top: 7,
+	left: 13
+},
+".leftPencil[platform=android]": {
+	top: 10,
+	left: 10
+},
+"#paymentEditImage[if=Alloy.Globals.hasNotch]": {
+	top: 14,
+	left: 13
+},
+".rightPencil": {
+	height: 12,
+	width: 12,
+	backgroundImage: "/images/im_pencil_white.png"
+},
+".rightPencil[platform=ios]": {
+	top: 51,
+	right: 3
+},
+".rightPencil[if=Alloy.Globals.hasNotch]": {
+	height: 14,
+	width: 14,
+	top: 40,
+	right: 11
+},
+".rightPencil[platform=android]": {
+	top: 57,
+	right: 8
+}

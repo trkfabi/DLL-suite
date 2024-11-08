@@ -1,0 +1,158 @@
+'#container': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+
+'#header': {
+	backgroundColor: Alloy.Globals.colors.azureRadiance
+},
+'#flipContainer': {
+	top: Alloy.Globals.headerHeight,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'#flipContainer[platform=android]': {
+	top: 48
+},
+'#body': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'.navButton[platform=ios]': {
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+},
+'#navLeftButton': {
+	left: 5,
+	top: 20,
+	width: 40,
+	height: 40
+},
+'#navLeftButton[platform=ios]': {
+	image: '/images/bt_quotescreen_quotelist.png'
+}
+'#navLeftButton[platform=android]': {
+	top: 6,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/bt_quotescreen_quotelist.png'
+}
+'#uploadButton': {
+	right: 50,
+	top: 20,
+	width: 40,
+	height: 40
+},
+'#uploadButton[platform=ios]': {
+	image: '/images/bt_quotescreen_share.png'
+}
+'#uploadButton[platform=android]': {
+	top: 6,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/bt_quotescreen_share.png'
+}
+'#flipButton': {
+	top: 20,
+	width: 40,
+	height: 40
+},
+'#flipButton[platform=ios]': {
+	image: '/images/bt_quotescreen_centaltoggle2.png'
+}
+'#flipButton[platform=android]': {
+	top: 6,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/bt_quotescreen_centaltoggle2.png'
+},
+'#summaryButton': {
+	top: 20,
+	right: 5,
+	width: 40,
+	height: 40
+},
+'#summaryButton[platform=ios]': {
+	image: '/images/bt_quotescreen_preview.png'
+}
+'#summaryButton[platform=android]': {
+	top: 6,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/bt_quotescreen_preview.png'
+},
+'#paymentOptionsContainer': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+'#addRow': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 55,
+	borderWidth: 1,
+	borderColor: Alloy.Globals.colors.silver,
+	backgroundColor: Alloy.Globals.colors.white
+}
+'#equipmentWrapper': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+},
+'#closeArrow[platform=ios]': {
+	image: '/images/ic_closepannel_arrow.png'
+},
+'#closeArrow[platform=android]': {
+	backgroundImage: '/images/ic_closepannel_arrow.png'
+},
+'#paymentsTableView': {
+	top: 85,
+	bottom: 0,
+	width: Ti.UI.FILL,
+	contentWidth: '100%',
+	contentHeight: 'auto',
+	scrollType: 'vertical',
+	layout: 'vertical',
+	bubbleParent: false
+},
+'#numberContainer': {
+	touchEnabled: false
+},
+'#numberLabel': {
+	left: 12,
+	width: 34,
+	height: 34,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 18
+	},
+	text: '...',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	borderRadius: 17,
+	color: Alloy.Globals.colors.azureRadiance,
+	borderColor: Alloy.Globals.colors.azureRadiance,
+	borderWidth: 1,
+	touchEnabled: false
+},
+'#numberLabel[platform=android]': {
+	width: 39,
+	height: 39,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 18
+	},
+	borderRadius: 20
+},
+'#addLabel': {
+	left: 56,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 22
+	},
+	text: L('add_new'),
+	color: Alloy.Globals.colors.azureRadiance,
+	touchEnabled: false
+}

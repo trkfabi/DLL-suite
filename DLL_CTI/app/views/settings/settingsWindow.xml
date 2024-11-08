@@ -1,0 +1,27 @@
+<Alloy>
+	<Window id="window">
+		<View id="header" platform="android">
+			<Label id="titleLabel" />
+			<View id="doneButton">
+				<Label id="doneTitle" />
+			</View>
+		</View>
+
+		<View id="wrapper">
+			<ImageView id="logoImage" />
+			<Label id="versionLabel" />
+			<Button id="crash" />
+		</View>
+		<View id="logOutButton">
+			<Label id="logOutButtonText" />
+		</View>
+	</Window>
+
+	<View id="cancelButton" platform="ios">
+		<Label id="cancelTitle" />
+	</View>
+	<View id="doneButton" platform="ios">
+		<Label id="doneTitle" />
+	</View>
+
+</Alloy>

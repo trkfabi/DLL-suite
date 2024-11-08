@@ -1,0 +1,8 @@
+<Alloy>
+	<View id="container">
+		<View id="circularDialPressed" />
+		<View id="circularDial" />
+		<View id="centerTarget" />
+		<View id="touchPoint" />
+	</View>
+</Alloy>

@@ -1,0 +1,77 @@
+'#container': {
+	top: 10,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+},
+'#contentWrapper': {
+	left: 0,
+	right: 0,
+	height: Ti.UI.SIZE
+},
+'#quantityLabel': {
+	top: 5,
+	left: 0,
+	width: 43,
+	color: Alloy.Globals.colors.thunder,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.regular,
+		fontSize: 14
+	}
+},
+'#productLabel': {
+	top: 5,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	color: Alloy.Globals.colors.thunder,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.regular,
+		fontSize: 14
+	}
+},
+'#totalLabel': {
+	top: 5,
+	right: 15,
+	width: 100,
+	height: 15,
+	color: Alloy.Globals.colors.thunder,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.medium,
+		fontSize: 14
+	},
+	minimumFontSize: 12
+},
+'#productDetailContainer': {
+	top: 0,
+	left: 50,
+	right: 110,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+'#priceContainer': {
+	top: 5,
+	bottom: 5,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'horizontal',
+	left: 0
+	// horizontalWrap : false
+},
+'#unitPriceLabel': {
+	top: 0,
+	left: 0,
+	text: L('unit_price')
+},
+'#unitPriceValue': {
+	left: 5
+},
+'.priceLabel': {
+	width: Ti.UI.SIZE,
+	color: Alloy.Globals.colors.shuttleGray,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.light,
+		fontSize: 13
+	}
+}

@@ -1,0 +1,38 @@
+'#window': {
+	backgroundColor: Alloy.Globals.colors.blackHalfTransparent
+},
+'#container': {
+	bottom: 0,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#toolbar': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 40
+},
+'#cancelButton': {
+
+},
+'#doneButton': {
+
+},
+'#datePicker': {
+	top: 40,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: 210
+},
+'.pickerRowLabel': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: Alloy.Globals.colors.black,
+	font: {
+		fontFamily: Alloy.Globals.fonts.regular,
+		fontSize: 13
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	touchEnabled: false
+}

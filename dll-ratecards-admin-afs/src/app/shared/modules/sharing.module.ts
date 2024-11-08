@@ -1,0 +1,117 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { SharedRoutingModule } from './routing/shared-routing.module';
+
+import { KendoUIModules, MaterialModules } from '@layout/ui-modules';
+
+import { ToasterModule } from 'angular2-toaster';
+
+import {
+	AmountFinanceComponent,
+	CheckboxListComponent,
+	GridComponent,
+	GridRatecardinputsEditableComponent,
+	GridRatecardinputsReadonlyComponent,
+	GridRatefactorsCompareComponent,
+	GridRatefactorsComponent,
+	IncreasePointsComponent,
+	LoadingComponent,
+	LoginComponent,
+	OptionsRadioComponent,
+	ProductCategoriesDialogComponent,
+	ProductDialogComponent,
+	RateProgramDialogComponent,
+	SettingRateCardDialogComponent,
+	SettingVendorCodesDialogComponent,
+	TermsComponent,
+	TermsListDialogComponent,
+	ToasterBodyComponent,
+	VendorDialogComponent,
+} from '@shared/components';
+
+import {
+	AmountRangesPipe,
+	ArrayInlinePipe,
+	NumberToArrayPipe,
+	PurchaseOptionsPipe,
+	RateFactorRoundPipe,
+	TermsSelectedPipe,
+} from '@shared/pipes';
+
+@NgModule({
+	declarations: [
+		CheckboxListComponent,
+		LoadingComponent,
+		ToasterBodyComponent,
+		GridComponent,
+		GridRatefactorsCompareComponent,
+		GridRatecardinputsEditableComponent,
+		GridRatefactorsComponent,
+		LoginComponent,
+		ProductCategoriesDialogComponent,
+		ProductDialogComponent,
+		RateProgramDialogComponent,
+		TermsComponent,
+		SettingRateCardDialogComponent,
+		SettingVendorCodesDialogComponent,
+		VendorDialogComponent,
+		AmountFinanceComponent,
+		IncreasePointsComponent,
+		OptionsRadioComponent,
+		TermsListDialogComponent,
+		AmountRangesPipe,
+		TermsSelectedPipe,
+		ArrayInlinePipe,
+		PurchaseOptionsPipe,
+		NumberToArrayPipe,
+		GridRatecardinputsReadonlyComponent,
+		RateFactorRoundPipe,
+	],
+	exports: [
+		CommonModule,
+		LoadingComponent,
+		ToasterBodyComponent,
+		CheckboxListComponent,
+		GridComponent,
+		GridRatefactorsCompareComponent,
+		GridRatefactorsComponent,
+		GridRatecardinputsEditableComponent,
+		ProductCategoriesDialogComponent,
+		ProductDialogComponent,
+		LoginComponent,
+		TermsComponent,
+		KendoUIModules,
+		MaterialModules,
+		FormsModule,
+		ReactiveFormsModule,
+		RateProgramDialogComponent,
+		ToasterModule,
+		SettingRateCardDialogComponent,
+		SettingVendorCodesDialogComponent,
+		VendorDialogComponent,
+		AmountFinanceComponent,
+		IncreasePointsComponent,
+		OptionsRadioComponent,
+		TermsListDialogComponent,
+		AmountRangesPipe,
+		TermsSelectedPipe,
+		ArrayInlinePipe,
+		PurchaseOptionsPipe,
+		NumberToArrayPipe,
+		GridRatecardinputsReadonlyComponent,
+		RateFactorRoundPipe,
+	],
+	imports: [
+		CommonModule,
+		FormsModule,
+		ReactiveFormsModule,
+		KendoUIModules,
+		MaterialModules,
+		SharedRoutingModule,
+		ToasterModule.forRoot(),
+	],
+	entryComponents: [ProductCategoriesDialogComponent],
+})
+export class SharingModule {}

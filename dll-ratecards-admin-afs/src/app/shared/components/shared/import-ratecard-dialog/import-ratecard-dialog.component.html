@@ -1,0 +1,41 @@
+<div class="dialog-container import-dialog align-center size">
+	<div class="modal-description">
+		<small> Where do you want to import a Version from? </small>
+	</div>
+	<label for="environment">Environment:</label>
+	<kendo-dropdownlist
+		[data]="environmentList"
+		[textField]="'name'"
+		[valueField]="'code'"
+		[disabled]="!environmentList"
+		[value]="environment"
+		(selectionChange)="onEnvironmentSelectChange($event)"
+		[(ngModel)]="environment"
+	>
+	</kendo-dropdownlist>
+	<div class="clearfix"></div>
+	<label for="ratecard">Rate Card:</label>
+	<kendo-dropdownlist
+		[data]="ratecardsList"
+		[textField]="'name'"
+		[valueField]="'id'"
+		[disabled]="!ratecardsList"
+		[value]="rateCard"
+		(selectionChange)="onRateCardSelectChange($event)"
+		[(ngModel)]="rateCard"
+	>
+	</kendo-dropdownlist>
+	<div class="clearfix"></div>
+	<label for="ratecard">Version:</label>
+	<kendo-dropdownlist
+		class="large"
+		[data]="rateCardsVersionList"
+		[textField]="'versionDate'"
+		[valueField]="'id'"
+		[defaultItem]="defaultVersionSelected"
+		[value]="selectedVersion"
+		[(ngModel)]="selectedVersion"
+		[disabled]="!rateCardsVersionList"
+	>
+	</kendo-dropdownlist>
+</div>

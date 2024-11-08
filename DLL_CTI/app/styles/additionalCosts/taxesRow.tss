@@ -1,0 +1,26 @@
+'#taxesLabel': {
+	text: L('taxes')
+},
+".taxesPercentUnderline": {
+	right: 170,
+	bottom: 5,
+	width: 80
+},
+'#taxesPercentSymbol': {
+	right: 240,
+	width: 15,
+
+	text: '%',
+	font: {
+		fontSize: 12
+	},
+	color: Alloy.Globals.colors.white
+},
+'#taxesPercentInputTextField': {
+	left: null,
+	width: 60,
+	right: 180
+},
+'#taxesClear': {
+	right: 10
+}

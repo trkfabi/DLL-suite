@@ -1,0 +1,30 @@
+'#insuranceTitle': {
+	text: L('insurance')
+},
+'#insuranceRow': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+"#insuranceCheck": {
+	right: 0,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	checked: false,
+	image: '/images/bt_customerinfo_checkbox_out.png',
+	imageOff: '/images/bt_customerinfo_checkbox_out.png',
+	imageOn: '/images/bt_customerinfo_checkbox_active.png'
+},
+"#insuranceCheck[platform=ios]": {
+	image: '/images/bt_customerinfo_checkbox_out_w.png',
+	imageOff: '/images/bt_customerinfo_checkbox_out_w.png',
+	imageOn: '/images/bt_customerinfo_checkbox_active_w.png'
+},
+"#insuranceCheck[platform=android]": {
+	right: 7,
+	width: 36,
+	height: 36,
+},
+'#insuranceAmountField': {
+	touchEnabled: false
+}

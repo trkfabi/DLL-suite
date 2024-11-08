@@ -1,0 +1,101 @@
+<form class="amount-finance-form" [formGroup]="amountsForm">
+	<button
+		class="button-add"
+		*ngIf="displayMinimumButton"
+		[ngClass]="{ hidden: validateHiddenMinimum() }"
+		(click)="onAddAmountRange(minimumAdd)"
+		[disabled]="disabledMinimumButton"
+	>
+		<i class="k-icon k-i-plus"></i> Add Amount Range
+	</button>
+	<div class="amount" *ngIf="displayInputText">
+		<ng-container *ngTemplateOutlet="inputsTexts; context: { form: amountsForm, property: false, delete: false }"></ng-container>
+		<ng-container
+			*ngTemplateOutlet="buttonsActions; context: { disabled: !amountsForm.valid, position: -1, display: { check: true } }"
+		></ng-container>
+	</div>
+	<ng-container *ngTemplateOutlet="errorMessage; context: { form: amountsForm }"></ng-container>
+	<div class="amounts-list" formArrayName="amounts">
+		<div class="amount-row" *ngFor="let amount of amounts.controls; let i = index">
+			<div class="amount">
+				<ng-container [formGroupName]="i">
+					<ng-container *ngTemplateOutlet="inputsTexts; context: { form: amount, property: amountProperties[i] }"></ng-container>
+					<ng-container
+						*ngTemplateOutlet="buttonsActions; context: { disabled: !amount.valid, position: i, display: amountProperties[i] }"
+					></ng-container>
+					<ng-container *ngTemplateOutlet="buttonDelete; context: { position: i, display: amountProperties[i] }"></ng-container>
+				</ng-container>
+			</div>
+			<ng-container *ngTemplateOutlet="confirmDelete; context: { position: i, display: amountProperties[i] }"></ng-container>
+			<ng-container *ngTemplateOutlet="errorMessage; context: { form: amount }"></ng-container>
+		</div>
+	</div>
+	<button class="button-add" *ngIf="displayMaximumButton" (click)="onAddAmountRange(maximumAdd)" [disabled]="disabledMaximumButton">
+		<i class="k-icon k-i-plus"></i> Add Amount Range
+	</button>
+</form>
+<ng-template #inputsTexts let-form="form" let-property="property" let-delete="delete">
+	<kendo-numerictextbox
+		[spinners]="false"
+		[format]="'n2'"
+		[decimals]="2"
+		class="input-text"
+		type="text"
+		placeholder="Min"
+		[formControl]="form.controls.minimum"
+		[readonly]="property.disabledMinimum"
+		[ngClass]="{ disabled: property.disabledMinimum, delete: property.deleteConfirm }"
+		(valueChange)="onAmountChange($event, form)"
+	></kendo-numerictextbox>
+	<span class="separator">-</span>
+	<kendo-numerictextbox
+		[spinners]="false"
+		[format]="'n2'"
+		[decimals]="2"
+		class="input-text"
+		type="text"
+		placeholder="Max"
+		[formControl]="form.controls.maximum"
+		[readonly]="property.disabledMaximum"
+		[ngClass]="{ disabled: property.disabledMaximum, delete: property.deleteConfirm }"
+		(valueChange)="onAmountChange($event, form)"
+	></kendo-numerictextbox>
+</ng-template>
+<ng-template #buttonsActions let-disabled="disabled" let-index="position" let-display="display">
+	<button
+		*ngIf="display.check"
+		class="buttons"
+		(click)="onCheckInputTexts(index)"
+		[disabled]="disabled"
+		[ngClass]="{ disabled: disabled }"
+	>
+		<i class="k-icon k-i-check"></i>
+	</button>
+	<button *ngIf="display.check" class="buttons" (click)="onCancelInputTexts(index)">
+		<i class="k-icon k-i-close"></i>
+	</button>
+</ng-template>
+<ng-template #buttonDelete let-index="position" let-display="display">
+	<button *ngIf="display.delete" class="buttons" (click)="onRemoveConfirm(index)">
+		<i class="k-icon k-i-trash"></i>
+	</button>
+</ng-template>
+<ng-template #confirmDelete let-index="position" let-display="display">
+	<div *ngIf="display.confirmMessage" class="message-delete">
+		If you decide to continue with this change, all highlighted rows will be removed. <span class="bold">What do you want to do?</span>
+	</div>
+	<div *ngIf="display.confirm" class="confirm-delete">
+		<button class="buttons undo" (click)="onCancelInputTexts(index)">
+			Undo Change
+		</button>
+		<button *ngIf="!display.confirmMessage" class="buttons remove" (click)="onRemoveAmount(index)">
+			Remove Row
+		</button>
+		<button *ngIf="display.confirmMessage" class="buttons remove" (click)="onRemoveAmounts(index)">
+			Remove Rows
+		</button>
+	</div>
+</ng-template>
+<ng-template #errorMessage let-form="form">
+	<div *ngIf="form.errors" class="error-message"><span class="bold">Error:</span> {{ form.errors.range }}</div>
+</ng-template>

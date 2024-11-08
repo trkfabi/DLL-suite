@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://schemas.delagelanden.com/expressfinance/1.0/" xmlns:q1="http://schemas.delagelanden.com/expressfinance/1.0/data" targetNamespace="http://schemas.delagelanden.com/expressfinance/1.0/">	
+	<wsdl:types>
+		<xs:schema>
+			<xs:import namespace="http://schemas.delagelanden.com/expressfinance/1.0/" schemaLocation="ExpressFinance.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="SearchContracts_InputMessage">
+		<wsdl:part name="parameters" element="tns:SearchContracts"/>
+	</wsdl:message>
+	<wsdl:message name="SearchContracts_OutputMessage">
+		<wsdl:part name="parameters" element="tns:SearchContractsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateTerminationQuote_InputMessage">
+		<wsdl:part name="parameters" element="tns:CreateTerminationQuote"/>
+	</wsdl:message>
+	<wsdl:message name="CreateTerminationQuote_OutputMessage">
+		<wsdl:part name="parameters" element="tns:CreateTerminationQuoteResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SearchCustomers_InputMessage">
+		<wsdl:part name="parameters" element="tns:SearchCustomers"/>
+	</wsdl:message>
+	<wsdl:message name="SearchCustomers_OutputMessage">
+		<wsdl:part name="parameters" element="tns:SearchCustomersResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SearchRateCards_InputMessage">
+		<wsdl:part name="parameters" element="tns:SearchRateCards"/>
+	</wsdl:message>
+	<wsdl:message name="SearchRateCards_OutputMessage">
+		<wsdl:part name="parameters" element="tns:SearchRateCardsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SubmitApplication_InputMessage">
+		<wsdl:part name="parameters" element="tns:SubmitApplication"/>
+	</wsdl:message>
+	<wsdl:message name="SubmitApplication_OutputMessage">
+		<wsdl:part name="parameters" element="tns:SubmitApplicationResponse"/>
+	</wsdl:message>	
+	<wsdl:message name="GetCustomizations_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetCustomizations"/>
+	</wsdl:message>
+	<wsdl:message name="GetCustomizations_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetCustomizationsResponse"/>
+	</wsdl:message>	
+	<wsdl:portType name="IExpressFinanceSvc">
+		<wsdl:operation name="EFSearchContracts">
+			<wsdl:input message="tns:SearchContracts_InputMessage"/>
+			<wsdl:output message="tns:SearchContracts_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="EFCreateTerminationQuote">
+			<wsdl:input message="tns:CreateTerminationQuote_InputMessage"/>
+			<wsdl:output message="tns:CreateTerminationQuote_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="EFSearchCustomers">
+			<wsdl:input message="tns:SearchCustomers_InputMessage"/>
+			<wsdl:output message="tns:SearchCustomers_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="EFSearchRateCards">
+			<wsdl:input message="tns:SearchRateCards_InputMessage"/>
+			<wsdl:output message="tns:SearchRateCards_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="EFSubmitApplication">
+			<wsdl:input message="tns:SubmitApplication_InputMessage"/>
+			<wsdl:output message="tns:SubmitApplication_OutputMessage"/>
+		</wsdl:operation>
+			<wsdl:operation name="EFGetCustomizations">
+			<wsdl:input message="tns:GetCustomizations_InputMessage"/>
+			<wsdl:output message="tns:GetCustomizations_OutputMessage"/>
+		</wsdl:operation>	
+	</wsdl:portType>
+	<wsdl:binding name="BasicHttpBinding_IExpressFinanceSvc" type="tns:IExpressFinanceSvc">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="EFSearchContracts">
+			<soap:operation soapAction="http://schemas.delagelanden.com/expressfinance/1.0/IExpressFinanceSvc/SearchContracts" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="EFCreateTerminationQuote">
+			<soap:operation soapAction="http://schemas.delagelanden.com/expressfinance/1.0/IExpressFinanceSvc/CreateTerminationQuote" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="EFSearchCustomers">
+			<soap:operation soapAction="http://schemas.delagelanden.com/expressfinance/1.0/IExpressFinanceSvc/SearchCustomers" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="EFSearchRateCards">
+			<soap:operation soapAction="http://schemas.delagelanden.com/expressfinance/1.0/IExpressFinanceSvc/SearchRateCards" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="EFSubmitApplication">
+			<soap:operation soapAction="http://schemas.delagelanden.com/expressfinance/1.0/IExpressFinanceSvc/SubmitApplication" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="EFGetCustomizations">
+			<soap:operation soapAction="http://schemas.delagelanden.com/expressfinance/1.0/IExpressFinanceSvc/GetCustomizations" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>		
+	</wsdl:binding>
+	<wsdl:service name="ExpressFinanceSvc">
+		<wsdl:port name="BasicHttpBinding_IExpressFinanceSvc" binding="tns:BasicHttpBinding_IExpressFinanceSvc">
+			<soap:address location=""/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

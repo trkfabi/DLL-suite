@@ -1,0 +1,6 @@
+<Alloy>
+	<View id='container'>
+		<View id="separator" />
+		<Button id='submitButton' class='button' />
+	</View>
+</Alloy>

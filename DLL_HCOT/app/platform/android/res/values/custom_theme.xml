@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!--Tag white color for the backgrounds of the windows in Agricredit project - Comment the below line if you switch to AGCO project -->
+	<color name="white">#FFFFFFFF</color>
+
+	<style name="Theme.NoActionBar" parent="@style/Theme.AppCompat.NoTitleBar">
+		<item name="android:windowBackground">@color/white</item>
+		<item name="android:windowActionBar">false</item>
+		<item name="android:windowNoTitle">true</item>
+		<!-- AppCompat Compatibility -->
+		<item name="windowActionBar">false</item>
+		<!-- To have the text of the buttons in lowercase -->
+		<item name="android:textAllCaps">false</item>
+	</style>
+	 
+</resources>

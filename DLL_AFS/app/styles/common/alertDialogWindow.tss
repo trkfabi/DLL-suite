@@ -1,0 +1,79 @@
+'#window': {
+	top: 0,
+	left: 0,
+	right: 0,
+	bottom: 0,
+	visible: true,
+	backgroundColor: Alloy.Globals.colors.blackHalfTransparent
+},
+'#container': {
+	left: 20,
+	right: 20,
+	height: 135,
+	backgroundColor: Alloy.Globals.colors.alabaster,
+	borderRadius: 10
+},
+'#title': {
+	top: 15,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: 16,
+		fontFamily: Alloy.Globals.fonts.primary.bold
+	},
+	color: Alloy.Globals.colors.black
+},
+'#textField': {
+	top: 60,
+	left: 20,
+	right: 20,
+	height: 28,
+	font: {
+		fontSize: 14,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	},
+	backgroundColor: Alloy.Globals.colors.white,
+	color: Alloy.Globals.colors.black,
+	borderWidth: 0.5,
+	borderColor: Alloy.Globals.colors.alto,
+	paddingLeft: 5
+},
+'#buttonsContainer': {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 40,
+	layout: 'horizontal',
+	horizontalWrap: false
+},
+'#leftView': {
+	width: '50%'
+}
+'#cancelButton': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	font: {
+		fontSize: 16,
+		fontFamily: Alloy.Globals.fonts.primary.bold
+	},
+	color: Alloy.Globals.colors.cornflowerBlue
+},
+'#okButton': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	font: {
+		fontSize: 16,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	},
+	color: Alloy.Globals.colors.cornflowerBlue
+},
+'#centerDivider': {
+	width: 0.5,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.alto
+},
+'.topLine': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 0.5,
+	backgroundColor: Alloy.Globals.colors.alto
+}

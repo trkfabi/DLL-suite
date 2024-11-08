@@ -1,0 +1,6 @@
+<Alloy>
+	<View id='equipmentInformation' class='summarySectionContainer'>
+		<Require id='sectionHeader' src='summary/sectionHeader' />
+		<View id='container' />
+	</View>
+</Alloy>

@@ -1,0 +1,455 @@
+'TextField': {
+	bubbleParent: false
+},
+'#wrapper': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#customerLabel': {
+	text: L('customer_information')
+},
+'#detailContainer': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	layout: 'vertical'
+},
+'#detailContainer[platform=android]': {
+	contentWidth: '100%',
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'#stateEquipmentContainer': {
+	width: 120
+},
+'#zipEquipmentContainer': {
+	left: 140
+},
+'#sendContract': {
+	left: 10,
+	right: 10,
+	height: 35,
+	title: L('accept_and_proceed_uppercase'),
+	backgroundColor: Alloy.Globals.colors.mantis
+},
+'#sendContract[platform=ios]': {
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+},
+'#markEquipmentSame': {
+	right: 0,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	layout: 'horizontal',
+	useSame: false
+},
+'#markTitle': {
+	left: 10,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: 10,
+		fontFamily: Alloy.Globals.fonts.primary.light
+	},
+	text: L('same_as_customer_addr'),
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	color: Alloy.Globals.colors.black,
+	touchEnabled: false
+},
+'#markCheck': {
+	left: 5,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	image: '/images/bt_customerinfo_checkbox_out.png',
+	imageOff: '/images/bt_customerinfo_checkbox_out.png',
+	imageOn: '/images/bt_customerinfo_checkbox_active.png',
+	touchEnabled: false
+},
+'#equipmentListLabel': {
+	text: L('equipment_list')
+},
+'#tradeListLabel': {
+	text: L('trade_information')
+},
+'#equipmentCount': {
+
+},
+'#deleteButton': {
+	right: 10,
+	width: 50,
+	height: Ti.UI.SIZE
+},
+'#addTradeRow': {
+	tag: 'tradein'
+},
+'#addItemButton': {
+	left: 15,
+	right: 15,
+	top: 10,
+	bottom: 10,
+	height: 35,
+	font: {
+		fontSize: 18,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	},
+	title: L('add_item'),
+	color: Alloy.Globals.colors.white,
+	backgroundColor: Alloy.Globals.colors.azureRadiance
+},
+'#addItemButton[platform=android]': {
+	color: Alloy.Globals.colors.alabaster
+},
+'#physicalTitle': {
+	text: L('customer_address')
+},
+'#equipmentTitle': {
+	text: L('equipment_address')
+},
+'#customerNameTextField': {
+	hintText: L('customer_name'),
+	right: 50,
+	tag: 'name'
+},
+'#nameTextField': {
+	hintText: L('first_name'),
+	tag: 'firstName'
+},
+'#middleTextField': {
+	hintText: L('middle_name'),
+	tag: 'middleName'
+},
+'#lastNameTextField': {
+	hintText: L('last_name'),
+	tag: 'lastName'
+},
+'#titleTextField': {
+	hintText: L('title'),
+	tag: 'title'
+},
+'#phoneTextField': {
+	hintText: L('phone'),
+	maxLength: 15,
+	tag: 'phone'
+},
+'#emailTextField': {
+	hintText: L('email'),
+	tag: 'email'
+},
+'#addressTextField': {
+	hintText: L('address'),
+	tag: 'physicalAddress'
+},
+'#cityTextField': {
+	hintText: L('city'),
+	tag: 'physicalCity'
+},
+'#stateTextField': {
+	hintText: L('state'),
+	maxLength: 2,
+	tag: 'physicalState'
+},
+'#zipTextField': {
+	hintText: L('zip'),
+	tag: 'physicalZip'
+},
+'#equipmentAddressTextField': {
+	hintText: L('address'),
+	tag: 'equipmentAddress'
+},
+'#cityEquipmentTextField': {
+	hintText: L('city'),
+	tag: 'equipmentCity'
+},
+'#stateEquipmentTextField': {
+	hintText: L('state'),
+	maxLength: 2,
+	tag: 'equipmentState'
+},
+'#zipEquipmentTextField': {
+	hintText: L('zip'),
+	tag: 'equipmentZip'
+},
+'#phoneButton[platform=ios]': {
+	image: '/images/ic_searchquote.png'
+},
+'#phoneButton[platform=android]': {
+	backgroundImage: '/images/ic_searchquote.png'
+},
+'#mailButton[platform=ios]': {
+	image: '/images/bt_customerinfo_mail.png'
+},
+'#mailButton[platform=android]': {
+	backgroundImage: '/images/bt_customerinfo_mail.png'
+},
+'#loadingContainer[platform=android]': {
+	height: Ti.UI.SIZE
+},
+'#loading[platform=android]': {
+	height: Ti.UI.SIZE
+},
+'#markEquipmentSame[platform=android]': {
+	height: Ti.UI.SIZE,
+},
+'#markCheck[platform=android]': {
+	left: 7,
+	width: 36,
+	height: 36
+},
+'.addItemRow': {
+	width: Ti.UI.FILL,
+	height: 40
+},
+'.addItemIcon': {
+	left: 8,
+	width: 35,
+	height: 35,
+	image: '/images/bt_customerinfo_additem_w.png',
+	touchEnabled: false
+},
+'.addItemIcon[platform=android]': {
+	width: 36,
+	height: 36,
+	touchEnabled: false
+}
+'.addItemLabel': {
+	left: 48,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 15
+	},
+	text: L('add_item'),
+	color: Alloy.Globals.colors.azureRadiance,
+	touchEnabled: false
+},
+'#customerHeader': {
+	expandImage: 'expandCustomerImage',
+	container: 'customerContainer'
+},
+'#equipmentHeader': {
+	expandImage: 'expandEquipmentImage',
+	container: 'equipmentContainer',
+},
+'#tradeHeader': {
+	expandImage: 'expandTradeImage',
+	container: 'tradeContainer'
+},
+'#usageLabel': {
+	text: L('equipment_use')
+},
+'#equipmentUseRow': {
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+'#searchCustomerButton[platform=ios]': {
+	image: '/images/ic_searchquote.png'
+},
+'#searchCustomerButton[platform=android]': {
+	backgroundImage: '/images/ic_searchquote.png'
+},
+'.category': {
+	top: 0,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	layout: 'vertical',
+},
+'.category[platform=ios]': {
+	heightCollapsed: 50,
+	clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED
+},
+'.category[platform=android]': {
+	heightCollapsed: 55
+},
+'.customerHeader': {
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white,
+	heightExpanded: Ti.UI.SIZE,
+	expanded: true,
+	borderColor: Alloy.Globals.colors.silver,
+	borderWidth: 1
+}
+'.customerHeader[platform=ios]': {
+	height: 50,
+	heightCollapsed: 50
+
+},
+'.customerHeader[platform=android]': {
+	height: 55,
+	heightCollapsed: 55,
+},
+'.sectionLabel': {
+	left: 10,
+	font: {
+		fontSize: 13,
+		fontFamily: Alloy.Globals.fonts.primary.bold
+	},
+	color: Alloy.Globals.colors.shuttleGray,
+	touchEnabled: false,
+},
+'.sectionLabel[platform=android]': {
+	left: 11,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: 18,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	},
+},
+'.row': {
+	width: Ti.UI.FILL
+},
+'.row[platform=ios]': {
+	height: 50,
+	expandedHeight: 50,
+	collapsedHeight: 0,
+	clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED
+},
+'.row[platform=android]': {
+	height: 60,
+	expandedHeight: 60,
+	collapsedHeight: 0,
+	backgroundColor: Alloy.Globals.colors.transparent
+},
+'.halfRow': {
+	width: '49%'
+},
+'.halfRow[platform=android]': {
+	height: Ti.UI.SIZE
+},
+'.leftField': {
+	left: 0
+},
+'.rightField': {
+	right: 0
+},
+'.leftTab': {
+	left: 0,
+	width: 4,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.silver,
+	touchEnabled: false
+},
+'.equipmentLeftTab[platform=android]': {
+	left: 0,
+	width: 4,
+	height: 40,
+	backgroundColor: Alloy.Globals.colors.silver,
+	touchEnabled: false
+}
+'.titleRow': {
+	width: Ti.UI.FILL,
+	height: 40
+},
+'.title': {
+	left: 10,
+	right: 10,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 13
+	},
+	color: Alloy.Globals.colors.azureRadiance
+},
+'.title[platform=android]': {
+	height: Ti.UI.SIZE,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 15
+	}
+}
+'.field': {
+	top: 24,
+	left: 20,
+	right: 20,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 18
+	},
+	color: Alloy.Globals.colors.shuttleGray,
+	tintColor: Alloy.Globals.colors.azureRadiance,
+	hintTextColor: Alloy.Globals.colors.shuttleGray,
+	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_SENTENCES
+},
+'.field[platform=ios]': {
+	height: 20
+}
+'.field[platform=android]': {
+	top: 20,
+	left: 10,
+	right: 10,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.transparent
+}
+'.fieldBottomLine': {
+	bottom: 0,
+	left: 10,
+	right: 10,
+	height: 5,
+	backgroundImage: '/images/im_customerinfo_textline_large.png'
+},
+'.halfBottomLine': {
+	backgroundImage: '/images/im_customerinfo_textline_small.png'
+},
+'.expandButton': {
+	touchEnabled: false,
+	backgroundImage: '/images/bt_quotescreen_equipmentprice_contract.png',
+	imageExpanded: '/images/bt_quotescreen_equipmentprice_contract.png',
+	imageCollapsed: '/images/bt_quotescreen_equipmentprice_expand.png'
+},
+'.expandButton[platform=ios]': {
+	right: 12,
+	width: 40,
+	height: 40
+}
+'.expandButton[platform=android]': {
+	right: 7,
+	width: 36,
+	height: 36
+},
+'.button': {
+	right: 15,
+	bottom: 5,
+	width: 30,
+	height: 30
+},
+'.button[platform=ios]': {
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN
+},
+'.separator': {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.silver
+},
+'.separatorRow': {
+	height: 10
+},
+'.deleteRow': {
+	width: Ti.UI.SIZE,
+	height: 38,
+	right: 10,
+	layout: 'horizontal'
+},
+'.deleteIcon': {
+	left: 5,
+	width: 25,
+	height: 25
+},
+'.deleteTitle': {
+	right: 5,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize: 14,
+		fontFamily: Alloy.Globals.fonts.primary.regular
+	},
+	text: L('delete'),
+	color: Alloy.Globals.colors.white
+},
+'.equipmentList': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+'.autocompleteContainer': {
+	left: 8,
+	right: 0,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.lightGrey
+}

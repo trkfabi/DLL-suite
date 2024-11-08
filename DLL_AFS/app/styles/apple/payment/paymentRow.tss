@@ -1,0 +1,132 @@
+'#paymentRow': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#paymentView': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.white,
+	layout: 'vertical'
+},
+'#paymentHeaderView': {
+	top: 0,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: 71,
+	backgroundColor: Alloy.Globals.colors.white,
+	zIndex: 30
+},
+'#dragLinesView': {
+	right: 3,
+	width: 4,
+	height: 20,
+	backgroundImage: '/images/ic_draglines.png'
+},
+'#numberLabel': {
+	left: 12,
+	width: 34,
+	height: 34,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	text: '1',
+	borderRadius: 17,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 21
+	},
+	borderWidth: 1,
+	color: Alloy.Globals.colors.azureRadiance,
+	borderColor: Alloy.Globals.colors.azureRadiance,
+	backgroundColor: Alloy.Globals.colors.transparent,
+
+	colorActive: Alloy.Globals.colors.white,
+	colorUnactive: Alloy.Globals.colors.azureRadiance,
+	borderColorActive: Alloy.Globals.colors.azureRadiance,
+	borderColorUnactive: Alloy.Globals.colors.azureRadiance,
+	backgroundColorActive: Alloy.Globals.colors.azureRadiance,
+	backgroundColorUnactive: Alloy.Globals.colors.transparent,
+},
+'#termLabel': {
+	left: 58,
+	top: 10,
+	width: Ti.UI.SIZE,
+	color: Alloy.Globals.colors.black,
+	text: '36 Months',
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 17
+	}
+},
+'#rateFactorLabel': {
+	left: 58,
+	top: 35,
+	width: Ti.UI.SIZE,
+	color: Alloy.Globals.colors.mountbattenPink,
+	text: 'Rate Factor: 0.032123',
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.light,
+		fontSize: 14
+	}
+},
+'#paymentLabel': {
+	right: 44,
+	top: 10,
+	width: 130,
+	height: 20,
+	color: Alloy.Globals.colors.azureRadiance,
+	horizontalWrap: false,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.medium,
+		fontSize: 17
+	},
+	minimumFontSize: 15,
+	ellipsize: true
+
+},
+'#expandButton': {
+	right: 5,
+	width: 40,
+	height: 40,
+	backgroundImage: '/images/bt_quotescreen_apple_collapse.png',
+	imageExpanded: '/images/bt_quotescreen_apple_expand.png',
+	imageCollapsed: '/images/bt_quotescreen_apple_collapse.png',
+	touchEnabled: false
+},
+'#optionsView': {
+	top: -50,
+	left: 0,
+	right: 0,
+	height: 50,
+	backgroundColor: Alloy.Globals.colors.alabaster,
+	zIndex: 10,
+	isExpanded: false,
+	topExpanded: 0,
+	topCollapsed: -50
+},
+'#termBar': {
+	top: 10,
+	bottom: 10,
+	left: 15,
+	right: 15,
+	height: 30,
+	index: 2,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 16
+	},
+	tintColor: Alloy.Globals.colors.abbey,
+	backgroundColor: Alloy.Globals.colors.gallery
+},
+'#verticalDividerView': {
+	left: 0,
+	width: 4,
+	height: 50,
+	backgroundColor: Alloy.Globals.colors.alto
+},
+'.divider': {
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.alto,
+	zIndex: 30
+}

@@ -1,0 +1,39 @@
+<Alloy>
+	<Window id='window'>
+		<View id='header'>
+			<View id='headerContent'>
+				<View id='backButton' class='headerButton'>
+					<ImageView id='backImage' class='headerImage' />
+					<Label id='backLabel' class='headerLabel' />
+				</View>
+				<ImageView id='brandLogo' />
+				<View id='nextButton' class='headerButton'>
+					<ImageView id='nextImage' class='headerImage' />
+					<Label id='nextLabel' class='headerLabel' />
+				</View>
+			</View>
+			<View id='headerSeparator' />
+		</View>
+		<ScrollView id='scrollView'>
+			<Label id='authorizationTitleLabel' class='authorizationTitleLabel' />
+
+			<View id='ssnContainer'>
+				<View class='fieldContainer' id='section1Container'>
+					<TextField id='section1TextField' class='authField kbNumPad' />
+					<View class='fieldBottomLine' />
+				</View>
+
+				<View class='fieldContainer' id='section2Container'>
+					<TextField id='section2TextField' class='authField kbNumPad' />
+					<View class='fieldBottomLine' />
+				</View>
+
+				<View class='fieldContainer' id='section3Container'>
+					<TextField id='section3TextField' class='authField kbNumPad' />
+					<View class='fieldBottomLine' />
+				</View>
+
+			</View>
+		</ScrollView>
+	</Window>
+</Alloy>

@@ -1,0 +1,54 @@
+'#wrapper': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.blackHalfTransparent
+},
+'#container': {
+	width: 305,
+	height: 446,
+	borderRadius: 10,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#policy': {
+	top: 0,
+	bottom: 90,
+	width: Ti.UI.FILL,
+	url: '/htmls/agco_credit_terms.html'
+},
+'#policy[platform=android]': {
+	scalesPageToFit: true,
+	enableZoomControls: false
+},
+'#okButton': {
+	top: 10,
+	title: L('accept_and_proceed_uppercase'),
+	backgroundColor: Alloy.Globals.colors.mantis
+},
+'#cancelButton': {
+	top: 5,
+	bottom: 5,
+	title: L('decline_and_close_uppercase'),
+	backgroundColor: Alloy.Globals.colors.tamarillo
+},
+'.buttonsContainer': {
+	bottom: 0,
+	width: Ti.UI.FILL,
+	height: 90,
+	layout: 'vertical'
+},
+'.button': {
+	width: 280,
+	height: 35,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 14
+	},
+	color: Alloy.Globals.colors.white,
+	borderRadius: 4
+},
+'.separator': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 1,
+	backgroundColor: Alloy.Globals.colors.silver
+}

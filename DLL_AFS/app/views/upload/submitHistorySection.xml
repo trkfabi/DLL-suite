@@ -1,0 +1,18 @@
+<Alloy>
+	<ListSection id="submitHistorySection">
+		<HeaderView>
+			<View class="headerContainer">
+				<Label class="quoteInfoLabel" id="quoteNameLabel" />
+				<Label class="dollarSymbolLabel" />
+				<Label class="quoteInfoLabel" id="paymentAmountLabel" />
+			</View>
+		</HeaderView>
+
+		<FooterView>
+			<View class="footerContainer" id="footerContainer">
+				<Button id="retryButton" />
+				<View class="horizontalLine" />
+			</View>
+		</FooterView>
+	</ListSection>
+</Alloy>

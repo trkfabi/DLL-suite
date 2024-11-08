@@ -1,0 +1,48 @@
+<Alloy>
+	<Window id="window">
+		<TitleControl platform="ios">
+			<View id="titleView">
+				<ImageView id="brandLogo" />
+			</View>
+		</TitleControl>
+
+		<View id="backButton" platform="android">
+			<ImageView id="backImage" />
+		</View>
+		<ImageView id="brandLogo" platform="android" />
+		<View id="nextButton" platform="android">
+			<ImageView id="nextImage" />
+		</View>
+		<View id="line" platform="android" />
+
+		<ScrollView id="scrollView">
+
+			<Label id="titleLabel" />
+
+			<View id="ssnContainer">
+				<View class="fieldContainer" id="section1Container">
+					<TextField id="section1TextField" class="font kbNumPad" />
+					<View class="fieldBottomLine" />
+				</View>
+
+				<View class="fieldContainer" id="section2Container">
+					<TextField id="section2TextField" class="font kbNumPad" />
+					<View class="fieldBottomLine" />
+				</View>
+
+				<View class="fieldContainer" id="section3Container">
+					<TextField id="section3TextField" class="font kbNumPad" />
+					<View class="fieldBottomLine" />
+				</View>
+			</View>
+		</ScrollView>
+	</Window>
+	<View id="backButton" platform="ios">
+		<ImageView id="backImage" />
+		<Label id="backTitle" />
+	</View>
+	<View id="nextButton" platform="ios">
+		<ImageView id="nextImage" />
+		<Label id="nextTitle" />
+	</View>
+</Alloy>

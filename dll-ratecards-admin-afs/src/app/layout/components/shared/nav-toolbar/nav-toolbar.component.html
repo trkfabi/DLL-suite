@@ -1,0 +1,125 @@
+<mat-toolbar color="primary">
+	<nav class="wrapper">
+		<figure class="logo left pointer" (click)="onLogoClick($event)">
+			<picture *ngIf="templateName">
+				<source media="(min-width: 1440px)" srcset="assets/images/{{templateName}}/img-logo-3-x@3x.png" />
+				<img src="assets/images/{{ templateName }}/img-logo-3-x@2x.png" alt="{{ appTitle }}" width="120" />
+			</picture>
+			<span hidden>{{ appTitle }}</span>
+		</figure>
+		<div class="select-boxes" *ngIf="isLoggedIn && showNavigationControls">
+			<div id="env">
+				<h4>{{ environment.name }} {{ appVersion }}</h4>
+			</div>
+			<div class="menu-selectors">
+				<label for="rateCard" class="ratecard-selector">
+					Rate Card:
+				</label>
+				<kendo-dropdownlist
+					#dropdownlist
+					class="ratecard-select"
+					[data]="rateCardsList"
+					[textField]="'name'"
+					[valueField]="'id'"
+					[popupSettings]="{ width: 'auto', popupClass: 'ratecard-selector-options' }"
+					(selectionChange)="onSelectionChange($event, 'ratecard', rateCardSelected)"
+					[ngModel]="rateCardSelected"
+					[disabled]="disabledRateCardList"
+					[readonly]="readonlyNavigationControls"
+					[ngClass]="{ readonly: readonlyNavigationControls }"
+				>
+				</kendo-dropdownlist>
+				<label for="rateCard" class="ratecardversion-selector">
+					Version:
+				</label>
+				<kendo-dropdownlist
+					class="version-select large"
+					[data]="rateCardsVersionList"
+					[textField]="'versionDate'"
+					[popupSettings]="{ popupClass: 'ratecard-selector-options' }"
+					[valueField]="'id'"
+					(selectionChange)="onSelectionChange($event, 'version', versionSelected)"
+					[disabled]="disabledVersionList"
+					[(ngModel)]="versionSelected"
+					[readonly]="readonlyNavigationControls"
+					[ngClass]="{ readonly: readonlyNavigationControls }"
+				>
+					<ng-template kendoDropDownListValueTemplate let-dataItem>
+						<span class="template">{{ dataItem?.versionDate }} </span>
+						<span *ngIf="isVersionPublished(dataItem?.id)"> (Current)</span>
+						<span *ngIf="isVersionInProgress(dataItem?.id)"> (In-Progress)</span>
+					</ng-template>
+					<ng-template kendoDropDownListItemTemplate let-dataItem>
+						<span class="template">{{ dataItem?.versionDate }} </span>
+						<span *ngIf="dataItem.published"> (Current)</span>
+						<span *ngIf="!dataItem.published && !dataItem.archived">(In-Progress)</span>
+					</ng-template>
+				</kendo-dropdownlist>
+				<button
+					*ngIf="!readonlyNavigationControls"
+					[disabled]="disabledRateCardList"
+					id="add-button"
+					class="add-button"
+					[ngClass]="{ 'larger-button': rateCardsVersionList }"
+					(click)="onAddButtonClick($event)"
+				>
+					<img id="add-button-img" src="assets/images/{{ templateName }}/ic-add.png" />
+				</button>
+				<div class="app-menu right">
+					<ul class="menu menu-import" [ngClass]="{ show: displayAddVersionsMenu }">
+						<li>
+							<i class="k-icon k-i-upload"></i>
+							<a (click)="onImportVersionButtonClick($event, dialogActions)"
+								>Import Version
+								<small>
+									Import from other Rate Cards
+								</small>
+							</a>
+						</li>
+						<li>
+							<i class="k-icon k-i-file-add"></i>
+							<a (click)="onCreateNewVersionClick($event, dialogActions)"
+								>Create New Version
+								<small>
+									Start a version from scratch
+								</small>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="app-menu" *ngIf="isLoggedIn && showNavigationControls" [ngClass]="{ hidden: readonlyNavigationControls }">
+					<div class="gear-container" [ngClass]="{ active: displayMenu }">
+						<i
+							class="k-icon k-i-gear pointer"
+							id="icon-gear"
+							(click)="onSettingsMenuClickEvent($event)"
+							[ngClass]="{ active: displayMenu }"
+						></i>
+					</div>
+
+					<ul class="menu menu-manager" [ngClass]="{ show: displayMenu }">
+						<li>
+							<a (click)="onManageRateCardsButtonClick($event)">Manage Rate Cards and Vendor Codes</a>
+						</li>
+						<li>
+							<a (click)="onExportAuditLogButtonClick($event, dialogActions)">Export Audit Logs</a>
+						</li>
+						<li>
+							<a class="logout" (click)="onLogoutButtonClick($event, dialogActions, 'Logout')">Logout</a>
+						</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<a class="export-rate-cards-link" #downloadExportLink></a>
+		<div kendoDialogContainer></div>
+		<ng-template #dialogActions>
+			<div class="buttons">
+				<button kendoButton (click)="handleDialogSubmitButtonClick($event)" class="k-button k-primary">{{ buttonAction }}</button>
+				<button kendoButton (click)="handleDialogCloseButtonClick($event)" class="k-button">Cancel</button>
+			</div>
+		</ng-template>
+	</nav>
+</mat-toolbar>

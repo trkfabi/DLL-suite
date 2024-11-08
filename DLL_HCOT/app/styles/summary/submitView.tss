@@ -1,0 +1,49 @@
+'#actionsContainer': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: 'vertical',
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#actionsContainer[if=Alloy.Globals.hasNotch]': {
+	bottom: 40
+},
+'#signContractButton': {
+	title: L('sign_contract'),
+	backgroundColor: Alloy.Globals.colors.mantis
+},
+'#sendContractToCustomerButton': {
+	bottom: 5,
+	title: L('send_contract_customer'),
+	backgroundColor: Alloy.Globals.colors.grayApprox
+},
+
+'.separator': {
+	top: 0,
+	height: 0.5,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.alto
+},
+'.button[platform=ios]': {
+	top: 5,
+	left: 10,
+	right: 10,
+	height: 35,
+	color: Alloy.Globals.colors.white,
+	style: Ti.UI.iOS.SystemButtonStyle.PLAIN,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 14
+	},
+	borderRadius: 3
+},
+'.button[platform=android]': {
+	top: 6,
+	left: 15,
+	right: 15,
+	height: 39,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 18
+	}
+}

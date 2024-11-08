@@ -1,0 +1,77 @@
+'#window': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.alabaster,
+	backgroundImage: '/images/login_footer.png'
+},
+'#window[if=Alloy.Globals.hasNotch]': {
+	backgroundImage: '/images/splash-Portrait-2436h@3x.png'
+}
+'#window[platform=ios]': {
+	modal: true,
+	navBarHidden: true
+},
+'#window[platform=android]': {
+	exitOnClose: false,
+	theme: 'Theme.AppCompat.Translucent.NoTitleBar'
+},
+'#container': {
+	top: 0,
+	bottom: 118,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#container[platform=android formFactor=tablet]': {
+	bottom: 300
+}
+'#container[if=Alloy.Globals.hasNotch]': {
+	bottom: 230.5
+},
+'#termsLabel': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 81,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.bold,
+		fontSize: 20
+	},
+	text: L('terms_and_conditions'),
+	color: Alloy.Globals.colors.black,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+},
+'#termsLabel[if=Alloy.Globals.hasNotch]': {
+	top: 23
+},
+'#policy': {
+	top: 65,
+	bottom: 70,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	url: L('terms_url')
+},
+'#policy[if=Alloy.Globals.hasNotch]': {
+	top: 85,
+	bottom: 70
+},
+'#policy[platform=android]': {
+	scalesPageToFit: true,
+	enableZoomControls: false
+},
+'#okButton': {
+	bottom: 17,
+	width: 274,
+	height: 40,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 14
+	},
+	title: L('accept_and_proceed_uppercase'),
+	color: Alloy.Globals.colors.white,
+	backgroundColor: Alloy.Globals.colors.falcon,
+	borderRadius: 4
+}
+'#okButton[if=Alloy.Globals.hasNotch]': {
+	height: 39,
+	bottom: 20
+}

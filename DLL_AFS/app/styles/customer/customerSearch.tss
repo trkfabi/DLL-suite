@@ -1,0 +1,99 @@
+'Button[platform=android]': {
+	backgroundColor: Alloy.Globals.colors.transparent,
+	borderColor: Alloy.Globals.colors.transparent
+},
+'#window': {
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	title: L('select_customer'),
+},
+'#window[platform=ios]': {
+	navTintColor: Alloy.Globals.colors.white,
+	barColor: Alloy.Globals.colors.azureRadiance,
+	backButtonTitle: 'Back',
+	titleAttributes: {
+		color: Alloy.Globals.colors.white
+	}
+},
+'#window[platform=android]': {
+	navBarHidden: true,
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#wrapper': {
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	layout: 'vertical'
+},
+'#customerList': {
+	height: Ti.UI.FILL,
+	separatorColor: Alloy.Globals.colors.transparent
+},
+'#header[platform=android]': {
+	width: Ti.UI.FILL,
+	height: 50,
+	backgroundColor: Alloy.Globals.colors.azureRadiance
+},
+'#doneButton[platform=ios]': {
+	title: L('done')
+},
+'#doneButton[platform=android]': {
+	right: 17,
+	width: 40,
+	height: 40,
+	backgroundImage: '/images/ic_goalseeker_done.png'
+},
+'#backButton[platform=android]': {
+	left: 0,
+	width: 17,
+	height: 17,
+	backgroundImage: '/images/ic_tradeup_back.png'
+},
+'#titleLabel': {
+	left: 17,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 18
+	},
+	text: L('select_customer'),
+	color: Alloy.Globals.colors.white
+},
+'#searchBarContainer[platform=ios]': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.alabaster
+},
+'#searchBar[platform=ios]': {
+	hintText: L('customer_name')
+},
+'#searchBarContainer[platform=android]': {
+	top: 10,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+},
+'#searchBarButton[platform=android]': {
+	right: 12,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/ic_equipment_search.png'
+},
+'#searchBar[platform=android]': {
+	left: 10,
+	width: 280,
+	height: Ti.UI.SIZE,
+	hintText: L('customer_name'),
+	color: Alloy.Globals.colors.scorpion,
+	hintTextColor: Alloy.Globals.colors.silver,
+	returnKeyType: Ti.UI.RETURNKEY_SEARCH
+},
+'.fieldBottomLine[platform=android]': {
+	bottom: 0,
+	left: 10,
+	right: 10,
+	height: 5,
+	backgroundImage: '/images/im_customerinfo_textline_large.png'
+},
+'#tradeupList[platform=android]': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+}

@@ -1,0 +1,174 @@
+'Button[platform=android]': {
+	backgroundColor: Alloy.Globals.colors.transparent,
+	borderColor: Alloy.Globals.colors.transparent
+},
+'.container': {
+
+},
+'#window': {
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	title: L('select_customer'),
+	navBarHidden: true
+},
+'#window[platform=ios]': {
+	navTintColor: Alloy.Globals.colors.white,
+	barColor: Alloy.Globals.colors.azureRadiance,
+	backButtonTitle: 'Back',
+	titleAttributes: {
+		color: Alloy.Globals.colors.white
+	},
+	backgroundColor: Alloy.Globals.colors.azureRadiance
+},
+'#window[platform=android]': {
+	navBarHidden: true,
+	theme: 'Theme.NoActionBar',
+	backgroundColor: Alloy.Globals.colors.white
+},
+'#Wrapper': {
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.transparent,
+	layout: 'vertical'
+},
+'#customerList': {
+	height: Ti.UI.FILL,
+	separatorColor: Alloy.Globals.colors.transparent
+},
+'#header': {
+	width: Ti.UI.FILL,
+	height: 50,
+	backgroundColor: Alloy.Globals.colors.azureRadiance
+},
+'#header[platform=ios]': {
+	top: 15
+},
+'#doneButton': {
+	right: 17,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 12
+	}
+},
+'#doneButton[platform=ios]': {
+	title: L('done'),
+	top: 15
+},
+'#doneButton[platform=android]': {
+	height: 36,
+	backgroundImage: '/images/bt_tradeup_done.png'
+},
+'#backButton': {
+	left: 0,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 12
+	}
+},
+'#backButton[platform=ios]': {
+	title: L('cancel'),
+	left: 15,
+	top: 15
+},
+'#backButton[platform=android]': {
+	backgroundImage: '/images/ic_tradeup_back.png',
+	width: 17,
+	height: 17
+},
+'#titleLabel': {
+	color: Alloy.Globals.colors.white,
+	text: L('select_customer'),
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: '18'
+	}
+},
+'#titleLabel[platform=android]': {
+	left: 17
+},
+'#titleLabel[platform=ios]': {
+	top: 17
+},
+'#paymentsLabel': {
+	bottom: 5,
+	color: Alloy.Globals.colors.white,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: '12'
+	},
+	visible: false
+},
+'#tradeupList': {
+	height: Ti.UI.FILL,
+	separatorColor: Alloy.Globals.colors.transparent
+},
+'#optionsSelectorContainer': {
+	height: 39,
+	color: Alloy.Globals.colors.silver,
+	backgroundColor: Alloy.Globals.colors.ghost
+},
+'#optionsSelectorContainer[platform=android]': {
+	width: Ti.UI.FILL,
+	backgroundColor: Alloy.Globals.colors.gallery
+},
+'#optionsSelector': {
+	left: 20,
+	right: 20,
+	index: 0,
+	tintColor: Alloy.Globals.colors.abbey,
+	backgroundColor: Alloy.Globals.colors.gallery,
+	labels: [
+		L('search_by_client'),
+		L('search_by_contract_number')
+	],
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: '13'
+	},
+	color: Alloy.Globals.colors.white
+},
+'#optionsSelector[platform=android]': {
+	left: 0,
+	right: 0,
+	selectedBackground: '/images/bg_quotelist_select.png',
+	unselectedBackground: '/images/bg_quotelist_unselect.png',
+	tintColor: Alloy.Globals.colors.black,
+	backgroundColor: Alloy.Globals.colors.gallery
+},
+'#searchBarContainer[platform=android]': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	top: 10
+}
+'#searchBarButton[platform=android]': {
+	right: 12,
+	width: 36,
+	height: 36,
+	backgroundImage: '/images/ic_equipment_search.png'
+},
+'#searchBar': {
+	hintText: L('customer_name'),
+	borderColor: '#BFC5CF',
+	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_SENTENCES,
+	font: {
+		fontFamily: Alloy.Globals.fonts.primary.regular,
+		fontSize: 12
+	}
+},
+'#searchBar[platform=android]': {
+	left: 10,
+	width: 280,
+	height: Ti.UI.SIZE,
+	hintText: L('customer_name'),
+	color: Alloy.Globals.colors.scorpion,
+	hintTextColor: Alloy.Globals.colors.scorpion,
+	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_SENTENCES,
+	returnKeyType: Ti.UI.RETURNKEY_SEARCH
+},
+'.fieldBottomLine[platform=android]': {
+	bottom: 0,
+	left: 10,
+	right: 10,
+	height: 5,
+	backgroundImage: '/images/im_customerinfo_textline_large.png'
+}

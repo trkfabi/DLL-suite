@@ -1,0 +1,96 @@
+'#quoteOptionsView': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	heightCollapsed: 40,
+	backgroundColor: Alloy.Globals.colors.alto
+},
+'#container': {
+	top: 40,
+	left: 4,
+	rigth: 0,
+	height: Ti.UI.SIZE,
+	backgroundColor: Alloy.Globals.colors.alabaster,
+	layout: 'vertical'
+},
+'#sectionHeader': {
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.semiBold,
+		fontSize: 16
+	},
+	color: Alloy.Globals.colors.shuttleGray,
+	expander: {
+		backgroundImage: '/images/bt_quotescreen_apple_expand.png',
+		imageExpanded: '/images/bt_quotescreen_apple_expand.png',
+		imageCollapsed: '/images/bt_quotescreen_apple_collapse.png'
+	}
+},
+'#quoteValidUntilLabel': {
+	text: L('quote_valid_until')
+},
+'#quoteValidUntilField': {
+	editable: false,
+	touchEnabled: false
+},
+'#quoteValidUntilIcon': {
+	backgroundImage: '/images/ic_calendar.png'
+},
+'#pdfFilenameField': {
+	maxLength: 25,
+	keyboardType: Ti.UI.KEYBOARD_TYPE_ASCII
+},
+'#quoteDisplayPaybackLabel': {
+	text: L('quote_display_payback')
+},
+'#pdfFilenameLabel': {
+	text: L('pdf_filename')
+},
+'#pdfFilenameIcon': {
+	backgroundImage: '/images/ic_pdf.png'
+},
+
+'.quoteOptionRow': {
+	width: Ti.UI.FILL,
+	height: 48
+},
+'.quoteOptionLabel': {
+	left: 10,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.thunder,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.regular,
+		fontSize: 14
+	},
+	touchEnabled: false
+},
+'.quoteOptionField': {
+	right: 45,
+	width: 140,
+	height: Ti.UI.FILL,
+	color: Alloy.Globals.colors.shuttleGray,
+	font: {
+		fontFamily: Alloy.Globals.fonts.myriadSetPro.regular,
+		fontSize: 14
+	},
+	padding: {
+		left: 5,
+		right: 5
+	}
+},
+'.quoteOptionIcon': {
+	right: 10,
+	width: 30,
+	height: 30
+},
+'.quoteOptionSwitch': {
+	right: 10,
+	value: true
+},
+'.textFieldLine': {
+	right: 45,
+	bottom: 7,
+	width: 140,
+	height: 6,
+	backgroundImage: '/images/textfield_line_gray.png',
+	touchEnabled: false
+}
